@@ -10,6 +10,7 @@ import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.Entity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
@@ -41,9 +42,12 @@ public abstract class ThatchedSlab extends BlockSlab
         setLightOpacity(255);
         setLightLevel(0.0F);
         setHardness(0.3F);
-        setSoundType(SoundType.WOOD);
+        setSoundType(SoundType.PLANT);
     }
-
+    public void onFallenUpon(World worldIn, BlockPos pos, Entity entityIn, float fallDistance)
+    {
+        entityIn.fall(fallDistance, 0.2F);
+    }
     /**
      * Get the MapColor for this Block and the given BlockState
      */

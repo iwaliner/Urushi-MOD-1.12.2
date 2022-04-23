@@ -12,11 +12,13 @@ import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.SoundCategory;
@@ -43,7 +45,7 @@ public class ChiseledLacquerLog extends BlockLog {
     {
         super();
         this.setDefaultState(this.blockState.getBaseState().withProperty(VARIANT, BlockPlanks.EnumType.OAK).withProperty(LOG_AXIS, EnumAxis.Y));
-        this.setCreativeTab(null);
+        this.setCreativeTab(ModCore_Urushi.TabUrushi);
         setResistance(10F);
         setLightOpacity(255);
         setLightLevel(0.0F);
@@ -88,9 +90,6 @@ public class ChiseledLacquerLog extends BlockLog {
     public void getSubBlocks(CreativeTabs itemIn, NonNullList<ItemStack> items)
     {
         items.add(new ItemStack(this, 1, BlockPlanks.EnumType.OAK.getMetadata()));
-        items.add(new ItemStack(this, 1, BlockPlanks.EnumType.SPRUCE.getMetadata()));
-        items.add(new ItemStack(this, 1, BlockPlanks.EnumType.BIRCH.getMetadata()));
-
     }
 
     /**
@@ -147,14 +146,11 @@ public class ChiseledLacquerLog extends BlockLog {
         return new BlockStateContainer(this, new IProperty[] {VARIANT, LOG_AXIS});
     }
 
-    public Item getItemDropped(IBlockState state, Random rand, int fortune)
-    {
-        return Item.getItemFromBlock(ModCore_Urushi.ULog);
-    }
+
 
     public ItemStack getItem(World worldIn, BlockPos pos, IBlockState state)
     {
-        return new ItemStack(ModCore_Urushi.ULog,1,2);
+        return new ItemStack(ModCore_Urushi.ChiseledLacquerLog,1,0);
     }
     /**
      * Gets the metadata of the item this Block can drop. This method is called when the block gets destroyed. It
@@ -162,7 +158,7 @@ public class ChiseledLacquerLog extends BlockLog {
      */
     public int damageDropped(IBlockState state)
     {
-        return 2;
+        return 0;
     }
 
 
@@ -214,9 +210,18 @@ public class ChiseledLacquerLog extends BlockLog {
         worldIn.spawnParticle(EnumParticleTypes.CLOUD, (double) pos.getX()+0.5D+p, (double)pos.getY()+0.5D+q, (double)pos.getZ()+0.5D+r, (double)0D, (double)-0.2D, (double)0D);
 
     }
+    public IBlockState getStateForPlacement(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer) {
+        if (placer.getHorizontalFacing() == EnumFacing.SOUTH) {
+            return this.getDefaultState().withProperty(ChiseledLacquerLog.VARIANT, BlockPlanks.EnumType.OAK);
 
-    @Override
-    public boolean canSilkHarvest(World world, BlockPos pos, IBlockState state, EntityPlayer player) {
-        return false;
+        } else if (placer.getHorizontalFacing() == EnumFacing.NORTH) {
+            return this.getDefaultState().withProperty(ChiseledLacquerLog.VARIANT, BlockPlanks.EnumType.SPRUCE);
+        } else if (placer.getHorizontalFacing() == EnumFacing.EAST) {
+            return this.getDefaultState().withProperty(ChiseledLacquerLog.VARIANT, BlockPlanks.EnumType.JUNGLE);
+        } else if (placer.getHorizontalFacing() == EnumFacing.WEST) {
+            return this.getDefaultState().withProperty(ChiseledLacquerLog.VARIANT, BlockPlanks.EnumType.BIRCH);
+        }
+        return this.getDefaultState();
     }
-}
+
+    }

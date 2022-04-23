@@ -21,7 +21,10 @@ public class Stairs extends BlockStairs {
 		if( this.getMaterial(state)== Material.WOOD) {
 			setHarvestLevel("axe", 0);
             setSoundType(SoundType.WOOD);
-		}else{
+		}else if( this.getMaterial(state)== Material.GRASS) {
+            setSoundType(SoundType.PLANT);
+        }
+        else{
             setHarvestLevel("pickaxe", 0);
         }
     }

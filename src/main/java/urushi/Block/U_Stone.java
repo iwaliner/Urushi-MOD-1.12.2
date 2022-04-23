@@ -45,6 +45,8 @@ public class U_Stone extends Block   {
         return I18n.translateToLocal(this.getUnlocalizedName() + "." + EnumType.CupricOxideKawara.getUnlocalizedName() + ".name");
     }
 
+
+
     /**
      * Get the MapColor for this Block and the given BlockState
      */

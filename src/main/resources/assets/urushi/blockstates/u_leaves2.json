@@ -1,0 +1,20 @@
+{
+    "variants": {
+"check_decay=false,decayable=true,variant=oak": { "model":"urushi:japanese_apricot_leaves" },
+"check_decay=false,decayable=false,variant=oak": { "model":"urushi:japanese_apricot_leaves" },
+"check_decay=true,decayable=true,variant=oak": { "model":"urushi:japanese_apricot_leaves" },
+"check_decay=true,decayable=false,variant=oak": { "model":"urushi:japanese_apricot_leaves" },
+"check_decay=false,decayable=true,variant=spruce": { "model":"urushi:sakura_leaves" },
+"check_decay=false,decayable=false,variant=spruce": { "model":"urushi:sakura_leaves" },
+"check_decay=true,decayable=true,variant=spruce": { "model":"urushi:sakura_leaves" },
+"check_decay=true,decayable=false,variant=spruce": { "model":"urushi:sakura_leaves" },
+"check_decay=false,decayable=true,variant=birch": { "model":"urushi:lacquer_leaves" },
+"check_decay=false,decayable=false,variant=birch": { "model":"urushi:lacquer_leaves" },
+"check_decay=true,decayable=true,variant=birch": { "model":"urushi:lacquer_leaves" },
+"check_decay=true,decayable=false,variant=birch": { "model":"urushi:lacquer_leaves" },
+"check_decay=false,decayable=true,variant=jungle": { "model":"urushi:cypress_leaves" },
+"check_decay=false,decayable=false,variant=jungle": { "model":"urushi:cypress_leaves" },
+"check_decay=true,decayable=true,variant=jungle": { "model":"urushi:cypress_leaves" },
+"check_decay=true,decayable=false,variant=jungle": { "model":"urushi:cypress_leaves" }
+    }
+}

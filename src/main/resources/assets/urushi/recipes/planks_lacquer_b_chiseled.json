@@ -1,0 +1,17 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "q"
+  ],
+  "key": {
+    "q": {
+      "item": "urushi:chiseled_lacquer_log",
+      "data": 0
+    }
+  },
+  "result": {
+    "item": "minecraft:planks",
+"data": 0,
+ "count": 4
+  }
+}

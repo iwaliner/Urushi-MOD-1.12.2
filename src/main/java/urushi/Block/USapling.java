@@ -21,6 +21,7 @@ public class USapling extends BlockSapling implements IGrowable
     {
         this.setDefaultState(this.blockState.getBaseState().withProperty(TYPE, BlockPlanks.EnumType.OAK).withProperty(STAGE, Integer.valueOf(0)));
         this.setCreativeTab(ModCore_Urushi.TabUrushi);
+        setSoundType(SoundType.WOOD);
     }
     public void generateTree(World worldIn, BlockPos pos, IBlockState state, Random rand)
     {

@@ -1,7 +1,6 @@
 package urushi.Block;
 
 import com.google.common.base.Predicate;
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.BlockPlanks;
 import net.minecraft.block.properties.IProperty;
@@ -28,7 +27,7 @@ import urushi.ModCore_Urushi;
 import javax.annotation.Nullable;
 import java.util.Random;
 
-public class U_Leaves extends BlockLeaves
+public class U_Leaves2 extends BlockLeaves
 {
     public static final PropertyEnum<BlockPlanks.EnumType> VARIANT = PropertyEnum.<BlockPlanks.EnumType>create("variant", BlockPlanks.EnumType.class, new Predicate<BlockPlanks.EnumType>()
     {
@@ -38,15 +37,11 @@ public class U_Leaves extends BlockLeaves
         }
     });
 
-    public U_Leaves()
+    public U_Leaves2()
     {
         this.setCreativeTab(ModCore_Urushi.TabUrushi);
         setLightOpacity(0);
-
-      if( ModCore_Urushi.SakuraLeavesAndJapaneseApricotLeavesIsLight){ setLightLevel(1F);
-      }else {
-          setLightLevel(0F);
-      }
+        setLightLevel(0F);
         this.setDefaultState(this.blockState.getBaseState().withProperty(VARIANT, BlockPlanks.EnumType.OAK).withProperty(CHECK_DECAY, Boolean.valueOf(true)).withProperty(DECAYABLE, Boolean.valueOf(true)));
     }
 
@@ -57,20 +52,12 @@ public class U_Leaves extends BlockLeaves
        return  new ItemStack(Item.getItemFromBlock(this), 1, ((BlockPlanks.EnumType)state.withProperty(CHECK_DECAY, Boolean.valueOf(false)).withProperty(DECAYABLE, Boolean.valueOf(false)).getValue(VARIANT)).getMetadata()+4);
 
     }
-    protected void dropApple(World worldIn, BlockPos pos, IBlockState state, int chance) {
-        if (state.getValue(CHECK_DECAY) == true|| state.getValue(DECAYABLE) == true) {
-            if (state.getValue(VARIANT) == BlockPlanks.EnumType.OAK && worldIn.rand.nextInt(8) == 0) {
-                spawnAsEntity(worldIn, pos, new ItemStack(ModCore_Urushi.ImmatureApricot));
-            }
-            if (state.getValue(VARIANT) == BlockPlanks.EnumType.OAK && worldIn.rand.nextInt(8) == 1) {
-                spawnAsEntity(worldIn, pos, new ItemStack(ModCore_Urushi.MaturedApricot));
-            }
-        }
-    }
+
     public void getSubBlocks(CreativeTabs itemIn, NonNullList<ItemStack> items)
     {
-        items.add(new ItemStack(this, 1, 4));
-        items.add(new ItemStack(this, 1, 5));
+
+        items.add(new ItemStack(this, 1, 6));
+        items.add(new ItemStack(this, 1, 7));
 
         // items.add(new ItemStack(this, 1, BlockPlanks.EnumType.OAK.getMetadata()));
        // items.add(new ItemStack(this, 1, BlockPlanks.EnumType.SPRUCE.getMetadata()));
@@ -147,7 +134,7 @@ public class U_Leaves extends BlockLeaves
     }
 
     @Override
-    public NonNullList<ItemStack> onSheared(ItemStack item, net.minecraft.world.IBlockAccess world, BlockPos pos, int fortune)
+    public NonNullList<ItemStack> onSheared(ItemStack item, IBlockAccess world, BlockPos pos, int fortune)
     {
         return NonNullList.withSize(1, new ItemStack(this, 1, (world.getBlockState(pos).withProperty(CHECK_DECAY, Boolean.valueOf(false)).withProperty(DECAYABLE, Boolean.valueOf(false)).getValue(VARIANT)).getMetadata()+4));
     }

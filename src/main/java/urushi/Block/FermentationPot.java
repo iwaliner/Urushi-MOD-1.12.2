@@ -230,7 +230,7 @@ if(worldIn.getTileEntity(pos) instanceof  TileEntityFermentationPot) {
 
 
     if (((FermentationPot.EnumType) worldIn.getBlockState(pos).getValue(VARIANT)) == EnumType.Empty) {
-        if (itemStack.getItem() instanceof ItemLeaves || itemStack.getItem() == Item.getItemFromBlock(ModCore_Urushi.ULeaves)) {
+        if (itemStack.getItem() instanceof ItemLeaves || itemStack.getItem() == Item.getItemFromBlock(ModCore_Urushi.ULeaves)|| itemStack.getItem() == Item.getItemFromBlock(ModCore_Urushi.ULeaves2)) {
             worldIn.setBlockState(pos, this.getDefaultState().withProperty(VARIANT, EnumType.Leaves));
             TileEntityFermentationPot tileEntity = (TileEntityFermentationPot) worldIn.getTileEntity(pos);
             tileEntity.itemAmount = itemStack.getCount();

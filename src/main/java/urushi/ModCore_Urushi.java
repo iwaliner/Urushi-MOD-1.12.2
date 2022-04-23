@@ -56,8 +56,8 @@ import urushi.WorldGen.WorldProviderKakuriyo;
 import java.util.Random;
 
 
-@Mod(modid = "urushi", version = "alpha2.21", name = "Urushi MOD")
-public class ModCore_Urushi {
+@Mod(modid = "urushi", version = "alpha2.22", name = "Urushi MOD")
+public class  ModCore_Urushi {
    public static String modid="urushi";
     public static final CreativeTabs TabUrushi = new TabUrushi("TabUrushi");
     public static final Block UPlanks = new U_Planks();
@@ -153,7 +153,7 @@ public class ModCore_Urushi {
     public static final BlockSlab ThatchedSlabSingle = new ThatchedSlab() {@Override public boolean isDouble() {return false;}};
     public static final BlockSlab ThatchedSlabDouble = new ThatchedSlab() {@Override public boolean isDouble() {return true;}};
     public static final ItemBlock ItemBlockThatchedSlab=new ItemSlab(ThatchedSlabSingle, ThatchedSlabSingle, ThatchedSlabDouble);
-    public static final Block ThatchedStairs = new Stairs(ThatchedBlock.getDefaultState());
+    public static final Block ThatchedStairs = new StairsThatched(ThatchedBlock.getDefaultState());
     public static final Block Andon = new PaperLamp();
     public static final Block AriakeAndon = new AriakeAndon();
     public static final Block Futon = new Futon();
@@ -182,7 +182,7 @@ public class ModCore_Urushi {
     public static final ItemBlock ItemBlockSandCoast=new ItemBlockMetadata(SandCoast);
     public static final Block CypressStairs = new Stairs(UPlanks.getDefaultState().withProperty(U_Planks.VARIANT, U_Planks.EnumType.Cypress));
     public static final Block SmoothCypressStairs = new Stairs(UPlanks.getDefaultState().withProperty(U_Planks.VARIANT, U_Planks.EnumType.SmoothCypress));
-    public static final Block HiwadabukiStairs = new Stairs(ThatchedBlock.getDefaultState().withProperty(urushi.Block.ThatchedBlock.VARIANT, EnumType.EnumType2.TypeB));
+    public static final Block HiwadabukiStairs = new StairsThatched(ThatchedBlock.getDefaultState().withProperty(urushi.Block.ThatchedBlock.VARIANT, EnumType.EnumType2.TypeB));
     public static final Block FermentationPot = new FermentationPot();
     public static final TileEntity TileEntityFermentationPot = new TileEntityFermentationPot();
     public static final Item ImmatureApricot = new ImmatureApricot(1, 0.1F, false);
@@ -192,18 +192,19 @@ public class ModCore_Urushi {
     public static final Block CropAzuki = new CropAzuki();
     public static final Item Ohagi = new ItemFood(8, 1F, false);
     public static final Item SakuraMochi = new ItemFood(8, 1F, false);
-    public static final Item Gyudon = new ItemFood(8, 1F, false);
-    public static final Item Butadon = new ItemFood(8, 1F, false);
+    public static final Item Gyudon = new ItemFood(10, 1.2F, false);
+    public static final Item Butadon = new ItemFood(10, 1.2F, false);
     public static final Item SalmonSashimi = new ItemFood(4, 0.4F, false);
    public static final Item Charm = new Charm();
-
+    public static final Block ULeaves2 = new U_Leaves2();
+    public static boolean SakuraLeavesAndJapaneseApricotLeavesIsLight=true;
+    public static final ItemBlock ItemBlockULeaves2=new ItemBlockMetadata(ULeaves2);
 
     @EventHandler
     public void construct(FMLConstructionEvent event) {
         MinecraftForge.EVENT_BUS.register(this);
         MinecraftForge.TERRAIN_GEN_BUS.register(this);
     }
-
 
 
 
@@ -269,7 +270,6 @@ public class ModCore_Urushi {
         event.getRegistry().register(ItemBlockThatchedBlock.setRegistryName(modid, "thatched_block"));
         event.getRegistry().register(ItemBlockThatchedSlab.setRegistryName(modid, "thatched_slab_single"));
         event.getRegistry().register(new ItemBlock(ThatchedStairs).setRegistryName(modid, "thatched_stairs"));
-        event.getRegistry().register(new ItemBlock(Futon).setRegistryName(modid, "futon"));
     //    event.getRegistry().register(HayatoShield.setRegistryName(modid, "hayato_shield"));
         event.getRegistry().register(new ItemBlock(OakShitomi).setRegistryName(modid, "oak_shitomi"));
         event.getRegistry().register(new ItemBlock(SpruceShitomi).setRegistryName(modid, "spruce_shitomi"));
@@ -296,6 +296,7 @@ public class ModCore_Urushi {
         event.getRegistry().register(Butadon.setUnlocalizedName("Butadon").setRegistryName("butadon").setCreativeTab(TabUrushi));
         event.getRegistry().register(SalmonSashimi.setUnlocalizedName("SalmonSashimi").setRegistryName("salmon_sashimi").setCreativeTab(TabUrushi));
         event.getRegistry().register(Charm);
+        event.getRegistry().register(ItemBlockULeaves2.setRegistryName(modid, "u_leaves2"));
 
 
     }
@@ -386,6 +387,7 @@ public class ModCore_Urushi {
         event.getRegistry().register(HiwadabukiStairs.setRegistryName(modid,"hiwadabuki_stairs").setUnlocalizedName("HiwadabukiStairs"));
         event.getRegistry().register(FermentationPot.setRegistryName(modid,"fermentation_pot").setUnlocalizedName("FermentationPot"));
         event.getRegistry().register(CropAzuki.setRegistryName(modid,"crop_azuki").setUnlocalizedName("CropAzuki"));
+        event.getRegistry().register(ULeaves2.setRegistryName(modid,"u_leaves2").setUnlocalizedName("ULeaves2"));
 
     }
 
@@ -605,6 +607,9 @@ public class ModCore_Urushi {
           ModelLoader.setCustomModelResourceLocation(Charm, 4, new ModelResourceLocation(new ResourceLocation(modid, "health_boost_charm"), "inventory"));
           ModelLoader.setCustomModelResourceLocation(Charm, 5, new ModelResourceLocation(new ResourceLocation(modid, "mayoke_charm"), "inventory"));
           ModelLoader.setCustomModelResourceLocation(UItems,36, new ModelResourceLocation(new ResourceLocation(modid, "blank_charm"), "inventory"));
+          ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ULeaves2), 6, new ModelResourceLocation(new ResourceLocation(modid, "lacquer_leaves"), "inventory"));
+          ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ULeaves2), 7, new ModelResourceLocation(new ResourceLocation(modid, "cypress_leaves"), "inventory"));
+          ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ChiseledLacquerLog), 0, new ModelResourceLocation(new ResourceLocation(modid, "chiseled_lacquer_log"), "inventory"));
 
 
 
@@ -615,7 +620,7 @@ public class ModCore_Urushi {
 
     @EventHandler
     public void init(FMLInitializationEvent event) {
-
+/**鉱石辞書に登録 */
         OreDictionary.registerOre("plankWood",new ItemStack(UPlanks,1,6));
         OreDictionary.registerOre("plankWood",new ItemStack(UPlanks,1,8));
         OreDictionary.registerOre("plankWood",new ItemStack(UPlanks,1,10));
@@ -694,6 +699,7 @@ public class ModCore_Urushi {
             Property e1ID4 = cfg.get("world generation", "generate Japanese Timber Bamboo in ForestHills Biome" ,wheather_ganerate_Bamboo);
             Property e1ID5 = cfg.get("world generation", "generate Copper Ore" ,wheather_ganerate_CopperOre);
             Property e1ID6 = cfg.get("block settings", "max height of Japanese Timber Bamboo" ,max_height_Bamboo);
+            Property e1ID8 = cfg.get("block settings", "Japanese Apricot Leaves and Sakura Leaves glow" ,SakuraLeavesAndJapaneseApricotLeavesIsLight);
 
             // 項目に入っている値を取得してIDに入れる。
             wheather_ganerate_Sakura = e1ID1.getBoolean();
@@ -703,6 +709,7 @@ public class ModCore_Urushi {
             wheather_ganerate_CopperOre = e1ID5.getBoolean();
             max_height_Bamboo=e1ID6.getInt();
             wheather_ganerate_Cypress = e1ID7.getBoolean();
+            SakuraLeavesAndJapaneseApricotLeavesIsLight = e1ID8.getBoolean();
         } catch (Exception e) {
             e.printStackTrace();
         } finally {

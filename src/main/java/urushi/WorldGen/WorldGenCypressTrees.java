@@ -18,7 +18,7 @@ import java.util.Random;
 public class WorldGenCypressTrees extends WorldGenAbstractTree
 {
     private static final IBlockState TRUNK = ModCore_Urushi.ULog.getDefaultState().withProperty(U_Log.VARIANT, BlockPlanks.EnumType.JUNGLE);
-    private static final IBlockState LEAF = ModCore_Urushi.ULeaves.getDefaultState().withProperty(U_Leaves.VARIANT, BlockPlanks.EnumType.JUNGLE).withProperty(BlockLeaves.CHECK_DECAY, Boolean.valueOf(false));
+    private static final IBlockState LEAF = ModCore_Urushi.ULeaves2.getDefaultState().withProperty(U_Leaves.VARIANT, BlockPlanks.EnumType.JUNGLE).withProperty(BlockLeaves.CHECK_DECAY, Boolean.valueOf(false));
     public WorldGenCypressTrees(boolean p_i2025_1_)
     {
         super(p_i2025_1_);
