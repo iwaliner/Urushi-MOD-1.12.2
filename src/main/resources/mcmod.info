@@ -1,8 +1,8 @@
 [
 {
-  "modid": "iwalinersmod",
-  "name": "iwaliner's mod",
-  "description": "a mod",
+  "modid": "urushi",
+  "name": "Urushi",
+  "description": "iwaliner's mod",
   "version": "${version}",
   "mcversion": "${mcversion}",
   "url": "",
