@@ -1,6 +1,6 @@
 package urushi.Itemblock;
 
-import MinecraftAPI.stuff.IMetaBlockName;
+
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;

@@ -1,6 +1,6 @@
 package urushi.Item;
 
-import lava_melon.ModCore_LavaMelon;
+
 import net.minecraft.block.BlockFarmland;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.creativetab.CreativeTabs;
