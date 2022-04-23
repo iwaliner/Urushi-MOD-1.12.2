@@ -20,12 +20,11 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import urushi.Else.EnumType;
-import urushi.Else.IMetaBlockName;
 import urushi.ModCore_Urushi;
 
 import java.util.Random;
 
-public abstract class KawaraSlabB extends BlockSlab  implements IMetaBlockName
+public abstract class KawaraSlabB extends BlockSlab
 {
     public static final PropertyEnum<EnumType.EnumType2> VARIANT = PropertyEnum.<EnumType.EnumType2>create("variant", EnumType.EnumType2.class);
     public static final PropertyDirection FACING = BlockHorizontal.FACING;
@@ -170,20 +169,6 @@ public abstract class KawaraSlabB extends BlockSlab  implements IMetaBlockName
     {
         return ((EnumType.EnumType2)state.getValue(VARIANT)).getMetadata()*4;
     }
-    @Override
-    public String getSpecialName(ItemStack stack) {
-        switch(stack.getItemDamage()) {
-            case 0:return "cupric_oxide_kawara_block";
-            case 1:return "ibushi_kawara_block";
-            case 2:return "plaster";
-            case 3:return "null3";
-            case 4:return "null4";
-            case 5:return "null5";
-            case 6:return "null6";
-            case 7:return "null7";
-            case 8:return "null8";
-        }
-        return "cupric_oxide_kawara_block";
-    }
+
 
 }

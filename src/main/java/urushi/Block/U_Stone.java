@@ -3,7 +3,6 @@ package urushi.Block;
 
 
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockSlab;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
@@ -20,12 +19,10 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import urushi.Else.EnumType;
-import urushi.Else.IMetaBlockName;
 import urushi.ModCore_Urushi;
 
 
-public class U_Stone extends Block  implements IMetaBlockName {
+public class U_Stone extends Block   {
     public static final PropertyEnum<U_Stone.EnumType> VARIANT = PropertyEnum.<U_Stone.EnumType>create("variant", U_Stone.EnumType.class);
 
     public U_Stone()
@@ -157,30 +154,7 @@ public class U_Stone extends Block  implements IMetaBlockName {
 
 
 
-    @Override
-    public String getSpecialName(ItemStack stack) {
 
-
-            switch(stack.getItemDamage()) {
-                case 0:return "cupric_oxide_kawara_block";
-                case 1:return "ibushi_kawara_block";
-                case 2:return "copper_ore";
-                case 3:return "plaster";
-                case 4:return "namako_plaster";
-                case 5:return "copper_kawara_block";
-                case 6:return "ibushi_kawara_block";
-                case 7:return "ibushi_kawara_block";
-                case 8:return "ibushi_kawara_block";
-                case 9:return "cupric_oxide_kawara_block";
-                case 10:return "cupric_oxide_kawara_block";
-                case 11:return "cupric_oxide_kawara_block";
-                case 12:return "copper_kawara_block";
-                case 13:return "copper_kawara_block";
-                case 14:return "copper_kawara_block";
-            }
-            return "cupric_oxide_kawara_block";
-
-    }
 
     public static enum EnumType implements IStringSerializable
     {

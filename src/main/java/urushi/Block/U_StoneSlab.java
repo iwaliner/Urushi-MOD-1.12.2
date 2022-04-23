@@ -2,7 +2,6 @@ package urushi.Block;
 
 
 import net.minecraft.block.BlockSlab;
-import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
@@ -17,7 +16,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import urushi.Else.EnumType;
-import urushi.Else.IMetaBlockName;
 import urushi.ModCore_Urushi;
 
 import java.util.Random;

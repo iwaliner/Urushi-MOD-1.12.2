@@ -3,39 +3,31 @@ package urushi.Block;
 
 
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockSlab;
 import net.minecraft.block.SoundType;
-import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumFacing;
-import net.minecraft.util.IStringSerializable;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import urushi.Else.EnumType;
-import urushi.Else.IMetaBlockName;
 import urushi.ModCore_Urushi;
 
 import javax.annotation.Nullable;
 import java.util.List;
 
 
-public class Bars extends Block  implements IMetaBlockName {
+public class Bars extends Block  {
     public static final PropertyEnum<urushi.Else.EnumType.EnumType8> VARIANT = PropertyEnum.<urushi.Else.EnumType.EnumType8>create("variant", urushi.Else.EnumType.EnumType8.class);
     public static final PropertyEnum<urushi.Else.EnumType.EnumType2> VARIANT2 = PropertyEnum.<urushi.Else.EnumType.EnumType2>create("variant2", urushi.Else.EnumType.EnumType2.class);
     protected static final AxisAlignedBB AABB_B = new AxisAlignedBB(0.0625D*7, 0.0D, 0D, 0.0625D*9, 1D, 1D);
@@ -187,49 +179,7 @@ public class Bars extends Block  implements IMetaBlockName {
             addCollisionBoxToList(pos, entityBox, collidingBoxes, AABB_B);
         }
     }
-    @Override
-    public String getSpecialName(ItemStack stack) {
 
-
-        switch (stack.getItemDamage()) {
-            case 0:
-                return "smooth_oak_planks";
-            case 2:
-                return "smooth_birch_planks";
-            case 1:
-                return "smooth_spruce_planks";
-            case 3:
-                return "smooth_jungle_planks";
-            case 4:
-                return "smooth_acacia_planks";
-            case 5:
-                return "smooth_dark_oak_planks";
-            case 6:
-                return "planks_red_urushi_stained";
-            case 7:
-                return "smooth_planks_red_urushi_stained";
-            case 8:
-                return "planks_black_urushi_stained";
-            case 9:
-                return "smooth_planks_black_urushi_stained";
-            case 10:
-                return "japanese_apricot_planks";
-            case 11:
-                return "smooth_japanese_apricot_planks";
-            case 12:
-                return "sakura_planks";
-            case 13:
-                return "smooth_sakura_planks";
-            case 14:
-                return "14";
-            case 15:
-                return "15";
-
-
-        }
-        return "smooth_oak_planks";
-
-    }
 
 
 

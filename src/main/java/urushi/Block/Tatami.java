@@ -1,7 +1,6 @@
 package urushi.Block;
 
 
-import net.minecraft.block.BlockPlanks;
 import net.minecraft.block.BlockRotatedPillar;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -14,10 +13,9 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.NonNullList;
 import urushi.Else.EnumType;
-import urushi.Else.IMetaBlockName;
 import urushi.ModCore_Urushi;
 
-public class Tatami extends BlockRotatedPillar implements IMetaBlockName {
+public class Tatami extends BlockRotatedPillar  {
     public static final PropertyEnum<EnumType.EnumType4> VARIANT = PropertyEnum.<EnumType.EnumType4>create("variant", EnumType.EnumType4.class);
    // public static final PropertyEnum<BlockLog.EnumAxis> LOG_AXIS = PropertyEnum.<BlockLog.EnumAxis>create("axis", BlockLog.EnumAxis.class);
 
@@ -90,15 +88,5 @@ public class Tatami extends BlockRotatedPillar implements IMetaBlockName {
     {
         return ((EnumType.EnumType4)state.getValue(VARIANT)).getMetadata();
     }
-    @Override
-    public String getSpecialName(ItemStack stack) {
-        switch(stack.getItemDamage()) {
-            case 0:return "brown_tatami";
-            case 1:return "green_tatami";
-            case 2:return "null_tatami";
-            case 3:return "null_null_tatami";
 
-        }
-        return "brown_tatami";
-    }
 }

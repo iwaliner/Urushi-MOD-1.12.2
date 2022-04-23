@@ -2,7 +2,6 @@ package urushi.Block;
 
 
 
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
@@ -12,15 +11,10 @@ import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.util.ITooltipFlag;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Blocks;
 import net.minecraft.init.SoundEvents;
-import net.minecraft.inventory.InventoryHelper;
 import net.minecraft.item.ItemStack;
-import net.minecraft.stats.StatList;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.tileentity.TileEntityFurnace;
 import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -29,20 +23,15 @@ import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import urushi.Else.EnumType;
-import urushi.Else.IMetaBlockName;
 import urushi.ModCore_Urushi;
 import urushi.TileEntity.TileEntityKama;
-import urushi.TileEntity.TileEntityRiceCauldron;
-import urushi.TileEntity.TileEntityWCabinetry;
-import urushi.TileEntity.TileEntityWoodenCabinetrySlab;
 
 import javax.annotation.Nullable;
 import java.util.List;
 import java.util.Random;
 
 
-public class Kama extends BlockContainer implements IMetaBlockName {
+public class Kama extends BlockContainer  {
     public static final PropertyEnum<Kama.EnumType> VARIANT = PropertyEnum.<Kama.EnumType>create("variant", Kama.EnumType.class);
     protected static final AxisAlignedBB AABB = new AxisAlignedBB(0.0625D*2, 0.0D, 0.0625D*2, 1D-0.0625D*2, 0.0625D*5, 1D-0.0625D*2);
 
@@ -107,29 +96,6 @@ public class Kama extends BlockContainer implements IMetaBlockName {
 
 
 
-    @Override
-    public String getSpecialName(ItemStack stack) {
-
-
-        switch (stack.getItemDamage()) {
-            case 0:
-                return "closed_empty_kama";
-            case 1:
-                return "closed_raw_rice_kama";
-            case 2:
-                return "closed_rice_kama";
-            case 3:
-                return "empty";
-            case 4:
-                return "raw_rice_kama";
-            case 5:
-                return "rice_kama";
-
-
-        }
-        return "closed_empty_kama";
-
-    }
 
 
 

@@ -15,13 +15,12 @@ import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
-import urushi.Else.IMetaBlockName;
 import urushi.ModCore_Urushi;
 
 import java.util.Random;
 
 
-public class LycorisRadiata extends BlockFlower implements IMetaBlockName, IGrowable,net.minecraftforge.common.IPlantable {
+public class LycorisRadiata extends BlockFlower implements  IGrowable,net.minecraftforge.common.IPlantable {
 	public static final PropertyEnum TYPE = PropertyEnum.create("type", LycorisRadiata.EnumType.class);
 	public LycorisRadiata()
     {
@@ -122,14 +121,7 @@ public class LycorisRadiata extends BlockFlower implements IMetaBlockName, IGrow
     public int damageDropped(IBlockState state) {
         return getMetaFromState(state);
     }
-    @Override
-    public String getSpecialName(ItemStack stack) {
 
-    	switch(stack.getItemDamage()) {
-    	case 0:return "meta0";
-    	}
-    	return "meta0";
-    }
     public enum EnumType implements IStringSerializable {
         meta0(0, "meta0");
 

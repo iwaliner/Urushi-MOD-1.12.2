@@ -17,12 +17,11 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import urushi.Else.EnumType;
-import urushi.Else.IMetaBlockName;
 import urushi.ModCore_Urushi;
 
 import java.util.Random;
 
-public abstract class U_WoodenSlabA extends BlockSlab  implements IMetaBlockName
+public abstract class U_WoodenSlabA extends BlockSlab
 {
     public static final PropertyEnum<EnumType.EnumType8> VARIANT = PropertyEnum.<EnumType.EnumType8>create("variant", EnumType.EnumType8.class);
 
@@ -140,19 +139,5 @@ public abstract class U_WoodenSlabA extends BlockSlab  implements IMetaBlockName
     {
         return ((EnumType.EnumType8)state.getValue(VARIANT)).getMetadata();
     }
-    @Override
-    public String getSpecialName(ItemStack stack) {
-        switch(stack.getItemDamage()) {
-            case 0:return "smooth_oak";
-            case 1:return "smooth_spruce";
-            case 2:return "smooth_birch";
-            case 3:return "smooth_jungle";
-            case 4:return "smooth_acacia";
-            case 5:return "smooth_dark_oak";
-            case 6:return "japanese_apricot";
-            case 7:return "smooth_japanese_apricot";
 
-        }
-        return "smooth_oak";
-    }
 }

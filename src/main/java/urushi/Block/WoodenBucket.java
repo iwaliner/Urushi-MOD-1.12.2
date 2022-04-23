@@ -4,47 +4,32 @@ import net.minecraft.block.*;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
-import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Items;
-import net.minecraft.init.PotionTypes;
 import net.minecraft.init.SoundEvents;
-import net.minecraft.inventory.InventoryHelper;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemArmor;
-import net.minecraft.item.ItemBanner;
 import net.minecraft.item.ItemStack;
-import net.minecraft.potion.PotionUtils;
-import net.minecraft.stats.StatList;
-import net.minecraft.tileentity.TileEntity;
-import net.minecraft.tileentity.TileEntityBanner;
 import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import urushi.Else.EnumType;
-import urushi.Else.IMetaBlockName;
 import urushi.ModCore_Urushi;
-import urushi.TileEntity.TileEntityWCabinetry;
 
 import javax.annotation.Nullable;
 import java.util.List;
-import java.util.Random;
 
 public class WoodenBucket
-        extends Block implements IMetaBlockName
+        extends Block
         //BlockContainer
 {
     protected static final AxisAlignedBB AABB_LEGS = new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.3125D, 1.0D);
@@ -372,23 +357,7 @@ if(!worldIn.isRemote && entityIn instanceof EntityItem){
         return (meta==7||meta==8||meta==9)? true:false;
     }
 
-    @Override
-    public String getSpecialName(ItemStack stack) {
-        switch(stack.getItemDamage()) {
-            case 0:return "wooden_bucket_empty";
-            case 2:return "wooden_bucket_raw_urushi_2";
-            case 1:return "wooden_bucket_raw_urushi_1";
-            case 3:return "wooden_bucket_raw_urushi_3";
-            case 4:return "wooden_bucket_red_urushi_1";
-            case 5:return "wooden_bucket_red_urushi_2";
-            case 6:return "wooden_bucket_red_urushi_3";
-            case 7:return "wooden_bucket_black_urushi_1";
-            case 8:return "wooden_bucket_black_urushi_2";
-            case 9:return "wooden_bucket_black_urushi_3";
 
-        }
-        return "wooden_bucket_empty";
-    }
     @Override
     public void addInformation(ItemStack stack, @Nullable World player, List<String> tooltip, ITooltipFlag advanced) {
         int metadata=stack.getItemDamage();

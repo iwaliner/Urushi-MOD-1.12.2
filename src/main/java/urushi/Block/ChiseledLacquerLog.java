@@ -25,14 +25,13 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import urushi.Else.IMetaBlockName;
 import urushi.ModCore_Urushi;
 
 import javax.annotation.Nullable;
 import java.util.Random;
 
 
-public class ChiseledLacquerLog extends BlockLog implements IMetaBlockName {
+public class ChiseledLacquerLog extends BlockLog {
     public static final PropertyEnum<BlockPlanks.EnumType> VARIANT = PropertyEnum.<BlockPlanks.EnumType>create("variant", BlockPlanks.EnumType.class, new Predicate<BlockPlanks.EnumType>()
     {
         public boolean apply(@Nullable BlockPlanks.EnumType p_apply_1_)
@@ -166,17 +165,7 @@ public class ChiseledLacquerLog extends BlockLog implements IMetaBlockName {
         return 2;
     }
 
-    @Override
-    public String getSpecialName(ItemStack stack) {
-        switch(stack.getItemDamage()) {
-            case 0:return "log1";
-            case 1:return "log2";
-            case 2:return "log3";
-            case 3:return "log4";
 
-        }
-        return "log1";
-    }
 
     @Override
     public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {
