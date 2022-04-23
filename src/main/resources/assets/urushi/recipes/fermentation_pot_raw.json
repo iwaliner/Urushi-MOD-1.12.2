@@ -1,0 +1,23 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "s s",
+    "sqs",
+    "sss"
+  ],
+  "key": {
+    "q": {
+   "type": "forge:ore_dict",
+      "ore": "bamboo"
+    },
+"s": {
+     "item": "minecraft:clay_ball",
+      "data": 0
+    }
+  },
+  "result": {
+    "item": "urushi:u_items",
+"data": 35,
+ "count": 1
+  }
+}

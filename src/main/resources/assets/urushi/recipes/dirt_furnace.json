@@ -1,0 +1,23 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "ddd",
+    "d d",
+    "dsd"
+  ],
+  "key": {
+    "d": {
+      "item": "minecraft:dirt",
+      "data": 0
+    },
+"s": {
+       "type": "forge:ore_dict",
+      "ore": "stickWood"
+    }
+  },
+  "result": {
+    "item": "urushi:dirt_furnace",
+"data": 0,
+ "count": 1
+  }
+}

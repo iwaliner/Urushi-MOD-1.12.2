@@ -1,0 +1,42 @@
+{
+  "type": "forge:ore_shapeless",
+  "ingredients": [
+    {
+       "type": "forge:ore_dict",
+      "ore": "slimeball"
+    },
+    {
+      "item": "minecraft:sand",
+      "data": 0
+    },
+    {
+      "item": "minecraft:sand",
+      "data": 0
+    },
+    {
+      "item": "minecraft:sand",
+      "data": 0
+    },
+    {
+      "item": "minecraft:sand",
+      "data": 0
+    },
+    {
+      "item": "minecraft:gravel"
+    },
+    {
+      "item": "minecraft:gravel"
+    },
+    {
+      "item": "minecraft:gravel"
+    },
+    {
+      "item": "minecraft:gravel"
+    }
+  ],
+  "result": {
+    "item": "urushi:u_stone",
+    "data": 3,
+    "count": 8
+  }
+}

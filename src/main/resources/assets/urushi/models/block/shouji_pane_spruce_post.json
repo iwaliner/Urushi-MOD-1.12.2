@@ -1,0 +1,7 @@
+{
+    "parent": "block/pane_post",
+    "textures": {
+        "edge": "urushi:blocks/planks_smooth_spruce",
+        "pane": "urushi:blocks/syoji_spruce_pane"
+    }
+}

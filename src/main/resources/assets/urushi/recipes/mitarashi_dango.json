@@ -1,0 +1,27 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    " km",
+    " m ",
+    "s  "
+  ],
+  "key": {
+    "m": {
+      "item": "urushi:rice_cake",
+      "data": 0
+    },
+"s": {
+       "type": "forge:ore_dict",
+      "ore": "stickWood"
+    },
+  "k": {
+         "type": "forge:ore_dict",
+      "ore": "dustGlowstone"
+    }
+  },
+  "result": {
+    "item": "urushi:mitarashi_dango",
+"data": 0,
+ "count": 1
+  }
+}

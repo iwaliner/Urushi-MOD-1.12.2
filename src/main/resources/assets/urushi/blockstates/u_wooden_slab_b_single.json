@@ -1,0 +1,21 @@
+{
+    "variants": {
+"half=bottom,variant=type_a": { "model":"urushi:half_slab_red_urushi_stained" },
+"half=bottom,variant=type_b": { "model":"urushi:half_slab_smooth_red_urushi_stained" },
+"half=bottom,variant=type_c": { "model":"urushi:half_slab_black_urushi_stained" },
+"half=bottom,variant=type_d": { "model":"urushi:half_slab_smooth_black_urushi_stained" },
+"half=bottom,variant=type_e": { "model":"urushi:half_slab_sakura" },
+"half=bottom,variant=type_f": { "model":"urushi:half_slab_smooth_sakura" },
+"half=bottom,variant=type_g": { "model":"urushi:half_slab_cypress" },
+"half=bottom,variant=type_h": { "model":"urushi:half_slab_smooth_cypress" },
+"half=top,variant=type_a": { "model":"urushi:upper_slab_red_urushi_stained" },
+"half=top,variant=type_b": { "model":"urushi:upper_slab_smooth_red_urushi_stained" },
+"half=top,variant=type_c": { "model":"urushi:upper_slab_black_urushi_stained" },
+"half=top,variant=type_d": { "model":"urushi:upper_slab_smooth_black_urushi_stained" },
+"half=top,variant=type_e": { "model":"urushi:upper_slab_sakura" },
+"half=top,variant=type_f": { "model":"urushi:upper_slab_smooth_sakura" },
+"half=top,variant=type_g": { "model":"urushi:upper_slab_cypress" },
+"half=top,variant=type_h": { "model":"urushi:upper_slab_smooth_cypress" }
+
+    }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "q"
+  ],
+  "key": {
+    "q": {
+   "type": "forge:ore_dict",
+      "ore": "seedRice"
+    }
+  },
+  "result": {
+    "item": "urushi:u_items",
+"data": 5,
+ "count": 1
+  }
+}

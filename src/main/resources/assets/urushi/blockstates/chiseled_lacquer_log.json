@@ -1,0 +1,14 @@
+{
+    "variants": {
+"axis=y,variant=oak": { "model":"urushi:chiseled_lacquer_log" },
+"axis=z,variant=oak": { "model":"urushi:chiseled_lacquer_log","x": 90 },
+"axis=x,variant=oak": { "model":"urushi:chiseled_lacquer_log", "x": 90, "y": 90 },
+"axis=y,variant=spruce": { "model":"urushi:chiseled_lacquer_log", "y": 180 },
+"axis=z,variant=spruce": { "model":"urushi:chiseled_lacquer_log","x": 90 },
+"axis=x,variant=spruce": { "model":"urushi:chiseled_lacquer_log", "x": 90, "y": 90 },
+"axis=y,variant=birch": { "model":"urushi:chiseled_lacquer_log" , "y": 90},
+"axis=z,variant=birch": { "model":"urushi:chiseled_lacquer_log","x": 90 },
+"axis=x,variant=birch": { "model":"urushi:chiseled_lacquer_log", "x": 90, "y": 90 },
+"axis=y,variant=jungle": { "model":"urushi:chiseled_lacquer_log" , "y": 270}
+    }
+}

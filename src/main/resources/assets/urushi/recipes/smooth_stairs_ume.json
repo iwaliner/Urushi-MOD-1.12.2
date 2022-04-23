@@ -1,0 +1,19 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+  "  q",
+  " qq",
+   "qqq"
+  ],
+  "key": {
+    "q": {
+      "item": "urushi:u_planks",
+      "data": 11
+    }
+  },
+  "result": {
+    "item": "urushi:smooth_japanese_apricot_stairs",
+"data": 0,
+ "count": 4
+  }
+}

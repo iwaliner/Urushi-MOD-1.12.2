@@ -1,0 +1,19 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "qq",
+    "qq",
+    "qq"
+  ],
+  "key": {
+    "q": {
+       "item": "minecraft:paper",
+      "data": 0
+    }
+  },
+  "result": {
+    "item": "urushi:u_items",
+"data": 30,
+ "count": 1
+  }
+}

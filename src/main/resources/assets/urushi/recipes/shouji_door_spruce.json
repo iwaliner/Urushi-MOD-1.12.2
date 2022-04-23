@@ -1,0 +1,17 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "q",
+    "q"
+  ],
+  "key": {
+    "q": {
+      "item": "urushi:shouji_pane_spruce"
+    }
+  },
+  "result": {
+    "item": "urushi:u_items",
+"data": 12,
+ "count": 1
+  }
+}

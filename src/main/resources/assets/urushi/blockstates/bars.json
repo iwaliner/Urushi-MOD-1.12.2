@@ -1,0 +1,18 @@
+{
+    "variants": {
+"variant=type_a,variant2=type_a": { "model":"urushi:oak_bars" },
+"variant=type_a,variant2=type_b": { "model":"urushi:oak_bars", "y": 90 },
+"variant=type_b,variant2=type_a": { "model":"urushi:spruce_bars" },
+"variant=type_b,variant2=type_b": { "model":"urushi:spruce_bars", "y": 90 },
+"variant=type_c,variant2=type_a": { "model":"urushi:birch_bars" },
+"variant=type_c,variant2=type_b": { "model":"urushi:birch_bars", "y": 90 },
+"variant=type_d,variant2=type_a": { "model":"urushi:jungle_bars" },
+"variant=type_d,variant2=type_b": { "model":"urushi:jungle_bars", "y": 90 },
+"variant=type_e,variant2=type_a": { "model":"urushi:acacia_bars" },
+"variant=type_e,variant2=type_b": { "model":"urushi:acacia_bars", "y": 90 },
+"variant=type_f,variant2=type_a": { "model":"urushi:dark_oak_bars" },
+"variant=type_f,variant2=type_b": { "model":"urushi:dark_oak_bars", "y": 90 },
+"variant=type_g,variant2=type_a": { "model":"urushi:green_bars" },
+"variant=type_g,variant2=type_b": { "model":"urushi:green_bars", "y": 90 }
+    }
+}

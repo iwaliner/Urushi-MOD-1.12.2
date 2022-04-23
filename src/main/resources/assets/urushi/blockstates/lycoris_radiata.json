@@ -1,0 +1,5 @@
+{
+    "variants": {
+"type=dandelion": { "model":"urushi:lycoris_radiata" }
+    }
+}

@@ -1,0 +1,127 @@
+{
+    "multipart": [
+        {   "when": { "northwall": "true","norththis": "false","southwall": "false","souththis": "false","eastwall": "false","eastthis": "false","westwall": "false","westthis": "false","overwall": "false","overthis": "false","beneathwall": "false","beneaththis": "false"},
+            "apply": { "model": "urushi:red_post_one_wall", "y": 180, "uvlock": true }
+        },
+        {   "when": {"northwall": "false","norththis": "false","southwall": "true","souththis": "false","eastwall": "false","eastthis": "false","westwall": "false","westthis": "false","overwall": "false","overthis": "false","beneathwall": "false","beneaththis": "false" },
+            "apply": { "model": "urushi:red_post_one_wall", "uvlock": true }
+        },
+        {   "when": { "northwall": "false","norththis": "false","southwall": "false","souththis": "false","eastwall": "true","eastthis": "false","westwall": "false","westthis": "false","overwall": "false","overthis": "false","beneathwall": "false","beneaththis": "false" },
+            "apply": { "model": "urushi:red_post_one_wall", "y": 270, "uvlock": true }
+        },
+        {   "when": {"northwall": "false","norththis": "false","southwall": "false","souththis": "false","eastwall": "false","eastthis": "false","westwall": "true","westthis": "false","overwall": "false","overthis": "false","beneathwall": "false","beneaththis": "false" },
+            "apply": { "model": "urushi:red_post_one_wall", "y": 90, "uvlock": true }
+        },
+        
+        {   "when": { "northwall": "true","norththis": "false","southwall": "false","souththis": "false","eastwall": "false","eastthis": "true","westwall": "false","westthis": "false","overwall": "false","overthis": "false","beneathwall": "false","beneaththis": "false"},
+            "apply": { "model": "urushi:red_post_one_wall_hor", "y": 180, "uvlock": true }
+        },
+        {   "when": {"northwall": "false","norththis": "false","southwall": "true","souththis": "false","eastwall": "false","eastthis": "true","westwall": "false","westthis": "false","overwall": "false","overthis": "false","beneathwall": "false","beneaththis": "false" },
+            "apply": { "model": "urushi:red_post_one_wall_hor", "uvlock": true }
+        },
+        {   "when": { "northwall": "false","norththis": "true","southwall": "false","souththis": "false","eastwall": "true","eastthis": "false","westwall": "false","westthis": "false","overwall": "false","overthis": "false","beneathwall": "false","beneaththis": "false" },
+            "apply": { "model": "urushi:red_post_one_wall_hor", "y": 270, "uvlock": true }
+        },
+        {   "when": {"northwall": "false","norththis": "true","southwall": "false","souththis": "false","eastwall": "false","eastthis": "false","westwall": "true","westthis": "false","overwall": "false","overthis": "false","beneathwall": "false","beneaththis": "false" },
+            "apply": { "model": "urushi:red_post_one_wall_hor", "y": 90, "uvlock": true }
+        },
+        {   "when": { "northwall": "true","norththis": "false","southwall": "false","souththis": "false","eastwall": "false","eastthis": "true","westwall": "false","westthis": "true","overwall": "false","overthis": "false","beneathwall": "false","beneaththis": "false"},
+            "apply": { "model": "urushi:red_post_one_wall_hor", "y": 180, "uvlock": true }
+        },
+        {   "when": {"northwall": "false","norththis": "false","southwall": "true","souththis": "false","eastwall": "false","eastthis": "true","westwall": "false","westthis": "true","overwall": "false","overthis": "false","beneathwall": "false","beneaththis": "false" },
+            "apply": { "model": "urushi:red_post_one_wall_hor", "uvlock": true }
+        },
+        {   "when": { "northwall": "false","norththis": "true","southwall": "false","souththis": "true","eastwall": "true","eastthis": "false","westwall": "false","westthis": "false","overwall": "false","overthis": "false","beneathwall": "false","beneaththis": "false" },
+            "apply": { "model": "urushi:red_post_one_wall_hor", "y": 270, "uvlock": true }
+        },
+        {   "when": {"northwall": "false","norththis": "true","southwall": "false","souththis": "true","eastwall": "false","eastthis": "false","westwall": "true","westthis": "false","overwall": "false","overthis": "false","beneathwall": "false","beneaththis": "false" },
+            "apply": { "model": "urushi:red_post_one_wall_hor", "y": 90, "uvlock": true }
+        },
+        {   "when": { "northwall": "true","norththis": "false","southwall": "false","souththis": "false","eastwall": "false","eastthis": "false","westwall": "false","westthis": "true","overwall": "false","overthis": "false","beneathwall": "false","beneaththis": "false"},
+            "apply": { "model": "urushi:red_post_one_wall_hor", "y": 180, "uvlock": true }
+        },
+        {   "when": {"northwall": "false","norththis": "false","southwall": "true","souththis": "false","eastwall": "false","eastthis": "false","westwall": "false","westthis": "true","overwall": "false","overthis": "false","beneathwall": "false","beneaththis": "false" },
+            "apply": { "model": "urushi:red_post_one_wall_hor", "uvlock": true }
+        },
+        {   "when": { "northwall": "false","norththis": "false","southwall": "false","souththis": "true","eastwall": "true","eastthis": "false","westwall": "false","westthis": "false","overwall": "false","overthis": "false","beneathwall": "false","beneaththis": "false" },
+            "apply": { "model": "urushi:red_post_one_wall_hor", "y": 270, "uvlock": true }
+        },
+        {   "when": {"northwall": "false","norththis": "false","southwall": "false","souththis": "true","eastwall": "false","eastthis": "false","westwall": "true","westthis": "false","overwall": "false","overthis": "false","beneathwall": "false","beneaththis": "false" },
+            "apply": { "model": "urushi:red_post_one_wall_hor", "y": 90, "uvlock": true }
+        },
+        
+        {   "when": { "northwall": "true","norththis": "false","southwall": "false","souththis": "false","eastwall": "false","eastthis": "false","westwall": "false","westthis": "false","overwall": "false","overthis": "true","beneathwall": "false","beneaththis": "false"},
+            "apply": { "model": "urushi:red_post_one_wall_ver", "y": 180, "uvlock": true }
+        },
+        {   "when": {"northwall": "false","norththis": "false","southwall": "true","souththis": "false","eastwall": "false","eastthis": "false","westwall": "false","westthis": "false","overwall": "false","overthis": "true","beneathwall": "false","beneaththis": "false" },
+            "apply": { "model": "urushi:red_post_one_wall_ver", "uvlock": true }
+        },
+        {   "when": { "northwall": "false","norththis": "false","southwall": "false","souththis": "false","eastwall": "true","eastthis": "false","westwall": "false","westthis": "false","overwall": "false","overthis": "true","beneathwall": "false","beneaththis": "false" },
+            "apply": { "model": "urushi:red_post_one_wall_ver", "y": 270, "uvlock": true }
+        },
+        {   "when": {"northwall": "false","norththis": "false","southwall": "false","souththis": "false","eastwall": "false","eastthis": "false","westwall": "true","westthis": "false","overwall": "false","overthis": "true","beneathwall": "false","beneaththis": "false" },
+            "apply": { "model": "urushi:red_post_one_wall_ver", "y": 90, "uvlock": true }
+        },
+        {   "when": { "northwall": "true","norththis": "false","southwall": "false","souththis": "false","eastwall": "false","eastthis": "false","westwall": "false","westthis": "false","overwall": "false","overthis": "true","beneathwall": "false","beneaththis": "true"},
+            "apply": { "model": "urushi:red_post_one_wall_ver", "y": 180, "uvlock": true }
+        },
+        {   "when": {"northwall": "false","norththis": "false","southwall": "true","souththis": "false","eastwall": "false","eastthis": "false","westwall": "false","westthis": "false","overwall": "false","overthis": "true","beneathwall": "false","beneaththis": "true" },
+            "apply": { "model": "urushi:red_post_one_wall_ver", "uvlock": true }
+        },
+        {   "when": { "northwall": "false","norththis": "false","southwall": "false","souththis": "false","eastwall": "true","eastthis": "false","westwall": "false","westthis": "false","overwall": "false","overthis": "true","beneathwall": "false","beneaththis": "true" },
+            "apply": { "model": "urushi:red_post_one_wall_ver", "y": 270, "uvlock": true }
+        },
+        {   "when": {"northwall": "false","norththis": "false","southwall": "false","souththis": "false","eastwall": "false","eastthis": "false","westwall": "true","westthis": "false","overwall": "false","overthis": "true","beneathwall": "false","beneaththis": "true" },
+            "apply": { "model": "urushi:red_post_one_wall_ver", "y": 90, "uvlock": true }
+        },
+        {   "when": { "northwall": "true","norththis": "false","southwall": "false","souththis": "false","eastwall": "false","eastthis": "false","westwall": "false","westthis": "false","overwall": "false","overthis": "false","beneathwall": "false","beneaththis": "true"},
+            "apply": { "model": "urushi:red_post_one_wall_ver", "y": 180, "uvlock": true }
+        },
+        {   "when": {"northwall": "false","norththis": "false","southwall": "true","souththis": "false","eastwall": "false","eastthis": "false","westwall": "false","westthis": "false","overwall": "false","overthis": "false","beneathwall": "false","beneaththis": "true" },
+            "apply": { "model": "urushi:red_post_one_wall_ver", "uvlock": true }
+        },
+        {   "when": { "northwall": "false","norththis": "false","southwall": "false","souththis": "false","eastwall": "true","eastthis": "false","westwall": "false","westthis": "false","overwall": "false","overthis": "false","beneathwall": "false","beneaththis": "true" },
+            "apply": { "model": "urushi:red_post_one_wall_ver", "y": 270, "uvlock": true }
+        },
+        {   "when": {"northwall": "false","norththis": "false","southwall": "false","souththis": "false","eastwall": "false","eastthis": "false","westwall": "true","westthis": "false","overwall": "false","overthis": "false","beneathwall": "false","beneaththis": "true" },
+            "apply": { "model": "urushi:red_post_one_wall_ver", "y": 90,  "uvlock": true }
+        },
+        
+        {   "when": { "northwall": "true","norththis": "false","southwall": "false","souththis": "false","eastwall": "false","eastthis": "true","westwall": "false","westthis": "false","overwall": "false","overthis": "true","beneathwall": "false","beneaththis": "false"},
+            "apply": { "model": "urushi:red_post_one_wall_l", "y": 180,  "uvlock": true }
+        },
+        {   "when": {"northwall": "false","norththis": "false","southwall": "true","souththis": "false","eastwall": "false","eastthis": "true","westwall": "false","westthis": "false","overwall": "false","overthis": "true","beneathwall": "false","beneaththis": "false" },
+            "apply": { "model": "urushi:red_post_one_wall_j", "uvlock": true }
+        },
+        {   "when": { "northwall": "false","norththis": "true","southwall": "false","souththis": "false","eastwall": "true","eastthis": "false","westwall": "false","westthis": "false","overwall": "false","overthis": "true","beneathwall": "false","beneaththis": "false" },
+            "apply": { "model": "urushi:red_post_one_wall_j", "y": 270, "uvlock": true }
+        },
+        {   "when": {"northwall": "false","norththis": "true","southwall": "false","souththis": "false","eastwall": "false","eastthis": "false","westwall": "true","westthis": "false","overwall": "false","overthis": "true","beneathwall": "false","beneaththis": "false" },
+            "apply": { "model": "urushi:red_post_one_wall_l", "y": 90,  "uvlock": true }
+        },
+        {   "when": { "northwall": "true","norththis": "false","southwall": "false","souththis": "false","eastwall": "false","eastthis": "true","westwall": "false","westthis": "true","overwall": "false","overthis": "true","beneathwall": "false","beneaththis": "false"},
+            "apply": { "model": "urushi:red_post_one_wall_hor_up_this", "y": 180,  "uvlock": true }
+        },
+        {   "when": {"northwall": "false","norththis": "false","southwall": "true","souththis": "false","eastwall": "false","eastthis": "true","westwall": "false","westthis": "true","overwall": "false","overthis": "true","beneathwall": "false","beneaththis": "false" },
+            "apply": { "model": "urushi:red_post_one_wall_hor_up_this",  "uvlock": true }
+        },
+        {   "when": { "northwall": "false","norththis": "true","southwall": "false","souththis": "true","eastwall": "true","eastthis": "false","westwall": "false","westthis": "false","overwall": "false","overthis": "true","beneathwall": "false","beneaththis": "false" },
+            "apply": { "model": "urushi:red_post_one_wall_hor_up_this", "y": 270,  "uvlock": true }
+        },
+        {   "when": {"northwall": "false","norththis": "true","southwall": "false","souththis": "true","eastwall": "false","eastthis": "false","westwall": "true","westthis": "false","overwall": "false","overthis": "true","beneathwall": "false","beneaththis": "false" },
+            "apply": { "model": "urushi:red_post_one_wall_hor_up_this", "y": 90,  "uvlock": true }
+        },
+        {   "when": { "northwall": "true","norththis": "false","southwall": "false","souththis": "false","eastwall": "false","eastthis": "false","westwall": "false","westthis": "true","overwall": "false","overthis": "true","beneathwall": "false","beneaththis": "false"},
+            "apply": { "model": "urushi:red_post_one_wall_j", "y": 180,  "uvlock": true }
+        },
+        {   "when": {"northwall": "false","norththis": "false","southwall": "true","souththis": "false","eastwall": "false","eastthis": "false","westwall": "false","westthis": "true","overwall": "false","overthis": "true","beneathwall": "false","beneaththis": "false" },
+            "apply": { "model": "urushi:red_post_one_wall_l", "uvlock": true }
+        },
+        {   "when": { "northwall": "false","norththis": "false","southwall": "false","souththis": "true","eastwall": "true","eastthis": "false","westwall": "false","westthis": "false","overwall": "false","overthis": "true","beneathwall": "false","beneaththis": "false" },
+            "apply": { "model": "urushi:red_post_one_wall_l", "y": 270,  "uvlock": true }
+        },
+        {   "when": {"northwall": "false","norththis": "false","southwall": "false","souththis": "true","eastwall": "false","eastthis": "false","westwall": "true","westthis": "false","overwall": "false","overthis": "true","beneathwall": "false","beneaththis": "false" },
+            "apply": { "model": "urushi:red_post_one_wall_j", "y": 90,  "uvlock": true }
+        }
+    ]
+}

@@ -1,0 +1,7 @@
+{
+    "parent": "block/door_top",
+    "textures": {
+        "bottom": "urushi:blocks/door_red_under",
+        "top": "urushi:blocks/door_red_upper"
+    }
+}

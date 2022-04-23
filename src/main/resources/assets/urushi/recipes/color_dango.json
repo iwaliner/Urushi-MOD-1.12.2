@@ -1,0 +1,31 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    " pm",
+    " m ",
+    "sk "
+  ],
+  "key": {
+    "m": {
+      "item": "urushi:rice_cake",
+      "data": 0
+    },
+"s": {
+       "type": "forge:ore_dict",
+      "ore": "stickWood"
+    },
+    "p": {
+       "type": "forge:ore_dict",
+      "ore": "dyePink"
+    },
+  "k": {
+       "item": "minecraft:tallgrass",
+      "data": 1
+    }
+  },
+  "result": {
+    "item": "urushi:color_dango",
+"data": 0,
+ "count": 1
+  }
+}

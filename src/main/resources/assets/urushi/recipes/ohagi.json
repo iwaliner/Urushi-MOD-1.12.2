@@ -1,0 +1,19 @@
+{
+  "type": "forge:ore_shapeless",
+  "ingredients": [
+    {
+      "item": "urushi:rice_cake"
+    },
+    {
+  "item": "urushi:azuki"
+    },
+    {
+  "item": "urushi:azuki"
+    }
+  ],
+  "result": {
+    "item": "urushi:ohagi",
+     "data": 0,
+      "count": 1
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "q q",
+    "q q"
+  ],
+  "key": {
+    "q": {
+      "item": "urushi:u_planks",
+      "data": 5
+    }
+  },
+  "result": {
+    "item": "urushi:bars",
+"data": 5,
+ "count": 16
+  }
+}

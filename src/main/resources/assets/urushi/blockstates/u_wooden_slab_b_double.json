@@ -1,0 +1,12 @@
+{
+    "variants": {
+"variant=type_a": { "model":"urushi:planks_red_urushi_stained" },
+"variant=type_b": { "model":"urushi:smooth_planks_red_urushi_stained" },
+"variant=type_c": { "model":"urushi:planks_black_urushi_stained" },
+"variant=type_d": { "model":"urushi:smooth_planks_black_urushi_stained" },
+"variant=type_e": { "model":"urushi:sakura_planks" },
+"variant=type_f": { "model":"urushi:sakura_smooth_planks" },
+"variant=type_g": { "model":"urushi:cypress_planks" },
+"variant=type_h": { "model":"urushi:cypress_smooth_planks" }
+    }
+}

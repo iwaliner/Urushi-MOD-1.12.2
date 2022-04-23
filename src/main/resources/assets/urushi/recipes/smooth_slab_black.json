@@ -1,0 +1,17 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "qqq"
+  ],
+  "key": {
+    "q": {
+      "item": "urushi:u_planks",
+      "data": 9
+    }
+  },
+  "result": {
+    "item": "urushi:u_wooden_slab_b_single",
+"data": 3,
+ "count": 6
+  }
+}

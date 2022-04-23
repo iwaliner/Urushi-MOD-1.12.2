@@ -1,0 +1,17 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "q"
+  ],
+  "key": {
+    "q": {
+      "item": "urushi:tatami_block",
+      "data": 1
+    }
+  },
+  "result": {
+    "item": "urushi:tatami_block",
+"data": 0,
+ "count": 1
+  }
+}

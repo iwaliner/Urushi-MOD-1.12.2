@@ -1,0 +1,18 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    " qq",
+    "qq "
+  ],
+  "key": {
+    "q": {
+      "item": "minecraft:clay_ball",
+      "data": 0
+    }
+  },
+  "result": {
+    "item": "urushi:u_items",
+"data": 10,
+ "count": 64
+  }
+}

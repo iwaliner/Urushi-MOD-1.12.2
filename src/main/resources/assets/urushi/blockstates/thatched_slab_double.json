@@ -1,0 +1,6 @@
+{
+    "variants": {
+"variant=type_a": { "model":"urushi:thatched_block" },
+"variant=type_b": { "model":"urushi:hiwadabuki_block" }
+    }
+}

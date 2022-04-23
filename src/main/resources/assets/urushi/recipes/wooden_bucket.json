@@ -1,0 +1,27 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "s s",
+    "sqs",
+    "shs"
+  ],
+  "key": {
+    "q": {
+   "type": "forge:ore_dict",
+      "ore": "bamboo"
+    },
+"s": {
+       "type": "forge:ore_dict",
+      "ore": "plankWood"
+    },
+  "h": {
+       "type": "forge:ore_dict",
+      "ore": "slabWood"
+    }
+  },
+  "result": {
+    "item": "urushi:wooden_bucket",
+"data": 0,
+ "count": 1
+  }
+}

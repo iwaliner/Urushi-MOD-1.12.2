@@ -1,0 +1,6 @@
+{
+    "parent": "block/crop",
+    "textures": {
+        "crop": "urushi:blocks/rice_7"
+    }
+}

@@ -1,0 +1,23 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "hhh",
+    "hdh",
+    "hhh"
+  ],
+  "key": {
+  "h": {
+      "item": "urushi:sand_coast",
+      "data": 0
+    },
+  "d": {
+       "type": "forge:ore_dict",
+      "ore": "dyeLime"
+    }
+  },
+  "result": {
+    "item": "urushi:sand_coast",
+"data": 2,
+ "count":8
+  }
+}

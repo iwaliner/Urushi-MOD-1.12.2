@@ -1,0 +1,20 @@
+{
+    "variants": {
+"facing=north,half=bottom,variant=type_a": { "model":"urushi:half_slab_ibushi_kawara_block" },
+"facing=south,half=bottom,variant=type_a": { "model":"urushi:half_slab_ibushi_kawara_block" , "y": 180 },
+"facing=east,half=bottom,variant=type_a": { "model":"urushi:half_slab_ibushi_kawara_block" , "y": 90 },
+"facing=west,half=bottom,variant=type_a": { "model":"urushi:half_slab_ibushi_kawara_block" , "y": 270 },
+"facing=north,half=bottom,variant=type_b": { "model":"urushi:half_slab_cupric_oxide_kawara" },
+"facing=south,half=bottom,variant=type_b": { "model":"urushi:half_slab_cupric_oxide_kawara" , "y": 180 },
+"facing=east,half=bottom,variant=type_b": { "model":"urushi:half_slab_cupric_oxide_kawara" , "y": 90 },
+"facing=west,half=bottom,variant=type_b": { "model":"urushi:half_slab_cupric_oxide_kawara" , "y": 270 },
+"facing=north,half=top,variant=type_a": { "model":"urushi:upper_slab_ibushi_kawara_block" },
+"facing=south,half=top,variant=type_a": { "model":"urushi:upper_slab_ibushi_kawara_block" , "y": 180 },
+"facing=east,half=top,variant=type_a": { "model":"urushi:upper_slab_ibushi_kawara_block" , "y": 90 },
+"facing=west,half=top,variant=type_a": { "model":"urushi:upper_slab_ibushi_kawara_block" , "y": 270 },
+"facing=north,half=top,variant=type_b": { "model":"urushi:upper_slab_cupric_oxide_kawara" },
+"facing=south,half=top,variant=type_b": { "model":"urushi:upper_slab_cupric_oxide_kawara" , "y": 180 },
+"facing=east,half=top,variant=type_b": { "model":"urushi:upper_slab_cupric_oxide_kawara" , "y": 90 },
+"facing=west,half=top,variant=type_b": { "model":"urushi:upper_slab_cupric_oxide_kawara" , "y": 270 }
+    }
+}

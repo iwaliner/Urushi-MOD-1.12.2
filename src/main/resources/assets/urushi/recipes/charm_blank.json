@@ -1,0 +1,18 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "p",
+    "p"
+  ],
+  "key": {
+  "p": {
+     "type": "forge:ore_dict",
+      "ore": "paper"
+    }
+  },
+  "result": {
+    "item": "urushi:u_items",
+"data": 36,
+ "count": 1
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "sds",
+    "dsd",
+    "sds"
+  ],
+  "key": {
+    "d": {
+      "item": "urushi:u_items",
+      "data": 3
+    },
+"s": {
+       "item": "urushi:u_stone",
+      "data": 3
+    }
+  },
+  "result": {
+    "item": "urushi:u_stone",
+"data": 4,
+ "count": 6
+  }
+}

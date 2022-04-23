@@ -1,0 +1,21 @@
+{
+    "variants": {
+"half=bottom,variant=type_a": { "model":"urushi:half_slab_smooth_oak" },
+"half=bottom,variant=type_b": { "model":"urushi:half_slab_smooth_spruce" },
+"half=bottom,variant=type_c": { "model":"urushi:half_slab_smooth_birch" },
+"half=bottom,variant=type_d": { "model":"urushi:half_slab_smooth_jungle" },
+"half=bottom,variant=type_e": { "model":"urushi:half_slab_smooth_acacia" },
+"half=bottom,variant=type_f": { "model":"urushi:half_slab_smooth_dark_oak" },
+"half=bottom,variant=type_g": { "model":"urushi:half_slab_japanese_apricot" },
+"half=bottom,variant=type_h": { "model":"urushi:half_slab_smooth_japanese_apricot" },
+"half=top,variant=type_a": { "model":"urushi:upper_slab_smooth_oak" },
+"half=top,variant=type_b": { "model":"urushi:upper_slab_smooth_spruce" },
+"half=top,variant=type_c": { "model":"urushi:upper_slab_smooth_birch" },
+"half=top,variant=type_d": { "model":"urushi:upper_slab_smooth_jungle" },
+"half=top,variant=type_e": { "model":"urushi:upper_slab_smooth_acacia" },
+"half=top,variant=type_f": { "model":"urushi:upper_slab_smooth_dark_oak" },
+"half=top,variant=type_g": { "model":"urushi:upper_slab_japanese_apricot" },
+"half=top,variant=type_h": { "model":"urushi:upper_slab_smooth_japanese_apricot" }
+
+    }
+}

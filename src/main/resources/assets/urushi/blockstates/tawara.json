@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=south": { "model": "urushi:tawara" },
+        "facing=west": { "model": "urushi:tawara", "y": 90 },
+        "facing=north": { "model": "urushi:tawara", "y": 180 },
+        "facing=east": { "model": "urushi:tawara", "y": 270 }
+    }
+}

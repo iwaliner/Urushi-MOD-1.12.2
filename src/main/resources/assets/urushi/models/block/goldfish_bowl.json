@@ -1,0 +1,6 @@
+{
+    "parent": "block/cross",
+    "textures": {
+        "cross": "urushi:blocks/goldfish_bowl"
+    }
+}

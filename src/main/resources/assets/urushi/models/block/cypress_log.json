@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "urushi:blocks/cypress_log_top",
+        "side": "urushi:blocks/cypress_log"
+    }
+}

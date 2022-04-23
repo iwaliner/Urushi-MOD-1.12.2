@@ -1,0 +1,12 @@
+{
+    "variants": {
+"facing=north,variant=type_b": { "model":"urushi:cupric_oxide_kawara_block" },
+"facing=south,variant=type_b": { "model":"urushi:cupric_oxide_kawara_block", "y": 180 },
+"facing=west,variant=type_b": { "model":"urushi:cupric_oxide_kawara_block", "y": 270 },
+"facing=east,variant=type_b": { "model":"urushi:cupric_oxide_kawara_block", "y": 90 },
+"facing=north,variant=type_a": { "model":"urushi:ibushi_kawara_block" },
+"facing=south,variant=type_a": { "model":"urushi:ibushi_kawara_block", "y": 180 },
+"facing=west,variant=type_a": { "model":"urushi:ibushi_kawara_block", "y": 270 },
+"facing=east,variant=type_a": { "model":"urushi:ibushi_kawara_block", "y": 90 }
+    }
+}

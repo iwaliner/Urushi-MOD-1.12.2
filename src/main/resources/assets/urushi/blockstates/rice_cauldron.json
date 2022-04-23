@@ -1,0 +1,18 @@
+{
+    "variants": {
+"variant=closed_empty": { "model":"urushi:kama_closed" },
+"variant=empty": { "model":"urushi:kama_empty" },
+"variant=closed_raw_rice1": { "model":"urushi:kama_closed" },
+"variant=closed_rice1": { "model":"urushi:kama_closed" },
+"variant=rice1": { "model":"urushi:kama_rice" },
+"variant=closed_raw_rice16": { "model":"urushi:kama_closed" },
+"variant=closed_rice16": { "model":"urushi:kama_closed" },
+"variant=rice16": { "model":"urushi:kama_rice" },
+"variant=closed_raw_rice32": { "model":"urushi:kama_closed" },
+"variant=closed_rice32": { "model":"urushi:kama_closed" },
+"variant=rice32": { "model":"urushi:kama_rice" },
+"variant=closed_raw_rice64": { "model":"urushi:kama_closed" },
+"variant=closed_rice64": { "model":"urushi:kama_closed" },
+"variant=rice64": { "model":"urushi:kama_rice" }
+    }
+}

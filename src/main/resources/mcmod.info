@@ -1,0 +1,16 @@
+[
+{
+  "modid": "iwalinersmod",
+  "name": "iwaliner's mod",
+  "description": "a mod",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["iwaliner"],
+  "credits": "thanks for playing",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
