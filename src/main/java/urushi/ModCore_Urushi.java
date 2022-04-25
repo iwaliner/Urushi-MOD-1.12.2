@@ -7,27 +7,18 @@ import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.MobEffects;
 import net.minecraft.item.*;
-import net.minecraft.potion.PotionEffect;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.DimensionType;
-import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.common.config.Property;
+import net.minecraftforge.event.LootTableLoadEvent;
 import net.minecraftforge.event.RegistryEvent;
-import net.minecraftforge.event.entity.EntityEvent;
-import net.minecraftforge.event.entity.living.LivingDeathEvent;
-import net.minecraftforge.event.entity.living.LivingDropsEvent;
-import net.minecraftforge.event.entity.player.BonemealEvent;
 import net.minecraftforge.fml.client.registry.IRenderFactory;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.Mod;
@@ -53,10 +44,8 @@ import urushi.Render.RenderCushion;
 import urushi.TileEntity.*;
 import urushi.WorldGen.WorldProviderKakuriyo;
 
-import java.util.Random;
 
-
-@Mod(modid = "urushi", version = "alpha2.22", name = "Urushi MOD")
+@Mod(modid = "urushi", version = "alpha2.23", name = "Urushi MOD")
 public class  ModCore_Urushi {
    public static String modid="urushi";
     public static final CreativeTabs TabUrushi = new TabUrushi("TabUrushi");
@@ -89,7 +78,9 @@ public class  ModCore_Urushi {
     public static final Block CupricOxideKawaraStairs = new Stairs(UStone.getDefaultState().withProperty(U_Stone.VARIANT, U_Stone.EnumType.CupricOxideKawara));
     public static final Block IbushiKawaraStairs = new Stairs(UStone.getDefaultState().withProperty(U_Stone.VARIANT, U_Stone.EnumType.IbushiKawara));
     public static final Block PlasterStairs = new Stairs(UStone.getDefaultState().withProperty(U_Stone.VARIANT, U_Stone.EnumType.Plaster));
-    public static final BlockFlower LycorisRadiata = (BlockFlower) new BlockYellowFlower().setCreativeTab(TabUrushi);
+    //public static final BlockFlower LycorisRadiata = (BlockFlower) new BlockYellowFlower().setCreativeTab(TabUrushi);
+    public static final BlockFlower LycorisRadiata = (BlockFlower) new KakuriyoFlower();
+    public static final ItemBlock ItemBlockLycorisRadiata=new ItemBlockMetadata(LycorisRadiata);
     public static final Block TrapdoorRedUrushiStained = new WoodenTrapDoor();
     public static final Item UItems = new UItems();
     public static final Block WoodenCabinetry = new BlockWoodenCabinetry();
@@ -195,10 +186,12 @@ public class  ModCore_Urushi {
     public static final Item Gyudon = new ItemFood(10, 1.2F, false);
     public static final Item Butadon = new ItemFood(10, 1.2F, false);
     public static final Item SalmonSashimi = new ItemFood(4, 0.4F, false);
-   public static final Item Charm = new Charm();
+    public static final Item Charm = new Charm();
     public static final Block ULeaves2 = new U_Leaves2();
     public static boolean SakuraLeavesAndJapaneseApricotLeavesIsLight=true;
     public static final ItemBlock ItemBlockULeaves2=new ItemBlockMetadata(ULeaves2);
+    public static final Item RawTsuna = new ItemFood(4, 0.4F, false);
+public static int KakuriyoDimensionID=36;
 
     @EventHandler
     public void construct(FMLConstructionEvent event) {
@@ -231,7 +224,7 @@ public class  ModCore_Urushi {
         event.getRegistry().register(new ItemBlock(SmoothStairsBlackUrushiStained).setRegistryName(modid, "smooth_stairs_black_urushi_stained"));
         event.getRegistry().register(new ItemBlock(CupricOxideKawaraStairs).setRegistryName(modid, "cupric_oxide_kawara_stairs"));
         event.getRegistry().register(new ItemBlock(IbushiKawaraStairs).setRegistryName(modid, "ibushi_kawara_stairs"));
-       event.getRegistry().register(new ItemBlock(LycorisRadiata).setRegistryName(modid, "lycoris_radiata"));
+        event.getRegistry().register(ItemBlockLycorisRadiata.setRegistryName(modid, "lycoris_radiata"));
         event.getRegistry().register(new ItemBlock(TrapdoorRedUrushiStained).setRegistryName(modid, "trapdoor_red_urushi_stained"));
         event.getRegistry().register(UItems);
         event.getRegistry().register(new ItemBlock(WoodenCabinetry).setRegistryName(modid, "wooden_cabinetry"));
@@ -297,6 +290,7 @@ public class  ModCore_Urushi {
         event.getRegistry().register(SalmonSashimi.setUnlocalizedName("SalmonSashimi").setRegistryName("salmon_sashimi").setCreativeTab(TabUrushi));
         event.getRegistry().register(Charm);
         event.getRegistry().register(ItemBlockULeaves2.setRegistryName(modid, "u_leaves2"));
+        event.getRegistry().register(RawTsuna.setUnlocalizedName("RawTsuna").setRegistryName("raw_tsuna").setCreativeTab(TabUrushi));
 
 
     }
@@ -394,6 +388,7 @@ public class  ModCore_Urushi {
     @SubscribeEvent
     @SideOnly(Side.CLIENT)
     public void registerModels(ModelRegistryEvent event) {
+        /**アイテム状態のモデルを指定*/
         ModelLoader.setCustomModelResourceLocation(UItems, 0, new ModelResourceLocation(new ResourceLocation(modid, "bamboo_item"), "inventory"));
         ModelLoader.setCustomModelResourceLocation(UItems, 1, new ModelResourceLocation(new ResourceLocation(modid, "copper_kawara"), "inventory"));
         ModelLoader.setCustomModelResourceLocation(UItems, 2, new ModelResourceLocation(new ResourceLocation(modid, "cupric_oxide_kawara"), "inventory"));
@@ -610,6 +605,9 @@ public class  ModCore_Urushi {
           ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ULeaves2), 6, new ModelResourceLocation(new ResourceLocation(modid, "lacquer_leaves"), "inventory"));
           ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ULeaves2), 7, new ModelResourceLocation(new ResourceLocation(modid, "cypress_leaves"), "inventory"));
           ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ChiseledLacquerLog), 0, new ModelResourceLocation(new ResourceLocation(modid, "chiseled_lacquer_log"), "inventory"));
+          ModelLoader.setCustomModelResourceLocation(RawTsuna,0, new ModelResourceLocation(new ResourceLocation(modid, "raw_tsuna"), "inventory"));
+          ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(USapling), 4, new ModelResourceLocation(new ResourceLocation(modid, "large_sakura_sapling"), "inventory"));
+          ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(LycorisRadiata), 1, new ModelResourceLocation(new ResourceLocation(modid, "indigo"), "inventory"));
 
 
 
@@ -675,21 +673,25 @@ public class  ModCore_Urushi {
 
 
 
-
-
-
-
+        /**エンティティを登録*/
         EntityRegistry.registerModEntity(new ResourceLocation("entity_cushion"), EntityCushion.class, "EntityCushion", 0, this, 50, 1, true);
 
+
+        /**草を壊した時に出る種を登録*/
+        MinecraftForge.addGrassSeed(new ItemStack(ModCore_Urushi.RiceEars),10);
+        MinecraftForge.addGrassSeed(new ItemStack(ModCore_Urushi.Azuki),10);
     }
     @Mod.EventHandler
     public void preInt(FMLPreInitializationEvent event)  {
+      //  Kakuriyo_DIMENSION = DimensionType.register("KakuriyoDimension", "_kakuriyo", 2, WorldProviderKakuriyo.class, false);
+      //  DimensionManager.registerDimension(2, Kakuriyo_DIMENSION);
+
+
+        //Kakuriyo_DIMENSION = DimensionType.register("Kakuriyo Dimension", "_kakuriyo", DimensionManager.getNextFreeDimId(), WorldProviderKakuriyo.class, false);
+        //DimensionManager.registerDimension(Kakuriyo_DIMENSION.getId(), Kakuriyo_DIMENSION);
+
+        /**コンフィグ設定を追加*/
         Configuration cfg = new Configuration(event.getSuggestedConfigurationFile());
-
-      //  Kakuriyo_DIMENSION = DimensionType.register("Kakuriyo Dimension", "_kakuriyo", DimensionManager.getNextFreeDimId(), WorldProviderKakuriyo.class, false);
-        // DimensionManager.registerDimension(Kakuriyo_DIMENSION.getId(), Kakuriyo_DIMENSION);
-
-
         try {
             cfg.load();
            Property e1ID1 = cfg.get("world generation", "ganerate Sakura trees in Forest Biome" ,wheather_ganerate_Sakura);
@@ -700,6 +702,7 @@ public class  ModCore_Urushi {
             Property e1ID5 = cfg.get("world generation", "generate Copper Ore" ,wheather_ganerate_CopperOre);
             Property e1ID6 = cfg.get("block settings", "max height of Japanese Timber Bamboo" ,max_height_Bamboo);
             Property e1ID8 = cfg.get("block settings", "Japanese Apricot Leaves and Sakura Leaves glow" ,SakuraLeavesAndJapaneseApricotLeavesIsLight);
+            Property e1ID9 = cfg.get("world generation", "the dimension ID of Kakuriyo Dimension" ,KakuriyoDimensionID);
 
             // 項目に入っている値を取得してIDに入れる。
             wheather_ganerate_Sakura = e1ID1.getBoolean();
@@ -710,6 +713,7 @@ public class  ModCore_Urushi {
             max_height_Bamboo=e1ID6.getInt();
             wheather_ganerate_Cypress = e1ID7.getBoolean();
             SakuraLeavesAndJapaneseApricotLeavesIsLight = e1ID8.getBoolean();
+            KakuriyoDimensionID=e1ID9.getInt();
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
@@ -718,7 +722,7 @@ public class  ModCore_Urushi {
 
 
        if(event.getSide().isClient()) {
-
+        /**タイルエンティティを登録*/
            GameRegistry.registerTileEntity(TileEntityRiceCauldron.getClass(),new ResourceLocation(modid,"rice_cauldron"));
            GameRegistry.registerTileEntity(TileEntityWoodenCabinetry.getClass(),new ResourceLocation(modid,"wooden_cabinetry"));
             GameRegistry.registerTileEntity(TileEntityWoodenCabinetryUnderSlab.getClass(),new ResourceLocation(modid,"wooden_cabinetry_under_slab"));
@@ -727,19 +731,29 @@ public class  ModCore_Urushi {
            GameRegistry.registerTileEntity(TileEntityFuton.getClass(),new ResourceLocation(modid,"futon"));
            GameRegistry.registerTileEntity(TileEntityFermentationPot.getClass(),new ResourceLocation(modid,"fermentation_pot"));
 
+
+
+           /**エンティティのモデルを登録*/
            RenderingRegistry.registerEntityRenderingHandler(EntityCushion.class, new IRenderFactory<EntityCushion>(){
                @Override
                public Render<? super EntityCushion> createRenderFor(RenderManager manager){
                    return new RenderCushion(manager);
                }
            });
+
+
        }
     }
     @Mod.EventHandler
     public void postInt(FMLPostInitializationEvent event) {
+        //Kakuriyo_DIMENSION = DimensionType.register("KakuriyoDimension", "_kakuriyo", KakuriyoDimensionID, WorldProviderKakuriyo.class, false);
+       // DimensionManager.registerDimension(KakuriyoDimensionID, Kakuriyo_DIMENSION);
+        Kakuriyo_DIMENSION = DimensionType.register("KakuriyoDimension", "_kakuriyo", KakuriyoDimensionID, WorldProviderKakuriyo.class, false);
+        DimensionManager.registerDimension(KakuriyoDimensionID, Kakuriyo_DIMENSION);
         if (event.getSide().isClient()) {
-
-
+           // Kakuriyo_DIMENSION = DimensionType.register("KakuriyoDimension", "_kakuriyo", 183, WorldProviderKakuriyo.class, false);
+            //DimensionManager.registerDimension(183, Kakuriyo_DIMENSION);
+       /**精錬レシピを登録*/
             GameRegistry.addSmelting(new ItemStack(UItems, 1, 10), new ItemStack(UItems, 1, 3), 5F);
             GameRegistry.addSmelting(new ItemStack(UStone, 1, 2), new ItemStack(UItems, 1, 9), 5F);
             GameRegistry.addSmelting(new ItemStack(UItems, 1, 5), new ItemStack(Rice, 1, 0), 5F);
@@ -748,9 +762,17 @@ public class  ModCore_Urushi {
 
         }
     }
-
-    @SubscribeEvent
-    public void EntityDropEvent(LivingDeathEvent event) {
-      //  event.getEntityLiving().drop
+@SubscribeEvent
+    public void LoottableAddEvent(LootTableLoadEvent event){
+        /**釣りのアイテムを追加*/
+/*
+    if (event.getName().equals(LootTableList.GAMEPLAY_FISHING_FISH))
+    {
+        LootEntry entry1 = new LootEntryItem(ModCore_Urushi.RawTsuna, 5, 20, new LootFunction[0], new LootCondition[0] ,"urushi:entry_fish1");
+        LootPool pool1 = new LootPool(new LootEntry[]{entry1}, new LootCondition[0], new RandomValueRange(1), new RandomValueRange(0,1), "urushi:pool_fish1");
+        event.getTable().addPool(pool1);
     }
+    */
+}
+
     }

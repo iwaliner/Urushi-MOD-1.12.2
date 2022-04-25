@@ -265,7 +265,7 @@ public class UItems extends Item  {
 						 worldIn.setBlockState(pos, iblockstate2, 10);
 						 worldIn.setBlockState(blockpos, iblockstate2.withProperty(Futon.PART, Futon.EnumPartType.HEAD), 10);
 						 SoundType soundtype = iblockstate2.getBlock().getSoundType(iblockstate2, worldIn, pos, player);
-						 worldIn.playSound((EntityPlayer)null,pos, SoundEvents.BLOCK_CLOTH_PLACE, SoundCategory.BLOCKS, 1.0F, 1.0F);
+						 worldIn.playSound((EntityPlayer)null,pos, SoundEvents.BLOCK_CLOTH_PLACE, SoundCategory.PLAYERS, 1.0F, 1.0F);
 						 TileEntity tileentity = worldIn.getTileEntity(blockpos);
 
 						 if (tileentity instanceof TileEntityBed)

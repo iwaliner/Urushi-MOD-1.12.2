@@ -34,7 +34,9 @@ public class EntityCushion extends Entity {
     public EntityCushion(World worldIn) {
         super(worldIn);
         this.setSize(0.0625F*12, 0.0625F*3);
-        this.preventEntitySpawning = true;
+        //this.preventEntitySpawning = true;
+       // this.motionY = -0.1D;
+        //this.setPosition(this.posX, this.posY + (double)((1.0F - this.height) / 2.0F), this.posZ);
     }
     @Override
     protected void writeEntityToNBT(NBTTagCompound compound) {
@@ -57,7 +59,7 @@ public class EntityCushion extends Entity {
         this(worldIn);
         this.setPosition(x, y, z);
         this.motionX = 0.0D;
-        this.motionY = 0.0D;
+        this.motionY = -0.1D;
         this.motionZ = 0.0D;
         this.prevPosX = x;
         this.prevPosY = y;
@@ -129,7 +131,7 @@ public class EntityCushion extends Entity {
     }
     @Override
     public void onUpdate() {
-
+      //this.motionY-=1D;
         List<Entity> list = this.world.getEntitiesInAABBexcluding(this,  this.getEntityBoundingBox().grow(0.1D,0.1D,0.1D), EntitySelectors.getTeamCollisionPredicate(this));
 
         if (!list.isEmpty())
@@ -146,6 +148,7 @@ public class EntityCushion extends Entity {
                else{entity1.applyEntityCollision(this);}
             }
         }
+
     }
 
     @Override
@@ -176,7 +179,7 @@ public class EntityCushion extends Entity {
 
     @Override
     public boolean processInitialInteract(EntityPlayer player, EnumHand hand) {
-        if (!this.world.isRemote)
+        if (!this.world.isRemote&&!player.isRiding())
         {
             player.startRiding(this);
             world.playSound((EntityPlayer)null, new BlockPos(posX,posY,posZ), SoundEvents.BLOCK_CLOTH_PLACE, SoundCategory.BLOCKS, 1.0F, 1.0F);

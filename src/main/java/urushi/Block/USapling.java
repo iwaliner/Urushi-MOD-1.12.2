@@ -21,7 +21,7 @@ public class USapling extends BlockSapling implements IGrowable
     {
         this.setDefaultState(this.blockState.getBaseState().withProperty(TYPE, BlockPlanks.EnumType.OAK).withProperty(STAGE, Integer.valueOf(0)));
         this.setCreativeTab(ModCore_Urushi.TabUrushi);
-        setSoundType(SoundType.WOOD);
+        setSoundType(SoundType.PLANT);
     }
     public void generateTree(World worldIn, BlockPos pos, IBlockState state, Random rand)
     {
@@ -32,6 +32,10 @@ public class USapling extends BlockSapling implements IGrowable
 
         switch ((BlockPlanks.EnumType)state.getValue(TYPE))
         {
+            case ACACIA:
+                worldgenerator =   new WorldGenLargeSakuraTree(true);
+
+                break;
             case JUNGLE:
                 label68:
 
@@ -101,7 +105,7 @@ public class USapling extends BlockSapling implements IGrowable
     }
     public void getSubBlocks(CreativeTabs itemIn, NonNullList<ItemStack> items)
     {
-        for(int i=0; i<4;i++) {
+        for(int i=0; i<5;i++) {
             items.add(new ItemStack(this, 1, i));
         }
     }

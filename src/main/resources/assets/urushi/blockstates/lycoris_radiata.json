@@ -1,5 +1,6 @@
 {
     "variants": {
-"type=dandelion": { "model":"urushi:lycoris_radiata" }
+"type=poppy": { "model":"urushi:lycoris_radiata" },
+"type=blue_orchid": { "model":"urushi:indigo" }
     }
 }

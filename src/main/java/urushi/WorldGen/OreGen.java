@@ -39,7 +39,7 @@ if(ModCore_Urushi.wheather_ganerate_CopperOre){  runGenCopper(random,chunkX,chun
 	}
 	private void runGenCopper(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator,
 			IChunkProvider chunkProvider) {
-		generateCopperOre(ModCore_Urushi.UStone.getDefaultState().withProperty(U_Stone.VARIANT, U_Stone.EnumType.CopperOre),world,random,chunkX*16,chunkZ*16,0,80,random.nextInt(7)+10,25);
+		generateCopperOre(ModCore_Urushi.UStone.getDefaultState().withProperty(U_Stone.VARIANT, U_Stone.EnumType.CopperOre),world,random,chunkX*16,chunkZ*16,0,80,random.nextInt(7)+10,20);
 
 	}
 	private void generateCopperOre(IBlockState ore, World world, Random random, int x, int z, int minY, int maxY, int size,

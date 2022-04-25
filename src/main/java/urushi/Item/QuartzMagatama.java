@@ -1,17 +1,22 @@
 package urushi.Item;
 
 import net.minecraft.client.util.ITooltipFlag;
-import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityList;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.world.World;
+import net.minecraft.world.WorldServer;
+import net.minecraftforge.common.util.ITeleporter;
 import urushi.ModCore_Urushi;
 import urushi.TileEntity.TileEntityRiceHokora;
 
@@ -87,9 +92,13 @@ public class QuartzMagatama extends Item {
                       !worldIn.isRemote &&
                                 !player.isRiding() && !player.isBeingRidden() && player.isNonBoss() )
                 {
-                    player.changeDimension(2);
+                    //player.changeDimension(ModCore_Urushi.KakuriyoDimensionID);
+               //     player.changeDimension(183);
+
+
+                    player.changeDimension(ModCore_Urushi.KakuriyoDimensionID,player.getServer().getWorld(1).getDefaultTeleporter());
                     return EnumActionResult.SUCCESS;
-                }
+               }
 
 
 
@@ -105,4 +114,7 @@ public class QuartzMagatama extends Item {
         tooltip.add(textComponent1.getFormattedText());
 
     }
+
+
+
 }
