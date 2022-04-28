@@ -6,11 +6,11 @@ import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.BlockLog;
 import net.minecraft.block.BlockPlanks;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
+import urushi.Block.U_Leaves;
 import urushi.Block.U_Leaves2;
 import urushi.Block.U_Log;
 import urushi.ModCore_Urushi;
@@ -18,7 +18,7 @@ import urushi.ModCore_Urushi;
 import java.util.List;
 import java.util.Random;
 
-public class WorldGenLargeSakuraTree extends WorldGenAbstractTree
+public class WorldGenGlowingLargeSakuraTree extends WorldGenAbstractTree
 {
     private Random rand;
     private World world;
@@ -32,9 +32,9 @@ public class WorldGenLargeSakuraTree extends WorldGenAbstractTree
     int trunkSize = 1;
     int heightLimitLimit = 12;
     int leafDistanceLimit = 4;
-    List<WorldGenLargeSakuraTree.FoliageCoordinates> foliageCoords;
+    List<WorldGenGlowingLargeSakuraTree.FoliageCoordinates> foliageCoords;
 
-    public WorldGenLargeSakuraTree(boolean notify)
+    public WorldGenGlowingLargeSakuraTree(boolean notify)
     {
         super(notify);
     }
@@ -57,8 +57,8 @@ public class WorldGenLargeSakuraTree extends WorldGenAbstractTree
 
         int j = this.basePos.getY() + this.height;
         int k = this.heightLimit - this.leafDistanceLimit;
-        this.foliageCoords = Lists.<WorldGenLargeSakuraTree.FoliageCoordinates>newArrayList();
-        this.foliageCoords.add(new WorldGenLargeSakuraTree.FoliageCoordinates(this.basePos.up(k), j));
+        this.foliageCoords = Lists.<WorldGenGlowingLargeSakuraTree.FoliageCoordinates>newArrayList();
+        this.foliageCoords.add(new WorldGenGlowingLargeSakuraTree.FoliageCoordinates(this.basePos.up(k), j));
 
         for (; k >= 0; --k)
         {
@@ -85,7 +85,7 @@ public class WorldGenLargeSakuraTree extends WorldGenAbstractTree
 
                         if (this.checkBlockLine(blockpos2, blockpos) == -1)
                         {
-                            this.foliageCoords.add(new WorldGenLargeSakuraTree.FoliageCoordinates(blockpos, blockpos2.getY()));
+                            this.foliageCoords.add(new WorldGenGlowingLargeSakuraTree.FoliageCoordinates(blockpos, blockpos2.getY()));
                         }
                     }
                 }
@@ -156,7 +156,7 @@ public class WorldGenLargeSakuraTree extends WorldGenAbstractTree
     {
         for (int i = 0; i < this.leafDistanceLimit; ++i)
         {
-            this.crosSection(pos.up(i), this.leafSize(i), ModCore_Urushi.ULeaves2.getDefaultState().withProperty(U_Leaves2.VARIANT, BlockPlanks.EnumType.SPRUCE).withProperty(BlockLeaves.CHECK_DECAY, Boolean.valueOf(false)));
+            this.crosSection(pos.up(i), this.leafSize(i), ModCore_Urushi.ULeaves.getDefaultState().withProperty(U_Leaves.VARIANT, BlockPlanks.EnumType.SPRUCE).withProperty(BlockLeaves.CHECK_DECAY, Boolean.valueOf(false)));
         }
     }
 
@@ -216,7 +216,7 @@ public class WorldGenLargeSakuraTree extends WorldGenAbstractTree
 
     void generateLeaves()
     {
-        for (WorldGenLargeSakuraTree.FoliageCoordinates worldgenbigtree$foliagecoordinates : this.foliageCoords)
+        for (WorldGenGlowingLargeSakuraTree.FoliageCoordinates worldgenbigtree$foliagecoordinates : this.foliageCoords)
         {
             this.generateLeafNode(worldgenbigtree$foliagecoordinates);
         }
@@ -244,7 +244,7 @@ public class WorldGenLargeSakuraTree extends WorldGenAbstractTree
 
     void generateLeafNodeBases()
     {
-        for (WorldGenLargeSakuraTree.FoliageCoordinates worldgenbigtree$foliagecoordinates : this.foliageCoords)
+        for (WorldGenGlowingLargeSakuraTree.FoliageCoordinates worldgenbigtree$foliagecoordinates : this.foliageCoords)
         {
             int i = worldgenbigtree$foliagecoordinates.getBranchBase();
             BlockPos blockpos = new BlockPos(this.basePos.getX(), i, this.basePos.getZ());

@@ -10,6 +10,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 import urushi.Block.U_Leaves;
+import urushi.Block.U_Leaves2;
 import urushi.Block.U_Log;
 import urushi.ModCore_Urushi;
 
@@ -20,7 +21,7 @@ import static net.minecraft.block.BlockLeaves.DECAYABLE;
 public class WorldGenSakuraTrees extends WorldGenAbstractTree
 {
     private static final IBlockState DEFAULT_TRUNK = ModCore_Urushi.ULog.getDefaultState().withProperty(U_Log.VARIANT, BlockPlanks.EnumType.SPRUCE);
-    private static final IBlockState DEFAULT_LEAF = ModCore_Urushi.ULeaves.getDefaultState().withProperty(U_Leaves.VARIANT, BlockPlanks.EnumType.SPRUCE).withProperty(BlockLeaves.CHECK_DECAY, Boolean.valueOf(false));
+    private static final IBlockState DEFAULT_LEAF = ModCore_Urushi.ULeaves2.getDefaultState().withProperty(U_Leaves2.VARIANT, BlockPlanks.EnumType.SPRUCE).withProperty(BlockLeaves.CHECK_DECAY, Boolean.valueOf(false));
     /** The minimum height of a generated tree. */
     private final int minTreeHeight;
     /** True if this tree should grow Vines. */

@@ -11,8 +11,12 @@ import net.minecraft.item.*;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.DimensionType;
+import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.BiomeOcean;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.common.BiomeDictionary;
+import net.minecraftforge.common.BiomeManager;
 import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.Configuration;
@@ -29,12 +33,14 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
+import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 import urushi.Block.*;
 import urushi.Else.EnumType;
+import urushi.WorldGen.BiomeSakuraForest;
 import urushi.WorldGen.OreGen;
 import urushi.Else.TabUrushi;
 import urushi.Entity.EntityCushion;
@@ -45,7 +51,7 @@ import urushi.TileEntity.*;
 import urushi.WorldGen.WorldProviderKakuriyo;
 
 
-@Mod(modid = "urushi", version = "alpha2.23", name = "Urushi MOD")
+@Mod(modid = "urushi", version = "alpha2.24", name = "Urushi MOD")
 public class  ModCore_Urushi {
    public static String modid="urushi";
     public static final CreativeTabs TabUrushi = new TabUrushi("TabUrushi");
@@ -97,9 +103,11 @@ public class  ModCore_Urushi {
     public static final BlockSlab UStoneSlabSingle = new U_StoneSlab() {@Override public boolean isDouble() {return false;}};
     public static final BlockSlab UStoneSlabDouble = new U_StoneSlab() {@Override public boolean isDouble() {return true;}};
     public static final ItemBlock ItemBlockUStoneSlab=new ItemSlab(UStoneSlabSingle, UStoneSlabSingle, UStoneSlabDouble);
-     public static final Block ChiseledLacquerLog = new ChiseledLacquerLog();
+    public static final Block ChiseledLacquerLog = new ChiseledLacquerLog();
     public static final Block USapling = new USapling();
+    public static final Block USapling2 = new USapling2();
     public static final ItemBlock ItemBlockUSapling=new ItemBlockMetadata(USapling);
+    public static final ItemBlock ItemBlockUSapling2=new ItemBlockMetadata(USapling2);
     public static final Block PaddyField = new PaddyField();
     public static final Block CropRice = new CropRice();
     public static final Item RiceEars = new RiceEars();
@@ -188,10 +196,13 @@ public class  ModCore_Urushi {
     public static final Item SalmonSashimi = new ItemFood(4, 0.4F, false);
     public static final Item Charm = new Charm();
     public static final Block ULeaves2 = new U_Leaves2();
-    public static boolean SakuraLeavesAndJapaneseApricotLeavesIsLight=true;
     public static final ItemBlock ItemBlockULeaves2=new ItemBlockMetadata(ULeaves2);
     public static final Item RawTsuna = new ItemFood(4, 0.4F, false);
-public static int KakuriyoDimensionID=36;
+    public static int KakuriyoDimensionID=36;
+    public static final Biome SakuraBiome=new BiomeSakuraForest();
+    public static final Block UStrippedLog = new U_StrippedLog();
+    public static final ItemBlock ItemBlockUStrippedLog=new ItemBlockMetadata(UStrippedLog);
+
 
     @EventHandler
     public void construct(FMLConstructionEvent event) {
@@ -234,8 +245,9 @@ public static int KakuriyoDimensionID=36;
         event.getRegistry().register(ItemBlockWoodenBucket.setRegistryName(modid, "wooden_bucket"));
         event.getRegistry().register(ItemBlockULeaves.setRegistryName(modid, "u_leaves"));
         event.getRegistry().register(ItemBlockUStoneSlab.setRegistryName(modid, "u_stone_slab_single"));
-       event.getRegistry().register(new ItemBlock(ChiseledLacquerLog).setRegistryName(modid, "chiseled_lacquer_log"));
+        event.getRegistry().register(new ItemBlock(ChiseledLacquerLog).setRegistryName(modid, "chiseled_lacquer_log"));
         event.getRegistry().register(ItemBlockUSapling.setRegistryName(modid, "u_sapling"));
+        event.getRegistry().register(ItemBlockUSapling2.setRegistryName(modid, "u_sapling2"));
         event.getRegistry().register(new ItemBlock(PlasterStairs).setRegistryName(modid, "plaster_stairs"));
         event.getRegistry().register(new ItemBlock(Tawara).setRegistryName(modid, "tawara"));
         event.getRegistry().register(RiceEars);
@@ -291,6 +303,7 @@ public static int KakuriyoDimensionID=36;
         event.getRegistry().register(Charm);
         event.getRegistry().register(ItemBlockULeaves2.setRegistryName(modid, "u_leaves2"));
         event.getRegistry().register(RawTsuna.setUnlocalizedName("RawTsuna").setRegistryName("raw_tsuna").setCreativeTab(TabUrushi));
+        event.getRegistry().register(ItemBlockUStrippedLog.setRegistryName(modid, "u_stripped_log"));
 
 
     }
@@ -325,7 +338,7 @@ public static int KakuriyoDimensionID=36;
         event.getRegistry().register(TrapdoorRedUrushiStained.setRegistryName(modid,"trapdoor_red_urushi_stained").setUnlocalizedName("TrapdoorRedUrushiStained"));
         event.getRegistry().register(WoodenCabinetry.setRegistryName(modid,"wooden_cabinetry").setUnlocalizedName("WoodenCabinetry"));
         event.getRegistry().register(WoodenCabinetryUnderSlab.setRegistryName(modid,"wooden_cabinetry_under_slab").setUnlocalizedName("WoodenCabinetryUnderSlab"));
-       event.getRegistry().register(JapaneseTimberBamboo.setRegistryName(modid,"japanese_timber_bamboo").setUnlocalizedName("JapaneseTimberBamboo"));
+        event.getRegistry().register(JapaneseTimberBamboo.setRegistryName(modid,"japanese_timber_bamboo").setUnlocalizedName("JapaneseTimberBamboo"));
         event.getRegistry().register(JapaneseTimberBambooShoot.setRegistryName(modid,"japanese_timber_bamboo_shoot").setUnlocalizedName("JapaneseTimberBambooShoot"));
         event.getRegistry().register(BambooWall.setRegistryName(modid,"bamboo_wall").setUnlocalizedName("BambooWall"));
         event.getRegistry().register(WoodenBucket.setRegistryName(modid,"wooden_bucket").setUnlocalizedName("WoodenBucket"));
@@ -334,6 +347,7 @@ public static int KakuriyoDimensionID=36;
         event.getRegistry().register(UStoneSlabDouble.setRegistryName(modid,"u_stone_slab_double").setUnlocalizedName("UStoneSlabDouble"));
         event.getRegistry().register(ChiseledLacquerLog.setRegistryName(modid,"chiseled_lacquer_log").setUnlocalizedName("ChiseledLacquerLog"));
         event.getRegistry().register(USapling.setRegistryName(modid,"u_sapling").setUnlocalizedName("USapling"));
+        event.getRegistry().register(USapling2.setRegistryName(modid,"u_sapling2").setUnlocalizedName("USapling2"));
         event.getRegistry().register(PlasterStairs.setRegistryName(modid,"plaster_stairs").setUnlocalizedName("PlasterStairs"));
         event.getRegistry().register(PaddyField.setRegistryName(modid,"paddy_field").setUnlocalizedName("PaddyField"));
         event.getRegistry().register(CropRice.setRegistryName(modid,"crop_rice").setUnlocalizedName("CropRice"));
@@ -382,6 +396,7 @@ public static int KakuriyoDimensionID=36;
         event.getRegistry().register(FermentationPot.setRegistryName(modid,"fermentation_pot").setUnlocalizedName("FermentationPot"));
         event.getRegistry().register(CropAzuki.setRegistryName(modid,"crop_azuki").setUnlocalizedName("CropAzuki"));
         event.getRegistry().register(ULeaves2.setRegistryName(modid,"u_leaves2").setUnlocalizedName("ULeaves2"));
+        event.getRegistry().register(UStrippedLog.setRegistryName(modid,"u_stripped_log").setUnlocalizedName("UStrippedLog"));
 
     }
 
@@ -608,7 +623,13 @@ public static int KakuriyoDimensionID=36;
           ModelLoader.setCustomModelResourceLocation(RawTsuna,0, new ModelResourceLocation(new ResourceLocation(modid, "raw_tsuna"), "inventory"));
           ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(USapling), 4, new ModelResourceLocation(new ResourceLocation(modid, "large_sakura_sapling"), "inventory"));
           ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(LycorisRadiata), 1, new ModelResourceLocation(new ResourceLocation(modid, "indigo"), "inventory"));
-
+          ModelLoader.setCustomModelResourceLocation(UItems,37, new ModelResourceLocation(new ResourceLocation(modid, "cypress_bark"), "inventory"));
+          ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(UStrippedLog), 0, new ModelResourceLocation(new ResourceLocation(modid, "stripped_cypress_log"), "inventory"));
+          ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ULeaves2), 4, new ModelResourceLocation(new ResourceLocation(modid, "japanese_apricot_leaves"), "inventory"));
+          ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ULeaves2), 5, new ModelResourceLocation(new ResourceLocation(modid, "sakura_leaves"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(USapling2), 0, new ModelResourceLocation(new ResourceLocation(modid, "japanese_apricot_sapling"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(USapling2), 1, new ModelResourceLocation(new ResourceLocation(modid, "sakura_sapling"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(USapling2), 2, new ModelResourceLocation(new ResourceLocation(modid, "large_sakura_sapling"), "inventory"));
 
 
 
@@ -666,10 +687,7 @@ public static int KakuriyoDimensionID=36;
         OreDictionary.registerOre("cropAzuki",new ItemStack(Azuki,1,0));
         OreDictionary.registerOre("cropBean",new ItemStack(Azuki,1,0));
         OreDictionary.registerOre("cropRedbean",new ItemStack(Azuki,1,0));
-
-       // Kakuriyo_DIMENSION = DimensionType.register("KakuriyoDimension", "_kakuriyo", 2, WorldProviderKakuriyo.class, false);
-      //  DimensionManager.registerDimension(2, Kakuriyo_DIMENSION);
-
+        OreDictionary.registerOre("logWood",new ItemStack(UStrippedLog,1,0));
 
 
 
@@ -681,14 +699,9 @@ public static int KakuriyoDimensionID=36;
         MinecraftForge.addGrassSeed(new ItemStack(ModCore_Urushi.RiceEars),10);
         MinecraftForge.addGrassSeed(new ItemStack(ModCore_Urushi.Azuki),10);
     }
+
     @Mod.EventHandler
     public void preInt(FMLPreInitializationEvent event)  {
-      //  Kakuriyo_DIMENSION = DimensionType.register("KakuriyoDimension", "_kakuriyo", 2, WorldProviderKakuriyo.class, false);
-      //  DimensionManager.registerDimension(2, Kakuriyo_DIMENSION);
-
-
-        //Kakuriyo_DIMENSION = DimensionType.register("Kakuriyo Dimension", "_kakuriyo", DimensionManager.getNextFreeDimId(), WorldProviderKakuriyo.class, false);
-        //DimensionManager.registerDimension(Kakuriyo_DIMENSION.getId(), Kakuriyo_DIMENSION);
 
         /**コンフィグ設定を追加*/
         Configuration cfg = new Configuration(event.getSuggestedConfigurationFile());
@@ -701,7 +714,6 @@ public static int KakuriyoDimensionID=36;
             Property e1ID4 = cfg.get("world generation", "generate Japanese Timber Bamboo in ForestHills Biome" ,wheather_ganerate_Bamboo);
             Property e1ID5 = cfg.get("world generation", "generate Copper Ore" ,wheather_ganerate_CopperOre);
             Property e1ID6 = cfg.get("block settings", "max height of Japanese Timber Bamboo" ,max_height_Bamboo);
-            Property e1ID8 = cfg.get("block settings", "Japanese Apricot Leaves and Sakura Leaves glow" ,SakuraLeavesAndJapaneseApricotLeavesIsLight);
             Property e1ID9 = cfg.get("world generation", "the dimension ID of Kakuriyo Dimension" ,KakuriyoDimensionID);
 
             // 項目に入っている値を取得してIDに入れる。
@@ -712,7 +724,6 @@ public static int KakuriyoDimensionID=36;
             wheather_ganerate_CopperOre = e1ID5.getBoolean();
             max_height_Bamboo=e1ID6.getInt();
             wheather_ganerate_Cypress = e1ID7.getBoolean();
-            SakuraLeavesAndJapaneseApricotLeavesIsLight = e1ID8.getBoolean();
             KakuriyoDimensionID=e1ID9.getInt();
         } catch (Exception e) {
             e.printStackTrace();
@@ -761,6 +772,14 @@ public static int KakuriyoDimensionID=36;
             GameRegistry.addSmelting(new ItemStack(UItems, 1, 35), new ItemStack(FermentationPot, 1, 0), 5F);
 
         }
+
+        /**バイオームを追加*/
+         SakuraBiome.setRegistryName("Sakura");
+         ForgeRegistries.BIOMES.register(SakuraBiome);
+         BiomeDictionary.addTypes(SakuraBiome, BiomeDictionary.Type.FOREST);
+         /**下の2行を実装すると、オーバーワールドに指定したバイオームが生成されるようになる*/
+         //BiomeManager.addBiome(BiomeManager.BiomeType.WARM, new BiomeManager.BiomeEntry(SakuraBiome, 500));
+         //BiomeManager.addSpawnBiome(SakuraBiome);
     }
 @SubscribeEvent
     public void LoottableAddEvent(LootTableLoadEvent event){

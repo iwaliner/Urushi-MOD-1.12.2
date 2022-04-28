@@ -33,7 +33,8 @@ public class WorldProviderKakuriyo extends WorldProvider {
     }
     public void init()
     {
-        this.biomeProvider = new BiomeProviderSingle(Biomes.FOREST);
+        this.biomeProvider = new BiomeProviderSingle(ModCore_Urushi.SakuraBiome);
+       // this.biomeProvider = new BiomeProviderKakuriyo(this.world);
         this.doesWaterVaporize = false;
         this.nether = false;
 this.hasSkyLight=true;
@@ -75,7 +76,7 @@ this.hasSkyLight=true;
     {
         return true;
     }
-
+/*
     @Override
     public BlockPos getSpawnPoint() {
         return BlockPos.ORIGIN;
@@ -83,6 +84,7 @@ this.hasSkyLight=true;
     public BlockPos getRandomizedSpawnPoint() {
         return this.getSpawnPoint();
     }
+    */
 /*
     public boolean shouldMapSpin(String entity, double x, double y, double z) {
         return false;

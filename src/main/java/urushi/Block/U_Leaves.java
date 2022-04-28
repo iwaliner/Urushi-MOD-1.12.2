@@ -17,6 +17,7 @@ import net.minecraft.stats.StatList;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
@@ -43,10 +44,9 @@ public class U_Leaves extends BlockLeaves
         this.setCreativeTab(ModCore_Urushi.TabUrushi);
         setLightOpacity(0);
 
-      if( ModCore_Urushi.SakuraLeavesAndJapaneseApricotLeavesIsLight){ setLightLevel(1F);
-      }else {
-          setLightLevel(0F);
-      }
+       setLightLevel(1F);
+
+
         this.setDefaultState(this.blockState.getBaseState().withProperty(VARIANT, BlockPlanks.EnumType.OAK).withProperty(CHECK_DECAY, Boolean.valueOf(true)).withProperty(DECAYABLE, Boolean.valueOf(true)));
     }
 
@@ -66,7 +66,7 @@ public class U_Leaves extends BlockLeaves
                 spawnAsEntity(worldIn, pos, new ItemStack(ModCore_Urushi.MaturedApricot));
             }
             if (state.getValue(VARIANT) == BlockPlanks.EnumType.SPRUCE && worldIn.rand.nextInt(30) == 0) {
-                spawnAsEntity(worldIn, pos, new ItemStack(ModCore_Urushi.USapling,1,4));
+                spawnAsEntity(worldIn, pos, new ItemStack(ModCore_Urushi.USapling2,1,2));
             }
         }
     }
@@ -130,7 +130,8 @@ public class U_Leaves extends BlockLeaves
      */
     public int damageDropped(IBlockState state)
     {
-        return ((BlockPlanks.EnumType)state.getValue(VARIANT)).getMetadata();
+        if(state.getValue(VARIANT)== BlockPlanks.EnumType.OAK){return 0;}
+        else{return 1;}
     }
 
     /**
@@ -177,7 +178,7 @@ public class U_Leaves extends BlockLeaves
     }
     public Item getItemDropped(IBlockState state, Random rand, int fortune)
     {
-        return Item.getItemFromBlock(ModCore_Urushi.USapling);
+        return Item.getItemFromBlock(ModCore_Urushi.USapling2);
     }
 
 

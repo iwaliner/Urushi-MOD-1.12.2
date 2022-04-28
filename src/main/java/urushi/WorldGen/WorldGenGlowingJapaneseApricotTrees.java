@@ -10,16 +10,15 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 import urushi.Block.U_Leaves;
-import urushi.Block.U_Leaves2;
 import urushi.Block.U_Log;
 import urushi.ModCore_Urushi;
 
 import java.util.Random;
 
-public class WorldGenJapaneseApricotTrees extends WorldGenAbstractTree
+public class WorldGenGlowingJapaneseApricotTrees extends WorldGenAbstractTree
 {
     private static final IBlockState DEFAULT_TRUNK = ModCore_Urushi.ULog.getDefaultState().withProperty(U_Log.VARIANT, BlockPlanks.EnumType.OAK);
-    private static final IBlockState DEFAULT_LEAF = ModCore_Urushi.ULeaves2.getDefaultState().withProperty(U_Leaves2.VARIANT, BlockPlanks.EnumType.OAK).withProperty(BlockLeaves.CHECK_DECAY, Boolean.valueOf(false));
+    private static final IBlockState DEFAULT_LEAF = ModCore_Urushi.ULeaves.getDefaultState().withProperty(U_Leaves.VARIANT, BlockPlanks.EnumType.OAK).withProperty(BlockLeaves.CHECK_DECAY, Boolean.valueOf(false));
     /** The minimum height of a generated tree. */
     private final int minTreeHeight;
     /** True if this tree should grow Vines. */
@@ -29,12 +28,12 @@ public class WorldGenJapaneseApricotTrees extends WorldGenAbstractTree
     /** The metadata value of the leaves to use in tree generation. */
     private final IBlockState metaLeaves;
 
-    public WorldGenJapaneseApricotTrees(boolean p_i2027_1_)
+    public WorldGenGlowingJapaneseApricotTrees(boolean p_i2027_1_)
     {
         this(p_i2027_1_, 4, DEFAULT_TRUNK, DEFAULT_LEAF, false);
     }
 
-    public WorldGenJapaneseApricotTrees(boolean notify, int minTreeHeightIn, IBlockState woodMeta, IBlockState p_i46446_4_, boolean growVines)
+    public WorldGenGlowingJapaneseApricotTrees(boolean notify, int minTreeHeightIn, IBlockState woodMeta, IBlockState p_i46446_4_, boolean growVines)
     {
         super(notify);
         this.minTreeHeight = minTreeHeightIn;

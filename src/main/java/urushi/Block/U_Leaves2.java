@@ -45,7 +45,19 @@ public class U_Leaves2 extends BlockLeaves
         this.setDefaultState(this.blockState.getBaseState().withProperty(VARIANT, BlockPlanks.EnumType.OAK).withProperty(CHECK_DECAY, Boolean.valueOf(true)).withProperty(DECAYABLE, Boolean.valueOf(true)));
     }
 
-
+    protected void dropApple(World worldIn, BlockPos pos, IBlockState state, int chance) {
+        if (state.getValue(CHECK_DECAY) == true|| state.getValue(DECAYABLE) == true) {
+            if (state.getValue(VARIANT) == BlockPlanks.EnumType.OAK && worldIn.rand.nextInt(10) == 0) {
+                spawnAsEntity(worldIn, pos, new ItemStack(ModCore_Urushi.ImmatureApricot));
+            }
+            if (state.getValue(VARIANT) == BlockPlanks.EnumType.OAK && worldIn.rand.nextInt(10) == 1) {
+                spawnAsEntity(worldIn, pos, new ItemStack(ModCore_Urushi.MaturedApricot));
+            }
+            if (state.getValue(VARIANT) == BlockPlanks.EnumType.SPRUCE && worldIn.rand.nextInt(30) == 0) {
+                spawnAsEntity(worldIn, pos, new ItemStack(ModCore_Urushi.USapling,1,4));
+            }
+        }
+    }
 
     @Override
     public ItemStack getItem(World worldIn, BlockPos pos, IBlockState state) {
@@ -55,7 +67,8 @@ public class U_Leaves2 extends BlockLeaves
 
     public void getSubBlocks(CreativeTabs itemIn, NonNullList<ItemStack> items)
     {
-
+        items.add(new ItemStack(this, 1, 4));
+        items.add(new ItemStack(this, 1, 5));
         items.add(new ItemStack(this, 1, 6));
         items.add(new ItemStack(this, 1, 7));
 

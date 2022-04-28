@@ -19,11 +19,11 @@ import urushi.ModCore_Urushi;
 import java.util.Random;
 
 public class OreGen implements IWorldGenerator{
-	private final WorldGenerator genSakuraTrees=new WorldGenSakuraTrees(true);
-	private final WorldGenerator genUmeTrees=new WorldGenJapaneseApricotTrees(true);
-	private final WorldGenerator genLacquerTrees=new WorldGenLacquerTrees(true);
+	private final WorldGenerator genSakuraTrees=new WorldGenSakuraTrees(false);
+	private final WorldGenerator genUmeTrees=new WorldGenJapaneseApricotTrees(false);
+	private final WorldGenerator genLacquerTrees=new WorldGenLacquerTrees(false);
 	private final WorldGenerator genBamboo=new WorldGenBamboo();
-	private final WorldGenerator genCypressTrees=new WorldGenCypressTrees(true);
+	private final WorldGenerator genCypressTrees=new WorldGenCypressTrees(false);
 
 	@Override
 	public void generate(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator,

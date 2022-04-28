@@ -1,0 +1,7 @@
+{
+    "variants": {
+"axis=y,variant=oak": { "model":"urushi:stripped_cypress_log" },
+"axis=z,variant=oak": { "model":"urushi:stripped_cypress_log","x": 90 },
+"axis=x,variant=oak": { "model":"urushi:stripped_cypress_log", "x": 90, "y": 90 }
+    }
+}

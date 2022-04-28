@@ -1,0 +1,10 @@
+{
+    "variants": {
+"stage=0,type=oak": { "model":"urushi:japanese_apricot_sapling" },
+"stage=1,type=oak": { "model":"urushi:japanese_apricot_sapling" },
+"stage=0,type=spruce": { "model":"urushi:sakura_sapling" },
+"stage=1,type=spruce": { "model":"urushi:sakura_sapling" },
+"stage=0,type=birch": { "model":"urushi:large_sakura_sapling" },
+"stage=1,type=birch": { "model":"urushi:large_sakura_sapling" }
+    }
+}
