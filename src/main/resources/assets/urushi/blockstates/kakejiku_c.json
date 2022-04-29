@@ -1,0 +1,20 @@
+{
+    "variants": {
+"facing=north,variant=type_a": { "model":"urushi:kakejiku_gensoukyou" },
+"facing=south,variant=type_a": { "model":"urushi:kakejiku_gensoukyou" , "y": 180},
+"facing=west,variant=type_a": { "model":"urushi:kakejiku_gensoukyou" , "y": 270},
+"facing=east,variant=type_a": { "model":"urushi:kakejiku_gensoukyou" , "y": 90},
+"facing=north,variant=type_b": { "model":"urushi:kakejiku_inkyo" },
+"facing=south,variant=type_b": { "model":"urushi:kakejiku_inkyo" , "y": 180},
+"facing=west,variant=type_b": { "model":"urushi:kakejiku_inkyo" , "y": 270},
+"facing=east,variant=type_b": { "model":"urushi:kakejiku_inkyo" , "y": 90},
+"facing=north,variant=type_c": { "model":"urushi:kakejiku_oshi" },
+"facing=south,variant=type_c": { "model":"urushi:kakejiku_oshi" , "y": 180},
+"facing=west,variant=type_c": { "model":"urushi:kakejiku_oshi" , "y": 270},
+"facing=east,variant=type_c": { "model":"urushi:kakejiku_oshi" , "y": 90},
+"facing=north,variant=type_d": { "model":"urushi:kakejiku_reform" },
+"facing=south,variant=type_d": { "model":"urushi:kakejiku_reform" , "y": 180},
+"facing=west,variant=type_d": { "model":"urushi:kakejiku_reform" , "y": 270},
+"facing=east,variant=type_d": { "model":"urushi:kakejiku_reform" , "y": 90}
+    }
+}

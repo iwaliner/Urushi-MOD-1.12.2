@@ -1,0 +1,21 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    " wq",
+    "qqq"
+  ],
+  "key": {
+    "q": {
+ "item": "minecraft:feather"
+    },
+    "w": {
+       "type": "forge:ore_dict",
+      "ore": "woolBlue"
+    }
+  },
+  "result": {
+    "item": "urushi:u_items",
+"data": 49,
+ "count": 1
+  }
+}

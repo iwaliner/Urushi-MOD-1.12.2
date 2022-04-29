@@ -1,0 +1,8 @@
+{
+    "variants": {
+"facing=north,variant=type_a": { "model":"urushi:kakejiku_usagitokame" },
+"facing=south,variant=type_a": { "model":"urushi:kakejiku_usagitokame" , "y": 180},
+"facing=west,variant=type_a": { "model":"urushi:kakejiku_usagitokame" , "y": 270},
+"facing=east,variant=type_a": { "model":"urushi:kakejiku_usagitokame" , "y": 90}
+    }
+}

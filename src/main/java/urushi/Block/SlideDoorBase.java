@@ -35,8 +35,7 @@ public class SlideDoorBase extends Block {
     public static final PropertyDirection FACING = BlockHorizontal.FACING;
     public static final PropertyEnum<SlideDoorBase.EnumTypeSlideDoorOpen> OPENCLOSE = PropertyEnum.<SlideDoorBase.EnumTypeSlideDoorOpen>create("openclose", SlideDoorBase.EnumTypeSlideDoorOpen.class);
     public static final PropertyEnum<SlideDoorBase.EnumTypeSlideDoorUnderUpper> UNDERUPPER = PropertyEnum.<SlideDoorBase.EnumTypeSlideDoorUnderUpper>create("underupper", SlideDoorBase.EnumTypeSlideDoorUnderUpper.class);
-    protected static final AxisAlignedBB AABB_NULL = new AxisAlignedBB(0.0D, 0.0D, 0.0D, 0D, 0D, 0D);
-    protected static final AxisAlignedBB AABB_CLOSED_NORTH = new AxisAlignedBB(0.0D, 0.0D, 0.0625D*7, 1.0D, 1D, 0.0625D*8);
+     protected static final AxisAlignedBB AABB_CLOSED_NORTH = new AxisAlignedBB(0.0D, 0.0D, 0.0625D*7, 1.0D, 1D, 0.0625D*8);
     protected static final AxisAlignedBB AABB_CLOSED_SOUTH = new AxisAlignedBB(0.0D, 0.0D, 0.0625D*8, 1.0D, 1D, 0.0625D*9);
     protected static final AxisAlignedBB AABB_CLOSED_WEST = new AxisAlignedBB(0.0625D*7, 0.0D, 0D, 0.0625D*8, 1D, 1D);
     protected static final AxisAlignedBB AABB_CLOSED_EAST = new AxisAlignedBB(0.0625D*9, 0.0D, 0D, 0.0625D*9, 1D, 1D);
@@ -217,7 +216,7 @@ public class SlideDoorBase extends Block {
     public void addCollisionBoxToList(IBlockState state, World worldIn, BlockPos pos, AxisAlignedBB entityBox, List<AxisAlignedBB> collidingBoxes, @Nullable Entity entityIn, boolean isActualState)
     {
         if(state.getValue(OPENCLOSE)==EnumTypeSlideDoorOpen.OPEN) {
-            addCollisionBoxToList(pos, entityBox, collidingBoxes, AABB_NULL);
+            addCollisionBoxToList(pos, entityBox, collidingBoxes, Block.NULL_AABB);
         }else {
             if(state.getValue(FACING)==EnumFacing.NORTH) addCollisionBoxToList(pos, entityBox, collidingBoxes, AABB_CLOSED_NORTH);
             else  if(state.getValue(FACING)==EnumFacing.SOUTH) addCollisionBoxToList(pos, entityBox, collidingBoxes, AABB_CLOSED_SOUTH);

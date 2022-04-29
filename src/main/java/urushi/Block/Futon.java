@@ -36,8 +36,8 @@ import java.util.Random;
 public class Futon extends BlockBed
 {
     protected static final AxisAlignedBB FUTON_AABB = new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.0625D*2, 1.0D);
-
-    public Futon()
+    private int meta;
+    public Futon(int i)
     {
         super();
         this.setDefaultState(this.blockState.getBaseState().withProperty(PART, BlockBed.EnumPartType.FOOT).withProperty(OCCUPIED, Boolean.valueOf(false)));
@@ -47,6 +47,7 @@ public class Futon extends BlockBed
         setLightLevel(0.0F);
         setHardness(0.3F);
         setSoundType(SoundType.CLOTH);
+        meta=i;
     }
     public EnumBlockRenderType getRenderType(IBlockState state)
     {
@@ -66,7 +67,7 @@ public class Futon extends BlockBed
 
     @Override
     public int damageDropped(IBlockState state) {
-        return 33;
+        return meta;
     }
 
 @Override
@@ -180,31 +181,8 @@ public class Futon extends BlockBed
     }
     public void onFallenUpon(World worldIn, BlockPos pos, Entity entityIn, float fallDistance)
     {
-        if (entityIn.isSneaking())
-        {
-            super.onFallenUpon(worldIn, pos, entityIn, fallDistance);
-        }
-        else
-        {
-            entityIn.fall(fallDistance, 0.0F);
-        }
-    }
-
-    public void onLanded(World worldIn, Entity entityIn)
-    {
-        if (entityIn.isSneaking())
-        {
-            super.onLanded(worldIn, entityIn);
-        }
-        else if (entityIn.motionY < 0.0D)
-        {
-            entityIn.motionY = -entityIn.motionY;
-
-            if (!(entityIn instanceof EntityLivingBase))
-            {
-                entityIn.motionY *= 0.8D;
-            }
-        }
+        entityIn.fall(fallDistance, 0.6F);
+        if(entityIn.motionY<0D){entityIn.motionY-=entityIn.motionY*2;}
     }
 
 
@@ -216,7 +194,7 @@ public class Futon extends BlockBed
         if (state.getValue(PART) == BlockBed.EnumPartType.HEAD)
         {
 
-           spawnAsEntity(worldIn, pos, new ItemStack(ModCore_Urushi.UItems, 1, 33));
+           spawnAsEntity(worldIn, pos, new ItemStack(ModCore_Urushi.UItems, 1, meta));
         }
     }
 
@@ -230,23 +208,24 @@ public class Futon extends BlockBed
             blockpos = pos.offset((EnumFacing)state.getValue(FACING));
         }
 
-        return new ItemStack(ModCore_Urushi.UItems, 1, 33);
+        return new ItemStack(ModCore_Urushi.UItems, 1, meta);
     }
 
 
 
 
-    public TileEntity createNewTileEntity(World worldIn, int meta)
+    public TileEntity createNewTileEntity(World worldIn, int i)
     {
-        //return new TileEntityBed();
         return new TileEntityFuton();
     }
 
-
-
-
-
-
+    @Override
+    public void onBlockAdded(World worldIn, BlockPos pos, IBlockState state) {
+        if(worldIn.getTileEntity(pos)==ModCore_Urushi.TileEntityFuton){
+            TileEntityFuton tileEntityFuton= (TileEntityFuton) worldIn.getTileEntity(pos);
+            tileEntityFuton.setMeta(meta);
+        }
+    }
 
     public MapColor getMapColor(IBlockState state, IBlockAccess worldIn, BlockPos pos)
     {

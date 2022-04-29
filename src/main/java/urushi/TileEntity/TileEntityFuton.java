@@ -13,12 +13,15 @@ import urushi.ModCore_Urushi;
 
 public class TileEntityFuton extends TileEntity
 {
+    public static int meta;
 
     public SPacketUpdateTileEntity getUpdatePacket()
     {
         return new SPacketUpdateTileEntity(this.pos, 11, this.getUpdateTag());
     }
-
+    public  void setMeta(int i){
+    meta=i;
+}
 
 
     @SideOnly(Side.CLIENT)
@@ -29,6 +32,19 @@ public class TileEntityFuton extends TileEntity
 
     public ItemStack getItemStack()
     {
-        return new ItemStack(ModCore_Urushi.UItems, 1, 33);
+        return new ItemStack(ModCore_Urushi.UItems, 1, meta);
+    }
+
+    public void readFromNBT(NBTTagCompound compound)
+    {
+        this.meta = compound.getInteger("Metadata");
+        super.readFromNBT(compound);
+
+    }
+
+    public NBTTagCompound writeToNBT(NBTTagCompound compound)
+    {
+        compound.setInteger("Metadata", this.meta);
+        return   super.writeToNBT(compound);
     }
 }

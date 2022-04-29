@@ -45,7 +45,7 @@ public class UItems extends Item  {
 		    {
 		       if (this.isInCreativeTab(tab))
 		        {
-		        	for(int i=0;i<38;i++) {
+		        	for(int i=0;i<53;i++) {
 
 	items.add(new ItemStack(this, 1, i));
 
@@ -301,7 +301,989 @@ public class UItems extends Item  {
 					 return EnumActionResult.FAIL;
 				 }
 
+			 }else if(meta==38){
+
+				 IBlockState iblockstate = worldIn.getBlockState(pos);
+				 Block block = iblockstate.getBlock();
+				 boolean flag = block.isReplaceable(worldIn, pos);
+
+				 if (!flag)
+				 {
+					 pos = pos.up();
+				 }
+
+				 int i = MathHelper.floor((double)(player.rotationYaw * 4.0F / 360.0F) + 0.5D) & 3;
+				 EnumFacing enumfacing = EnumFacing.getHorizontal(i);
+				 BlockPos blockpos = pos.offset(enumfacing);
+				 ItemStack itemstack = player.getHeldItem(hand);
+
+				 if (player.canPlayerEdit(pos, facing, itemstack) && player.canPlayerEdit(blockpos, facing, itemstack))
+				 {
+					 IBlockState iblockstate1 = worldIn.getBlockState(blockpos);
+					 boolean flag1 = iblockstate1.getBlock().isReplaceable(worldIn, blockpos);
+					 boolean flag2 = flag || worldIn.isAirBlock(pos);
+					 boolean flag3 = flag1 || worldIn.isAirBlock(blockpos);
+
+					 if (flag2 && flag3 && worldIn.getBlockState(pos.down()).isTopSolid() && worldIn.getBlockState(blockpos.down()).isTopSolid())
+					 {
+						 IBlockState iblockstate2 = ModCore_Urushi.WhiteFuton.getDefaultState().withProperty(Futon.OCCUPIED, Boolean.valueOf(false)).withProperty(Futon.FACING, enumfacing).withProperty(Futon.PART, Futon.EnumPartType.FOOT);
+						 worldIn.setBlockState(pos, iblockstate2, 10);
+						 worldIn.setBlockState(blockpos, iblockstate2.withProperty(Futon.PART, Futon.EnumPartType.HEAD), 10);
+						 SoundType soundtype = iblockstate2.getBlock().getSoundType(iblockstate2, worldIn, pos, player);
+						 worldIn.playSound((EntityPlayer)null,pos, SoundEvents.BLOCK_CLOTH_PLACE, SoundCategory.PLAYERS, 1.0F, 1.0F);
+						 TileEntity tileentity = worldIn.getTileEntity(blockpos);
+
+						 if (tileentity instanceof TileEntityBed)
+						 {
+							 ((TileEntityBed)tileentity).setItemValues(itemstack);
+						 }
+
+						 TileEntity tileentity1 = worldIn.getTileEntity(pos);
+
+						 if (tileentity1 instanceof TileEntityBed)
+						 {
+							 ((TileEntityBed)tileentity1).setItemValues(itemstack);
+						 }
+
+						 worldIn.notifyNeighborsRespectDebug(pos, block, false);
+						 worldIn.notifyNeighborsRespectDebug(blockpos, iblockstate1.getBlock(), false);
+
+						 if (player instanceof EntityPlayerMP)
+						 {
+							 CriteriaTriggers.PLACED_BLOCK.trigger((EntityPlayerMP)player, pos, itemstack);
+						 }
+
+						 itemstack.shrink(1);
+						 return EnumActionResult.SUCCESS;
+					 }
+					 else
+					 {
+						 return EnumActionResult.FAIL;
+					 }
+				 }
+				 else
+				 {
+					 return EnumActionResult.FAIL;
+				 }
+
+			 }else if(meta==39){
+
+				 IBlockState iblockstate = worldIn.getBlockState(pos);
+				 Block block = iblockstate.getBlock();
+				 boolean flag = block.isReplaceable(worldIn, pos);
+
+				 if (!flag)
+				 {
+					 pos = pos.up();
+				 }
+
+				 int i = MathHelper.floor((double)(player.rotationYaw * 4.0F / 360.0F) + 0.5D) & 3;
+				 EnumFacing enumfacing = EnumFacing.getHorizontal(i);
+				 BlockPos blockpos = pos.offset(enumfacing);
+				 ItemStack itemstack = player.getHeldItem(hand);
+
+				 if (player.canPlayerEdit(pos, facing, itemstack) && player.canPlayerEdit(blockpos, facing, itemstack))
+				 {
+					 IBlockState iblockstate1 = worldIn.getBlockState(blockpos);
+					 boolean flag1 = iblockstate1.getBlock().isReplaceable(worldIn, blockpos);
+					 boolean flag2 = flag || worldIn.isAirBlock(pos);
+					 boolean flag3 = flag1 || worldIn.isAirBlock(blockpos);
+
+					 if (flag2 && flag3 && worldIn.getBlockState(pos.down()).isTopSolid() && worldIn.getBlockState(blockpos.down()).isTopSolid())
+					 {
+						 IBlockState iblockstate2 = ModCore_Urushi.OrangeFuton.getDefaultState().withProperty(Futon.OCCUPIED, Boolean.valueOf(false)).withProperty(Futon.FACING, enumfacing).withProperty(Futon.PART, Futon.EnumPartType.FOOT);
+						 worldIn.setBlockState(pos, iblockstate2, 10);
+						 worldIn.setBlockState(blockpos, iblockstate2.withProperty(Futon.PART, Futon.EnumPartType.HEAD), 10);
+						 SoundType soundtype = iblockstate2.getBlock().getSoundType(iblockstate2, worldIn, pos, player);
+						 worldIn.playSound((EntityPlayer)null,pos, SoundEvents.BLOCK_CLOTH_PLACE, SoundCategory.PLAYERS, 1.0F, 1.0F);
+						 TileEntity tileentity = worldIn.getTileEntity(blockpos);
+
+						 if (tileentity instanceof TileEntityBed)
+						 {
+							 ((TileEntityBed)tileentity).setItemValues(itemstack);
+						 }
+
+						 TileEntity tileentity1 = worldIn.getTileEntity(pos);
+
+						 if (tileentity1 instanceof TileEntityBed)
+						 {
+							 ((TileEntityBed)tileentity1).setItemValues(itemstack);
+						 }
+
+						 worldIn.notifyNeighborsRespectDebug(pos, block, false);
+						 worldIn.notifyNeighborsRespectDebug(blockpos, iblockstate1.getBlock(), false);
+
+						 if (player instanceof EntityPlayerMP)
+						 {
+							 CriteriaTriggers.PLACED_BLOCK.trigger((EntityPlayerMP)player, pos, itemstack);
+						 }
+
+						 itemstack.shrink(1);
+						 return EnumActionResult.SUCCESS;
+					 }
+					 else
+					 {
+						 return EnumActionResult.FAIL;
+					 }
+				 }
+				 else
+				 {
+					 return EnumActionResult.FAIL;
+				 }
+
+			 }else if(meta==40){
+
+				 IBlockState iblockstate = worldIn.getBlockState(pos);
+				 Block block = iblockstate.getBlock();
+				 boolean flag = block.isReplaceable(worldIn, pos);
+
+				 if (!flag)
+				 {
+					 pos = pos.up();
+				 }
+
+				 int i = MathHelper.floor((double)(player.rotationYaw * 4.0F / 360.0F) + 0.5D) & 3;
+				 EnumFacing enumfacing = EnumFacing.getHorizontal(i);
+				 BlockPos blockpos = pos.offset(enumfacing);
+				 ItemStack itemstack = player.getHeldItem(hand);
+
+				 if (player.canPlayerEdit(pos, facing, itemstack) && player.canPlayerEdit(blockpos, facing, itemstack))
+				 {
+					 IBlockState iblockstate1 = worldIn.getBlockState(blockpos);
+					 boolean flag1 = iblockstate1.getBlock().isReplaceable(worldIn, blockpos);
+					 boolean flag2 = flag || worldIn.isAirBlock(pos);
+					 boolean flag3 = flag1 || worldIn.isAirBlock(blockpos);
+
+					 if (flag2 && flag3 && worldIn.getBlockState(pos.down()).isTopSolid() && worldIn.getBlockState(blockpos.down()).isTopSolid())
+					 {
+						 IBlockState iblockstate2 = ModCore_Urushi.MagentaFuton.getDefaultState().withProperty(Futon.OCCUPIED, Boolean.valueOf(false)).withProperty(Futon.FACING, enumfacing).withProperty(Futon.PART, Futon.EnumPartType.FOOT);
+						 worldIn.setBlockState(pos, iblockstate2, 10);
+						 worldIn.setBlockState(blockpos, iblockstate2.withProperty(Futon.PART, Futon.EnumPartType.HEAD), 10);
+						 SoundType soundtype = iblockstate2.getBlock().getSoundType(iblockstate2, worldIn, pos, player);
+						 worldIn.playSound((EntityPlayer)null,pos, SoundEvents.BLOCK_CLOTH_PLACE, SoundCategory.PLAYERS, 1.0F, 1.0F);
+						 TileEntity tileentity = worldIn.getTileEntity(blockpos);
+
+						 if (tileentity instanceof TileEntityBed)
+						 {
+							 ((TileEntityBed)tileentity).setItemValues(itemstack);
+						 }
+
+						 TileEntity tileentity1 = worldIn.getTileEntity(pos);
+
+						 if (tileentity1 instanceof TileEntityBed)
+						 {
+							 ((TileEntityBed)tileentity1).setItemValues(itemstack);
+						 }
+
+						 worldIn.notifyNeighborsRespectDebug(pos, block, false);
+						 worldIn.notifyNeighborsRespectDebug(blockpos, iblockstate1.getBlock(), false);
+
+						 if (player instanceof EntityPlayerMP)
+						 {
+							 CriteriaTriggers.PLACED_BLOCK.trigger((EntityPlayerMP)player, pos, itemstack);
+						 }
+
+						 itemstack.shrink(1);
+						 return EnumActionResult.SUCCESS;
+					 }
+					 else
+					 {
+						 return EnumActionResult.FAIL;
+					 }
+				 }
+				 else
+				 {
+					 return EnumActionResult.FAIL;
+				 }
+
+			 }else if(meta==41){
+
+				 IBlockState iblockstate = worldIn.getBlockState(pos);
+				 Block block = iblockstate.getBlock();
+				 boolean flag = block.isReplaceable(worldIn, pos);
+
+				 if (!flag)
+				 {
+					 pos = pos.up();
+				 }
+
+				 int i = MathHelper.floor((double)(player.rotationYaw * 4.0F / 360.0F) + 0.5D) & 3;
+				 EnumFacing enumfacing = EnumFacing.getHorizontal(i);
+				 BlockPos blockpos = pos.offset(enumfacing);
+				 ItemStack itemstack = player.getHeldItem(hand);
+
+				 if (player.canPlayerEdit(pos, facing, itemstack) && player.canPlayerEdit(blockpos, facing, itemstack))
+				 {
+					 IBlockState iblockstate1 = worldIn.getBlockState(blockpos);
+					 boolean flag1 = iblockstate1.getBlock().isReplaceable(worldIn, blockpos);
+					 boolean flag2 = flag || worldIn.isAirBlock(pos);
+					 boolean flag3 = flag1 || worldIn.isAirBlock(blockpos);
+
+					 if (flag2 && flag3 && worldIn.getBlockState(pos.down()).isTopSolid() && worldIn.getBlockState(blockpos.down()).isTopSolid())
+					 {
+						 IBlockState iblockstate2 = ModCore_Urushi.LightBlueFuton.getDefaultState().withProperty(Futon.OCCUPIED, Boolean.valueOf(false)).withProperty(Futon.FACING, enumfacing).withProperty(Futon.PART, Futon.EnumPartType.FOOT);
+						 worldIn.setBlockState(pos, iblockstate2, 10);
+						 worldIn.setBlockState(blockpos, iblockstate2.withProperty(Futon.PART, Futon.EnumPartType.HEAD), 10);
+						 SoundType soundtype = iblockstate2.getBlock().getSoundType(iblockstate2, worldIn, pos, player);
+						 worldIn.playSound((EntityPlayer)null,pos, SoundEvents.BLOCK_CLOTH_PLACE, SoundCategory.PLAYERS, 1.0F, 1.0F);
+						 TileEntity tileentity = worldIn.getTileEntity(blockpos);
+
+						 if (tileentity instanceof TileEntityBed)
+						 {
+							 ((TileEntityBed)tileentity).setItemValues(itemstack);
+						 }
+
+						 TileEntity tileentity1 = worldIn.getTileEntity(pos);
+
+						 if (tileentity1 instanceof TileEntityBed)
+						 {
+							 ((TileEntityBed)tileentity1).setItemValues(itemstack);
+						 }
+
+						 worldIn.notifyNeighborsRespectDebug(pos, block, false);
+						 worldIn.notifyNeighborsRespectDebug(blockpos, iblockstate1.getBlock(), false);
+
+						 if (player instanceof EntityPlayerMP)
+						 {
+							 CriteriaTriggers.PLACED_BLOCK.trigger((EntityPlayerMP)player, pos, itemstack);
+						 }
+
+						 itemstack.shrink(1);
+						 return EnumActionResult.SUCCESS;
+					 }
+					 else
+					 {
+						 return EnumActionResult.FAIL;
+					 }
+				 }
+				 else
+				 {
+					 return EnumActionResult.FAIL;
+				 }
+
+			 }else if(meta==42){
+
+				 IBlockState iblockstate = worldIn.getBlockState(pos);
+				 Block block = iblockstate.getBlock();
+				 boolean flag = block.isReplaceable(worldIn, pos);
+
+				 if (!flag)
+				 {
+					 pos = pos.up();
+				 }
+
+				 int i = MathHelper.floor((double)(player.rotationYaw * 4.0F / 360.0F) + 0.5D) & 3;
+				 EnumFacing enumfacing = EnumFacing.getHorizontal(i);
+				 BlockPos blockpos = pos.offset(enumfacing);
+				 ItemStack itemstack = player.getHeldItem(hand);
+
+				 if (player.canPlayerEdit(pos, facing, itemstack) && player.canPlayerEdit(blockpos, facing, itemstack))
+				 {
+					 IBlockState iblockstate1 = worldIn.getBlockState(blockpos);
+					 boolean flag1 = iblockstate1.getBlock().isReplaceable(worldIn, blockpos);
+					 boolean flag2 = flag || worldIn.isAirBlock(pos);
+					 boolean flag3 = flag1 || worldIn.isAirBlock(blockpos);
+
+					 if (flag2 && flag3 && worldIn.getBlockState(pos.down()).isTopSolid() && worldIn.getBlockState(blockpos.down()).isTopSolid())
+					 {
+						 IBlockState iblockstate2 = ModCore_Urushi.YellowFuton.getDefaultState().withProperty(Futon.OCCUPIED, Boolean.valueOf(false)).withProperty(Futon.FACING, enumfacing).withProperty(Futon.PART, Futon.EnumPartType.FOOT);
+						 worldIn.setBlockState(pos, iblockstate2, 10);
+						 worldIn.setBlockState(blockpos, iblockstate2.withProperty(Futon.PART, Futon.EnumPartType.HEAD), 10);
+						 SoundType soundtype = iblockstate2.getBlock().getSoundType(iblockstate2, worldIn, pos, player);
+						 worldIn.playSound((EntityPlayer)null,pos, SoundEvents.BLOCK_CLOTH_PLACE, SoundCategory.PLAYERS, 1.0F, 1.0F);
+						 TileEntity tileentity = worldIn.getTileEntity(blockpos);
+
+						 if (tileentity instanceof TileEntityBed)
+						 {
+							 ((TileEntityBed)tileentity).setItemValues(itemstack);
+						 }
+
+						 TileEntity tileentity1 = worldIn.getTileEntity(pos);
+
+						 if (tileentity1 instanceof TileEntityBed)
+						 {
+							 ((TileEntityBed)tileentity1).setItemValues(itemstack);
+						 }
+
+						 worldIn.notifyNeighborsRespectDebug(pos, block, false);
+						 worldIn.notifyNeighborsRespectDebug(blockpos, iblockstate1.getBlock(), false);
+
+						 if (player instanceof EntityPlayerMP)
+						 {
+							 CriteriaTriggers.PLACED_BLOCK.trigger((EntityPlayerMP)player, pos, itemstack);
+						 }
+
+						 itemstack.shrink(1);
+						 return EnumActionResult.SUCCESS;
+					 }
+					 else
+					 {
+						 return EnumActionResult.FAIL;
+					 }
+				 }
+				 else
+				 {
+					 return EnumActionResult.FAIL;
+				 }
+
+			 }else if(meta==43){
+
+				 IBlockState iblockstate = worldIn.getBlockState(pos);
+				 Block block = iblockstate.getBlock();
+				 boolean flag = block.isReplaceable(worldIn, pos);
+
+				 if (!flag)
+				 {
+					 pos = pos.up();
+				 }
+
+				 int i = MathHelper.floor((double)(player.rotationYaw * 4.0F / 360.0F) + 0.5D) & 3;
+				 EnumFacing enumfacing = EnumFacing.getHorizontal(i);
+				 BlockPos blockpos = pos.offset(enumfacing);
+				 ItemStack itemstack = player.getHeldItem(hand);
+
+				 if (player.canPlayerEdit(pos, facing, itemstack) && player.canPlayerEdit(blockpos, facing, itemstack))
+				 {
+					 IBlockState iblockstate1 = worldIn.getBlockState(blockpos);
+					 boolean flag1 = iblockstate1.getBlock().isReplaceable(worldIn, blockpos);
+					 boolean flag2 = flag || worldIn.isAirBlock(pos);
+					 boolean flag3 = flag1 || worldIn.isAirBlock(blockpos);
+
+					 if (flag2 && flag3 && worldIn.getBlockState(pos.down()).isTopSolid() && worldIn.getBlockState(blockpos.down()).isTopSolid())
+					 {
+						 IBlockState iblockstate2 = ModCore_Urushi.LimeFuton.getDefaultState().withProperty(Futon.OCCUPIED, Boolean.valueOf(false)).withProperty(Futon.FACING, enumfacing).withProperty(Futon.PART, Futon.EnumPartType.FOOT);
+						 worldIn.setBlockState(pos, iblockstate2, 10);
+						 worldIn.setBlockState(blockpos, iblockstate2.withProperty(Futon.PART, Futon.EnumPartType.HEAD), 10);
+						 SoundType soundtype = iblockstate2.getBlock().getSoundType(iblockstate2, worldIn, pos, player);
+						 worldIn.playSound((EntityPlayer)null,pos, SoundEvents.BLOCK_CLOTH_PLACE, SoundCategory.PLAYERS, 1.0F, 1.0F);
+						 TileEntity tileentity = worldIn.getTileEntity(blockpos);
+
+						 if (tileentity instanceof TileEntityBed)
+						 {
+							 ((TileEntityBed)tileentity).setItemValues(itemstack);
+						 }
+
+						 TileEntity tileentity1 = worldIn.getTileEntity(pos);
+
+						 if (tileentity1 instanceof TileEntityBed)
+						 {
+							 ((TileEntityBed)tileentity1).setItemValues(itemstack);
+						 }
+
+						 worldIn.notifyNeighborsRespectDebug(pos, block, false);
+						 worldIn.notifyNeighborsRespectDebug(blockpos, iblockstate1.getBlock(), false);
+
+						 if (player instanceof EntityPlayerMP)
+						 {
+							 CriteriaTriggers.PLACED_BLOCK.trigger((EntityPlayerMP)player, pos, itemstack);
+						 }
+
+						 itemstack.shrink(1);
+						 return EnumActionResult.SUCCESS;
+					 }
+					 else
+					 {
+						 return EnumActionResult.FAIL;
+					 }
+				 }
+				 else
+				 {
+					 return EnumActionResult.FAIL;
+				 }
+
+			 }else if(meta==44){
+
+				 IBlockState iblockstate = worldIn.getBlockState(pos);
+				 Block block = iblockstate.getBlock();
+				 boolean flag = block.isReplaceable(worldIn, pos);
+
+				 if (!flag)
+				 {
+					 pos = pos.up();
+				 }
+
+				 int i = MathHelper.floor((double)(player.rotationYaw * 4.0F / 360.0F) + 0.5D) & 3;
+				 EnumFacing enumfacing = EnumFacing.getHorizontal(i);
+				 BlockPos blockpos = pos.offset(enumfacing);
+				 ItemStack itemstack = player.getHeldItem(hand);
+
+				 if (player.canPlayerEdit(pos, facing, itemstack) && player.canPlayerEdit(blockpos, facing, itemstack))
+				 {
+					 IBlockState iblockstate1 = worldIn.getBlockState(blockpos);
+					 boolean flag1 = iblockstate1.getBlock().isReplaceable(worldIn, blockpos);
+					 boolean flag2 = flag || worldIn.isAirBlock(pos);
+					 boolean flag3 = flag1 || worldIn.isAirBlock(blockpos);
+
+					 if (flag2 && flag3 && worldIn.getBlockState(pos.down()).isTopSolid() && worldIn.getBlockState(blockpos.down()).isTopSolid())
+					 {
+						 IBlockState iblockstate2 = ModCore_Urushi.PinkFuton.getDefaultState().withProperty(Futon.OCCUPIED, Boolean.valueOf(false)).withProperty(Futon.FACING, enumfacing).withProperty(Futon.PART, Futon.EnumPartType.FOOT);
+						 worldIn.setBlockState(pos, iblockstate2, 10);
+						 worldIn.setBlockState(blockpos, iblockstate2.withProperty(Futon.PART, Futon.EnumPartType.HEAD), 10);
+						 SoundType soundtype = iblockstate2.getBlock().getSoundType(iblockstate2, worldIn, pos, player);
+						 worldIn.playSound((EntityPlayer)null,pos, SoundEvents.BLOCK_CLOTH_PLACE, SoundCategory.PLAYERS, 1.0F, 1.0F);
+						 TileEntity tileentity = worldIn.getTileEntity(blockpos);
+
+						 if (tileentity instanceof TileEntityBed)
+						 {
+							 ((TileEntityBed)tileentity).setItemValues(itemstack);
+						 }
+
+						 TileEntity tileentity1 = worldIn.getTileEntity(pos);
+
+						 if (tileentity1 instanceof TileEntityBed)
+						 {
+							 ((TileEntityBed)tileentity1).setItemValues(itemstack);
+						 }
+
+						 worldIn.notifyNeighborsRespectDebug(pos, block, false);
+						 worldIn.notifyNeighborsRespectDebug(blockpos, iblockstate1.getBlock(), false);
+
+						 if (player instanceof EntityPlayerMP)
+						 {
+							 CriteriaTriggers.PLACED_BLOCK.trigger((EntityPlayerMP)player, pos, itemstack);
+						 }
+
+						 itemstack.shrink(1);
+						 return EnumActionResult.SUCCESS;
+					 }
+					 else
+					 {
+						 return EnumActionResult.FAIL;
+					 }
+				 }
+				 else
+				 {
+					 return EnumActionResult.FAIL;
+				 }
+
+			 }else if(meta==45){
+
+				 IBlockState iblockstate = worldIn.getBlockState(pos);
+				 Block block = iblockstate.getBlock();
+				 boolean flag = block.isReplaceable(worldIn, pos);
+
+				 if (!flag)
+				 {
+					 pos = pos.up();
+				 }
+
+				 int i = MathHelper.floor((double)(player.rotationYaw * 4.0F / 360.0F) + 0.5D) & 3;
+				 EnumFacing enumfacing = EnumFacing.getHorizontal(i);
+				 BlockPos blockpos = pos.offset(enumfacing);
+				 ItemStack itemstack = player.getHeldItem(hand);
+
+				 if (player.canPlayerEdit(pos, facing, itemstack) && player.canPlayerEdit(blockpos, facing, itemstack))
+				 {
+					 IBlockState iblockstate1 = worldIn.getBlockState(blockpos);
+					 boolean flag1 = iblockstate1.getBlock().isReplaceable(worldIn, blockpos);
+					 boolean flag2 = flag || worldIn.isAirBlock(pos);
+					 boolean flag3 = flag1 || worldIn.isAirBlock(blockpos);
+
+					 if (flag2 && flag3 && worldIn.getBlockState(pos.down()).isTopSolid() && worldIn.getBlockState(blockpos.down()).isTopSolid())
+					 {
+						 IBlockState iblockstate2 = ModCore_Urushi.GrayFuton.getDefaultState().withProperty(Futon.OCCUPIED, Boolean.valueOf(false)).withProperty(Futon.FACING, enumfacing).withProperty(Futon.PART, Futon.EnumPartType.FOOT);
+						 worldIn.setBlockState(pos, iblockstate2, 10);
+						 worldIn.setBlockState(blockpos, iblockstate2.withProperty(Futon.PART, Futon.EnumPartType.HEAD), 10);
+						 SoundType soundtype = iblockstate2.getBlock().getSoundType(iblockstate2, worldIn, pos, player);
+						 worldIn.playSound((EntityPlayer)null,pos, SoundEvents.BLOCK_CLOTH_PLACE, SoundCategory.PLAYERS, 1.0F, 1.0F);
+						 TileEntity tileentity = worldIn.getTileEntity(blockpos);
+
+						 if (tileentity instanceof TileEntityBed)
+						 {
+							 ((TileEntityBed)tileentity).setItemValues(itemstack);
+						 }
+
+						 TileEntity tileentity1 = worldIn.getTileEntity(pos);
+
+						 if (tileentity1 instanceof TileEntityBed)
+						 {
+							 ((TileEntityBed)tileentity1).setItemValues(itemstack);
+						 }
+
+						 worldIn.notifyNeighborsRespectDebug(pos, block, false);
+						 worldIn.notifyNeighborsRespectDebug(blockpos, iblockstate1.getBlock(), false);
+
+						 if (player instanceof EntityPlayerMP)
+						 {
+							 CriteriaTriggers.PLACED_BLOCK.trigger((EntityPlayerMP)player, pos, itemstack);
+						 }
+
+						 itemstack.shrink(1);
+						 return EnumActionResult.SUCCESS;
+					 }
+					 else
+					 {
+						 return EnumActionResult.FAIL;
+					 }
+				 }
+				 else
+				 {
+					 return EnumActionResult.FAIL;
+				 }
+
+			 }else if(meta==46){
+
+				 IBlockState iblockstate = worldIn.getBlockState(pos);
+				 Block block = iblockstate.getBlock();
+				 boolean flag = block.isReplaceable(worldIn, pos);
+
+				 if (!flag)
+				 {
+					 pos = pos.up();
+				 }
+
+				 int i = MathHelper.floor((double)(player.rotationYaw * 4.0F / 360.0F) + 0.5D) & 3;
+				 EnumFacing enumfacing = EnumFacing.getHorizontal(i);
+				 BlockPos blockpos = pos.offset(enumfacing);
+				 ItemStack itemstack = player.getHeldItem(hand);
+
+				 if (player.canPlayerEdit(pos, facing, itemstack) && player.canPlayerEdit(blockpos, facing, itemstack))
+				 {
+					 IBlockState iblockstate1 = worldIn.getBlockState(blockpos);
+					 boolean flag1 = iblockstate1.getBlock().isReplaceable(worldIn, blockpos);
+					 boolean flag2 = flag || worldIn.isAirBlock(pos);
+					 boolean flag3 = flag1 || worldIn.isAirBlock(blockpos);
+
+					 if (flag2 && flag3 && worldIn.getBlockState(pos.down()).isTopSolid() && worldIn.getBlockState(blockpos.down()).isTopSolid())
+					 {
+						 IBlockState iblockstate2 = ModCore_Urushi.LightGrayFuton.getDefaultState().withProperty(Futon.OCCUPIED, Boolean.valueOf(false)).withProperty(Futon.FACING, enumfacing).withProperty(Futon.PART, Futon.EnumPartType.FOOT);
+						 worldIn.setBlockState(pos, iblockstate2, 10);
+						 worldIn.setBlockState(blockpos, iblockstate2.withProperty(Futon.PART, Futon.EnumPartType.HEAD), 10);
+						 SoundType soundtype = iblockstate2.getBlock().getSoundType(iblockstate2, worldIn, pos, player);
+						 worldIn.playSound((EntityPlayer)null,pos, SoundEvents.BLOCK_CLOTH_PLACE, SoundCategory.PLAYERS, 1.0F, 1.0F);
+						 TileEntity tileentity = worldIn.getTileEntity(blockpos);
+
+						 if (tileentity instanceof TileEntityBed)
+						 {
+							 ((TileEntityBed)tileentity).setItemValues(itemstack);
+						 }
+
+						 TileEntity tileentity1 = worldIn.getTileEntity(pos);
+
+						 if (tileentity1 instanceof TileEntityBed)
+						 {
+							 ((TileEntityBed)tileentity1).setItemValues(itemstack);
+						 }
+
+						 worldIn.notifyNeighborsRespectDebug(pos, block, false);
+						 worldIn.notifyNeighborsRespectDebug(blockpos, iblockstate1.getBlock(), false);
+
+						 if (player instanceof EntityPlayerMP)
+						 {
+							 CriteriaTriggers.PLACED_BLOCK.trigger((EntityPlayerMP)player, pos, itemstack);
+						 }
+
+						 itemstack.shrink(1);
+						 return EnumActionResult.SUCCESS;
+					 }
+					 else
+					 {
+						 return EnumActionResult.FAIL;
+					 }
+				 }
+				 else
+				 {
+					 return EnumActionResult.FAIL;
+				 }
+
+			 }else if(meta==47){
+
+				 IBlockState iblockstate = worldIn.getBlockState(pos);
+				 Block block = iblockstate.getBlock();
+				 boolean flag = block.isReplaceable(worldIn, pos);
+
+				 if (!flag)
+				 {
+					 pos = pos.up();
+				 }
+
+				 int i = MathHelper.floor((double)(player.rotationYaw * 4.0F / 360.0F) + 0.5D) & 3;
+				 EnumFacing enumfacing = EnumFacing.getHorizontal(i);
+				 BlockPos blockpos = pos.offset(enumfacing);
+				 ItemStack itemstack = player.getHeldItem(hand);
+
+				 if (player.canPlayerEdit(pos, facing, itemstack) && player.canPlayerEdit(blockpos, facing, itemstack))
+				 {
+					 IBlockState iblockstate1 = worldIn.getBlockState(blockpos);
+					 boolean flag1 = iblockstate1.getBlock().isReplaceable(worldIn, blockpos);
+					 boolean flag2 = flag || worldIn.isAirBlock(pos);
+					 boolean flag3 = flag1 || worldIn.isAirBlock(blockpos);
+
+					 if (flag2 && flag3 && worldIn.getBlockState(pos.down()).isTopSolid() && worldIn.getBlockState(blockpos.down()).isTopSolid())
+					 {
+						 IBlockState iblockstate2 = ModCore_Urushi.CyanFuton.getDefaultState().withProperty(Futon.OCCUPIED, Boolean.valueOf(false)).withProperty(Futon.FACING, enumfacing).withProperty(Futon.PART, Futon.EnumPartType.FOOT);
+						 worldIn.setBlockState(pos, iblockstate2, 10);
+						 worldIn.setBlockState(blockpos, iblockstate2.withProperty(Futon.PART, Futon.EnumPartType.HEAD), 10);
+						 SoundType soundtype = iblockstate2.getBlock().getSoundType(iblockstate2, worldIn, pos, player);
+						 worldIn.playSound((EntityPlayer)null,pos, SoundEvents.BLOCK_CLOTH_PLACE, SoundCategory.PLAYERS, 1.0F, 1.0F);
+						 TileEntity tileentity = worldIn.getTileEntity(blockpos);
+
+						 if (tileentity instanceof TileEntityBed)
+						 {
+							 ((TileEntityBed)tileentity).setItemValues(itemstack);
+						 }
+
+						 TileEntity tileentity1 = worldIn.getTileEntity(pos);
+
+						 if (tileentity1 instanceof TileEntityBed)
+						 {
+							 ((TileEntityBed)tileentity1).setItemValues(itemstack);
+						 }
+
+						 worldIn.notifyNeighborsRespectDebug(pos, block, false);
+						 worldIn.notifyNeighborsRespectDebug(blockpos, iblockstate1.getBlock(), false);
+
+						 if (player instanceof EntityPlayerMP)
+						 {
+							 CriteriaTriggers.PLACED_BLOCK.trigger((EntityPlayerMP)player, pos, itemstack);
+						 }
+
+						 itemstack.shrink(1);
+						 return EnumActionResult.SUCCESS;
+					 }
+					 else
+					 {
+						 return EnumActionResult.FAIL;
+					 }
+				 }
+				 else
+				 {
+					 return EnumActionResult.FAIL;
+				 }
+
+			 }else if(meta==48){
+
+				 IBlockState iblockstate = worldIn.getBlockState(pos);
+				 Block block = iblockstate.getBlock();
+				 boolean flag = block.isReplaceable(worldIn, pos);
+
+				 if (!flag)
+				 {
+					 pos = pos.up();
+				 }
+
+				 int i = MathHelper.floor((double)(player.rotationYaw * 4.0F / 360.0F) + 0.5D) & 3;
+				 EnumFacing enumfacing = EnumFacing.getHorizontal(i);
+				 BlockPos blockpos = pos.offset(enumfacing);
+				 ItemStack itemstack = player.getHeldItem(hand);
+
+				 if (player.canPlayerEdit(pos, facing, itemstack) && player.canPlayerEdit(blockpos, facing, itemstack))
+				 {
+					 IBlockState iblockstate1 = worldIn.getBlockState(blockpos);
+					 boolean flag1 = iblockstate1.getBlock().isReplaceable(worldIn, blockpos);
+					 boolean flag2 = flag || worldIn.isAirBlock(pos);
+					 boolean flag3 = flag1 || worldIn.isAirBlock(blockpos);
+
+					 if (flag2 && flag3 && worldIn.getBlockState(pos.down()).isTopSolid() && worldIn.getBlockState(blockpos.down()).isTopSolid())
+					 {
+						 IBlockState iblockstate2 = ModCore_Urushi.PurpleFuton.getDefaultState().withProperty(Futon.OCCUPIED, Boolean.valueOf(false)).withProperty(Futon.FACING, enumfacing).withProperty(Futon.PART, Futon.EnumPartType.FOOT);
+						 worldIn.setBlockState(pos, iblockstate2, 10);
+						 worldIn.setBlockState(blockpos, iblockstate2.withProperty(Futon.PART, Futon.EnumPartType.HEAD), 10);
+						 SoundType soundtype = iblockstate2.getBlock().getSoundType(iblockstate2, worldIn, pos, player);
+						 worldIn.playSound((EntityPlayer)null,pos, SoundEvents.BLOCK_CLOTH_PLACE, SoundCategory.PLAYERS, 1.0F, 1.0F);
+						 TileEntity tileentity = worldIn.getTileEntity(blockpos);
+
+						 if (tileentity instanceof TileEntityBed)
+						 {
+							 ((TileEntityBed)tileentity).setItemValues(itemstack);
+						 }
+
+						 TileEntity tileentity1 = worldIn.getTileEntity(pos);
+
+						 if (tileentity1 instanceof TileEntityBed)
+						 {
+							 ((TileEntityBed)tileentity1).setItemValues(itemstack);
+						 }
+
+						 worldIn.notifyNeighborsRespectDebug(pos, block, false);
+						 worldIn.notifyNeighborsRespectDebug(blockpos, iblockstate1.getBlock(), false);
+
+						 if (player instanceof EntityPlayerMP)
+						 {
+							 CriteriaTriggers.PLACED_BLOCK.trigger((EntityPlayerMP)player, pos, itemstack);
+						 }
+
+						 itemstack.shrink(1);
+						 return EnumActionResult.SUCCESS;
+					 }
+					 else
+					 {
+						 return EnumActionResult.FAIL;
+					 }
+				 }
+				 else
+				 {
+					 return EnumActionResult.FAIL;
+				 }
+
+			 }else if(meta==49){
+
+				 IBlockState iblockstate = worldIn.getBlockState(pos);
+				 Block block = iblockstate.getBlock();
+				 boolean flag = block.isReplaceable(worldIn, pos);
+
+				 if (!flag)
+				 {
+					 pos = pos.up();
+				 }
+
+				 int i = MathHelper.floor((double)(player.rotationYaw * 4.0F / 360.0F) + 0.5D) & 3;
+				 EnumFacing enumfacing = EnumFacing.getHorizontal(i);
+				 BlockPos blockpos = pos.offset(enumfacing);
+				 ItemStack itemstack = player.getHeldItem(hand);
+
+				 if (player.canPlayerEdit(pos, facing, itemstack) && player.canPlayerEdit(blockpos, facing, itemstack))
+				 {
+					 IBlockState iblockstate1 = worldIn.getBlockState(blockpos);
+					 boolean flag1 = iblockstate1.getBlock().isReplaceable(worldIn, blockpos);
+					 boolean flag2 = flag || worldIn.isAirBlock(pos);
+					 boolean flag3 = flag1 || worldIn.isAirBlock(blockpos);
+
+					 if (flag2 && flag3 && worldIn.getBlockState(pos.down()).isTopSolid() && worldIn.getBlockState(blockpos.down()).isTopSolid())
+					 {
+						 IBlockState iblockstate2 = ModCore_Urushi.BlueFuton.getDefaultState().withProperty(Futon.OCCUPIED, Boolean.valueOf(false)).withProperty(Futon.FACING, enumfacing).withProperty(Futon.PART, Futon.EnumPartType.FOOT);
+						 worldIn.setBlockState(pos, iblockstate2, 10);
+						 worldIn.setBlockState(blockpos, iblockstate2.withProperty(Futon.PART, Futon.EnumPartType.HEAD), 10);
+						 SoundType soundtype = iblockstate2.getBlock().getSoundType(iblockstate2, worldIn, pos, player);
+						 worldIn.playSound((EntityPlayer)null,pos, SoundEvents.BLOCK_CLOTH_PLACE, SoundCategory.PLAYERS, 1.0F, 1.0F);
+						 TileEntity tileentity = worldIn.getTileEntity(blockpos);
+
+						 if (tileentity instanceof TileEntityBed)
+						 {
+							 ((TileEntityBed)tileentity).setItemValues(itemstack);
+						 }
+
+						 TileEntity tileentity1 = worldIn.getTileEntity(pos);
+
+						 if (tileentity1 instanceof TileEntityBed)
+						 {
+							 ((TileEntityBed)tileentity1).setItemValues(itemstack);
+						 }
+
+						 worldIn.notifyNeighborsRespectDebug(pos, block, false);
+						 worldIn.notifyNeighborsRespectDebug(blockpos, iblockstate1.getBlock(), false);
+
+						 if (player instanceof EntityPlayerMP)
+						 {
+							 CriteriaTriggers.PLACED_BLOCK.trigger((EntityPlayerMP)player, pos, itemstack);
+						 }
+
+						 itemstack.shrink(1);
+						 return EnumActionResult.SUCCESS;
+					 }
+					 else
+					 {
+						 return EnumActionResult.FAIL;
+					 }
+				 }
+				 else
+				 {
+					 return EnumActionResult.FAIL;
+				 }
+
+			 }else if(meta==50){
+
+				 IBlockState iblockstate = worldIn.getBlockState(pos);
+				 Block block = iblockstate.getBlock();
+				 boolean flag = block.isReplaceable(worldIn, pos);
+
+				 if (!flag)
+				 {
+					 pos = pos.up();
+				 }
+
+				 int i = MathHelper.floor((double)(player.rotationYaw * 4.0F / 360.0F) + 0.5D) & 3;
+				 EnumFacing enumfacing = EnumFacing.getHorizontal(i);
+				 BlockPos blockpos = pos.offset(enumfacing);
+				 ItemStack itemstack = player.getHeldItem(hand);
+
+				 if (player.canPlayerEdit(pos, facing, itemstack) && player.canPlayerEdit(blockpos, facing, itemstack))
+				 {
+					 IBlockState iblockstate1 = worldIn.getBlockState(blockpos);
+					 boolean flag1 = iblockstate1.getBlock().isReplaceable(worldIn, blockpos);
+					 boolean flag2 = flag || worldIn.isAirBlock(pos);
+					 boolean flag3 = flag1 || worldIn.isAirBlock(blockpos);
+
+					 if (flag2 && flag3 && worldIn.getBlockState(pos.down()).isTopSolid() && worldIn.getBlockState(blockpos.down()).isTopSolid())
+					 {
+						 IBlockState iblockstate2 = ModCore_Urushi.BrownFuton.getDefaultState().withProperty(Futon.OCCUPIED, Boolean.valueOf(false)).withProperty(Futon.FACING, enumfacing).withProperty(Futon.PART, Futon.EnumPartType.FOOT);
+						 worldIn.setBlockState(pos, iblockstate2, 10);
+						 worldIn.setBlockState(blockpos, iblockstate2.withProperty(Futon.PART, Futon.EnumPartType.HEAD), 10);
+						 SoundType soundtype = iblockstate2.getBlock().getSoundType(iblockstate2, worldIn, pos, player);
+						 worldIn.playSound((EntityPlayer)null,pos, SoundEvents.BLOCK_CLOTH_PLACE, SoundCategory.PLAYERS, 1.0F, 1.0F);
+						 TileEntity tileentity = worldIn.getTileEntity(blockpos);
+
+						 if (tileentity instanceof TileEntityBed)
+						 {
+							 ((TileEntityBed)tileentity).setItemValues(itemstack);
+						 }
+
+						 TileEntity tileentity1 = worldIn.getTileEntity(pos);
+
+						 if (tileentity1 instanceof TileEntityBed)
+						 {
+							 ((TileEntityBed)tileentity1).setItemValues(itemstack);
+						 }
+
+						 worldIn.notifyNeighborsRespectDebug(pos, block, false);
+						 worldIn.notifyNeighborsRespectDebug(blockpos, iblockstate1.getBlock(), false);
+
+						 if (player instanceof EntityPlayerMP)
+						 {
+							 CriteriaTriggers.PLACED_BLOCK.trigger((EntityPlayerMP)player, pos, itemstack);
+						 }
+
+						 itemstack.shrink(1);
+						 return EnumActionResult.SUCCESS;
+					 }
+					 else
+					 {
+						 return EnumActionResult.FAIL;
+					 }
+				 }
+				 else
+				 {
+					 return EnumActionResult.FAIL;
+				 }
+
+			 }else if(meta==51){
+
+				 IBlockState iblockstate = worldIn.getBlockState(pos);
+				 Block block = iblockstate.getBlock();
+				 boolean flag = block.isReplaceable(worldIn, pos);
+
+				 if (!flag)
+				 {
+					 pos = pos.up();
+				 }
+
+				 int i = MathHelper.floor((double)(player.rotationYaw * 4.0F / 360.0F) + 0.5D) & 3;
+				 EnumFacing enumfacing = EnumFacing.getHorizontal(i);
+				 BlockPos blockpos = pos.offset(enumfacing);
+				 ItemStack itemstack = player.getHeldItem(hand);
+
+				 if (player.canPlayerEdit(pos, facing, itemstack) && player.canPlayerEdit(blockpos, facing, itemstack))
+				 {
+					 IBlockState iblockstate1 = worldIn.getBlockState(blockpos);
+					 boolean flag1 = iblockstate1.getBlock().isReplaceable(worldIn, blockpos);
+					 boolean flag2 = flag || worldIn.isAirBlock(pos);
+					 boolean flag3 = flag1 || worldIn.isAirBlock(blockpos);
+
+					 if (flag2 && flag3 && worldIn.getBlockState(pos.down()).isTopSolid() && worldIn.getBlockState(blockpos.down()).isTopSolid())
+					 {
+						 IBlockState iblockstate2 = ModCore_Urushi.GreenFuton.getDefaultState().withProperty(Futon.OCCUPIED, Boolean.valueOf(false)).withProperty(Futon.FACING, enumfacing).withProperty(Futon.PART, Futon.EnumPartType.FOOT);
+						 worldIn.setBlockState(pos, iblockstate2, 10);
+						 worldIn.setBlockState(blockpos, iblockstate2.withProperty(Futon.PART, Futon.EnumPartType.HEAD), 10);
+						 SoundType soundtype = iblockstate2.getBlock().getSoundType(iblockstate2, worldIn, pos, player);
+						 worldIn.playSound((EntityPlayer)null,pos, SoundEvents.BLOCK_CLOTH_PLACE, SoundCategory.PLAYERS, 1.0F, 1.0F);
+						 TileEntity tileentity = worldIn.getTileEntity(blockpos);
+
+						 if (tileentity instanceof TileEntityBed)
+						 {
+							 ((TileEntityBed)tileentity).setItemValues(itemstack);
+						 }
+
+						 TileEntity tileentity1 = worldIn.getTileEntity(pos);
+
+						 if (tileentity1 instanceof TileEntityBed)
+						 {
+							 ((TileEntityBed)tileentity1).setItemValues(itemstack);
+						 }
+
+						 worldIn.notifyNeighborsRespectDebug(pos, block, false);
+						 worldIn.notifyNeighborsRespectDebug(blockpos, iblockstate1.getBlock(), false);
+
+						 if (player instanceof EntityPlayerMP)
+						 {
+							 CriteriaTriggers.PLACED_BLOCK.trigger((EntityPlayerMP)player, pos, itemstack);
+						 }
+
+						 itemstack.shrink(1);
+						 return EnumActionResult.SUCCESS;
+					 }
+					 else
+					 {
+						 return EnumActionResult.FAIL;
+					 }
+				 }
+				 else
+				 {
+					 return EnumActionResult.FAIL;
+				 }
+
+			 }else if(meta==52){
+
+				 IBlockState iblockstate = worldIn.getBlockState(pos);
+				 Block block = iblockstate.getBlock();
+				 boolean flag = block.isReplaceable(worldIn, pos);
+
+				 if (!flag)
+				 {
+					 pos = pos.up();
+				 }
+
+				 int i = MathHelper.floor((double)(player.rotationYaw * 4.0F / 360.0F) + 0.5D) & 3;
+				 EnumFacing enumfacing = EnumFacing.getHorizontal(i);
+				 BlockPos blockpos = pos.offset(enumfacing);
+				 ItemStack itemstack = player.getHeldItem(hand);
+
+				 if (player.canPlayerEdit(pos, facing, itemstack) && player.canPlayerEdit(blockpos, facing, itemstack))
+				 {
+					 IBlockState iblockstate1 = worldIn.getBlockState(blockpos);
+					 boolean flag1 = iblockstate1.getBlock().isReplaceable(worldIn, blockpos);
+					 boolean flag2 = flag || worldIn.isAirBlock(pos);
+					 boolean flag3 = flag1 || worldIn.isAirBlock(blockpos);
+
+					 if (flag2 && flag3 && worldIn.getBlockState(pos.down()).isTopSolid() && worldIn.getBlockState(blockpos.down()).isTopSolid())
+					 {
+						 IBlockState iblockstate2 = ModCore_Urushi.BlackFuton.getDefaultState().withProperty(Futon.OCCUPIED, Boolean.valueOf(false)).withProperty(Futon.FACING, enumfacing).withProperty(Futon.PART, Futon.EnumPartType.FOOT);
+						 worldIn.setBlockState(pos, iblockstate2, 10);
+						 worldIn.setBlockState(blockpos, iblockstate2.withProperty(Futon.PART, Futon.EnumPartType.HEAD), 10);
+						 SoundType soundtype = iblockstate2.getBlock().getSoundType(iblockstate2, worldIn, pos, player);
+						 worldIn.playSound((EntityPlayer)null,pos, SoundEvents.BLOCK_CLOTH_PLACE, SoundCategory.PLAYERS, 1.0F, 1.0F);
+						 TileEntity tileentity = worldIn.getTileEntity(blockpos);
+
+						 if (tileentity instanceof TileEntityBed)
+						 {
+							 ((TileEntityBed)tileentity).setItemValues(itemstack);
+						 }
+
+						 TileEntity tileentity1 = worldIn.getTileEntity(pos);
+
+						 if (tileentity1 instanceof TileEntityBed)
+						 {
+							 ((TileEntityBed)tileentity1).setItemValues(itemstack);
+						 }
+
+						 worldIn.notifyNeighborsRespectDebug(pos, block, false);
+						 worldIn.notifyNeighborsRespectDebug(blockpos, iblockstate1.getBlock(), false);
+
+						 if (player instanceof EntityPlayerMP)
+						 {
+							 CriteriaTriggers.PLACED_BLOCK.trigger((EntityPlayerMP)player, pos, itemstack);
+						 }
+
+						 itemstack.shrink(1);
+						 return EnumActionResult.SUCCESS;
+					 }
+					 else
+					 {
+						 return EnumActionResult.FAIL;
+					 }
+				 }
+				 else
+				 {
+					 return EnumActionResult.FAIL;
+				 }
+
 			 }
+
+
+
+
+
+
+
 
 
 		}

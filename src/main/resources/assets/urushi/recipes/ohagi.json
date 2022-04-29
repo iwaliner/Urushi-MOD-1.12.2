@@ -5,10 +5,12 @@
       "item": "urushi:rice_cake"
     },
     {
-  "item": "urushi:azuki"
+       "type": "forge:ore_dict",
+      "ore": "cropRedbean"
     },
     {
-  "item": "urushi:azuki"
+       "type": "forge:ore_dict",
+      "ore": "cropRedbean"
     }
   ],
   "result": {

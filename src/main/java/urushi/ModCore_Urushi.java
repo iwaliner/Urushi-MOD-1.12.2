@@ -51,7 +51,7 @@ import urushi.TileEntity.*;
 import urushi.WorldGen.WorldProviderKakuriyo;
 
 
-@Mod(modid = "urushi", version = "alpha2.24", name = "Urushi MOD")
+@Mod(modid = "urushi", version = "alpha2.25", name = "Urushi MOD")
 public class  ModCore_Urushi {
    public static String modid="urushi";
     public static final CreativeTabs TabUrushi = new TabUrushi("TabUrushi");
@@ -129,12 +129,12 @@ public class  ModCore_Urushi {
     public static final Block SpruceShouji = new SlideDoorBase(12);
     public static final Block RedShouji = new SlideDoorBase(13);
     public static final Block ShoujiPaneOak = new PaneWall(Material.WOOD);
-     public static final Block ShoujiPaneSpruce = new PaneWall(Material.WOOD);
+    public static final Block ShoujiPaneSpruce = new PaneWall(Material.WOOD);
     public static final Block ShoujiPaneRed = new PaneWall(Material.WOOD);
     public static final Block RiceHokora = new RiceHokora();
     public static final TileEntity TileEntityRiceHokora = new TileEntityRiceHokora();
     public static final Item QuartzMagatama = new QuartzMagatama();
-   public static final Block BlankFusuma = new SlideDoorBase(30);
+    public static final Block BlankFusuma = new SlideDoorBase(30);
     public static final Block SlidingGlassDoor = new SlideDoorBase(7);
     public static final Block Bars = new Bars();
     public static final ItemBlock ItemBlockBars=new ItemBlockMetadata(Bars);
@@ -155,7 +155,7 @@ public class  ModCore_Urushi {
     public static final Block ThatchedStairs = new StairsThatched(ThatchedBlock.getDefaultState());
     public static final Block Andon = new PaperLamp();
     public static final Block AriakeAndon = new AriakeAndon();
-    public static final Block Futon = new Futon();
+    public static final Block Futon = new Futon(33);
     public static final TileEntity TileEntityFuton = new TileEntityFuton();
     public static boolean wheather_ganerate_Sakura=true;
     public static boolean wheather_ganerate_Ume=true;
@@ -202,6 +202,25 @@ public class  ModCore_Urushi {
     public static final Biome SakuraBiome=new BiomeSakuraForest();
     public static final Block UStrippedLog = new U_StrippedLog();
     public static final ItemBlock ItemBlockUStrippedLog=new ItemBlockMetadata(UStrippedLog);
+    public static final Block WhiteFuton = new Futon(38);
+    public static final Block OrangeFuton = new Futon(39);
+    public static final Block MagentaFuton = new Futon(40);
+    public static final Block LightBlueFuton = new Futon(41);
+    public static final Block YellowFuton = new Futon(42);
+    public static final Block LimeFuton = new Futon(43);
+    public static final Block PinkFuton = new Futon(44);
+    public static final Block GrayFuton = new Futon(45);
+    public static final Block LightGrayFuton = new Futon(46);
+    public static final Block CyanFuton = new Futon(47);
+    public static final Block PurpleFuton = new Futon(48);
+    public static final Block BlueFuton = new Futon(49);
+    public static final Block BrownFuton = new Futon(50);
+    public static final Block GreenFuton = new Futon(51);
+    public static final Block BlackFuton = new Futon(52);
+    public static final Block KakejikuA = new Kakejiku();
+    public static final Block KakejikuB = new Kakejiku();
+    public static final Block KakejikuC = new Kakejiku();
+    public static final Block KakejikuD = new Kakejiku();
 
 
     @EventHandler
@@ -304,6 +323,7 @@ public class  ModCore_Urushi {
         event.getRegistry().register(ItemBlockULeaves2.setRegistryName(modid, "u_leaves2"));
         event.getRegistry().register(RawTsuna.setUnlocalizedName("RawTsuna").setRegistryName("raw_tsuna").setCreativeTab(TabUrushi));
         event.getRegistry().register(ItemBlockUStrippedLog.setRegistryName(modid, "u_stripped_log"));
+        event.getRegistry().register(new ItemBlock(KakejikuA).setRegistryName(modid, "kakejiku_a"));
 
 
     }
@@ -397,6 +417,26 @@ public class  ModCore_Urushi {
         event.getRegistry().register(CropAzuki.setRegistryName(modid,"crop_azuki").setUnlocalizedName("CropAzuki"));
         event.getRegistry().register(ULeaves2.setRegistryName(modid,"u_leaves2").setUnlocalizedName("ULeaves2"));
         event.getRegistry().register(UStrippedLog.setRegistryName(modid,"u_stripped_log").setUnlocalizedName("UStrippedLog"));
+        event.getRegistry().register(WhiteFuton.setRegistryName(modid,"white_futon").setUnlocalizedName("Futon"));
+        event.getRegistry().register(OrangeFuton.setRegistryName(modid,"orange_futon").setUnlocalizedName("Futon"));
+        event.getRegistry().register(MagentaFuton.setRegistryName(modid,"magenta_futon").setUnlocalizedName("Futon"));
+        event.getRegistry().register(LightBlueFuton.setRegistryName(modid,"light_blue_futon").setUnlocalizedName("Futon"));
+        event.getRegistry().register(YellowFuton.setRegistryName(modid,"yellow_futon").setUnlocalizedName("Futon"));
+        event.getRegistry().register(LimeFuton.setRegistryName(modid,"lime_futon").setUnlocalizedName("Futon"));
+        event.getRegistry().register(PinkFuton.setRegistryName(modid,"pink_futon").setUnlocalizedName("Futon"));
+        event.getRegistry().register(GrayFuton.setRegistryName(modid,"gray_futon").setUnlocalizedName("Futon"));
+        event.getRegistry().register(LightGrayFuton.setRegistryName(modid,"light_gray_futon").setUnlocalizedName("Futon"));
+        event.getRegistry().register(CyanFuton.setRegistryName(modid,"cyan_futon").setUnlocalizedName("Futon"));
+        event.getRegistry().register(PurpleFuton.setRegistryName(modid,"purple_futon").setUnlocalizedName("Futon"));
+        event.getRegistry().register(BlueFuton.setRegistryName(modid,"blue_futon").setUnlocalizedName("Futon"));
+        event.getRegistry().register(BrownFuton.setRegistryName(modid,"brown_futon").setUnlocalizedName("Futon"));
+        event.getRegistry().register(GreenFuton.setRegistryName(modid,"green_futon").setUnlocalizedName("Futon"));
+        event.getRegistry().register(BlackFuton.setRegistryName(modid,"black_futon").setUnlocalizedName("Futon"));
+        event.getRegistry().register(KakejikuA.setRegistryName(modid,"kakejiku_a").setUnlocalizedName("CharacterKakejiku"));
+        event.getRegistry().register(KakejikuB.setRegistryName(modid,"kakejiku_b").setUnlocalizedName("CharacterKakejiku"));
+        event.getRegistry().register(KakejikuC.setRegistryName(modid,"kakejiku_c").setUnlocalizedName("CharacterKakejiku"));
+        event.getRegistry().register(KakejikuD.setRegistryName(modid,"kakejiku_d").setUnlocalizedName("CharacterKakejiku"));
+
 
     }
 
@@ -532,9 +572,8 @@ public class  ModCore_Urushi {
         ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ShoujiPaneOak), 0, new ModelResourceLocation(new ResourceLocation(modid, "shouji_pane_oak"), "inventory"));
         ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ShoujiPaneSpruce), 0, new ModelResourceLocation(new ResourceLocation(modid, "shouji_pane_spruce"), "inventory"));
         ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ShoujiPaneRed), 0, new ModelResourceLocation(new ResourceLocation(modid, "shouji_pane_red"), "inventory"));
-
         ModelLoader.setCustomModelResourceLocation(QuartzMagatama, 0, new ModelResourceLocation(new ResourceLocation(modid, "quartz_magatama"), "inventory"));
-      ModelLoader.setCustomModelResourceLocation(UItems, 14, new ModelResourceLocation(new ResourceLocation(modid, "cushion_white"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(UItems, 14, new ModelResourceLocation(new ResourceLocation(modid, "cushion_white"), "inventory"));
         ModelLoader.setCustomModelResourceLocation(UItems, 15, new ModelResourceLocation(new ResourceLocation(modid, "cushion_orange"), "inventory"));
         ModelLoader.setCustomModelResourceLocation(UItems, 16, new ModelResourceLocation(new ResourceLocation(modid, "cushion_magenta"), "inventory"));
         ModelLoader.setCustomModelResourceLocation(UItems, 17, new ModelResourceLocation(new ResourceLocation(modid, "cushion_light_blue"), "inventory"));
@@ -588,7 +627,7 @@ public class  ModCore_Urushi {
         ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(BirchShitomi), 0, new ModelResourceLocation(new ResourceLocation(modid, "birch_shitomi"), "inventory"));
         ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(JungleShitomi), 0, new ModelResourceLocation(new ResourceLocation(modid, "jungle_shitomi"), "inventory"));
         ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(AcaciaShitomi), 0, new ModelResourceLocation(new ResourceLocation(modid, "acacia_shitomi"), "inventory"));
-         ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(DarkOakShitomi), 0, new ModelResourceLocation(new ResourceLocation(modid, "dark_oak_shitomi"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(DarkOakShitomi), 0, new ModelResourceLocation(new ResourceLocation(modid, "dark_oak_shitomi"), "inventory"));
         ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(RedShitomi), 0, new ModelResourceLocation(new ResourceLocation(modid, "red_shitomi"), "inventory"));
         ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(BlackShitomi), 0, new ModelResourceLocation(new ResourceLocation(modid, "black_shitomi"), "inventory"));
         ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(JapaneseApricotShitomi), 0, new ModelResourceLocation(new ResourceLocation(modid, "japanese_apricot_shitomi"), "inventory"));
@@ -609,28 +648,42 @@ public class  ModCore_Urushi {
         ModelLoader.setCustomModelResourceLocation(Gyudon,0, new ModelResourceLocation(new ResourceLocation(modid, "gyudon"), "inventory"));
         ModelLoader.setCustomModelResourceLocation(Butadon,0, new ModelResourceLocation(new ResourceLocation(modid, "butadon"), "inventory"));
         ModelLoader.setCustomModelResourceLocation(SalmonSashimi,0, new ModelResourceLocation(new ResourceLocation(modid, "salmon_sashimi"), "inventory"));
-
-          ModelLoader.setCustomModelResourceLocation(Charm, 0, new ModelResourceLocation(new ResourceLocation(modid, "water_charm"), "inventory"));
-          ModelLoader.setCustomModelResourceLocation(Charm, 1, new ModelResourceLocation(new ResourceLocation(modid, "fasting_charm"), "inventory"));
-          ModelLoader.setCustomModelResourceLocation(Charm, 2, new ModelResourceLocation(new ResourceLocation(modid, "protection_charm"), "inventory"));
-          ModelLoader.setCustomModelResourceLocation(Charm, 3, new ModelResourceLocation(new ResourceLocation(modid, "cleanse_charm"), "inventory"));
-          ModelLoader.setCustomModelResourceLocation(Charm, 4, new ModelResourceLocation(new ResourceLocation(modid, "health_boost_charm"), "inventory"));
-          ModelLoader.setCustomModelResourceLocation(Charm, 5, new ModelResourceLocation(new ResourceLocation(modid, "mayoke_charm"), "inventory"));
-          ModelLoader.setCustomModelResourceLocation(UItems,36, new ModelResourceLocation(new ResourceLocation(modid, "blank_charm"), "inventory"));
-          ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ULeaves2), 6, new ModelResourceLocation(new ResourceLocation(modid, "lacquer_leaves"), "inventory"));
-          ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ULeaves2), 7, new ModelResourceLocation(new ResourceLocation(modid, "cypress_leaves"), "inventory"));
-          ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ChiseledLacquerLog), 0, new ModelResourceLocation(new ResourceLocation(modid, "chiseled_lacquer_log"), "inventory"));
-          ModelLoader.setCustomModelResourceLocation(RawTsuna,0, new ModelResourceLocation(new ResourceLocation(modid, "raw_tsuna"), "inventory"));
-          ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(USapling), 4, new ModelResourceLocation(new ResourceLocation(modid, "large_sakura_sapling"), "inventory"));
-          ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(LycorisRadiata), 1, new ModelResourceLocation(new ResourceLocation(modid, "indigo"), "inventory"));
-          ModelLoader.setCustomModelResourceLocation(UItems,37, new ModelResourceLocation(new ResourceLocation(modid, "cypress_bark"), "inventory"));
-          ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(UStrippedLog), 0, new ModelResourceLocation(new ResourceLocation(modid, "stripped_cypress_log"), "inventory"));
-          ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ULeaves2), 4, new ModelResourceLocation(new ResourceLocation(modid, "japanese_apricot_leaves"), "inventory"));
-          ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ULeaves2), 5, new ModelResourceLocation(new ResourceLocation(modid, "sakura_leaves"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(Charm, 0, new ModelResourceLocation(new ResourceLocation(modid, "water_charm"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(Charm, 1, new ModelResourceLocation(new ResourceLocation(modid, "fasting_charm"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(Charm, 2, new ModelResourceLocation(new ResourceLocation(modid, "protection_charm"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(Charm, 3, new ModelResourceLocation(new ResourceLocation(modid, "cleanse_charm"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(Charm, 4, new ModelResourceLocation(new ResourceLocation(modid, "health_boost_charm"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(Charm, 5, new ModelResourceLocation(new ResourceLocation(modid, "mayoke_charm"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(UItems,36, new ModelResourceLocation(new ResourceLocation(modid, "blank_charm"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ULeaves2), 6, new ModelResourceLocation(new ResourceLocation(modid, "lacquer_leaves"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ULeaves2), 7, new ModelResourceLocation(new ResourceLocation(modid, "cypress_leaves"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ChiseledLacquerLog), 0, new ModelResourceLocation(new ResourceLocation(modid, "chiseled_lacquer_log"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(RawTsuna,0, new ModelResourceLocation(new ResourceLocation(modid, "raw_tsuna"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(USapling), 4, new ModelResourceLocation(new ResourceLocation(modid, "large_sakura_sapling"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(LycorisRadiata), 1, new ModelResourceLocation(new ResourceLocation(modid, "indigo"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(UItems,37, new ModelResourceLocation(new ResourceLocation(modid, "cypress_bark"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(UStrippedLog), 0, new ModelResourceLocation(new ResourceLocation(modid, "stripped_cypress_log"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ULeaves2), 4, new ModelResourceLocation(new ResourceLocation(modid, "japanese_apricot_leaves"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ULeaves2), 5, new ModelResourceLocation(new ResourceLocation(modid, "sakura_leaves"), "inventory"));
         ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(USapling2), 0, new ModelResourceLocation(new ResourceLocation(modid, "japanese_apricot_sapling"), "inventory"));
         ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(USapling2), 1, new ModelResourceLocation(new ResourceLocation(modid, "sakura_sapling"), "inventory"));
         ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(USapling2), 2, new ModelResourceLocation(new ResourceLocation(modid, "large_sakura_sapling"), "inventory"));
-
+        ModelLoader.setCustomModelResourceLocation(UItems, 38, new ModelResourceLocation(new ResourceLocation(modid, "futon_item_white"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(UItems, 39, new ModelResourceLocation(new ResourceLocation(modid, "futon_item_orange"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(UItems, 40, new ModelResourceLocation(new ResourceLocation(modid, "futon_item_magenta"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(UItems, 41, new ModelResourceLocation(new ResourceLocation(modid, "futon_item_light_blue"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(UItems, 42, new ModelResourceLocation(new ResourceLocation(modid, "futon_item_yellow"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(UItems, 43, new ModelResourceLocation(new ResourceLocation(modid, "futon_item_lime"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(UItems, 44, new ModelResourceLocation(new ResourceLocation(modid, "futon_item_pink"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(UItems, 45, new ModelResourceLocation(new ResourceLocation(modid, "futon_item_gray"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(UItems, 46, new ModelResourceLocation(new ResourceLocation(modid, "futon_item_light_gray"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(UItems, 47, new ModelResourceLocation(new ResourceLocation(modid, "futon_item_cyan"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(UItems, 48, new ModelResourceLocation(new ResourceLocation(modid, "futon_item_purple"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(UItems, 49, new ModelResourceLocation(new ResourceLocation(modid, "futon_item_blue"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(UItems, 50, new ModelResourceLocation(new ResourceLocation(modid, "futon_item_brown"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(UItems, 51, new ModelResourceLocation(new ResourceLocation(modid, "futon_item_green"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(UItems, 52, new ModelResourceLocation(new ResourceLocation(modid, "futon_item_black"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(KakejikuA), 0, new ModelResourceLocation(new ResourceLocation(modid, "kakejiku"), "inventory"));
 
 
 
@@ -660,12 +713,19 @@ public class  ModCore_Urushi {
         OreDictionary.registerOre("treeSapling",new ItemStack(USapling,1,1));
         OreDictionary.registerOre("treeSapling",new ItemStack(USapling,1,2));
         OreDictionary.registerOre("treeSapling",new ItemStack(USapling,1,3));
+        OreDictionary.registerOre("treeSapling",new ItemStack(USapling,1,4));
+        OreDictionary.registerOre("treeSapling",new ItemStack(USapling2,1,0));
+        OreDictionary.registerOre("treeSapling",new ItemStack(USapling2,1,1));
+        OreDictionary.registerOre("treeSapling",new ItemStack(USapling2,1,2));
         OreDictionary.registerOre("treeLeaves",new ItemStack(ULeaves,1,4));
         OreDictionary.registerOre("treeLeaves",new ItemStack(ULeaves,1,5));
-        OreDictionary.registerOre("treeLeaves",new ItemStack(ULeaves,1,6));
-        OreDictionary.registerOre("treeLeaves",new ItemStack(ULeaves,1,7));
+        OreDictionary.registerOre("treeLeaves",new ItemStack(ULeaves2,1,4));
+        OreDictionary.registerOre("treeLeaves",new ItemStack(ULeaves2,1,5));
+        OreDictionary.registerOre("treeLeaves",new ItemStack(ULeaves2,1,6));
+        OreDictionary.registerOre("treeLeaves",new ItemStack(ULeaves2,1,7));
         OreDictionary.registerOre("slimeball",new ItemStack(UItems,1,8));
         OreDictionary.registerOre("sakuraLeaves",new ItemStack(ULeaves,1,5));
+        OreDictionary.registerOre("sakuraLeaves",new ItemStack(ULeaves2,1,5));
         OreDictionary.registerOre("seedRice",new ItemStack(RiceEars,1,0));
         OreDictionary.registerOre("bamboo",new ItemStack(UItems,1,0));
         OreDictionary.registerOre("stickBamboo",new ItemStack(UItems,1,0));
