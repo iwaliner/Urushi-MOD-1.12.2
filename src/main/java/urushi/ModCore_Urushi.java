@@ -9,6 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.*;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.DimensionType;
 import net.minecraft.world.biome.Biome;
@@ -51,7 +52,7 @@ import urushi.TileEntity.*;
 import urushi.WorldGen.WorldProviderKakuriyo;
 
 
-@Mod(modid = "urushi", version = "alpha2.25", name = "Urushi MOD")
+@Mod(modid = "urushi", version = "alpha2.26", name = "Urushi MOD")
 public class  ModCore_Urushi {
    public static String modid="urushi";
     public static final CreativeTabs TabUrushi = new TabUrushi("TabUrushi");
@@ -125,17 +126,17 @@ public class  ModCore_Urushi {
     public static final ItemBlock ItemBlockRiceCauldron=new ItemBlockMetadata(RiceCauldron);
     public static final TileEntity TileEntityRiceCauldron = new TileEntityRiceCauldron();
     public static final Block WattleAndDaub = new WattleAndDaub();
-    public static final Block OakShouji = new SlideDoorBase(11);
-    public static final Block SpruceShouji = new SlideDoorBase(12);
-    public static final Block RedShouji = new SlideDoorBase(13);
+    public static final Block OakShouji = new SlideDoorBase(11,BlockRenderLayer.TRANSLUCENT);
+    public static final Block SpruceShouji = new SlideDoorBase(12,BlockRenderLayer.TRANSLUCENT);
+    public static final Block RedShouji = new SlideDoorBase(13,BlockRenderLayer.TRANSLUCENT);
     public static final Block ShoujiPaneOak = new PaneWall(Material.WOOD);
     public static final Block ShoujiPaneSpruce = new PaneWall(Material.WOOD);
     public static final Block ShoujiPaneRed = new PaneWall(Material.WOOD);
     public static final Block RiceHokora = new RiceHokora();
     public static final TileEntity TileEntityRiceHokora = new TileEntityRiceHokora();
     public static final Item QuartzMagatama = new QuartzMagatama();
-    public static final Block BlankFusuma = new SlideDoorBase(30);
-    public static final Block SlidingGlassDoor = new SlideDoorBase(7);
+    public static final Block BlankFusuma = new SlideDoorBase(30,BlockRenderLayer.SOLID);
+    public static final Block SlidingGlassDoor = new SlideDoorBase(7,BlockRenderLayer.CUTOUT);
     public static final Block Bars = new Bars();
     public static final ItemBlock ItemBlockBars=new ItemBlockMetadata(Bars);
     public static final Block FramedPlaster = new FramedBlock();
@@ -221,7 +222,11 @@ public class  ModCore_Urushi {
     public static final Block KakejikuB = new Kakejiku();
     public static final Block KakejikuC = new Kakejiku();
     public static final Block KakejikuD = new Kakejiku();
-
+    public static final Block FishBowl = new FishBowl();
+    public static final Block BlankTenbukuroFusuma = new SlideMonoDoorBase(BlockRenderLayer.SOLID);
+    public static final Item KakejikuItem = new KakejikuItem();
+    public static final Block BlueSeigaihaFusuma = new SlideDoorBase(53,BlockRenderLayer.SOLID);
+    public static final Block BlueSayagataFusuma = new SlideDoorBase(54,BlockRenderLayer.SOLID);
 
     @EventHandler
     public void construct(FMLConstructionEvent event) {
@@ -324,7 +329,9 @@ public class  ModCore_Urushi {
         event.getRegistry().register(RawTsuna.setUnlocalizedName("RawTsuna").setRegistryName("raw_tsuna").setCreativeTab(TabUrushi));
         event.getRegistry().register(ItemBlockUStrippedLog.setRegistryName(modid, "u_stripped_log"));
         event.getRegistry().register(new ItemBlock(KakejikuA).setRegistryName(modid, "kakejiku_a"));
-
+        event.getRegistry().register(new ItemBlock(FishBowl).setRegistryName(modid, "golden_fish_bowl"));
+        event.getRegistry().register(new ItemBlock(BlankTenbukuroFusuma).setRegistryName(modid, "blank_tenbukuro_fusuma"));
+        event.getRegistry().register(KakejikuItem);
 
     }
 
@@ -386,7 +393,7 @@ public class  ModCore_Urushi {
         event.getRegistry().register(BlankFusuma.setRegistryName(modid,"blank_fusuma").setUnlocalizedName("BlankFusuma"));
         event.getRegistry().register(SlidingGlassDoor.setRegistryName(modid,"sliding_glass_door").setUnlocalizedName("SlidingGlassDoor"));
         event.getRegistry().register(Bars.setRegistryName(modid,"bars").setUnlocalizedName("Bars"));
-         event.getRegistry().register(FramedPlaster.setRegistryName(modid,"framed_plaster").setUnlocalizedName("FramedPlaster"));
+        event.getRegistry().register(FramedPlaster.setRegistryName(modid,"framed_plaster").setUnlocalizedName("FramedPlaster"));
         event.getRegistry().register(CopperKawaraStairs.setRegistryName(modid,"copper_kawara_stairs").setUnlocalizedName("CopperKawaraStairs"));
         event.getRegistry().register(KawaraSlabASingle.setRegistryName(modid,"kawara_slab_a_single").setUnlocalizedName("KawaraSlabASingle"));
       //  event.getRegistry().register(KawaraSlabADouble.setRegistryName(modid,"kawara_slab_a_double").setUnlocalizedName("KawaraSlabADouble"));
@@ -436,6 +443,10 @@ public class  ModCore_Urushi {
         event.getRegistry().register(KakejikuB.setRegistryName(modid,"kakejiku_b").setUnlocalizedName("CharacterKakejiku"));
         event.getRegistry().register(KakejikuC.setRegistryName(modid,"kakejiku_c").setUnlocalizedName("CharacterKakejiku"));
         event.getRegistry().register(KakejikuD.setRegistryName(modid,"kakejiku_d").setUnlocalizedName("CharacterKakejiku"));
+        event.getRegistry().register(FishBowl.setRegistryName(modid,"golden_fish_bowl").setUnlocalizedName("GoldenFishBowl"));
+        event.getRegistry().register(BlankTenbukuroFusuma.setRegistryName(modid,"blank_tenbukuro_fusuma").setUnlocalizedName("BlankTenbukuroFusuma"));
+        event.getRegistry().register(BlueSeigaihaFusuma.setRegistryName(modid,"blue_seigaiha_fusuma").setUnlocalizedName("BlueSeigaihaFusuma"));
+        event.getRegistry().register(BlueSayagataFusuma.setRegistryName(modid,"blue_sayagata_fusuma").setUnlocalizedName("BlueSayagataFusuma"));
 
 
     }
@@ -683,8 +694,25 @@ public class  ModCore_Urushi {
         ModelLoader.setCustomModelResourceLocation(UItems, 50, new ModelResourceLocation(new ResourceLocation(modid, "futon_item_brown"), "inventory"));
         ModelLoader.setCustomModelResourceLocation(UItems, 51, new ModelResourceLocation(new ResourceLocation(modid, "futon_item_green"), "inventory"));
         ModelLoader.setCustomModelResourceLocation(UItems, 52, new ModelResourceLocation(new ResourceLocation(modid, "futon_item_black"), "inventory"));
-        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(KakejikuA), 0, new ModelResourceLocation(new ResourceLocation(modid, "kakejiku"), "inventory"));
-
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(FishBowl), 0, new ModelResourceLocation(new ResourceLocation(modid, "goldfish_bowl"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(BlankTenbukuroFusuma), 0, new ModelResourceLocation(new ResourceLocation(modid, "blank_tenbukuro_fusuma"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(KakejikuItem, 0, new ModelResourceLocation(new ResourceLocation(modid, "kakejiku0"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(KakejikuItem, 1, new ModelResourceLocation(new ResourceLocation(modid, "kakejiku1"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(KakejikuItem, 2, new ModelResourceLocation(new ResourceLocation(modid, "kakejiku2"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(KakejikuItem, 3, new ModelResourceLocation(new ResourceLocation(modid, "kakejiku3"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(KakejikuItem, 4, new ModelResourceLocation(new ResourceLocation(modid, "kakejiku4"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(KakejikuItem, 5, new ModelResourceLocation(new ResourceLocation(modid, "kakejiku5"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(KakejikuItem, 6, new ModelResourceLocation(new ResourceLocation(modid, "kakejiku6"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(KakejikuItem, 7, new ModelResourceLocation(new ResourceLocation(modid, "kakejiku7"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(KakejikuItem, 8, new ModelResourceLocation(new ResourceLocation(modid, "kakejiku8"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(KakejikuItem, 9, new ModelResourceLocation(new ResourceLocation(modid, "kakejiku9"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(KakejikuItem, 10, new ModelResourceLocation(new ResourceLocation(modid, "kakejiku10"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(KakejikuItem, 11, new ModelResourceLocation(new ResourceLocation(modid, "kakejiku11"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(KakejikuItem, 12, new ModelResourceLocation(new ResourceLocation(modid, "kakejiku12"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(KakejikuItem, 13, new ModelResourceLocation(new ResourceLocation(modid, "kakejiku13"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(KakejikuItem, 14, new ModelResourceLocation(new ResourceLocation(modid, "kakejiku14"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(UItems, 53, new ModelResourceLocation(new ResourceLocation(modid, "blue_seigaiha_fusuma"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(UItems, 54, new ModelResourceLocation(new ResourceLocation(modid, "blue_sayagata_fusuma"), "inventory"));
 
 
     }

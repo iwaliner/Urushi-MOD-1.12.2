@@ -47,10 +47,10 @@ public class SlideDoorBase extends Block {
 
 
     int meta;
+BlockRenderLayer renderLayer;
 
 
-
-    public SlideDoorBase(int i) {
+    public SlideDoorBase(int i,BlockRenderLayer j) {
         super(Material.WOOD);
         this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH).withProperty(OPENCLOSE, EnumTypeSlideDoorOpen.CLOSE).withProperty(UNDERUPPER, EnumTypeSlideDoorUnderUpper.UNDER));
         setResistance(10F);
@@ -60,11 +60,12 @@ public class SlideDoorBase extends Block {
         setHarvestLevel("axe", 0);
         setSoundType(SoundType.WOOD);
         meta=i;
+        renderLayer=j;
     }
     @SideOnly(Side.CLIENT)
     public BlockRenderLayer getBlockLayer()
     {
-        return BlockRenderLayer.TRANSLUCENT;
+        return renderLayer;
     }
     public void neighborChanged(IBlockState state, World worldIn, BlockPos pos, Block blockIn, BlockPos fromPos) {
 
@@ -290,14 +291,6 @@ public class SlideDoorBase extends Block {
 
     }
 
-  /*  @Override
-    public void onBlockAdded(World worldIn, BlockPos pos, IBlockState state) {
-        EnumFacing blockFacing=state.getValue(FACING);
-        EnumTypeSlideDoorUnderUpper underUpper=state.getValue(UNDERUPPER);
-if(underUpper==EnumTypeSlideDoorUnderUpper.UNDER){
-    worldIn.setBlockState(pos.add(0,1,0),this.getDefaultState().withProperty(FACING,blockFacing).withProperty(OPENCLOSE,EnumTypeSlideDoorOpen.CLOSE).withProperty(UNDERUPPER,EnumTypeSlideDoorUnderUpper.UPPER));
-}
-    }*/
 
 
     public static enum EnumTypeSlideDoorOpen implements IStringSerializable

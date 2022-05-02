@@ -1,0 +1,21 @@
+{
+  "type": "forge:ore_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:fish"
+    },
+    {
+       "type": "forge:ore_dict",
+      "ore": "paneGlass"
+    },
+    {
+       "type": "forge:ore_dict",
+      "ore": "bucketWater"
+    }
+  ],
+  "result": {
+    "item": "urushi:golden_fish_bowl",
+     "data": 0,
+      "count": 1
+  }
+}

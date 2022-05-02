@@ -45,7 +45,7 @@ public class UItems extends Item  {
 		    {
 		       if (this.isInCreativeTab(tab))
 		        {
-		        	for(int i=0;i<53;i++) {
+		        	for(int i=0;i<55;i++) {
 
 	items.add(new ItemStack(this, 1, i));
 
@@ -158,6 +158,42 @@ public class UItems extends Item  {
 				} else {
 					worldIn.setBlockState(pos.add(0, 1, 0), ModCore_Urushi.BlankFusuma.getDefaultState().withProperty(FACING, player.getHorizontalFacing()).withProperty(SlideDoorBase.UNDERUPPER, SlideDoorBase.EnumTypeSlideDoorUnderUpper.UNDER));
 					worldIn.setBlockState(pos.add(0, 2, 0), ModCore_Urushi.BlankFusuma.getDefaultState().withProperty(FACING, player.getHorizontalFacing()).withProperty(SlideDoorBase.UNDERUPPER, SlideDoorBase.EnumTypeSlideDoorUnderUpper.UPPER));
+					player.swingArm(hand);
+					itemStack.shrink(1);
+					worldIn.playSound((EntityPlayer)null,pos, SoundEvents.BLOCK_WOOD_PLACE, SoundCategory.BLOCKS, 1.0F, 1.0F);
+
+					return EnumActionResult.SUCCESS;
+				}
+			}else if (meta == 53) {
+				if (!player.isSneaking()) {
+					worldIn.setBlockState(pos.add(0, 1, 0), ModCore_Urushi.BlueSeigaihaFusuma.getDefaultState().withProperty(FACING, player.getHorizontalFacing().getOpposite()).withProperty(SlideDoorBase.UNDERUPPER, SlideDoorBase.EnumTypeSlideDoorUnderUpper.UNDER));
+					worldIn.setBlockState(pos.add(0, 2, 0), ModCore_Urushi.BlueSeigaihaFusuma.getDefaultState().withProperty(FACING, player.getHorizontalFacing().getOpposite()).withProperty(SlideDoorBase.UNDERUPPER, SlideDoorBase.EnumTypeSlideDoorUnderUpper.UPPER));
+					player.swingArm(hand);
+					itemStack.shrink(1);
+					worldIn.playSound((EntityPlayer)null,pos, SoundEvents.BLOCK_WOOD_PLACE, SoundCategory.BLOCKS, 1.0F, 1.0F);
+
+					return EnumActionResult.SUCCESS;
+				} else {
+					worldIn.setBlockState(pos.add(0, 1, 0), ModCore_Urushi.BlueSeigaihaFusuma.getDefaultState().withProperty(FACING, player.getHorizontalFacing()).withProperty(SlideDoorBase.UNDERUPPER, SlideDoorBase.EnumTypeSlideDoorUnderUpper.UNDER));
+					worldIn.setBlockState(pos.add(0, 2, 0), ModCore_Urushi.BlueSeigaihaFusuma.getDefaultState().withProperty(FACING, player.getHorizontalFacing()).withProperty(SlideDoorBase.UNDERUPPER, SlideDoorBase.EnumTypeSlideDoorUnderUpper.UPPER));
+					player.swingArm(hand);
+					itemStack.shrink(1);
+					worldIn.playSound((EntityPlayer)null,pos, SoundEvents.BLOCK_WOOD_PLACE, SoundCategory.BLOCKS, 1.0F, 1.0F);
+
+					return EnumActionResult.SUCCESS;
+				}
+			}else if (meta == 54) {
+				if (!player.isSneaking()) {
+					worldIn.setBlockState(pos.add(0, 1, 0), ModCore_Urushi.BlueSayagataFusuma.getDefaultState().withProperty(FACING, player.getHorizontalFacing().getOpposite()).withProperty(SlideDoorBase.UNDERUPPER, SlideDoorBase.EnumTypeSlideDoorUnderUpper.UNDER));
+					worldIn.setBlockState(pos.add(0, 2, 0), ModCore_Urushi.BlueSayagataFusuma.getDefaultState().withProperty(FACING, player.getHorizontalFacing().getOpposite()).withProperty(SlideDoorBase.UNDERUPPER, SlideDoorBase.EnumTypeSlideDoorUnderUpper.UPPER));
+					player.swingArm(hand);
+					itemStack.shrink(1);
+					worldIn.playSound((EntityPlayer)null,pos, SoundEvents.BLOCK_WOOD_PLACE, SoundCategory.BLOCKS, 1.0F, 1.0F);
+
+					return EnumActionResult.SUCCESS;
+				} else {
+					worldIn.setBlockState(pos.add(0, 1, 0), ModCore_Urushi.BlueSayagataFusuma.getDefaultState().withProperty(FACING, player.getHorizontalFacing()).withProperty(SlideDoorBase.UNDERUPPER, SlideDoorBase.EnumTypeSlideDoorUnderUpper.UNDER));
+					worldIn.setBlockState(pos.add(0, 2, 0), ModCore_Urushi.BlueSayagataFusuma.getDefaultState().withProperty(FACING, player.getHorizontalFacing()).withProperty(SlideDoorBase.UNDERUPPER, SlideDoorBase.EnumTypeSlideDoorUnderUpper.UPPER));
 					player.swingArm(hand);
 					itemStack.shrink(1);
 					worldIn.playSound((EntityPlayer)null,pos, SoundEvents.BLOCK_WOOD_PLACE, SoundCategory.BLOCKS, 1.0F, 1.0F);

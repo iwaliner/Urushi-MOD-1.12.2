@@ -46,7 +46,6 @@ public class Kakejiku extends Block {
     public Kakejiku() {
         super(Material.WOOD);
         this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH).withProperty(VARIANT, EnumType.EnumType4.TypeA));
-        this.setCreativeTab(ModCore_Urushi.TabUrushi);
         setResistance(10F);
         setLightOpacity(0);
         setLightLevel(0.0F);
@@ -83,74 +82,134 @@ public class Kakejiku extends Block {
 
     @Override
     public ItemStack getItem(World worldIn, BlockPos pos, IBlockState state) {
-        return new ItemStack(ModCore_Urushi.KakejikuA);
+        return new ItemStack(ModCore_Urushi.KakejikuItem);
     }
 
     @Override
     public Item getItemDropped(IBlockState state, Random rand, int fortune) {
-        return Item.getItemFromBlock(ModCore_Urushi.KakejikuA);
+        return ModCore_Urushi.KakejikuItem;
     }
 
-    public IBlockState getStateForPlacement(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer) {
+   /* public IBlockState getStateForPlacement(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer) {
         Random random=new Random();
-        int i=12;
-        if(random.nextInt(i)==0){
-            return ModCore_Urushi.KakejikuA.getDefaultState().withProperty(VARIANT, EnumType.EnumType4.TypeA).withProperty(FACING, placer.getHorizontalFacing());
-        }else if(random.nextInt(i)==1){
-            return ModCore_Urushi.KakejikuA.getDefaultState().withProperty(VARIANT, EnumType.EnumType4.TypeB).withProperty(FACING, placer.getHorizontalFacing());
-        }else if(random.nextInt(i)==2){
-        return ModCore_Urushi.KakejikuA.getDefaultState().withProperty(VARIANT, EnumType.EnumType4.TypeC).withProperty(FACING, placer.getHorizontalFacing());
-        }else if(random.nextInt(i)==3){
-            return ModCore_Urushi.KakejikuA.getDefaultState().withProperty(VARIANT, EnumType.EnumType4.TypeD).withProperty(FACING, placer.getHorizontalFacing());
-        }else if(random.nextInt(i)==4){
-            return ModCore_Urushi.KakejikuB.getDefaultState().withProperty(VARIANT, EnumType.EnumType4.TypeA).withProperty(FACING, placer.getHorizontalFacing());
-        }else if(random.nextInt(i)==5){
-            return ModCore_Urushi.KakejikuB.getDefaultState().withProperty(VARIANT, EnumType.EnumType4.TypeB).withProperty(FACING, placer.getHorizontalFacing());
-        }else if(random.nextInt(i)==6){
-            return ModCore_Urushi.KakejikuB.getDefaultState().withProperty(VARIANT, EnumType.EnumType4.TypeC).withProperty(FACING, placer.getHorizontalFacing());
-        }else if(random.nextInt(i)==7){
-            return ModCore_Urushi.KakejikuB.getDefaultState().withProperty(VARIANT, EnumType.EnumType4.TypeD).withProperty(FACING, placer.getHorizontalFacing());
-        }else if(random.nextInt(i)==8){
-            return ModCore_Urushi.KakejikuC.getDefaultState().withProperty(VARIANT, EnumType.EnumType4.TypeA).withProperty(FACING, placer.getHorizontalFacing());
-        }else if(random.nextInt(i)==9){
-            return ModCore_Urushi.KakejikuC.getDefaultState().withProperty(VARIANT, EnumType.EnumType4.TypeB).withProperty(FACING, placer.getHorizontalFacing());
-        }else if(random.nextInt(i)==10){
-            return ModCore_Urushi.KakejikuC.getDefaultState().withProperty(VARIANT, EnumType.EnumType4.TypeC).withProperty(FACING, placer.getHorizontalFacing());
-        }else if(random.nextInt(i)==11){
-            return ModCore_Urushi.KakejikuC.getDefaultState().withProperty(VARIANT, EnumType.EnumType4.TypeD).withProperty(FACING, placer.getHorizontalFacing());
+        int i=14;
+        if(!worldIn.isRemote) {
+            if (random.nextInt(i) == 0) {
+                return ModCore_Urushi.KakejikuA.getDefaultState().withProperty(VARIANT, EnumType.EnumType4.TypeA).withProperty(FACING, placer.getHorizontalFacing());
+            } else if (random.nextInt(i) == 1) {
+                return ModCore_Urushi.KakejikuA.getDefaultState().withProperty(VARIANT, EnumType.EnumType4.TypeB).withProperty(FACING, placer.getHorizontalFacing());
+            } else if (random.nextInt(i) == 2) {
+                return ModCore_Urushi.KakejikuA.getDefaultState().withProperty(VARIANT, EnumType.EnumType4.TypeC).withProperty(FACING, placer.getHorizontalFacing());
+            } else if (random.nextInt(i) == 3) {
+                return ModCore_Urushi.KakejikuA.getDefaultState().withProperty(VARIANT, EnumType.EnumType4.TypeD).withProperty(FACING, placer.getHorizontalFacing());
+            } else if (random.nextInt(i) == 4) {
+                return ModCore_Urushi.KakejikuB.getDefaultState().withProperty(VARIANT, EnumType.EnumType4.TypeA).withProperty(FACING, placer.getHorizontalFacing());
+            } else if (random.nextInt(i) == 5) {
+                return ModCore_Urushi.KakejikuB.getDefaultState().withProperty(VARIANT, EnumType.EnumType4.TypeB).withProperty(FACING, placer.getHorizontalFacing());
+            } else if (random.nextInt(i) == 6) {
+                return ModCore_Urushi.KakejikuB.getDefaultState().withProperty(VARIANT, EnumType.EnumType4.TypeC).withProperty(FACING, placer.getHorizontalFacing());
+            } else if (random.nextInt(i) == 7) {
+                return ModCore_Urushi.KakejikuB.getDefaultState().withProperty(VARIANT, EnumType.EnumType4.TypeD).withProperty(FACING, placer.getHorizontalFacing());
+            } else if (random.nextInt(i) == 8) {
+                return ModCore_Urushi.KakejikuC.getDefaultState().withProperty(VARIANT, EnumType.EnumType4.TypeA).withProperty(FACING, placer.getHorizontalFacing());
+            } else if (random.nextInt(i) == 9) {
+                return ModCore_Urushi.KakejikuC.getDefaultState().withProperty(VARIANT, EnumType.EnumType4.TypeB).withProperty(FACING, placer.getHorizontalFacing());
+            } else if (random.nextInt(i) == 10) {
+                return ModCore_Urushi.KakejikuC.getDefaultState().withProperty(VARIANT, EnumType.EnumType4.TypeC).withProperty(FACING, placer.getHorizontalFacing());
+            } else if (random.nextInt(i) == 11) {
+                return ModCore_Urushi.KakejikuC.getDefaultState().withProperty(VARIANT, EnumType.EnumType4.TypeD).withProperty(FACING, placer.getHorizontalFacing());
+            } else if (random.nextInt(i) == 12) {
+                return ModCore_Urushi.KakejikuD.getDefaultState().withProperty(VARIANT, EnumType.EnumType4.TypeB).withProperty(FACING, placer.getHorizontalFacing());
+            } else if (random.nextInt(i) == 13) {
+                return ModCore_Urushi.KakejikuD.getDefaultState().withProperty(VARIANT, EnumType.EnumType4.TypeC).withProperty(FACING, placer.getHorizontalFacing());
+            } else {
+                return ModCore_Urushi.KakejikuD.getDefaultState().withProperty(VARIANT, EnumType.EnumType4.TypeA).withProperty(FACING, placer.getHorizontalFacing());
+            }
         }
-
-        else{
-            return ModCore_Urushi.KakejikuD.getDefaultState().withProperty(VARIANT, EnumType.EnumType4.TypeA).withProperty(FACING, placer.getHorizontalFacing());
-        }
+        return  this.getDefaultState();
 
     }
+*/
+
+
+    @Override
+    public void onBlockPlacedBy(World worldIn, BlockPos pos, IBlockState state, EntityLivingBase placer, ItemStack stack) {
+        Random random=new Random();
+        int i=14;
+        if(!worldIn.isRemote) {
+            if (random.nextInt(i) == 0) {
+                worldIn.setBlockState(pos, ModCore_Urushi.KakejikuA.getDefaultState().withProperty(VARIANT, EnumType.EnumType4.TypeA).withProperty(FACING, placer.getHorizontalFacing()));
+               worldIn.setBlockState(pos, ModCore_Urushi.KakejikuA.getDefaultState().withProperty(VARIANT, EnumType.EnumType4.TypeA).withProperty(FACING, placer.getHorizontalFacing()));
+            } else if (random.nextInt(i) == 1) {
+                worldIn.setBlockState(pos,  ModCore_Urushi.KakejikuA.getDefaultState().withProperty(VARIANT, EnumType.EnumType4.TypeB).withProperty(FACING, placer.getHorizontalFacing()));
+                worldIn.setBlockState(pos,  ModCore_Urushi.KakejikuA.getDefaultState().withProperty(VARIANT, EnumType.EnumType4.TypeB).withProperty(FACING, placer.getHorizontalFacing()));
+            } else if (random.nextInt(i) == 2) {
+                worldIn.setBlockState(pos,  ModCore_Urushi.KakejikuA.getDefaultState().withProperty(VARIANT, EnumType.EnumType4.TypeC).withProperty(FACING, placer.getHorizontalFacing()));
+
+                worldIn.setBlockState(pos,  ModCore_Urushi.KakejikuA.getDefaultState().withProperty(VARIANT, EnumType.EnumType4.TypeC).withProperty(FACING, placer.getHorizontalFacing()));
+            } else if (random.nextInt(i) == 3) {
+                worldIn.setBlockState(pos,  ModCore_Urushi.KakejikuA.getDefaultState().withProperty(VARIANT, EnumType.EnumType4.TypeD).withProperty(FACING, placer.getHorizontalFacing()));
+                worldIn.setBlockState(pos,  ModCore_Urushi.KakejikuA.getDefaultState().withProperty(VARIANT, EnumType.EnumType4.TypeD).withProperty(FACING, placer.getHorizontalFacing()));
+            } else if (random.nextInt(i) == 4) {
+                worldIn.setBlockState(pos, ModCore_Urushi.KakejikuB.getDefaultState().withProperty(VARIANT, EnumType.EnumType4.TypeA).withProperty(FACING, placer.getHorizontalFacing()));
+                worldIn.setBlockState(pos, ModCore_Urushi.KakejikuB.getDefaultState().withProperty(VARIANT, EnumType.EnumType4.TypeA).withProperty(FACING, placer.getHorizontalFacing()));
+            } else if (random.nextInt(i) == 5) {
+                worldIn.setBlockState(pos, ModCore_Urushi.KakejikuB.getDefaultState().withProperty(VARIANT, EnumType.EnumType4.TypeB).withProperty(FACING, placer.getHorizontalFacing()));
+                worldIn.setBlockState(pos, ModCore_Urushi.KakejikuB.getDefaultState().withProperty(VARIANT, EnumType.EnumType4.TypeB).withProperty(FACING, placer.getHorizontalFacing()));
+            } else if (random.nextInt(i) == 6) {
+                worldIn.setBlockState(pos, ModCore_Urushi.KakejikuB.getDefaultState().withProperty(VARIANT, EnumType.EnumType4.TypeC).withProperty(FACING, placer.getHorizontalFacing()));
+                worldIn.setBlockState(pos, ModCore_Urushi.KakejikuB.getDefaultState().withProperty(VARIANT, EnumType.EnumType4.TypeC).withProperty(FACING, placer.getHorizontalFacing()));
+            } else if (random.nextInt(i) == 7) {
+                worldIn.setBlockState(pos, ModCore_Urushi.KakejikuB.getDefaultState().withProperty(VARIANT, EnumType.EnumType4.TypeD).withProperty(FACING, placer.getHorizontalFacing()));
+                worldIn.setBlockState(pos, ModCore_Urushi.KakejikuB.getDefaultState().withProperty(VARIANT, EnumType.EnumType4.TypeD).withProperty(FACING, placer.getHorizontalFacing()));
+            } else if (random.nextInt(i) == 8) {
+                worldIn.setBlockState(pos, ModCore_Urushi.KakejikuC.getDefaultState().withProperty(VARIANT, EnumType.EnumType4.TypeA).withProperty(FACING, placer.getHorizontalFacing()));
+                worldIn.setBlockState(pos, ModCore_Urushi.KakejikuC.getDefaultState().withProperty(VARIANT, EnumType.EnumType4.TypeA).withProperty(FACING, placer.getHorizontalFacing()));
+            } else if (random.nextInt(i) == 9) {
+                worldIn.setBlockState(pos, ModCore_Urushi.KakejikuC.getDefaultState().withProperty(VARIANT, EnumType.EnumType4.TypeB).withProperty(FACING, placer.getHorizontalFacing()));
+                worldIn.setBlockState(pos, ModCore_Urushi.KakejikuC.getDefaultState().withProperty(VARIANT, EnumType.EnumType4.TypeB).withProperty(FACING, placer.getHorizontalFacing()));
+            } else if (random.nextInt(i) == 10) {
+                worldIn.setBlockState(pos, ModCore_Urushi.KakejikuC.getDefaultState().withProperty(VARIANT, EnumType.EnumType4.TypeC).withProperty(FACING, placer.getHorizontalFacing()));
+                worldIn.setBlockState(pos, ModCore_Urushi.KakejikuC.getDefaultState().withProperty(VARIANT, EnumType.EnumType4.TypeC).withProperty(FACING, placer.getHorizontalFacing()));
+            } else if (random.nextInt(i) == 11) {
+                worldIn.setBlockState(pos, ModCore_Urushi.KakejikuC.getDefaultState().withProperty(VARIANT, EnumType.EnumType4.TypeD).withProperty(FACING, placer.getHorizontalFacing()));
+                worldIn.setBlockState(pos, ModCore_Urushi.KakejikuC.getDefaultState().withProperty(VARIANT, EnumType.EnumType4.TypeD).withProperty(FACING, placer.getHorizontalFacing()));
+            } else if (random.nextInt(i) == 12) {
+                worldIn.setBlockState(pos, ModCore_Urushi.KakejikuD.getDefaultState().withProperty(VARIANT, EnumType.EnumType4.TypeB).withProperty(FACING, placer.getHorizontalFacing()));
+                worldIn.setBlockState(pos, ModCore_Urushi.KakejikuD.getDefaultState().withProperty(VARIANT, EnumType.EnumType4.TypeB).withProperty(FACING, placer.getHorizontalFacing()));
+            } else if (random.nextInt(i) == 13) {
+                worldIn.setBlockState(pos, ModCore_Urushi.KakejikuD.getDefaultState().withProperty(VARIANT, EnumType.EnumType4.TypeC).withProperty(FACING, placer.getHorizontalFacing()));
+                worldIn.setBlockState(pos, ModCore_Urushi.KakejikuD.getDefaultState().withProperty(VARIANT, EnumType.EnumType4.TypeC).withProperty(FACING, placer.getHorizontalFacing()));
+            } else {
+                worldIn.setBlockState(pos, ModCore_Urushi.KakejikuD.getDefaultState().withProperty(VARIANT, EnumType.EnumType4.TypeA).withProperty(FACING, placer.getHorizontalFacing()));
+                worldIn.setBlockState(pos, ModCore_Urushi.KakejikuD.getDefaultState().withProperty(VARIANT, EnumType.EnumType4.TypeA).withProperty(FACING, placer.getHorizontalFacing()));
+            }
+        }
+    }
+
 
 
     public IBlockState getStateFromMeta(int meta) {
+        if(meta>11){return this.getDefaultState().withProperty(FACING, EnumFacing.getHorizontal(meta%4)).withProperty(VARIANT, EnumType.EnumType4.TypeD);}
+      else  if(meta>7){return this.getDefaultState().withProperty(FACING, EnumFacing.getHorizontal(meta%4)).withProperty(VARIANT, EnumType.EnumType4.TypeC);}
+        else  if(meta>3){return this.getDefaultState().withProperty(FACING, EnumFacing.getHorizontal(meta%4)).withProperty(VARIANT, EnumType.EnumType4.TypeB);}
+        else  {return this.getDefaultState().withProperty(FACING, EnumFacing.getHorizontal(meta%4)).withProperty(VARIANT, EnumType.EnumType4.TypeA);}
 
-        return meta>3? this.getDefaultState().withProperty(FACING, EnumFacing.getHorizontal(meta%4)).withProperty(VARIANT, EnumType.EnumType4.TypeB):this.getDefaultState().withProperty(FACING, EnumFacing.getHorizontal(meta%4)).withProperty(VARIANT, EnumType.EnumType4.TypeA);
     }
 
     public int getMetaFromState(IBlockState state) {
         return ((EnumFacing) state.getValue(FACING)).getHorizontalIndex()+4*((EnumType.EnumType4) state.getValue(VARIANT)).getMetadata();
     }
 
-    /**
-     * Returns the blockstate with the given rotation from the passed blockstate. If inapplicable, returns the passed
-     * blockstate.
-     */
+ /*
     public IBlockState withRotation(IBlockState state, Rotation rot) {
         return state.withProperty(FACING, rot.rotate((EnumFacing) state.getValue(FACING)));
     }
 
-    /**
-     * Returns the blockstate with the given mirror of the passed blockstate. If inapplicable, returns the passed
-     * blockstate.
-     */
+
     public IBlockState withMirror(IBlockState state, Mirror mirrorIn) {
         return state.withRotation(mirrorIn.toRotation((EnumFacing) state.getValue(FACING)));
-    }
+    }*/
 
 
     protected BlockStateContainer createBlockState() {
