@@ -277,3 +277,7 @@ item.Kakejiku.name=文字の掛け軸
 tile.GoldenFishBowl.name=金魚鉢
 tile.BlankTenbukuroFusuma.name=天袋の無地のふすま
 item.info.kakejiku=シフトで設置
+item.Wagasa.name=蛇の目傘
+item.info.wagasa=落下ダメージをゼロにする
+item.UItems.53.name=空色の青海波のふすま
+item.UItems.54.name=空色の紗綾形のふすま

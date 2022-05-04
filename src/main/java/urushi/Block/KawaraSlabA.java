@@ -112,7 +112,7 @@ public abstract class KawaraSlabA extends BlockSlab
             }else if(meta<8){
                 return  this.getDefaultState().withProperty(HALF,EnumBlockHalf.BOTTOM).withProperty(VARIANT, EnumType.EnumType2.TypeB).withProperty(FACING,EnumFacing.getHorizontal(meta-4));
             }else if(meta<12){
-                return  this.getDefaultState().withProperty(HALF,EnumBlockHalf.TOP).withProperty(VARIANT, EnumType.EnumType2.TypeB).withProperty(FACING,EnumFacing.getHorizontal(meta-8));
+                return  this.getDefaultState().withProperty(HALF,EnumBlockHalf.TOP).withProperty(VARIANT, EnumType.EnumType2.TypeA).withProperty(FACING,EnumFacing.getHorizontal(meta-8));
             }else{
                 return  this.getDefaultState().withProperty(HALF,EnumBlockHalf.TOP).withProperty(VARIANT, EnumType.EnumType2.TypeB).withProperty(FACING,EnumFacing.getHorizontal(meta-12));
             }

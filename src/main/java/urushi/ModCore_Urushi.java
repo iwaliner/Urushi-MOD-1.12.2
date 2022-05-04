@@ -52,7 +52,7 @@ import urushi.TileEntity.*;
 import urushi.WorldGen.WorldProviderKakuriyo;
 
 
-@Mod(modid = "urushi", version = "alpha2.26", name = "Urushi MOD")
+@Mod(modid = "urushi", version = "alpha2.27", name = "Urushi MOD")
 public class  ModCore_Urushi {
    public static String modid="urushi";
     public static final CreativeTabs TabUrushi = new TabUrushi("TabUrushi");
@@ -227,6 +227,7 @@ public class  ModCore_Urushi {
     public static final Item KakejikuItem = new KakejikuItem();
     public static final Block BlueSeigaihaFusuma = new SlideDoorBase(53,BlockRenderLayer.SOLID);
     public static final Block BlueSayagataFusuma = new SlideDoorBase(54,BlockRenderLayer.SOLID);
+    public static final Item Wagasa = new Wagasa();
 
     @EventHandler
     public void construct(FMLConstructionEvent event) {
@@ -332,6 +333,7 @@ public class  ModCore_Urushi {
         event.getRegistry().register(new ItemBlock(FishBowl).setRegistryName(modid, "golden_fish_bowl"));
         event.getRegistry().register(new ItemBlock(BlankTenbukuroFusuma).setRegistryName(modid, "blank_tenbukuro_fusuma"));
         event.getRegistry().register(KakejikuItem);
+        event.getRegistry().register(Wagasa);
 
     }
 
@@ -713,6 +715,8 @@ public class  ModCore_Urushi {
         ModelLoader.setCustomModelResourceLocation(KakejikuItem, 14, new ModelResourceLocation(new ResourceLocation(modid, "kakejiku14"), "inventory"));
         ModelLoader.setCustomModelResourceLocation(UItems, 53, new ModelResourceLocation(new ResourceLocation(modid, "blue_seigaiha_fusuma"), "inventory"));
         ModelLoader.setCustomModelResourceLocation(UItems, 54, new ModelResourceLocation(new ResourceLocation(modid, "blue_sayagata_fusuma"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(Wagasa, 0, new ModelResourceLocation(new ResourceLocation(modid, "wagasa"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(Wagasa, 1, new ModelResourceLocation(new ResourceLocation(modid, "wagasa_closed"), "inventory"));
 
 
     }
@@ -839,8 +843,6 @@ public class  ModCore_Urushi {
                    return new RenderCushion(manager);
                }
            });
-
-
        }
     }
     @Mod.EventHandler
@@ -858,7 +860,6 @@ public class  ModCore_Urushi {
             GameRegistry.addSmelting(new ItemStack(UItems, 1, 5), new ItemStack(Rice, 1, 0), 5F);
             GameRegistry.addSmelting(new ItemStack(Mochi, 1, 0), new ItemStack(YakiMochi, 1, 0), 5F);
             GameRegistry.addSmelting(new ItemStack(UItems, 1, 35), new ItemStack(FermentationPot, 1, 0), 5F);
-
         }
 
         /**バイオームを追加*/

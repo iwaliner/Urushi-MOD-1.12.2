@@ -258,10 +258,12 @@ renderLayer=j;
                 if (flag) {
                     if (state.getValue(OPENCLOSE) == EnumTypeSlideDoorOpen.CLOSE) {
                         worldIn.setBlockState(pos, this.getDefaultState().withProperty(FACING, enumfacing).withProperty(OPENCLOSE, EnumTypeSlideDoorOpen.OPEN));
+                        worldIn.playEvent(null, 1007, pos, 0);
                      }
                 } else if (blockIn.getDefaultState().canProvidePower() ) {
                     if (state.getValue(OPENCLOSE) == EnumTypeSlideDoorOpen.OPEN) {
                         worldIn.setBlockState(pos, this.getDefaultState().withProperty(FACING, enumfacing).withProperty(OPENCLOSE, EnumTypeSlideDoorOpen.CLOSE));
+                        worldIn.playEvent(null, 1013, pos, 0);
                     }
 
 

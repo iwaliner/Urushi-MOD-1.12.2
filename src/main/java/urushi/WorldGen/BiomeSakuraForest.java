@@ -2,10 +2,12 @@ package urushi.WorldGen;
 
 import net.minecraft.block.BlockDoublePlant;
 import net.minecraft.block.BlockFlower;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.monster.EntityEnderman;
 import net.minecraft.entity.passive.EntityRabbit;
 import net.minecraft.entity.passive.EntityWolf;
 import net.minecraft.init.Blocks;
+import net.minecraft.util.WeightedRandom;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
@@ -39,7 +41,7 @@ this.spawnableCreatureList.add(new SpawnListEntry(EntityEnderman.class,5,10,10))
             this.decorator.flowersPerChunk = 100;
             this.decorator.grassPerChunk = 1;
             this.spawnableCreatureList.add(new SpawnListEntry(EntityRabbit.class, 4, 2, 3));
-
+            this.addDefaultFlowers();
           //  this.flowers.clear();
 
 
@@ -60,10 +62,37 @@ this.spawnableCreatureList.add(new SpawnListEntry(EntityEnderman.class,5,10,10))
 
     }
 
-    @Override
+   /* @Override
     public void addDefaultFlowers() {
-        this.addFlower(ModCore_Urushi.LycorisRadiata.getStateFromMeta(0),20);
+        this.addFlower(ModCore_Urushi.LycorisRadiata.getStateFromMeta(0),10);
         this.addFlower(ModCore_Urushi.LycorisRadiata.getStateFromMeta(1),10);
+    }*/
+    public BlockFlower.EnumFlowerType pickRandomFlower(Random rand, BlockPos pos)
+    {
+        return BlockFlower.EnumFlowerType.HOUSTONIA ;
+    }
+    /**草ブロックに骨粉を使って出る花*/
+    public void addFlower(IBlockState state, int weight)
+    {
+        this.flowers.add(new FlowerEntry(ModCore_Urushi.LycorisRadiata.getStateFromMeta(0), 30));
+        this.flowers.add(new FlowerEntry(ModCore_Urushi.LycorisRadiata.getStateFromMeta(1), 10));
+    }
+
+    public void plantFlower(World world, Random rand, BlockPos pos)
+    {
+        if (flowers.isEmpty()) return;
+        FlowerEntry flower = (FlowerEntry) WeightedRandom.getRandomItem(rand, flowers);
+        if (flower == null || flower.state == null ||
+                (flower.state.getBlock() instanceof net.minecraft.block.BlockBush &&
+                        !((net.minecraft.block.BlockBush)flower.state.getBlock()).canBlockStay(world, pos, flower.state)))
+        {
+            return;
+        }
+        if(flower.state.getBlock()!=ModCore_Urushi.LycorisRadiata){
+            return;
+        }
+
+        world.setBlockState(pos, flower.state, 3);
     }
 /*  public BlockFlower.EnumFlowerType pickRandomFlower(Random rand, BlockPos pos)
     {

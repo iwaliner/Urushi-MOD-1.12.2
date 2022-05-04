@@ -133,11 +133,13 @@ BlockRenderLayer renderLayer;
                     if (state.getValue(OPENCLOSE) == EnumTypeSlideDoorOpen.CLOSE) {
                         worldIn.setBlockState(pos, this.getDefaultState().withProperty(FACING, enumfacing).withProperty(OPENCLOSE, EnumTypeSlideDoorOpen.OPEN).withProperty(UNDERUPPER, underUpper));
                         worldIn.setBlockState(pos1, this.getDefaultState().withProperty(FACING, enumfacing).withProperty(OPENCLOSE, EnumTypeSlideDoorOpen.OPEN).withProperty(UNDERUPPER, underUpper2));
+                        worldIn.playEvent(null, 1007, pos, 0);
                     }
                 } else if (blockIn.getDefaultState().canProvidePower() || worldIn.getBlockState(blockpos1).getBlock().getDefaultState().canProvidePower()) {
                     if (state.getValue(OPENCLOSE) == EnumTypeSlideDoorOpen.OPEN) {
                         worldIn.setBlockState(pos, this.getDefaultState().withProperty(FACING, enumfacing).withProperty(OPENCLOSE, EnumTypeSlideDoorOpen.CLOSE).withProperty(UNDERUPPER, underUpper));
                         worldIn.setBlockState(pos1, this.getDefaultState().withProperty(FACING, enumfacing).withProperty(OPENCLOSE, EnumTypeSlideDoorOpen.CLOSE).withProperty(UNDERUPPER, underUpper2));
+                        worldIn.playEvent(null, 1013, pos, 0);
                     }
                 }
             }

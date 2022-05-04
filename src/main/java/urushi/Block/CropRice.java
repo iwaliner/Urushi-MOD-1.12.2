@@ -6,10 +6,13 @@ import net.minecraft.block.SoundType;
 import net.minecraft.block.properties.PropertyInteger;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.EnumFacing;
+import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
@@ -29,8 +32,6 @@ public class CropRice extends BlockCrops
         this.setSoundType(SoundType.PLANT);
         this.disableStats();
     }
-   // private static final AxisAlignedBB[] CARROT_AABB = new AxisAlignedBB[] {new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.125D, 1.0D), new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.1875D, 1.0D), new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.25D, 1.0D), new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.3125D, 1.0D), new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.375D, 1.0D), new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.4375D, 1.0D), new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.5D, 1.0D), new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.5625D, 1.0D)};
-
     protected Item getSeed()
     {
         return ModCore_Urushi.RiceEars;
@@ -41,10 +42,7 @@ public class CropRice extends BlockCrops
         return ModCore_Urushi.RiceEars;
     }
 
-   // public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos)
-   // {
-  //      return CARROT_AABB[((Integer)state.getValue(this.getAgeProperty())).intValue()];
-  //  }
+
 
     protected boolean canSustainBush(IBlockState state)
     {
@@ -55,6 +53,16 @@ public class CropRice extends BlockCrops
         return 4;
     }
 
-
+    @Override
+    public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
+        if(!worldIn.isRemote){
+            if(state.getValue(this.getAgeProperty())==4) {
+                state.getBlock().dropBlockAsItem(worldIn,pos,state,0);
+                worldIn.setBlockState(pos,this.getDefaultState());
+                return true;
+            }
+        }
+        return false;
+    }
 
 }

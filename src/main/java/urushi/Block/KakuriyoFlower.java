@@ -146,26 +146,9 @@ public class KakuriyoFlower extends BlockRedFlower implements  IGrowable,net.min
     	       items.add(new ItemStack(this,1,i));
     	    	}
     }
-   /* public int damageDropped(IBlockState state) {
-        return ((EnumType.EnumType2) state.getValue(VARIANT)).getMetadata();
-    }
-    public IBlockState getStateFromMeta(int meta) {
-        return this.getDefaultState().withProperty(VARIANT,EnumType.EnumType2.byMetadata(meta));
-    }
 
 
 
-    public int getMetaFromState(IBlockState state) {
-        return ((EnumType.EnumType2) state.getValue(VARIANT)).getMetadata();
-    }
 
-    protected BlockStateContainer createBlockState() {
-        return new BlockStateContainer(this, new IProperty[]{VARIANT});
-    }
-    public ItemStack getItem(World worldIn, BlockPos pos, IBlockState state)
-    {
-        int meta = ((EnumType.EnumType2) state.getValue(VARIANT)).getMetadata();
-        return new ItemStack(ModCore_Urushi.LycorisRadiata, 1, ((EnumType.EnumType2)state.getValue(VARIANT)).getMetadata());
-    }*/
 
 }

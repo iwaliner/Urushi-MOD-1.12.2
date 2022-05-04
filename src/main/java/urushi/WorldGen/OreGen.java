@@ -24,6 +24,8 @@ public class OreGen implements IWorldGenerator{
 	private final WorldGenerator genLacquerTrees=new WorldGenLacquerTrees(false);
 	private final WorldGenerator genBamboo=new WorldGenBamboo();
 	private final WorldGenerator genCypressTrees=new WorldGenCypressTrees(false);
+	private final WorldGenerator genLycoris=new WorldGenLycoris();
+	private final WorldGenerator genIndigo=new WorldGenIndigo();
 
 	@Override
 	public void generate(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator,
@@ -35,7 +37,8 @@ if(ModCore_Urushi.wheather_ganerate_CopperOre){  runGenCopper(random,chunkX,chun
 		if(ModCore_Urushi.wheather_ganerate_Urushi){	generate(genLacquerTrees,world,random,chunkX,chunkZ,8,0,240,4);}
 		if(ModCore_Urushi.wheather_ganerate_Bamboo){	generate(genBamboo,world,random,chunkX,chunkZ,3,0,240,18);}
 		if(ModCore_Urushi.wheather_ganerate_Cypress){	generate(genCypressTrees,world,random,chunkX,chunkZ,8,0,240,3);}
-
+		generateInKakuriyo(genLycoris,world,random,chunkX,chunkZ,40,0,240);
+		generateInKakuriyo(genIndigo,world,random,chunkX,chunkZ,20,0,240);
 	}
 	private void runGenCopper(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator,
 			IChunkProvider chunkProvider) {
@@ -68,7 +71,20 @@ if(ModCore_Urushi.wheather_ganerate_CopperOre){  runGenCopper(random,chunkX,chun
 		}
 	}
 
+	private void generateInKakuriyo(WorldGenerator generator, World world, Random random, int chunkX, int chunkZ,double chancesToSpawn, int minY, int maxY) {
+		if(chancesToSpawn<1){
+			if(random.nextDouble()<chancesToSpawn) chancesToSpawn=1;
+			else chancesToSpawn=0;
+		}
+		int hightDiff=maxY-minY+1;
+		for(int i=0; i<chancesToSpawn;i++){
+			BlockPos pos=new BlockPos(chunkX*16+10+random.nextInt(15),minY+random.nextInt(hightDiff),chunkZ*16+10+random.nextInt(15));
 
+			if(minY<0) pos=world.getHeight(pos);
+
+			if(world.provider.getDimension()==ModCore_Urushi.KakuriyoDimensionID) generator.generate(world,random,pos);
+		}
+	}
 
 
 
