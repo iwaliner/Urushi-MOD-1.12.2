@@ -886,6 +886,150 @@
         
         
         
+        
+        
+        {   "when": { "north": "false","south": "false","east": "false","west": "false","upper": "false","under": "false","variant": "type_h"},
+            "apply": { "model": "urushi:plaster_sakura_0", "uvlock": true }
+        },
+        {   "when": {"north": "false","south": "false","east": "false","west": "false","upper": "false","under": "true","variant": "type_h"},
+            "apply": { "model": "urushi:plaster_sakura_1", "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "false","east": "false","west": "false","upper": "true","under": "false","variant": "type_h"},
+            "apply": { "model": "urushi:plaster_sakura_2", "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "false","east": "false","west": "false","upper": "true","under": "true","variant": "type_h"},
+            "apply": { "model": "urushi:plaster_sakura_3", "uvlock": true }
+        },
+       {   "when": { "north": "true","south": "false","east": "false","west": "false","upper": "false","under": "false","variant": "type_h"},
+            "apply": { "model": "urushi:plaster_sakura_4", "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "true","east": "false","west": "false","upper": "false","under": "false","variant": "type_h"},
+            "apply": { "model": "urushi:plaster_sakura_4", "y": 180, "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "false","east": "true","west": "false","upper": "false","under": "false","variant": "type_h"},
+            "apply": { "model": "urushi:plaster_sakura_4", "y": 90, "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "false","east": "false","west": "true","upper": "false","under": "false","variant": "type_h"},
+            "apply": { "model": "urushi:plaster_sakura_4", "y": 270, "uvlock": true }
+        },
+         {   "when": { "north": "true","south": "true","upper": "false","under": "false","variant": "type_h"},
+            "apply": { "model": "urushi:plaster_sakura_5", "uvlock": true }
+        },
+        {   "when": { "east": "true","west": "true","upper": "false","under": "false","variant": "type_h"},
+            "apply": { "model": "urushi:plaster_sakura_5", "y": 90, "uvlock": true }
+        },
+        {   "when": { "north": "true","south": "false","east": "false","west": "false","upper": "true","under": "false","variant": "type_h"},
+            "apply": { "model": "urushi:plaster_sakura_6", "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "true","east": "false","west": "false","upper": "true","under": "false","variant": "type_h"},
+            "apply": { "model": "urushi:plaster_sakura_6", "y": 180, "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "false","east": "true","west": "false","upper": "true","under": "false","variant": "type_h"},
+            "apply": { "model": "urushi:plaster_sakura_6", "y": 90, "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "false","east": "false","west": "true","upper": "true","under": "false","variant": "type_h"},
+            "apply": { "model": "urushi:plaster_sakura_6", "y": 270, "uvlock": true }
+        },
+        {   "when": { "north": "true","south": "false","east": "false","west": "false","upper": "false","under": "true","variant": "type_h"},
+            "apply": { "model": "urushi:plaster_sakura_7", "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "true","east": "false","west": "false","upper": "false","under": "true","variant": "type_h"},
+            "apply": { "model": "urushi:plaster_sakura_7", "y": 180, "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "false","east": "true","west": "false","upper": "false","under": "true","variant": "type_h"},
+            "apply": { "model": "urushi:plaster_sakura_7", "y": 90, "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "false","east": "false","west": "true","upper": "false","under": "true","variant": "type_h"},
+            "apply": { "model": "urushi:plaster_sakura_7", "y": 270, "uvlock": true }
+        },
+        {   "when": { "north": "true","south": "false","east": "false","west": "false","upper": "true","under": "true","variant": "type_h"},
+            "apply": { "model": "urushi:plaster_sakura_8",  "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "true","east": "false","west": "false","upper": "true","under": "true","variant": "type_h"},
+            "apply": { "model": "urushi:plaster_sakura_8", "y": 180, "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "false","east": "true","west": "false","upper": "true","under": "true","variant": "type_h"},
+            "apply": { "model": "urushi:plaster_sakura_8", "y": 90, "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "false","east": "false","west": "true","upper": "true","under": "true","variant": "type_h"},
+            "apply": { "model": "urushi:plaster_sakura_8", "y":270, "uvlock": true }
+        },
+        {   "when": { "north": "true","south": "true","upper": "true","under": "false","variant": "type_h"},
+            "apply": { "model": "urushi:plaster_sakura_9",  "uvlock": true }
+        },
+        {   "when": { "east": "true","west": "true","upper": "true","under": "false","variant": "type_h"},
+            "apply": { "model": "urushi:plaster_sakura_9", "y": 90,  "uvlock": true }
+        },
+        {   "when": { "north": "true","south": "true","upper": "false","under": "true","variant": "type_h"},
+            "apply": { "model": "urushi:plaster_sakura_10",  "uvlock": true }
+        },
+        {   "when": { "east": "true","west": "true","upper": "false","under": "true","variant": "type_h"},
+            "apply": { "model": "urushi:plaster_sakura_10", "y": 90,  "uvlock": true }
+        },
+      
+        {   "when": { "north": "true","south": "false","east": "false","west": "true","upper": "false","under": "false","variant": "type_h"},
+            "apply": { "model": "urushi:plaster_sakura_12",  "uvlock": true }
+        },
+        {   "when": { "north": "true","south": "false","east": "true","west": "false","upper": "false","under": "false","variant": "type_h"},
+            "apply": { "model": "urushi:plaster_sakura_12", "y": 90,  "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "true","east": "true","west": "false","upper": "false","under": "false","variant": "type_h"},
+            "apply": { "model": "urushi:plaster_sakura_12", "y": 180,  "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "true","east": "false","west": "true","upper": "false","under": "false","variant": "type_h"},
+            "apply": { "model": "urushi:plaster_sakura_12", "y": 270,  "uvlock": true }
+        },
+        
+        {   "when": { "north": "true","south": "false","east": "false","west": "true","upper": "true","under": "false","variant": "type_h"},
+            "apply": { "model": "urushi:plaster_sakura_13",  "uvlock": true }
+        },
+        {   "when": { "north": "true","south": "false","east": "true","west": "false","upper": "true","under": "false","variant": "type_h"},
+            "apply": { "model": "urushi:plaster_sakura_13", "y": 90,  "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "true","east": "true","west": "false","upper": "true","under": "false","variant": "type_h"},
+            "apply": { "model": "urushi:plaster_sakura_13", "y": 180,  "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "true","east": "false","west": "true","upper": "true","under": "false","variant": "type_h"},
+            "apply": { "model": "urushi:plaster_sakura_13", "y": 270,  "uvlock": true }
+        },
+        
+        {   "when": { "north": "true","south": "false","east": "false","west": "true","upper": "false","under": "true","variant": "type_h"},
+            "apply": { "model": "urushi:plaster_sakura_14",  "uvlock": true }
+        },
+        {   "when": { "north": "true","south": "false","east": "true","west": "false","upper": "false","under": "true","variant": "type_h"},
+            "apply": { "model": "urushi:plaster_sakura_14", "y": 90,  "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "true","east": "true","west": "false","upper": "false","under": "true","variant": "type_h"},
+            "apply": { "model": "urushi:plaster_sakura_14", "y": 180,  "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "true","east": "false","west": "true","upper": "false","under": "true","variant": "type_h"},
+            "apply": { "model": "urushi:plaster_sakura_14", "y": 270,  "uvlock": true }
+        },
+        
+        
+        
+        {   "when": { "north": "true","south": "true","east": "true","west": "true","variant": "type_h"},
+            "apply": { "model": "urushi:sakura_smooth_planks",  "uvlock": true }
+        },
+        
+        {   "when": { "north": "true","south": "false","east": "false","west": "true","upper": "true","under": "true","variant": "type_h"},
+            "apply": { "model": "urushi:plaster_sakura_15",  "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "true","east": "true","west": "false","upper": "true","under": "true","variant": "type_h"},
+            "apply": { "model": "urushi:plaster_sakura_15", "y": 180,  "uvlock": true }
+        },
+        {   "when": { "north": "true","south": "false","east": "true","west": "false","upper": "true","under": "true","variant": "type_h"},
+            "apply": { "model": "urushi:plaster_sakura_15", "y": 90,  "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "true","east": "false","west": "true","upper": "true","under": "true","variant": "type_h"},
+            "apply": { "model": "urushi:plaster_sakura_15", "y": 270,  "uvlock": true }
+        },
+        
+        
+        
+        
+        
+        
         {   "when": { "north": "false","south": "false","east": "false","west": "false","upper": "false","under": "false","variant": "type_g"},
             "apply": { "model": "urushi:plaster_dark_oak_0", "uvlock": true }
         },

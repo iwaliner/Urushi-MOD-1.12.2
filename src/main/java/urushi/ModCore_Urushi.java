@@ -3,9 +3,11 @@ package urushi;
 
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderManager;
+import net.minecraft.client.renderer.entity.RenderSnowball;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.*;
 import net.minecraft.tileentity.TileEntity;
@@ -13,15 +15,15 @@ import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.DimensionType;
 import net.minecraft.world.biome.Biome;
-import net.minecraft.world.biome.BiomeOcean;
+import net.minecraft.world.storage.loot.LootTableList;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.BiomeDictionary;
-import net.minecraftforge.common.BiomeManager;
 import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.common.config.Property;
+import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.event.LootTableLoadEvent;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.client.registry.IRenderFactory;
@@ -41,6 +43,11 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 import urushi.Block.*;
 import urushi.Else.EnumType;
+import urushi.Entity.EntityOni;
+import urushi.Entity.EntityOniGirl;
+import urushi.Entity.EntityOnibi;
+import urushi.Render.RenderOni;
+import urushi.Render.RenderOniGirl;
 import urushi.WorldGen.BiomeSakuraForest;
 import urushi.WorldGen.OreGen;
 import urushi.Else.TabUrushi;
@@ -52,7 +59,7 @@ import urushi.TileEntity.*;
 import urushi.WorldGen.WorldProviderKakuriyo;
 
 
-@Mod(modid = "urushi", version = "alpha2.27", name = "Urushi MOD")
+@Mod(modid = "urushi", version = "alpha2.28", name = "Urushi MOD")
 public class  ModCore_Urushi {
    public static String modid="urushi";
     public static final CreativeTabs TabUrushi = new TabUrushi("TabUrushi");
@@ -228,6 +235,18 @@ public class  ModCore_Urushi {
     public static final Block BlueSeigaihaFusuma = new SlideDoorBase(53,BlockRenderLayer.SOLID);
     public static final Block BlueSayagataFusuma = new SlideDoorBase(54,BlockRenderLayer.SOLID);
     public static final Item Wagasa = new Wagasa();
+    public static int EntityCushionID=0;
+    public static int EntityRedOniID=180;
+    public static int EntityOniGirlID=181;
+    public static int EntityOnibiID=182;
+   // public static ResourceLocation ONI_GIRL = new ResourceLocation(modid, "oni_girl");
+    public static ResourceLocation RED_ONI = new ResourceLocation("urushi:red_oni");
+    public static final Item.ToolMaterial MetalClubMaterial= EnumHelper.addToolMaterial("metal_club", 0, 81, 0F, 4F, 2);
+    public static final Item MetalClub = new MetalClub(MetalClubMaterial);
+    public static final Block Onibi = new Onibi();
+    public static final Item ItemOnibi=new ItemOnibi();
+    public static int range_of_onibi=24;
+
 
     @EventHandler
     public void construct(FMLConstructionEvent event) {
@@ -334,6 +353,8 @@ public class  ModCore_Urushi {
         event.getRegistry().register(new ItemBlock(BlankTenbukuroFusuma).setRegistryName(modid, "blank_tenbukuro_fusuma"));
         event.getRegistry().register(KakejikuItem);
         event.getRegistry().register(Wagasa);
+        event.getRegistry().register(MetalClub);
+        event.getRegistry().register(ItemOnibi);
 
     }
 
@@ -449,6 +470,7 @@ public class  ModCore_Urushi {
         event.getRegistry().register(BlankTenbukuroFusuma.setRegistryName(modid,"blank_tenbukuro_fusuma").setUnlocalizedName("BlankTenbukuroFusuma"));
         event.getRegistry().register(BlueSeigaihaFusuma.setRegistryName(modid,"blue_seigaiha_fusuma").setUnlocalizedName("BlueSeigaihaFusuma"));
         event.getRegistry().register(BlueSayagataFusuma.setRegistryName(modid,"blue_sayagata_fusuma").setUnlocalizedName("BlueSayagataFusuma"));
+        event.getRegistry().register(Onibi.setRegistryName(modid,"onibi_block").setUnlocalizedName("Onibi"));
 
 
     }
@@ -618,6 +640,7 @@ public class  ModCore_Urushi {
         ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(FramedPlaster), 4, new ModelResourceLocation(new ResourceLocation(modid, "jungle_framed_plaster"), "inventory"));
         ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(FramedPlaster), 5, new ModelResourceLocation(new ResourceLocation(modid, "acacia_framed_plaster"), "inventory"));
         ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(FramedPlaster), 6, new ModelResourceLocation(new ResourceLocation(modid, "dark_oak_framed_plaster"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(FramedPlaster), 7, new ModelResourceLocation(new ResourceLocation(modid, "sakura_framed_plaster"), "inventory"));
         ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(CopperKawaraStairs), 0, new ModelResourceLocation(new ResourceLocation(modid, "copper_kawara_stairs"), "inventory"));
         ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(KawaraSlabASingle), 0, new ModelResourceLocation(new ResourceLocation(modid, "ibushi_kawara_slab"), "inventory"));
         ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(KawaraSlabASingle), 4, new ModelResourceLocation(new ResourceLocation(modid, "cupric_oxide_kawara_slab"), "inventory"));
@@ -717,6 +740,8 @@ public class  ModCore_Urushi {
         ModelLoader.setCustomModelResourceLocation(UItems, 54, new ModelResourceLocation(new ResourceLocation(modid, "blue_sayagata_fusuma"), "inventory"));
         ModelLoader.setCustomModelResourceLocation(Wagasa, 0, new ModelResourceLocation(new ResourceLocation(modid, "wagasa"), "inventory"));
         ModelLoader.setCustomModelResourceLocation(Wagasa, 1, new ModelResourceLocation(new ResourceLocation(modid, "wagasa_closed"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(MetalClub, 0, new ModelResourceLocation(new ResourceLocation(modid, "metal_club"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(ItemOnibi, 0, new ModelResourceLocation(new ResourceLocation(modid, "onibi"), "inventory"));
 
 
     }
@@ -784,7 +809,10 @@ public class  ModCore_Urushi {
 
 
         /**エンティティを登録*/
-        EntityRegistry.registerModEntity(new ResourceLocation("entity_cushion"), EntityCushion.class, "EntityCushion", 0, this, 50, 1, true);
+        EntityRegistry.registerModEntity(new ResourceLocation("entity_cushion"), EntityCushion.class, "EntityCushion", EntityCushionID, this, 10, 1, true);
+        EntityRegistry.registerModEntity(new ResourceLocation("entity_red_oni"), EntityOni.class, "EntityRedOni", EntityRedOniID, this, 50, 1, true,000555555,150000000);
+        EntityRegistry.registerModEntity(new ResourceLocation("entity_oni_girl"), EntityOniGirl.class, "EntityOniGirl", EntityOniGirlID, this, 50, 1, true,100,200);
+        EntityRegistry.registerModEntity(new ResourceLocation("entity_onibi"), EntityOnibi.class, "EntityOnibi", EntityOnibiID, this, 10, 1, true);
 
 
         /**草を壊した時に出る種を登録*/
@@ -794,6 +822,10 @@ public class  ModCore_Urushi {
 
     @Mod.EventHandler
     public void preInt(FMLPreInitializationEvent event)  {
+/**モブドロップや宝箱チェストの中身などを決定するルートテーブルを登録*/
+        LootTableList.register(RED_ONI);
+
+
 
         /**コンフィグ設定を追加*/
         Configuration cfg = new Configuration(event.getSuggestedConfigurationFile());
@@ -807,8 +839,13 @@ public class  ModCore_Urushi {
             Property e1ID5 = cfg.get("world generation", "generate Copper Ore" ,wheather_ganerate_CopperOre);
             Property e1ID6 = cfg.get("block settings", "max height of Japanese Timber Bamboo" ,max_height_Bamboo);
             Property e1ID9 = cfg.get("world generation", "the dimension ID of Kakuriyo Dimension" ,KakuriyoDimensionID);
+            Property e1ID10 = cfg.get("entity settings", "the Entity ID of Cushion" ,EntityCushionID);
+            Property e1ID11 = cfg.get("entity settings", "the Entity ID of Red Oni" ,EntityRedOniID);
+            Property e1ID12 = cfg.get("entity settings", "the Entity ID of Oni Girl" ,EntityOniGirlID);
+            Property e1ID13 = cfg.get("entity settings", "the Entity ID of Onibi" ,EntityOnibiID);
+            Property e1ID14 = cfg.get("item settings", "the range of Onibi" ,range_of_onibi);
 
-            // 項目に入っている値を取得してIDに入れる。
+
             wheather_ganerate_Sakura = e1ID1.getBoolean();
             wheather_ganerate_Ume = e1ID2.getBoolean();
             wheather_ganerate_Urushi = e1ID3.getBoolean();
@@ -817,6 +854,11 @@ public class  ModCore_Urushi {
             max_height_Bamboo=e1ID6.getInt();
             wheather_ganerate_Cypress = e1ID7.getBoolean();
             KakuriyoDimensionID=e1ID9.getInt();
+            EntityCushionID=e1ID10.getInt();
+            EntityRedOniID=e1ID11.getInt();
+            EntityOniGirlID=e1ID12.getInt();
+            EntityOnibiID=e1ID13.getInt();
+            range_of_onibi=e1ID14.getInt();
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
@@ -830,31 +872,49 @@ public class  ModCore_Urushi {
            GameRegistry.registerTileEntity(TileEntityWoodenCabinetry.getClass(),new ResourceLocation(modid,"wooden_cabinetry"));
             GameRegistry.registerTileEntity(TileEntityWoodenCabinetryUnderSlab.getClass(),new ResourceLocation(modid,"wooden_cabinetry_under_slab"));
            GameRegistry.registerTileEntity(TileEntityRiceHokora.getClass(),new ResourceLocation(modid,"rice_hokora"));
-           GameRegistry.registerWorldGenerator(new OreGen(), 3);
            GameRegistry.registerTileEntity(TileEntityFuton.getClass(),new ResourceLocation(modid,"futon"));
            GameRegistry.registerTileEntity(TileEntityFermentationPot.getClass(),new ResourceLocation(modid,"fermentation_pot"));
 
 
+           /**鉱石や樹木、花などを自然生成させる*/
+           GameRegistry.registerWorldGenerator(new OreGen(), 3);
 
-           /**エンティティのモデルを登録*/
+           /**エンティティのレンダーとモデルを登録*/
            RenderingRegistry.registerEntityRenderingHandler(EntityCushion.class, new IRenderFactory<EntityCushion>(){
                @Override
                public Render<? super EntityCushion> createRenderFor(RenderManager manager){
                    return new RenderCushion(manager);
                }
            });
+           RenderingRegistry.registerEntityRenderingHandler(EntityOni.class, new IRenderFactory<EntityOni>(){
+               @Override
+               public Render<? super EntityOni> createRenderFor(RenderManager manager){
+                   return new RenderOni(manager);
+               }
+           });
+           RenderingRegistry.registerEntityRenderingHandler(EntityOniGirl.class, new IRenderFactory<EntityOniGirl>(){
+               @Override
+               public Render<? super EntityOniGirl> createRenderFor(RenderManager manager){
+                   return new RenderOniGirl(manager);
+               }
+           });
+          RenderingRegistry.registerEntityRenderingHandler(EntityOnibi.class, new IRenderFactory<EntityOnibi>(){
+               @Override
+               public Render<? super EntityOnibi> createRenderFor(RenderManager manager){
+                   Minecraft mcIn = Minecraft.getMinecraft();
+                   return (Render)new RenderSnowball<EntityOnibi>(manager, ModCore_Urushi.ItemOnibi, mcIn.getRenderItem());
+               }
+           });
        }
     }
     @Mod.EventHandler
     public void postInt(FMLPostInitializationEvent event) {
-        //Kakuriyo_DIMENSION = DimensionType.register("KakuriyoDimension", "_kakuriyo", KakuriyoDimensionID, WorldProviderKakuriyo.class, false);
-       // DimensionManager.registerDimension(KakuriyoDimensionID, Kakuriyo_DIMENSION);
+        /**ディメンションを登録*/
         Kakuriyo_DIMENSION = DimensionType.register("KakuriyoDimension", "_kakuriyo", KakuriyoDimensionID, WorldProviderKakuriyo.class, false);
         DimensionManager.registerDimension(KakuriyoDimensionID, Kakuriyo_DIMENSION);
+
         if (event.getSide().isClient()) {
-           // Kakuriyo_DIMENSION = DimensionType.register("KakuriyoDimension", "_kakuriyo", 183, WorldProviderKakuriyo.class, false);
-            //DimensionManager.registerDimension(183, Kakuriyo_DIMENSION);
-       /**精錬レシピを登録*/
+        /**精錬レシピを登録*/
             GameRegistry.addSmelting(new ItemStack(UItems, 1, 10), new ItemStack(UItems, 1, 3), 5F);
             GameRegistry.addSmelting(new ItemStack(UStone, 1, 2), new ItemStack(UItems, 1, 9), 5F);
             GameRegistry.addSmelting(new ItemStack(UItems, 1, 5), new ItemStack(Rice, 1, 0), 5F);
@@ -872,6 +932,9 @@ public class  ModCore_Urushi {
     }
 @SubscribeEvent
     public void LoottableAddEvent(LootTableLoadEvent event){
+
+
+
         /**釣りのアイテムを追加*/
 /*
     if (event.getName().equals(LootTableList.GAMEPLAY_FISHING_FISH))

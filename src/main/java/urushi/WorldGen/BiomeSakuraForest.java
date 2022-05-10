@@ -4,6 +4,7 @@ import net.minecraft.block.BlockDoublePlant;
 import net.minecraft.block.BlockFlower;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.monster.EntityEnderman;
+import net.minecraft.entity.passive.EntityChicken;
 import net.minecraft.entity.passive.EntityRabbit;
 import net.minecraft.entity.passive.EntityWolf;
 import net.minecraft.init.Blocks;
@@ -19,6 +20,7 @@ import net.minecraft.world.gen.feature.WorldGenBirchTree;
 import net.minecraft.world.gen.feature.WorldGenCanopyTree;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import urushi.Entity.EntityOni;
 import urushi.ModCore_Urushi;
 
 import java.util.Random;
@@ -30,19 +32,22 @@ public class BiomeSakuraForest extends Biome
 
     public BiomeSakuraForest()
     {
-        super(new BiomeProperties("Sakura").setBaseHeight(1.0F).setHeightVariation(0.5F).setTemperature(0.8F).setRainDisabled());
+        super(new BiomeProperties("Sakura").setBaseHeight(0.125F).setHeightVariation(0.5F).setTemperature(0.8F));
      //   this.decorator.treesPerChunk = 10;
      //   this.decorator.grassPerChunk = 2;
        // topBlock= Blocks.GRASS.getDefaultState();
        // fillerBlock=Blocks.DIRT.getDefaultState();
-this.spawnableCreatureList.add(new SpawnListEntry(EntityEnderman.class,5,10,10));
+        this.spawnableMonsterList.clear();
+        this.spawnableCreatureList.clear();
+        this.spawnableWaterCreatureList.clear();
+        this.spawnableCaveCreatureList.clear();
+        this.spawnableCreatureList.add(new SpawnListEntry(EntityOni.class,60,1,3));
 
-            this.decorator.treesPerChunk = 5;
-            this.decorator.flowersPerChunk = 100;
-            this.decorator.grassPerChunk = 1;
-            this.spawnableCreatureList.add(new SpawnListEntry(EntityRabbit.class, 4, 2, 3));
-            this.addDefaultFlowers();
-          //  this.flowers.clear();
+        this.decorator.treesPerChunk = 3;
+        this.decorator.grassPerChunk = 1;
+        this.spawnableCreatureList.add(new SpawnListEntry(EntityChicken.class, 40, 1, 5));
+        this.decorator.flowersPerChunk = 0;
+
 
 
            /* this.flowers.clear();
@@ -69,7 +74,7 @@ this.spawnableCreatureList.add(new SpawnListEntry(EntityEnderman.class,5,10,10))
     }*/
     public BlockFlower.EnumFlowerType pickRandomFlower(Random rand, BlockPos pos)
     {
-        return BlockFlower.EnumFlowerType.HOUSTONIA ;
+        return BlockFlower.EnumFlowerType.HOUSTONIA;
     }
     /**草ブロックに骨粉を使って出る花*/
     public void addFlower(IBlockState state, int weight)

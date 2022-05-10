@@ -2,7 +2,9 @@ package urushi.WorldGen;
 
 import net.minecraft.client.audio.MusicTicker;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Biomes;
+import net.minecraft.init.Blocks;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
@@ -23,7 +25,6 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import urushi.ModCore_Urushi;
 
-import javax.annotation.Nullable;
 
 public class WorldProviderKakuriyo extends WorldProvider {
    // private static final String SEED_KEY = "CustomSeed";
@@ -341,5 +342,27 @@ this.hasSkyLight=true;
     public float getCloudHeight() {
         return  120F;
     }
+
+
+    /**ディメンション移動の他、ワールド入りなおした時も呼ばれる*/
+ /*   @Override
+    public void onPlayerAdded(EntityPlayerMP player) {
+        BlockPos pos=new BlockPos(Math.floor(player.posX),Math.floor(player.posY),Math.floor(player.posZ));
+      world.setBlockState(pos, Blocks.GLASS.getDefaultState());
+        world.setBlockState(pos.add(0,1,0), Blocks.AIR.getDefaultState());
+        world.setBlockState(pos.add(1,1,0), Blocks.AIR.getDefaultState());
+        world.setBlockState(pos.add(-1,1,0), Blocks.AIR.getDefaultState());
+        world.setBlockState(pos.add(0,1,1), Blocks.AIR.getDefaultState());
+        world.setBlockState(pos.add(0,1,-1), Blocks.AIR.getDefaultState());
+        world.setBlockState(pos.add(1,1,1), Blocks.AIR.getDefaultState());
+        world.setBlockState(pos.add(1,1,-1), Blocks.AIR.getDefaultState());
+        world.setBlockState(pos.add(-1,1,1), Blocks.AIR.getDefaultState());
+        world.setBlockState(pos.add(-1,1,-1), Blocks.AIR.getDefaultState());
+
+
+
+
+
+    }*/
 
 }

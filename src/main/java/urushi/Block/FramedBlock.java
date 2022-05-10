@@ -1,5 +1,6 @@
 package urushi.Block;
 
+
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.BlockShulkerBox;
@@ -27,6 +28,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import urushi.Else.EnumType;
 import urushi.ModCore_Urushi;
+
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -62,7 +64,7 @@ public class FramedBlock extends Block
 
     }
     public void getSubBlocks(CreativeTabs itemIn, NonNullList<ItemStack> items) {
-        for(int i=0;i<7;i++) {
+        for(int i=0;i<8;i++) {
             items.add(new ItemStack(this, 1, i));
         }
     }
