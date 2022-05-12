@@ -90,64 +90,7 @@ public class QuartzMagatama extends Item {
         }
 
 
-            else if (worldIn.getBlockState(pos).getBlock() == Blocks.BARRIER) {
-                if (
-                      !worldIn.isRemote &&
-                                !player.isRiding() && !player.isBeingRidden() && player.isNonBoss() )
-                {
-                    //player.changeDimension(ModCore_Urushi.KakuriyoDimensionID);
-               //     player.changeDimension(183);
-                    //MinecraftServer server = worldIn.getMinecraftServer();
-                   // Teleporter teleporter = new TeleporterGenKakuriyo(server.getWorld(ModCore_Urushi.KakuriyoDimensionID));
-                    //Teleporter teleporter = new TeleporterGenKakuriyo(player.getServer().getWorld(ModCore_Urushi.KakuriyoDimensionID));
-                   // player.changeDimension(ModCore_Urushi.KakuriyoDimensionID,teleporter);
 
-
-
-                    // player.changeDimension(ModCore_Urushi.KakuriyoDimensionID,player.getServer().getWorld(1).getDefaultTeleporter());
-
-
-                  if(player.dimension==ModCore_Urushi.KakuriyoDimensionID){
-                      player.changeDimension(0,player.getServer().getWorld(1).getDefaultTeleporter());
-
-                  }else{
-                      player.changeDimension(ModCore_Urushi.KakuriyoDimensionID,player.getServer().getWorld(1).getDefaultTeleporter());
-
-                  }
-
-                    return EnumActionResult.SUCCESS;
-               }
-
-
-
-            }else if (worldIn.getBlockState(pos).getBlock() == Blocks.STRUCTURE_VOID) {
-                if (
-                        !worldIn.isRemote &&
-                                !player.isRiding() && !player.isBeingRidden() && player.isNonBoss() )
-                {
-
-                    MinecraftServer server = worldIn.getMinecraftServer();
-                     Teleporter teleporter = new TeleporterBuildingGenKakuriyo(server.getWorld(ModCore_Urushi.KakuriyoDimensionID));
-
-
-                    if(player.dimension==ModCore_Urushi.KakuriyoDimensionID){
-                        player.changeDimension(0,teleporter);
-
-                    }else{
-                        player.changeDimension(ModCore_Urushi.KakuriyoDimensionID,teleporter);
-
-                    }
-
-
-
-
-
-                    return EnumActionResult.SUCCESS;
-                }
-
-
-
-            }
         return EnumActionResult.FAIL;
     }
 

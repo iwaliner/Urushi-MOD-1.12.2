@@ -26,6 +26,7 @@ public class OreGen implements IWorldGenerator{
 	private final WorldGenerator genCypressTrees=new WorldGenCypressTrees(false);
 	private final WorldGenerator genLycoris=new WorldGenLycoris();
 	private final WorldGenerator genIndigo=new WorldGenIndigo();
+	private final WorldGenerator genGateShrine=new WorldGenTeleportShrine();
 
 	@Override
 	public void generate(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator,
@@ -35,10 +36,12 @@ if(ModCore_Urushi.wheather_ganerate_CopperOre){  runGenCopper(random,chunkX,chun
 	if(ModCore_Urushi.wheather_ganerate_Sakura){	generate(genSakuraTrees,world,random,chunkX,chunkZ,8,0,240,4);}
 		if(ModCore_Urushi.wheather_ganerate_Ume){	generate(genUmeTrees,world,random,chunkX,chunkZ,8,0,240,4);}
 		if(ModCore_Urushi.wheather_ganerate_Urushi){	generate(genLacquerTrees,world,random,chunkX,chunkZ,8,0,240,4);}
-		if(ModCore_Urushi.wheather_ganerate_Bamboo){	generate(genBamboo,world,random,chunkX,chunkZ,3,0,240,18);}
+		if(ModCore_Urushi.wheather_ganerate_Bamboo){	generate(genBamboo,world,random,chunkX,chunkZ,2,0,240,18);}
 		if(ModCore_Urushi.wheather_ganerate_Cypress){	generate(genCypressTrees,world,random,chunkX,chunkZ,8,0,240,3);}
 		generateInKakuriyo(genLycoris,world,random,chunkX,chunkZ,40,0,240);
 		generateInKakuriyo(genIndigo,world,random,chunkX,chunkZ,20,0,240);
+
+		generate(genGateShrine,world,random,chunkX,chunkZ,1,64,110,18);
 	}
 	private void runGenCopper(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator,
 			IChunkProvider chunkProvider) {

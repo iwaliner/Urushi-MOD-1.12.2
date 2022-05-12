@@ -4,8 +4,11 @@ import net.minecraft.block.material.Material;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.IProjectile;
 import net.minecraft.entity.item.EntityItem;
+import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.projectile.EntityThrowable;
+import net.minecraft.init.MobEffects;
 import net.minecraft.item.ItemStack;
+import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.datafix.DataFixer;
@@ -88,7 +91,24 @@ public class EntityOnibi extends EntityThrowable  {
                 world.spawnEntity(entityItem);
             }
             this.setDead();
-        }else {
+        }else if(result.typeOfHit == RayTraceResult.Type.ENTITY&&result.entityHit!=null){
+            if(result.entityHit instanceof EntityMob){
+                EntityLivingBase entityLivingBase= (EntityLivingBase) result.entityHit;
+                entityLivingBase.addPotionEffect(new PotionEffect(MobEffects.GLOWING, 400, 1));
+
+            }else{
+                if (!this.world.isRemote) {
+                    EntityItem entityItem=new EntityItem(world,newPos.getX()+0.5D,newPos.getY()+0.5D,newPos.getZ()+0.5D);
+                    entityItem.setItem(new ItemStack(ModCore_Urushi.ItemOnibi));
+                    world.spawnEntity(entityItem);
+                    this.setDead();
+
+                }
+            }
+
+        }
+
+        else {
             if (!this.world.isRemote) {
                 EntityItem entityItem=new EntityItem(world,newPos.getX()+0.5D,newPos.getY()+0.5D,newPos.getZ()+0.5D);
                 entityItem.setItem(new ItemStack(ModCore_Urushi.ItemOnibi));

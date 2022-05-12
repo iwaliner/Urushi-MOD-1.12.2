@@ -2,6 +2,7 @@ package urushi;
 
 
 import net.minecraft.block.*;
+import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -59,7 +60,7 @@ import urushi.TileEntity.*;
 import urushi.WorldGen.WorldProviderKakuriyo;
 
 
-@Mod(modid = "urushi", version = "alpha2.28", name = "Urushi MOD")
+@Mod(modid = "urushi", version = "alpha2.29", name = "Urushi MOD")
 public class  ModCore_Urushi {
    public static String modid="urushi";
     public static final CreativeTabs TabUrushi = new TabUrushi("TabUrushi");
@@ -246,6 +247,19 @@ public class  ModCore_Urushi {
     public static final Block Onibi = new Onibi();
     public static final Item ItemOnibi=new ItemOnibi();
     public static int range_of_onibi=24;
+    public static final Block RedUrushiFence = new Fence( MapColor.RED);
+    public static final Block BlackUrushiFence = new Fence( MapColor.BLACK);
+    public static final Block JapaneseApricotFence = new Fence( MapColor.ADOBE);
+    public static final Block SakuraFence = new Fence( MapColor.WOOD);
+    public static final Block CypressFence = new Fence( MapColor.SAND);
+    public static final Block RedUrushiFenceGate = new FenceGate();
+    public static final Block BlackUrushiFenceGate = new FenceGate();
+    public static final Block JapaneseApricotFenceGate = new FenceGate();
+    public static final Block SakuraFenceGate = new FenceGate();
+    public static final Block CypressFenceGate = new FenceGate();
+    public static final Block MirrorGate = new MirrorGate();
+
+
 
 
     @EventHandler
@@ -355,6 +369,20 @@ public class  ModCore_Urushi {
         event.getRegistry().register(Wagasa);
         event.getRegistry().register(MetalClub);
         event.getRegistry().register(ItemOnibi);
+        event.getRegistry().register(new ItemBlock(RedUrushiFence).setRegistryName(modid, "red_urushi_fence"));
+        event.getRegistry().register(new ItemBlock(BlackUrushiFence).setRegistryName(modid, "black_urushi_fence"));
+        event.getRegistry().register(new ItemBlock(JapaneseApricotFence).setRegistryName(modid, "japanese_apricot_fence"));
+        event.getRegistry().register(new ItemBlock(SakuraFence).setRegistryName(modid, "sakura_fence"));
+        event.getRegistry().register(new ItemBlock(CypressFence).setRegistryName(modid, "cypress_fence"));
+        event.getRegistry().register(new ItemBlock(RedUrushiFenceGate).setRegistryName(modid, "red_urushi_fence_gate"));
+        event.getRegistry().register(new ItemBlock(BlackUrushiFenceGate).setRegistryName(modid, "black_urushi_fence_gate"));
+        event.getRegistry().register(new ItemBlock(JapaneseApricotFenceGate).setRegistryName(modid, "japanese_apricot_fence_gate"));
+        event.getRegistry().register(new ItemBlock(SakuraFenceGate).setRegistryName(modid, "sakura_fence_gate"));
+        event.getRegistry().register(new ItemBlock(CypressFenceGate).setRegistryName(modid, "cypress_fence_gate"));
+        event.getRegistry().register(new ItemBlock(MirrorGate).setRegistryName(modid, "mirror_gate"));
+
+
+
 
     }
 
@@ -471,6 +499,19 @@ public class  ModCore_Urushi {
         event.getRegistry().register(BlueSeigaihaFusuma.setRegistryName(modid,"blue_seigaiha_fusuma").setUnlocalizedName("BlueSeigaihaFusuma"));
         event.getRegistry().register(BlueSayagataFusuma.setRegistryName(modid,"blue_sayagata_fusuma").setUnlocalizedName("BlueSayagataFusuma"));
         event.getRegistry().register(Onibi.setRegistryName(modid,"onibi_block").setUnlocalizedName("Onibi"));
+        event.getRegistry().register(RedUrushiFence.setRegistryName(modid,"red_urushi_fence").setUnlocalizedName("RedUrushiFence"));
+        event.getRegistry().register(BlackUrushiFence.setRegistryName(modid,"black_urushi_fence").setUnlocalizedName("BlackUrushiFence"));
+        event.getRegistry().register(JapaneseApricotFence.setRegistryName(modid,"japanese_apricot_fence").setUnlocalizedName("JapaneseApricotFence"));
+        event.getRegistry().register(SakuraFence.setRegistryName(modid,"sakura_fence").setUnlocalizedName("SakuraFence"));
+        event.getRegistry().register(CypressFence.setRegistryName(modid,"cypress_fence").setUnlocalizedName("CypressFence"));
+        event.getRegistry().register(RedUrushiFenceGate.setRegistryName(modid,"red_urushi_fence_gate").setUnlocalizedName("RedUrushiFenceGate"));
+        event.getRegistry().register(BlackUrushiFenceGate.setRegistryName(modid,"black_urushi_fence_gate").setUnlocalizedName("BlackUrushiFenceGate"));
+        event.getRegistry().register(JapaneseApricotFenceGate.setRegistryName(modid,"japanese_apricot_fence_gate").setUnlocalizedName("JapaneseApricotFenceGate"));
+        event.getRegistry().register(SakuraFenceGate.setRegistryName(modid,"sakura_fence_gate").setUnlocalizedName("SakuraFenceGate"));
+        event.getRegistry().register(CypressFenceGate.setRegistryName(modid,"cypress_fence_gate").setUnlocalizedName("CypressFenceGate"));
+        event.getRegistry().register(MirrorGate.setRegistryName(modid,"mirror_gate").setUnlocalizedName("MirrorGate"));
+
+
 
 
     }
@@ -742,6 +783,18 @@ public class  ModCore_Urushi {
         ModelLoader.setCustomModelResourceLocation(Wagasa, 1, new ModelResourceLocation(new ResourceLocation(modid, "wagasa_closed"), "inventory"));
         ModelLoader.setCustomModelResourceLocation(MetalClub, 0, new ModelResourceLocation(new ResourceLocation(modid, "metal_club"), "inventory"));
         ModelLoader.setCustomModelResourceLocation(ItemOnibi, 0, new ModelResourceLocation(new ResourceLocation(modid, "onibi"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(RedUrushiFence), 0, new ModelResourceLocation(new ResourceLocation(modid, "red_urushi_fence"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(BlackUrushiFence), 0, new ModelResourceLocation(new ResourceLocation(modid, "black_urushi_fence"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(JapaneseApricotFence), 0, new ModelResourceLocation(new ResourceLocation(modid, "japanese_apricot_fence"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(SakuraFence), 0, new ModelResourceLocation(new ResourceLocation(modid, "sakura_fence"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(CypressFence), 0, new ModelResourceLocation(new ResourceLocation(modid, "cypress_fence"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(RedUrushiFenceGate), 0, new ModelResourceLocation(new ResourceLocation(modid, "red_urushi_fence_gate"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(BlackUrushiFenceGate), 0, new ModelResourceLocation(new ResourceLocation(modid, "black_urushi_fence_gate"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(JapaneseApricotFenceGate), 0, new ModelResourceLocation(new ResourceLocation(modid, "japanese_apricot_fence_gate"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(SakuraFenceGate), 0, new ModelResourceLocation(new ResourceLocation(modid, "sakura_fence_gate"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(CypressFenceGate), 0, new ModelResourceLocation(new ResourceLocation(modid, "cypress_fence_gate"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(MirrorGate), 0, new ModelResourceLocation(new ResourceLocation(modid, "mirror"), "inventory"));
+
 
 
     }

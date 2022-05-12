@@ -1,0 +1,6 @@
+{
+    "parent": "block/fence_inventory",
+    "textures": {
+        "texture": "urushi:blocks/planks_black_urushi_stained"
+    }
+}

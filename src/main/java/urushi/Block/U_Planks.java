@@ -129,8 +129,8 @@ public class U_Planks extends Block {
         SmoothJapaneseApricot(11, MapColor.ADOBE, "smooth_japanese_apricot_planks"),
         Sakura(12, MapColor.WOOD, "sakura_planks"),
         SmoothSakura(13, MapColor.WOOD, "smooth_sakura_planks"),
-        Cypress(14, MapColor.WOOD, "cypress_planks"),
-        SmoothCypress(15, MapColor.WOOD, "smooth_cypress_planks");
+        Cypress(14, MapColor.SAND, "cypress_planks"),
+        SmoothCypress(15, MapColor.SAND, "smooth_cypress_planks");
 
         /**
          * Array of the Block's BlockStates
