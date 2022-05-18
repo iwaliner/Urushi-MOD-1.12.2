@@ -223,7 +223,7 @@ BlockPos pos=new BlockPos(Math.floor(player.posX),Math.floor(player.posY),Math.f
 
 
 
-    protected int findAmmo(EntityPlayer player,int amount)
+    public static int findAmmo(EntityPlayer player,int amount)
     {
 int maxMana=5000;
             for (int i = 0; i < player.inventory.getSizeInventory(); ++i)

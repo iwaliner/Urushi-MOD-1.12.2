@@ -29,6 +29,7 @@ import net.minecraftforge.event.LootTableLoadEvent;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.client.registry.IRenderFactory;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
+import net.minecraftforge.fml.common.IFuelHandler;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLConstructionEvent;
@@ -60,7 +61,7 @@ import urushi.TileEntity.*;
 import urushi.WorldGen.WorldProviderKakuriyo;
 
 
-@Mod(modid = "urushi", version = "alpha2.29", name = "Urushi MOD")
+@Mod(modid = "urushi", version = "alpha2.32", name = "Urushi MOD")
 public class  ModCore_Urushi {
    public static String modid="urushi";
     public static final CreativeTabs TabUrushi = new TabUrushi("TabUrushi");
@@ -147,7 +148,7 @@ public class  ModCore_Urushi {
     public static final Block SlidingGlassDoor = new SlideDoorBase(7,BlockRenderLayer.CUTOUT);
     public static final Block Bars = new Bars();
     public static final ItemBlock ItemBlockBars=new ItemBlockMetadata(Bars);
-    public static final Block FramedPlaster = new FramedBlock();
+    public static final Block FramedPlaster = new FramedBlock(8,"pickaxe");
     public static final ItemBlock ItemBlockFramedPlaster=new ItemBlockMetadata(FramedPlaster);
     public static final Block CopperKawaraStairs = new Stairs(UStone.getDefaultState().withProperty(U_Stone.VARIANT, U_Stone.EnumType.CopperKawara));
     public static final BlockSlab KawaraSlabASingle = new KawaraSlabA() {@Override public boolean isDouble() {return false;}};
@@ -258,7 +259,17 @@ public class  ModCore_Urushi {
     public static final Block SakuraFenceGate = new FenceGate();
     public static final Block CypressFenceGate = new FenceGate();
     public static final Block MirrorGate = new MirrorGate();
-
+    public static final Item TenguFan = new TenguFan();
+    public static final Block FramedPlaster2 = new FramedBlock(3,"pickaxe");
+    public static final ItemBlock ItemBlockFramedPlaster2=new ItemBlockMetadata(FramedPlaster2);
+    public static final Block Parapet = new Parapet(8);
+    public static final ItemBlock ItemBlockParapet=new ItemBlockMetadata(Parapet);
+    public static final Block Parapet2 = new Parapet(3);
+    public static final ItemBlock ItemBlockParapet2=new ItemBlockMetadata(Parapet2);
+    public static final Block FramedWattleAndDaub = new FramedBlock(6,"shovel");
+    public static final ItemBlock ItemBlockFramedWattleAndDaub=new ItemBlockMetadata(FramedWattleAndDaub);
+    public static final Block Giboshi = new Giboshi();
+    public static final ItemBlock ItemBlockGiboshi=new ItemBlockMetadata(Giboshi);
 
 
 
@@ -380,6 +391,12 @@ public class  ModCore_Urushi {
         event.getRegistry().register(new ItemBlock(SakuraFenceGate).setRegistryName(modid, "sakura_fence_gate"));
         event.getRegistry().register(new ItemBlock(CypressFenceGate).setRegistryName(modid, "cypress_fence_gate"));
         event.getRegistry().register(new ItemBlock(MirrorGate).setRegistryName(modid, "mirror_gate"));
+        event.getRegistry().register(TenguFan);
+        event.getRegistry().register(ItemBlockFramedPlaster2.setRegistryName(modid, "framed_plaster2"));
+        event.getRegistry().register(ItemBlockParapet.setRegistryName(modid, "parapet"));
+        event.getRegistry().register(ItemBlockParapet2.setRegistryName(modid, "parapet2"));
+        event.getRegistry().register(ItemBlockFramedWattleAndDaub.setRegistryName(modid, "framed_wattle_and_daub"));
+        event.getRegistry().register(ItemBlockGiboshi.setRegistryName(modid, "giboshi"));
 
 
 
@@ -510,6 +527,11 @@ public class  ModCore_Urushi {
         event.getRegistry().register(SakuraFenceGate.setRegistryName(modid,"sakura_fence_gate").setUnlocalizedName("SakuraFenceGate"));
         event.getRegistry().register(CypressFenceGate.setRegistryName(modid,"cypress_fence_gate").setUnlocalizedName("CypressFenceGate"));
         event.getRegistry().register(MirrorGate.setRegistryName(modid,"mirror_gate").setUnlocalizedName("MirrorGate"));
+        event.getRegistry().register(FramedPlaster2.setRegistryName(modid,"framed_plaster2").setUnlocalizedName("FramedPlaster2"));
+        event.getRegistry().register(Parapet.setRegistryName(modid,"parapet").setUnlocalizedName("Parapet"));
+        event.getRegistry().register(Parapet2.setRegistryName(modid,"parapet2").setUnlocalizedName("Parapet2"));
+        event.getRegistry().register(FramedWattleAndDaub.setRegistryName(modid,"framed_wattle_and_daub").setUnlocalizedName("FramedWattleAndDaub"));
+        event.getRegistry().register(Giboshi.setRegistryName(modid,"giboshi").setUnlocalizedName("Giboshi"));
 
 
 
@@ -794,7 +816,35 @@ public class  ModCore_Urushi {
         ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(SakuraFenceGate), 0, new ModelResourceLocation(new ResourceLocation(modid, "sakura_fence_gate"), "inventory"));
         ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(CypressFenceGate), 0, new ModelResourceLocation(new ResourceLocation(modid, "cypress_fence_gate"), "inventory"));
         ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(MirrorGate), 0, new ModelResourceLocation(new ResourceLocation(modid, "mirror"), "inventory"));
-
+        ModelLoader.setCustomModelResourceLocation(TenguFan, 0, new ModelResourceLocation(new ResourceLocation(modid, "tengu_fan"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(FramedPlaster2), 0, new ModelResourceLocation(new ResourceLocation(modid, "black_framed_plaster"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(FramedPlaster2), 1, new ModelResourceLocation(new ResourceLocation(modid, "japanese_apricot_framed_plaster"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(FramedPlaster2), 2, new ModelResourceLocation(new ResourceLocation(modid, "cypress_framed_plaster"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(UItems, 55, new ModelResourceLocation(new ResourceLocation(modid, "indigo_ball"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(UItems, 56, new ModelResourceLocation(new ResourceLocation(modid, "wood_chip"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(UItems, 57, new ModelResourceLocation(new ResourceLocation(modid, "japanese_apricot_bark"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(UItems, 58, new ModelResourceLocation(new ResourceLocation(modid, "sakura_bark"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(UStrippedLog), 1, new ModelResourceLocation(new ResourceLocation(modid, "stripped_japanese_apricot_log"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(UStrippedLog), 2, new ModelResourceLocation(new ResourceLocation(modid, "stripped_sakura_log"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(Parapet), 0, new ModelResourceLocation(new ResourceLocation(modid, "oak_parapet"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(Parapet), 1, new ModelResourceLocation(new ResourceLocation(modid, "spruce_parapet"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(Parapet), 2, new ModelResourceLocation(new ResourceLocation(modid, "birch_parapet"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(Parapet), 3, new ModelResourceLocation(new ResourceLocation(modid, "jungle_parapet"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(Parapet), 4, new ModelResourceLocation(new ResourceLocation(modid, "acacia_parapet"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(Parapet), 5, new ModelResourceLocation(new ResourceLocation(modid, "dark_oak_parapet"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(Parapet), 6, new ModelResourceLocation(new ResourceLocation(modid, "red_parapet"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(Parapet), 7, new ModelResourceLocation(new ResourceLocation(modid, "black_parapet"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(Parapet2), 0, new ModelResourceLocation(new ResourceLocation(modid, "japanese_apricot_parapet"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(Parapet2), 1, new ModelResourceLocation(new ResourceLocation(modid, "sakura_parapet"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(Parapet2), 2, new ModelResourceLocation(new ResourceLocation(modid, "cypress_parapet"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(FramedWattleAndDaub), 0, new ModelResourceLocation(new ResourceLocation(modid, "wattle_and_daub_oak_framed"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(FramedWattleAndDaub), 1, new ModelResourceLocation(new ResourceLocation(modid, "wattle_and_daub_spruce_framed"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(FramedWattleAndDaub), 2, new ModelResourceLocation(new ResourceLocation(modid, "wattle_and_daub_birch_framed"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(FramedWattleAndDaub), 3, new ModelResourceLocation(new ResourceLocation(modid, "wattle_and_daub_jungle_framed"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(FramedWattleAndDaub), 4, new ModelResourceLocation(new ResourceLocation(modid, "wattle_and_daub_acacia_framed"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(FramedWattleAndDaub), 5, new ModelResourceLocation(new ResourceLocation(modid, "wattle_and_daub_dark_oak_framed"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(Giboshi), 0, new ModelResourceLocation(new ResourceLocation(modid, "iron_giboshi"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(Giboshi), 1, new ModelResourceLocation(new ResourceLocation(modid, "gold_giboshi"), "inventory"));
 
 
     }
@@ -858,7 +908,9 @@ public class  ModCore_Urushi {
         OreDictionary.registerOre("cropBean",new ItemStack(Azuki,1,0));
         OreDictionary.registerOre("cropRedbean",new ItemStack(Azuki,1,0));
         OreDictionary.registerOre("logWood",new ItemStack(UStrippedLog,1,0));
-
+        OreDictionary.registerOre("logWood",new ItemStack(UStrippedLog,1,1));
+        OreDictionary.registerOre("logWood",new ItemStack(UStrippedLog,1,2));
+        OreDictionary.registerOre("dyeBlue",new ItemStack(UItems,1,55));
 
 
         /**エンティティを登録*/
@@ -927,6 +979,7 @@ public class  ModCore_Urushi {
            GameRegistry.registerTileEntity(TileEntityRiceHokora.getClass(),new ResourceLocation(modid,"rice_hokora"));
            GameRegistry.registerTileEntity(TileEntityFuton.getClass(),new ResourceLocation(modid,"futon"));
            GameRegistry.registerTileEntity(TileEntityFermentationPot.getClass(),new ResourceLocation(modid,"fermentation_pot"));
+
 
 
            /**鉱石や樹木、花などを自然生成させる*/

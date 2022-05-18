@@ -45,8 +45,9 @@ public class FramedBlock extends Block
     public static final PropertyEnum<EnumType.EnumType8> VARIANT = PropertyEnum.<EnumType.EnumType8>create("variant", EnumType.EnumType8.class);
     public static final PropertyEnum<EnumType.EnumType2> VARIANT2 = PropertyEnum.<EnumType.EnumType2>create("variant2", EnumType.EnumType2.class);
 
+    int var;
     //private Block blockThis;
-    public FramedBlock()
+    public FramedBlock(int i,String s)
     {
         super(Material.WOOD);
         this.setDefaultState(this.blockState.getBaseState().withProperty(NORTH, Boolean.valueOf(false)).withProperty(SOUTH, Boolean.valueOf(false)).withProperty(WEST, Boolean.valueOf(false)).withProperty(EAST, Boolean.valueOf(false)).withProperty(UPPER, Boolean.valueOf(false)).withProperty(UNDER, Boolean.valueOf(false)).withProperty(VARIANT,EnumType.EnumType8.TypeA).withProperty(VARIANT2,EnumType.EnumType2.TypeA));
@@ -56,15 +57,15 @@ public class FramedBlock extends Block
         setLightLevel(0.0F);
         setHardness(0.4F);
 
-
-
-
-            setHarvestLevel("pickaxe", 0);
-
+        var=i;
+            setHarvestLevel(s, 0);
+if(s=="shovel"){
+    setSoundType(SoundType.GROUND);
+}
 
     }
     public void getSubBlocks(CreativeTabs itemIn, NonNullList<ItemStack> items) {
-        for(int i=0;i<8;i++) {
+        for(int i=0;i<var;i++) {
             items.add(new ItemStack(this, 1, i));
         }
     }

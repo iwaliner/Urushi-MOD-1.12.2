@@ -17,5 +17,6 @@ public class PaddyField extends BlockFarmland {
         setHardness(0.2F);
         setHarvestLevel("shovel", 0);
         setSoundType(SoundType.GROUND);
+        this.useNeighborBrightness=true;
     }
 }

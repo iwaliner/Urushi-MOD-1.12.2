@@ -65,6 +65,8 @@ public class U_StrippedLog extends BlockLog  {
     public void getSubBlocks(CreativeTabs itemIn, NonNullList<ItemStack> items)
     {
         items.add(new ItemStack(this, 1, BlockPlanks.EnumType.OAK.getMetadata()));
+        items.add(new ItemStack(this, 1, BlockPlanks.EnumType.SPRUCE.getMetadata()));
+        items.add(new ItemStack(this, 1, BlockPlanks.EnumType.BIRCH.getMetadata()));
 
 
     }

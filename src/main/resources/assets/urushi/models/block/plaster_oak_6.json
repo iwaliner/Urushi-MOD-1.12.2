@@ -6,7 +6,7 @@
         "up": "urushi:blocks/plaster",
         "north": "urushi:blocks/plaster",
         "east": "urushi:blocks/plaster_oak_12",
-        "south": "urushi:blocks/plaster_oak_12",
+        "south": "urushi:blocks/plaster_oak_2",
         "west": "urushi:blocks/plaster_oak_11"
     }
 }

@@ -51,10 +51,7 @@ public class ThatchedBlock extends Block
         int meta = ((EnumType.EnumType2) state.getValue(VARIANT)).getMetadata();
         return new ItemStack(ModCore_Urushi.ThatchedBlock, 1, ((EnumType.EnumType2)state.getValue(VARIANT)).getMetadata());
     }
-    public String getUnlocalizedName(int meta)
-    {
-        return super.getUnlocalizedName() + "." + EnumType.EnumType2.byMetadata(meta).getMetadata();
-    }
+
 
     public void getSubBlocks(CreativeTabs itemIn, NonNullList<ItemStack> items)
     {

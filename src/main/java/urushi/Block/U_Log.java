@@ -169,7 +169,29 @@ public class U_Log extends BlockLog  {
     @Override
     public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
         int blockMeta=state.getBlock().getMetaFromState(state);
-        if(blockMeta==2&&(playerIn.getHeldItem(hand).getItem()== Items.FLINT||playerIn.getHeldItem(hand).getItem() instanceof ItemTool)){
+        if(state.getValue(VARIANT)== BlockPlanks.EnumType.OAK&&playerIn.getHeldItem(hand).getItem() instanceof ItemAxe){
+            worldIn.setBlockState(pos,ModCore_Urushi.UStrippedLog.getDefaultState().withProperty(BlockLog.LOG_AXIS,state.getValue(BlockLog.LOG_AXIS)).withProperty(U_StrippedLog.VARIANT, BlockPlanks.EnumType.SPRUCE));
+            if(!worldIn.isRemote) {
+                EntityItem entityItem = new EntityItem(worldIn, (double) pos.getX(), (double) pos.getY(), (double) pos.getZ(), new ItemStack(ModCore_Urushi.UItems, 8, 57));
+                worldIn.spawnEntity(entityItem);
+            }
+            worldIn.playSound((EntityPlayer)null, pos, SoundEvents.BLOCK_WOOD_BREAK, SoundCategory.BLOCKS, 1.0F, 1.0F);
+            playerIn.swingArm(hand);
+            playerIn.getHeldItem(hand).damageItem(1,playerIn);
+            return  true;
+        }
+        else if(state.getValue(VARIANT)== BlockPlanks.EnumType.SPRUCE&&playerIn.getHeldItem(hand).getItem() instanceof ItemAxe){
+            worldIn.setBlockState(pos,ModCore_Urushi.UStrippedLog.getDefaultState().withProperty(BlockLog.LOG_AXIS,state.getValue(BlockLog.LOG_AXIS)).withProperty(U_StrippedLog.VARIANT, BlockPlanks.EnumType.BIRCH));
+            if(!worldIn.isRemote) {
+                EntityItem entityItem = new EntityItem(worldIn, (double) pos.getX(), (double) pos.getY(), (double) pos.getZ(), new ItemStack(ModCore_Urushi.UItems, 8, 58));
+                worldIn.spawnEntity(entityItem);
+            }
+            worldIn.playSound((EntityPlayer)null, pos, SoundEvents.BLOCK_WOOD_BREAK, SoundCategory.BLOCKS, 1.0F, 1.0F);
+            playerIn.swingArm(hand);
+            playerIn.getHeldItem(hand).damageItem(1,playerIn);
+            return  true;
+        }
+        else if(blockMeta==2&&(playerIn.getHeldItem(hand).getItem()== Items.FLINT||playerIn.getHeldItem(hand).getItem() instanceof ItemTool)){
             if(facing==EnumFacing.NORTH){
                 worldIn.setBlockState(pos,ModCore_Urushi.ChiseledLacquerLog.getDefaultState().withProperty(ChiseledLacquerLog.VARIANT,BlockPlanks.EnumType.OAK));
                 return true;

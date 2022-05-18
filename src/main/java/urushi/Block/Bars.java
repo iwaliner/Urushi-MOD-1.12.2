@@ -47,14 +47,6 @@ public class Bars extends Block  {
     }
 
     /**
-     * Gets the localized name of this block. Used for the statistics page.
-     */
-    public String getLocalizedName() {
-        return I18n.translateToLocal(this.getUnlocalizedName() + "." + EnumType.EnumType8.TypeA.getUnlocalizedName() + ".name");
-    }
-
-
-    /**
      * Gets the metadata of the item this Block can drop. This method is called when the block gets destroyed. It
      * returns the metadata of the dropped item based on the old metadata of the block.
      */

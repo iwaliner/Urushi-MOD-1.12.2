@@ -45,7 +45,7 @@ public class UItems extends Item  {
 		    {
 		       if (this.isInCreativeTab(tab))
 		        {
-		        	for(int i=0;i<55;i++) {
+		        	for(int i=0;i<59;i++) {
 
 	items.add(new ItemStack(this, 1, i));
 
@@ -1324,5 +1324,14 @@ public class UItems extends Item  {
 
 		}
 		return EnumActionResult.FAIL;
+	}
+
+	@Override
+	public int getItemBurnTime(ItemStack itemStack) {
+		if(itemStack.getItemDamage()==37||itemStack.getItemDamage()==56||itemStack.getItemDamage()==57||itemStack.getItemDamage()==58||itemStack.getItemDamage()==0){
+			return 200;
+		}else{
+			return 0;
+		}
 	}
 }
