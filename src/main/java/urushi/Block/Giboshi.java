@@ -78,7 +78,7 @@ public class Giboshi extends Block
     public ItemStack getItem(World worldIn, BlockPos pos, IBlockState state)
     {
         int meta = ((EnumType.EnumType8) state.getValue(VARIANT)).getMetadata();
-        return new ItemStack(ModCore_Urushi.ThatchedBlock, 1, ((EnumType.EnumType8)state.getValue(VARIANT)).getMetadata());
+        return new ItemStack(ModCore_Urushi.Giboshi, 1, ((EnumType.EnumType8)state.getValue(VARIANT)).getMetadata());
     }
 
 

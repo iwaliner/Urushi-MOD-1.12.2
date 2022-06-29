@@ -1,0 +1,8 @@
+{
+    "parent": "block/inner_stairs",
+    "textures": {
+        "bottom": "urushi:blocks/bamboo_block",
+        "top": "urushi:blocks/bamboo_block",
+        "side": "urushi:blocks/bamboo_block"
+    }
+}

@@ -27,6 +27,7 @@ import net.minecraftforge.common.config.Property;
 import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.event.LootTableLoadEvent;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.event.furnace.FurnaceFuelBurnTimeEvent;
 import net.minecraftforge.fml.client.registry.IRenderFactory;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.IFuelHandler;
@@ -61,7 +62,7 @@ import urushi.TileEntity.*;
 import urushi.WorldGen.WorldProviderKakuriyo;
 
 
-@Mod(modid = "urushi", version = "alpha2.32", name = "Urushi MOD")
+@Mod(modid = "urushi", version = "alpha2.33", name = "Urushi MOD")
 public class  ModCore_Urushi {
    public static String modid="urushi";
     public static final CreativeTabs TabUrushi = new TabUrushi("TabUrushi");
@@ -270,7 +271,12 @@ public class  ModCore_Urushi {
     public static final ItemBlock ItemBlockFramedWattleAndDaub=new ItemBlockMetadata(FramedWattleAndDaub);
     public static final Block Giboshi = new Giboshi();
     public static final ItemBlock ItemBlockGiboshi=new ItemBlockMetadata(Giboshi);
-
+    public static final Block BambooBlock = new BambooBlock();
+    public static final BlockSlab BambooSlabSingle = new BambooSlab() {@Override public boolean isDouble() {return false;}};
+    public static final BlockSlab BambooSlabDouble = new BambooSlab() {@Override public boolean isDouble() {return true;}};
+    public static final ItemBlock ItemBlockBambooSlab=new ItemSlab(BambooSlabSingle, BambooSlabSingle, BambooSlabDouble);
+    public static final Block BambooStairs = new Stairs(BambooBlock.getDefaultState());
+    public static final Block RawUrushiLayer = new RawUrushiLayer();
 
 
     @EventHandler
@@ -397,6 +403,10 @@ public class  ModCore_Urushi {
         event.getRegistry().register(ItemBlockParapet2.setRegistryName(modid, "parapet2"));
         event.getRegistry().register(ItemBlockFramedWattleAndDaub.setRegistryName(modid, "framed_wattle_and_daub"));
         event.getRegistry().register(ItemBlockGiboshi.setRegistryName(modid, "giboshi"));
+        event.getRegistry().register(new ItemBlock(BambooBlock).setRegistryName(modid, "bamboo_block"));
+        event.getRegistry().register(ItemBlockBambooSlab.setRegistryName(modid, "bamboo_slab_single"));
+        event.getRegistry().register(new ItemBlock(BambooStairs).setRegistryName(modid, "bamboo_stairs"));
+        event.getRegistry().register(new ItemBlock(RawUrushiLayer).setRegistryName(modid, "raw_urushi_layer"));
 
 
 
@@ -532,6 +542,11 @@ public class  ModCore_Urushi {
         event.getRegistry().register(Parapet2.setRegistryName(modid,"parapet2").setUnlocalizedName("Parapet2"));
         event.getRegistry().register(FramedWattleAndDaub.setRegistryName(modid,"framed_wattle_and_daub").setUnlocalizedName("FramedWattleAndDaub"));
         event.getRegistry().register(Giboshi.setRegistryName(modid,"giboshi").setUnlocalizedName("Giboshi"));
+        event.getRegistry().register(BambooBlock.setRegistryName(modid,"bamboo_block").setUnlocalizedName("BambooBlock"));
+        event.getRegistry().register(BambooSlabSingle.setRegistryName(modid,"bamboo_slab_single").setUnlocalizedName("BambooSlab"));
+        event.getRegistry().register(BambooSlabDouble.setRegistryName(modid,"bamboo_slab_double").setUnlocalizedName("BambooSlab"));
+        event.getRegistry().register(BambooStairs.setRegistryName(modid,"bamboo_stairs").setUnlocalizedName("BambooStairs"));
+        event.getRegistry().register(RawUrushiLayer.setRegistryName(modid,"raw_urushi_layer").setUnlocalizedName("RawUrushiLayer"));
 
 
 
@@ -764,9 +779,9 @@ public class  ModCore_Urushi {
         ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(UStrippedLog), 0, new ModelResourceLocation(new ResourceLocation(modid, "stripped_cypress_log"), "inventory"));
         ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ULeaves2), 4, new ModelResourceLocation(new ResourceLocation(modid, "japanese_apricot_leaves"), "inventory"));
         ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ULeaves2), 5, new ModelResourceLocation(new ResourceLocation(modid, "sakura_leaves"), "inventory"));
-        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(USapling2), 0, new ModelResourceLocation(new ResourceLocation(modid, "japanese_apricot_sapling"), "inventory"));
-        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(USapling2), 1, new ModelResourceLocation(new ResourceLocation(modid, "sakura_sapling"), "inventory"));
-        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(USapling2), 2, new ModelResourceLocation(new ResourceLocation(modid, "large_sakura_sapling"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(USapling2), 0, new ModelResourceLocation(new ResourceLocation(modid, "glowing_japanese_apricot_sapling"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(USapling2), 1, new ModelResourceLocation(new ResourceLocation(modid, "glowing_sakura_sapling"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(USapling2), 2, new ModelResourceLocation(new ResourceLocation(modid, "glowing_big_sakura_sapling"), "inventory"));
         ModelLoader.setCustomModelResourceLocation(UItems, 38, new ModelResourceLocation(new ResourceLocation(modid, "futon_item_white"), "inventory"));
         ModelLoader.setCustomModelResourceLocation(UItems, 39, new ModelResourceLocation(new ResourceLocation(modid, "futon_item_orange"), "inventory"));
         ModelLoader.setCustomModelResourceLocation(UItems, 40, new ModelResourceLocation(new ResourceLocation(modid, "futon_item_magenta"), "inventory"));
@@ -845,6 +860,14 @@ public class  ModCore_Urushi {
         ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(FramedWattleAndDaub), 5, new ModelResourceLocation(new ResourceLocation(modid, "wattle_and_daub_dark_oak_framed"), "inventory"));
         ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(Giboshi), 0, new ModelResourceLocation(new ResourceLocation(modid, "iron_giboshi"), "inventory"));
         ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(Giboshi), 1, new ModelResourceLocation(new ResourceLocation(modid, "gold_giboshi"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(UItems, 59, new ModelResourceLocation(new ResourceLocation(modid, "red_urushi_ball"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(UItems, 60, new ModelResourceLocation(new ResourceLocation(modid, "black_urushi_ball"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(RawUrushiLayer), 0, new ModelResourceLocation(new ResourceLocation(modid, "raw_urushi_layer"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(BambooBlock), 0, new ModelResourceLocation(new ResourceLocation(modid, "bamboo_block"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(BambooSlabSingle), 0, new ModelResourceLocation(new ResourceLocation(modid, "bamboo_slab"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(BambooStairs), 0, new ModelResourceLocation(new ResourceLocation(modid, "bamboo_stairs"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(UItems, 61, new ModelResourceLocation(new ResourceLocation(modid, "bamboo_charcoal"), "inventory"));
+
 
 
     }
@@ -911,6 +934,29 @@ public class  ModCore_Urushi {
         OreDictionary.registerOre("logWood",new ItemStack(UStrippedLog,1,1));
         OreDictionary.registerOre("logWood",new ItemStack(UStrippedLog,1,2));
         OreDictionary.registerOre("dyeBlue",new ItemStack(UItems,1,55));
+        OreDictionary.registerOre("slimeball",new ItemStack(UItems,1,59));
+        OreDictionary.registerOre("slimeball",new ItemStack(UItems,1,60));
+        OreDictionary.registerOre("plankWood",new ItemStack(BambooBlock,1,0));
+        OreDictionary.registerOre("slabWood",new ItemStack(BambooSlabSingle,1,0));
+        OreDictionary.registerOre("stairWood",new ItemStack(BambooStairs,1,0));
+        OreDictionary.registerOre("stairWood",new ItemStack(JapaneseApricotStairs,1,0));
+        OreDictionary.registerOre("stairWood",new ItemStack(SakuraStairs,1,0));
+        OreDictionary.registerOre("stairWood",new ItemStack(CypressStairs,1,0));
+        OreDictionary.registerOre("stairWood",new ItemStack(StairsRedUrushiStained,1,0));
+        OreDictionary.registerOre("stairWood",new ItemStack(StairsBlackUrushiStained,1,0));
+        OreDictionary.registerOre("fenceWood",new ItemStack(SakuraFence,1,0));
+        OreDictionary.registerOre("fenceWood",new ItemStack(JapaneseApricotFence,1,0));
+        OreDictionary.registerOre("fenceWood",new ItemStack(CypressFence,1,0));
+        OreDictionary.registerOre("fenceWood",new ItemStack(RedUrushiFence,1,0));
+        OreDictionary.registerOre("fenceWood",new ItemStack(BlackUrushiFence,1,0));
+        OreDictionary.registerOre("fenceGateWood",new ItemStack(JapaneseApricotFenceGate,1,0));
+        OreDictionary.registerOre("fenceGateWood",new ItemStack(JapaneseApricotFenceGate,1,0));
+        OreDictionary.registerOre("fenceGateWood",new ItemStack(SakuraFenceGate,1,0));
+        OreDictionary.registerOre("fenceGateWood",new ItemStack(CypressFenceGate,1,0));
+        OreDictionary.registerOre("fenceGateWood",new ItemStack(RedUrushiFenceGate,1,0));
+        OreDictionary.registerOre("fenceGateWood",new ItemStack(BlackUrushiFenceGate,1,0));
+
+
 
 
         /**エンティティを登録*/
@@ -1026,6 +1072,8 @@ public class  ModCore_Urushi {
             GameRegistry.addSmelting(new ItemStack(UItems, 1, 5), new ItemStack(Rice, 1, 0), 5F);
             GameRegistry.addSmelting(new ItemStack(Mochi, 1, 0), new ItemStack(YakiMochi, 1, 0), 5F);
             GameRegistry.addSmelting(new ItemStack(UItems, 1, 35), new ItemStack(FermentationPot, 1, 0), 5F);
+            GameRegistry.addSmelting(new ItemStack(UItems, 1, 0), new ItemStack(UItems, 1, 61), 5F);
+
         }
 
         /**バイオームを追加*/
@@ -1035,6 +1083,13 @@ public class  ModCore_Urushi {
          /**下の2行を実装すると、オーバーワールドに指定したバイオームが生成されるようになる*/
          //BiomeManager.addBiome(BiomeManager.BiomeType.WARM, new BiomeManager.BiomeEntry(SakuraBiome, 500));
          //BiomeManager.addSpawnBiome(SakuraBiome);
+    }
+    @SubscribeEvent
+    public void FuelEvent(FurnaceFuelBurnTimeEvent event) {
+        /**燃料の燃焼時間を設定*/
+        if (event.getItemStack().getItem()==ModCore_Urushi.UItems&&event.getItemStack().getItemDamage()==61) {
+            event.setBurnTime(1600);
+        }
     }
 @SubscribeEvent
     public void LoottableAddEvent(LootTableLoadEvent event){

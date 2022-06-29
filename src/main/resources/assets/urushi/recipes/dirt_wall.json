@@ -7,12 +7,12 @@
   ],
   "key": {
     "d": {
-      "item": "minecraft:dirt",
+       "item": "minecraft:dirt",
       "data": 0
     },
 "s": {
        "type": "forge:ore_dict",
-      "ore": "stickWood"
+      "ore": "bamboo"
     }
   },
   "result": {

@@ -1,18 +1,16 @@
 {
   "type": "forge:ore_shaped",
   "pattern": [
-    "qqq",
     "qqq"
   ],
   "key": {
     "q": {
-   "item": "urushi:bamboo_slab_single",
-   "data": 0
+      "item": "urushi:bamboo_block"
     }
   },
   "result": {
-    "item": "urushi:bamboo_wall",
+    "item": "urushi:bamboo_slab_single",
 "data": 0,
- "count": 16
+ "count": 6
   }
 }

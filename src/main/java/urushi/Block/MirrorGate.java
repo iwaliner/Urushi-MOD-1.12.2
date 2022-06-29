@@ -39,7 +39,7 @@ public class MirrorGate extends Block
         setResistance(100F);
         setLightOpacity(0);
         setLightLevel(0F);
-        setBlockUnbreakable();
+        setHardness(3F);
         setCreativeTab(ModCore_Urushi.TabUrushi);
 
     }

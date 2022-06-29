@@ -45,7 +45,7 @@ public class UItems extends Item  {
 		    {
 		       if (this.isInCreativeTab(tab))
 		        {
-		        	for(int i=0;i<59;i++) {
+		        	for(int i=0;i<62;i++) {
 
 	items.add(new ItemStack(this, 1, i));
 

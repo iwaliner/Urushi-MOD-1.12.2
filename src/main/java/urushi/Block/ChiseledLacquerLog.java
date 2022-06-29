@@ -25,6 +25,7 @@ import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import urushi.ModCore_Urushi;
@@ -184,9 +185,15 @@ public class ChiseledLacquerLog extends BlockLog {
                     woodenBucket.setUrushiLevel(worldIn,pos.add(p,q-i,r),worldIn.getBlockState(pos.add(p,q-i,r)),blockMeta+1);
                     worldIn.playSound((EntityPlayer)null, pos.add(p,q-i,r), SoundEvents.ITEM_BUCKET_EMPTY, SoundCategory.BLOCKS, 1.0F, 1.0F);
                     break;
+                }else{
+                    break;
                 }
-            }else if(worldIn.getBlockState(pos.add(p,q-i,r)).getBlock()!= Blocks.AIR){
+            }else if(worldIn.getBlockState(pos.add(p,q-i,r)).getBlock()!= Blocks.AIR&&worldIn.getBlockState(pos.add(p,q-i,r)).getBlock()!= ModCore_Urushi.RawUrushiLayer){
+                worldIn.setBlockState(pos.add(p,q-i+1,r),ModCore_Urushi.RawUrushiLayer.getDefaultState());
+
                 break;
+            }else{
+                continue;
             }
         }
     }

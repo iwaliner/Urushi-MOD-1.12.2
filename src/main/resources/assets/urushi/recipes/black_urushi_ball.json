@@ -1,0 +1,23 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "qqq",
+    "qdq",
+    "qqq"
+  ],
+  "key": {
+    "q": {
+      "item": "urushi:u_items",
+      "data": 8
+    },
+     "d": {
+      "type": "forge:ore_dict",
+      "ore": "dyeBlack"
+    }
+  },
+  "result": {
+    "item": "urushi:u_items",
+"data": 60,
+ "count": 8
+  }
+}
