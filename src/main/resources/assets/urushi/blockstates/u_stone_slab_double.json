@@ -1,0 +1,12 @@
+{
+    "variants": {
+"variant=type_a": { "model":"urushi:cupric_oxide_kawara_block" },
+"variant=type_b": { "model":"urushi:ibushi_kawara_block" },
+"variant=type_c": { "model":"urushi:plaster" },
+"variant=type_d": { "model":"urushi:copper_kawara_block" },
+"variant=type_e": { "model":"urushi:rough_stone" },
+"variant=type_f": { "model":"urushi:concrete" },
+"variant=type_g": { "model":"urushi:null" },
+"variant=type_h": { "model":"urushi:null" }
+    }
+}

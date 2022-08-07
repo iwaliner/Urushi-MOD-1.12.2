@@ -1,0 +1,17 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "q"
+  ],
+  "key": {
+    "q": {
+      "item": "urushi:copper_kawara_stairs",
+      "data": 0
+    }
+  },
+  "result": {
+    "item": "urushi:cupric_oxide_kawara_stairs",
+"data": 0,
+ "count": 1
+  }
+}

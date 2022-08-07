@@ -1,0 +1,21 @@
+{
+    "variants": {
+"half=bottom,variant=type_a": { "model":"urushi:half_slab_cupric_oxide_kawara" },
+"half=bottom,variant=type_b": { "model":"urushi:half_slab_ibushi_kawara_block" },
+"half=bottom,variant=type_c": { "model":"urushi:half_slab_plaster" },
+"half=bottom,variant=type_d": { "model":"urushi:half_slab_copper_kawara_block" },
+"half=bottom,variant=type_e": { "model":"urushi:half_slab_rough_stone" },
+"half=bottom,variant=type_f": { "model":"urushi:half_slab_concrete" },
+"half=bottom,variant=type_g": { "model":"urushi:null" },
+"half=bottom,variant=type_h": { "model":"urushi:null" },
+"half=top,variant=type_a": { "model":"urushi:upper_slab_cupric_oxide_kawara" },
+"half=top,variant=type_b": { "model":"urushi:upper_slab_ibushi_kawara_block" },
+"half=top,variant=type_c": { "model":"urushi:upper_slab_plaster" },
+"half=top,variant=type_d": { "model":"urushi:upper_slab_copper_kawara_block" },
+"half=top,variant=type_e": { "model":"urushi:upper_slab_rough_stone" },
+"half=top,variant=type_f": { "model":"urushi:upper_slab_concrete" },
+"half=top,variant=type_g": { "model":"urushi:null" },
+"half=top,variant=type_h": { "model":"urushi:null" }
+
+    }
+}

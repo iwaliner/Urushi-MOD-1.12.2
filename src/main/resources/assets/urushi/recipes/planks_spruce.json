@@ -1,0 +1,17 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "q"
+  ],
+  "key": {
+    "q": {
+      "item": "urushi:u_planks",
+      "data": 1
+    }
+  },
+  "result": {
+    "item": "minecraft:planks",
+"data": 1,
+ "count": 1
+  }
+}

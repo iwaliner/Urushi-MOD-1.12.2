@@ -1,0 +1,7 @@
+{
+    "parent": "block/template_glass_pane_post",
+    "textures": {
+        "edge": "urushi:blocks/planks_smooth_cypress",
+        "pane": "urushi:blocks/syoji_cypress_pane"
+    }
+}

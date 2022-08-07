@@ -1,0 +1,19 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "hhh",
+    "h h",
+    "hhh"
+  ],
+  "key": {
+  "h": {
+       "type": "forge:ore_dict",
+      "ore": "slabWood"
+    }
+  },
+  "result": {
+    "item": "urushi:wooden_cabinetry_under_slab",
+"data": 0,
+ "count": 1
+  }
+}

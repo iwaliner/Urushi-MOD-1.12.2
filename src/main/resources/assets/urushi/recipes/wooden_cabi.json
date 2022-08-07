@@ -1,0 +1,18 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "q",
+    "q"
+  ],
+  "key": {
+    "q": {
+      "item": "urushi:wooden_cabinetry_under_slab",
+      "data": 0
+    }
+  },
+  "result": {
+    "item": "urushi:wooden_cabinetry",
+"data": 0,
+ "count": 1
+  }
+}

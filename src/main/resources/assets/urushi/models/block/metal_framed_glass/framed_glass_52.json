@@ -1,0 +1,12 @@
+{
+    "parent": "block/cube",
+    "textures": {
+        "particle": "urushi:blocks/framed_glass_metal_0",
+        "down": "urushi:blocks/framed_glass_metal_4",
+        "up": "urushi:blocks/framed_glass_metal_4",
+        "north": "urushi:blocks/framed_glass_metal_5",
+        "east": "urushi:blocks/framed_glass_metal_0",
+        "south": "urushi:blocks/framed_glass_metal_4",
+        "west": "urushi:blocks/framed_glass_15"
+    }
+}

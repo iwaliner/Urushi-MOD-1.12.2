@@ -1,0 +1,18 @@
+{
+  "type": "forge:ore_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:flint",
+      "data": 0
+    },
+    {
+      "item": "minecraft:quartz",
+      "data": 0
+    }
+  ],
+  "result": {
+    "item": "urushi:quartz_magatama",
+     "data": 5000,
+      "count": 1
+  }
+}

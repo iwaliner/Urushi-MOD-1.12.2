@@ -1,0 +1,12 @@
+{
+    "variants": {
+"variant=type_a": { "model":"urushi:sand_coast" },
+"variant=type_b": { "model":"urushi:sand_coast_red" },
+"variant=type_c": { "model":"urushi:sand_coast_lime" },
+"variant=type_d": { "model":"urushi:copper_kawara_block" },
+"variant=type_e": { "model":"urushi:null" },
+"variant=type_f": { "model":"urushi:null" },
+"variant=type_g": { "model":"urushi:null" },
+"variant=type_h": { "model":"urushi:null" }
+    }
+}

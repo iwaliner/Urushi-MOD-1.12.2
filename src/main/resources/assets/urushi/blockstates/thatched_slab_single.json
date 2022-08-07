@@ -1,0 +1,9 @@
+{
+    "variants": {
+"half=bottom,variant=type_a": { "model":"urushi:half_slab_thatched" },
+"half=top,variant=type_a": { "model":"urushi:upper_slab_thatched" },
+"half=bottom,variant=type_b": { "model":"urushi:half_slab_hiwadabuki" },
+"half=top,variant=type_b": { "model":"urushi:upper_slab_hiwadabuki" }
+
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "variants": {
+"half=bottom,variant=type_a": { "model":"urushi:half_slab_wattle_and_daub" },
+"half=top,variant=type_a": { "model":"urushi:upper_slab_wattle_and_daub" },
+"half=bottom,variant=type_b": { "model":"urushi:half_slab_wattle_and_daub" },
+"half=top,variant=type_b": { "model":"urushi:upper_slab_wattle_and_daub" }
+
+    }
+}

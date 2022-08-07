@@ -1,0 +1,8 @@
+{
+    "parent": "block/half_slab",
+    "textures": {
+        "bottom": "urushi:blocks/kawara_block_cupric_oxide",
+        "top": "urushi:blocks/kawara_block_cupric_oxide",
+        "side": "urushi:blocks/kawara_block_cupric_oxide"
+    }
+}

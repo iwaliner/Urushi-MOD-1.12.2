@@ -1,0 +1,19 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "qqq",
+    " q ",
+    "qqq"
+  ],
+  "key": {
+    "q": {
+      "type": "forge:ore_dict",
+      "ore": "ingotIron"
+    }
+  },
+  "result": {
+    "item": "urushi:giboshi",
+"data": 0,
+ "count": 8
+  }
+}

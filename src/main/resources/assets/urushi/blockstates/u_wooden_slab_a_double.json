@@ -1,0 +1,12 @@
+{
+    "variants": {
+"variant=type_a": { "model":"urushi:oak_smooth_planks" },
+"variant=type_b": { "model":"urushi:spruce_smooth_planks" },
+"variant=type_c": { "model":"urushi:birch_smooth_planks" },
+"variant=type_d": { "model":"urushi:jungle_smooth_planks" },
+"variant=type_e": { "model":"urushi:acacia_smooth_planks" },
+"variant=type_f": { "model":"urushi:dark_oak_smooth_planks" },
+"variant=type_g": { "model":"urushi:japanese_apricot_planks" },
+"variant=type_h": { "model":"urushi:japanese_apricot_smooth_planks" }
+    }
+}

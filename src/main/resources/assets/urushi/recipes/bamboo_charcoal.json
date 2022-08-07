@@ -1,0 +1,14 @@
+{
+  "type": "forge:ore_shapeless",
+  "ingredients": [
+    {
+      "item": "urushi:bamboo_block",
+      "data": 1
+    }
+  ],
+  "result": {
+    "item": "urushi:u_items",
+     "data": 61,
+      "count": 9
+  }
+}

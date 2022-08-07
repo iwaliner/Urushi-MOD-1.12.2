@@ -1,0 +1,16 @@
+{
+    "variants": {
+"facing=north,variant=type_a": { "model":"urushi:kakejiku_usagitokame" },
+"facing=south,variant=type_a": { "model":"urushi:kakejiku_usagitokame" , "y": 180},
+"facing=west,variant=type_a": { "model":"urushi:kakejiku_usagitokame" , "y": 270},
+"facing=east,variant=type_a": { "model":"urushi:kakejiku_usagitokame" , "y": 90},
+"facing=north,variant=type_b": { "model":"urushi:kakejiku_shinchoku" },
+"facing=south,variant=type_b": { "model":"urushi:kakejiku_shinchoku" , "y": 180},
+"facing=west,variant=type_b": { "model":"urushi:kakejiku_shinchoku" , "y": 270},
+"facing=east,variant=type_b": { "model":"urushi:kakejiku_shinchoku" , "y": 90},
+"facing=north,variant=type_c": { "model":"urushi:kakejiku_geishun" },
+"facing=south,variant=type_c": { "model":"urushi:kakejiku_geishun" , "y": 180},
+"facing=west,variant=type_c": { "model":"urushi:kakejiku_geishun" , "y": 270},
+"facing=east,variant=type_c": { "model":"urushi:kakejiku_geishun" , "y": 90}
+    }
+}

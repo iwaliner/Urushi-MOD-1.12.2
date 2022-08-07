@@ -1,0 +1,20 @@
+{
+    "variants": {
+"variant=smooth_oak_planks": { "model":"urushi:oak_smooth_planks" },
+"variant=smooth_birch_planks": { "model":"urushi:birch_smooth_planks" },
+"variant=smooth_spruce_planks": { "model":"urushi:spruce_smooth_planks" },
+"variant=smooth_jungle_planks": { "model":"urushi:jungle_smooth_planks" },
+"variant=smooth_acacia_planks": { "model":"urushi:acacia_smooth_planks" },
+"variant=smooth_dark_oak_planks": { "model":"urushi:dark_oak_smooth_planks" },
+"variant=planks_red_urushi_stained": { "model":"urushi:planks_red_urushi_stained" },
+"variant=smooth_planks_red_urushi_stained": { "model":"urushi:smooth_planks_red_urushi_stained" },
+"variant=planks_black_urushi_stained": { "model":"urushi:planks_black_urushi_stained" },
+"variant=smooth_planks_black_urushi_stained": { "model":"urushi:smooth_planks_black_urushi_stained" },
+"variant=japanese_apricot_planks": { "model":"urushi:japanese_apricot_planks" },
+"variant=smooth_japanese_apricot_planks": { "model":"urushi:japanese_apricot_smooth_planks" },
+"variant=sakura_planks": { "model":"urushi:sakura_planks" },
+"variant=smooth_sakura_planks": { "model":"urushi:sakura_smooth_planks" },
+"variant=cypress_planks": { "model":"urushi:cypress_planks" },
+"variant=smooth_cypress_planks": { "model":"urushi:cypress_smooth_planks" }
+    }
+}

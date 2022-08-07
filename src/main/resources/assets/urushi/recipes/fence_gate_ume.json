@@ -1,0 +1,22 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "bpb",
+    "bpb"
+  ],
+  "key": {
+    "b": {
+       "type": "forge:ore_dict",
+      "ore": "stickWood"
+    },
+  "p": {
+      "item": "urushi:u_planks",
+      "data": 10
+    }
+  },
+  "result": {
+    "item": "urushi:japanese_apricot_fence_gate",
+"data": 0,
+ "count": 1
+  }
+}

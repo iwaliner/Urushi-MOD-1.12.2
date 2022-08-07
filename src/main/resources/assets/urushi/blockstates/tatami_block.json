@@ -1,0 +1,13 @@
+{
+    "variants": {
+"axis=y,variant=type_a": { "model":"urushi:brown_tatami" },
+"axis=z,variant=type_a": { "model":"urushi:brown_tatami","x": 90 },
+"axis=x,variant=type_a": { "model":"urushi:brown_tatami", "x": 90, "y": 90 },
+"axis=y,variant=type_b": { "model":"urushi:green_tatami" },
+"axis=z,variant=type_b": { "model":"urushi:green_tatami","x": 90 },
+"axis=x,variant=type_b": { "model":"urushi:green_tatami", "x": 90, "y": 90 },
+"axis=y,variant=type_c": { "model":"urushi:brown_tatami" },
+"axis=z,variant=type_c": { "model":"urushi:brown_tatami","x": 90 },
+"axis=x,variant=type_c": { "model":"urushi:brown_tatami", "x": 90, "y": 90 }
+    }
+}

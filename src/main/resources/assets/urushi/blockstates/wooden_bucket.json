@@ -1,0 +1,17 @@
+{
+    "variants": {
+"variant=type_a": { "model":"urushi:wooden_bucket_empty" },
+"variant=type_b": { "model":"urushi:wooden_bucket_raw_level1" },
+"variant=type_c": { "model":"urushi:wooden_bucket_raw_level2" },
+"variant=type_d": { "model":"urushi:wooden_bucket_raw_level3" },
+"variant=type_e": { "model":"urushi:wooden_bucket_red_level1" },
+"variant=type_f": { "model":"urushi:wooden_bucket_red_level2" },
+"variant=type_g": { "model":"urushi:wooden_bucket_red_level3" },
+"variant=type_h": { "model":"urushi:wooden_bucket_black_level1" },
+"variant=type_i": { "model":"urushi:wooden_bucket_black_level2" },
+"variant=type_j": { "model":"urushi:wooden_bucket_black_level3" },
+"variant=type_k": { "model":"urushi:wooden_bucket_water_level1" },
+"variant=type_l": { "model":"urushi:wooden_bucket_water_level2" },
+"variant=type_m": { "model":"urushi:wooden_bucket_water_level3" }
+    }
+}

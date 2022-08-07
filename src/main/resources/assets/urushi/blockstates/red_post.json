@@ -1,0 +1,123 @@
+{
+    "multipart": [
+        {   "when": { "northwall": "true"},
+            "apply": { "model": "urushi:red_post_one_wall", "y": 180, "uvlock": true }
+        },
+        {   "when": {"southwall": "true"},
+            "apply": { "model": "urushi:red_post_one_wall", "uvlock": true }
+        },
+        {   "when": { "eastwall": "true" },
+            "apply": { "model": "urushi:red_post_one_wall", "y": 270, "uvlock": true }
+        },
+        {   "when": {"westwall": "true" },
+            "apply": { "model": "urushi:red_post_one_wall", "y": 90, "uvlock": true }
+        },
+        
+        {   "when": { "OR": [
+                { "northwall": "true","eastthis": "true" },
+                { "northwall": "true","eastwall": "true" }
+            ]},
+            "apply": { "model": "urushi:red_post_right_this", "y": 180, "uvlock": true }
+        },
+         {   "when": { "OR": [
+                { "northwall": "true","westthis": "true" },
+                { "northwall": "true","westwall": "true" }
+            ]},
+            "apply": { "model": "urushi:red_post_left_this", "y": 180, "uvlock": true }
+        },
+        {   "when": { "OR": [
+                { "southwall": "true","eastthis": "true" },
+                { "southwall": "true","eastwall": "true" }
+            ]},
+            "apply": { "model": "urushi:red_post_left_this",  "uvlock": true }
+        },
+         {   "when": { "OR": [
+                { "southwall": "true","westthis": "true" },
+                { "southwall": "true","westwall": "true" }
+            ]},
+            "apply": { "model": "urushi:red_post_right_this",  "uvlock": true }
+        },
+        {   "when": { "OR": [
+                { "eastwall": "true","norththis": "true" },
+                { "eastwall": "true","northwall": "true" }
+            ]},
+            "apply": { "model": "urushi:red_post_left_this", "y": 270, "uvlock": true }
+        },
+         {   "when": { "OR": [
+                { "eastwall": "true","souththis": "true" },
+                { "eastwall": "true","southwall": "true" }
+            ]},
+            "apply": { "model": "urushi:red_post_right_this", "y": 270, "uvlock": true }
+        },
+        {   "when": { "OR": [
+                { "westwall": "true","norththis": "true" },
+                { "westwall": "true","northwall": "true" }
+            ]},
+            "apply": { "model": "urushi:red_post_right_this", "y": 90, "uvlock": true }
+        },
+         {   "when": { "OR": [
+                { "westwall": "true","souththis": "true" },
+                { "westwall": "true","southwall": "true" }
+            ]},
+            "apply": { "model": "urushi:red_post_left_this", "y": 90, "uvlock": true }
+        },
+        
+        
+        {   "when": { "OR": [
+                { "northwall": "true","upperthis": "true" },
+                { "northwall": "true","upperwall": "true" }
+            ]},
+            "apply": { "model": "urushi:red_post_upper_this", "y": 180, "uvlock": true }
+        },
+        {   "when": { "OR": [
+                { "northwall": "true","underthis": "true" },
+                { "northwall": "true","underwall": "true" }
+            ]},
+            "apply": { "model": "urushi:red_post_under_this", "y": 180, "uvlock": true }
+        },
+        {   "when": { "OR": [
+                { "southwall": "true","upperthis": "true" },
+                { "southwall": "true","upperwall": "true" }
+            ]},
+            "apply": { "model": "urushi:red_post_upper_this", "uvlock": true }
+        },
+        {   "when": { "OR": [
+                { "southwall": "true","underthis": "true" },
+                { "southwall": "true","underwall": "true" }
+            ]},
+            "apply": { "model": "urushi:red_post_under_this",  "uvlock": true }
+        },
+        {   "when": { "OR": [
+                { "eastwall": "true","upperthis": "true" },
+                { "eastwall": "true","upperwall": "true" }
+            ]},
+            "apply": { "model": "urushi:red_post_upper_this", "y": 270, "uvlock": true }
+        },
+        {   "when": { "OR": [
+                { "eastwall": "true","underthis": "true" },
+                { "eastwall": "true","underwall": "true" }
+            ]},
+            "apply": { "model": "urushi:red_post_under_this", "y": 270, "uvlock": true }
+        },
+        {   "when": { "OR": [
+                { "westwall": "true","upperthis": "true" },
+                { "westwall": "true","upperwall": "true" }
+            ]},
+            "apply": { "model": "urushi:red_post_upper_this", "y": 90, "uvlock": true }
+        },
+        {   "when": { "OR": [
+                { "westwall": "true","underthis": "true" },
+                { "westwall": "true","underwall": "true" }
+            ]},
+            "apply": { "model": "urushi:red_post_under_this", "y": 90, "uvlock": true }
+        },
+        
+        {   "when": { "upperwall": "true","northwall": "false","southwall": "false","eastwall": "false","westwall": "false","norththis": "false","southwall": "false","eastwall": "false","westwall": "false"},
+            "apply": { "model": "urushi:red_post_one_wall", "y": 180,"x": 90, "uvlock": true }
+        },
+        {   "when": { "underwall": "true","northwall": "false","southwall": "false","eastwall": "false","westwall": "false"},
+            "apply": { "model": "urushi:red_post_one_wall", "y": 180,"x": 270, "uvlock": true }
+        }
+       
+    ]
+}

@@ -1,0 +1,23 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "pwp",
+    "www",
+    "pwp"
+  ],
+  "key": {
+    "w": {
+        "item": "urushi:u_planks",
+      "data": 7
+    },
+  "p": {
+     "type": "forge:ore_dict",
+      "ore": "paper"
+    }
+  },
+  "result": {
+    "item": "urushi:shouji_pane_red",
+"data": 0,
+ "count": 32
+  }
+}

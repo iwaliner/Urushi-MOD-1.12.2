@@ -1,0 +1,8 @@
+{
+    "parent": "block/half_slab",
+    "textures": {
+        "bottom": "urushi:blocks/concrete",
+        "top": "urushi:blocks/concrete",
+        "side": "urushi:blocks/concrete"
+    }
+}

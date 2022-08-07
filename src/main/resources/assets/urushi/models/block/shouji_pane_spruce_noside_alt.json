@@ -1,0 +1,6 @@
+{
+    "parent": "block/pane_noside_alt",
+    "textures": {
+        "pane": "urushi:blocks/syoji_spruce_pane"
+    }
+}

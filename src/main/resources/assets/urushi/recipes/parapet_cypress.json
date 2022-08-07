@@ -1,0 +1,22 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "pbp",
+    "pbp"
+  ],
+  "key": {
+    "b": {
+       "type": "forge:ore_dict",
+      "ore": "stickWood"
+    },
+  "p": {
+      "item": "urushi:u_planks",
+      "data": 15
+    }
+  },
+  "result": {
+    "item": "urushi:parapet2",
+"data": 2,
+ "count": 3
+  }
+}

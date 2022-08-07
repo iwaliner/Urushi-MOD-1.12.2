@@ -1,0 +1,589 @@
+{
+  "multipart": [
+    {
+      "when": {
+        "variant2": "type_a","upper": "false","under": "false","east": "false","west": "false","variant": "type_a"
+      },
+      "apply": {
+        "model": "urushi:connectable_glass/glass_pane_0a"
+      }
+    },
+    {
+      "when": {
+        "variant2": "type_b","upper": "false","under": "false","north": "false","south": "false","variant": "type_a"
+      },
+      "apply": {
+        "model": "urushi:connectable_glass/glass_pane_0b"
+      }
+    },
+    {
+      "when": {
+        "variant2": "type_a","upper": "false","under": "true","east": "false","west": "false","variant": "type_a"
+      },
+      "apply": {
+        "model": "urushi:connectable_glass/glass_pane_1a"
+      }
+    },
+    {
+      "when": {
+        "variant2": "type_b","upper": "false","under": "true","north": "false","south": "false","variant": "type_a"
+      },
+      "apply": {
+        "model": "urushi:connectable_glass/glass_pane_1b"
+      }
+    },
+    {
+      "when": {
+        "variant2": "type_a","upper": "true","under": "false","east": "false","west": "false","variant": "type_a"
+      },
+      "apply": {
+        "model": "urushi:connectable_glass/glass_pane_2a"
+      }
+    },
+    {
+      "when": {
+        "variant2": "type_b","upper": "true","under": "false","north": "false","south": "false","variant": "type_a"
+      },
+      "apply": {
+        "model": "urushi:connectable_glass/glass_pane_2b"
+      }
+    },
+    {
+      "when": {
+        "variant2": "type_a","upper": "true","under": "true","east": "false","west": "false","variant": "type_a"
+      },
+      "apply": {
+        "model": "urushi:connectable_glass/glass_pane_3a"
+      }
+    },
+    {
+      "when": {
+        "variant2": "type_b","upper": "true","under": "true","north": "false","south": "false","variant": "type_a"
+      },
+      "apply": {
+        "model": "urushi:connectable_glass/glass_pane_3b"
+      }
+    },
+    {
+      "when": {
+        "variant2": "type_a","upper": "false","under": "false","east": "true","west": "true","variant": "type_a"
+      },
+      "apply": {
+        "model": "urushi:connectable_glass/glass_pane_4a"
+      }
+    },
+    {
+      "when": {
+        "variant2": "type_b","upper": "false","under": "false","north": "true","south": "true","variant": "type_a"
+      },
+      "apply": {
+        "model": "urushi:connectable_glass/glass_pane_4b"
+      }
+    },
+    {
+      "when": {
+        "variant2": "type_a","upper": "false","under": "false","east": "true","west": "false","variant": "type_a"
+      },
+      "apply": {
+        "model": "urushi:connectable_glass/glass_pane_5a"
+      }
+    },
+    {
+      "when": {
+        "variant2": "type_b","upper": "false","under": "false","north": "true","south": "false","variant": "type_a"
+      },
+      "apply": {
+        "model": "urushi:connectable_glass/glass_pane_5b"
+      }
+    },
+    {
+      "when": {
+        "variant2": "type_a","upper": "false","under": "false","east": "false","west": "true","variant": "type_a"
+      },
+      "apply": {
+        "model": "urushi:connectable_glass/glass_pane_6a"
+      }
+    },
+    {
+      "when": {
+        "variant2": "type_b","upper": "false","under": "false","north": "false","south": "true","variant": "type_a"
+      },
+      "apply": {
+        "model": "urushi:connectable_glass/glass_pane_6b"
+      }
+    },
+    {
+      "when": {
+        "variant2": "type_a","upper": "true","under": "false","east": "true","west": "true","variant": "type_a"
+      },
+      "apply": {
+        "model": "urushi:connectable_glass/glass_pane_7a"
+      }
+    },
+    {
+      "when": {
+        "variant2": "type_b","upper": "true","under": "false","north": "true","south": "true","variant": "type_a"
+      },
+      "apply": {
+        "model": "urushi:connectable_glass/glass_pane_7b"
+      }
+    },
+    {
+      "when": {
+        "variant2": "type_a","upper": "false","under": "true","east": "true","west": "true","variant": "type_a"
+      },
+      "apply": {
+        "model": "urushi:connectable_glass/glass_pane_8a"
+      }
+    },
+    {
+      "when": {
+        "variant2": "type_b","upper": "false","under": "true","north": "true","south": "true","variant": "type_a"
+      },
+      "apply": {
+        "model": "urushi:connectable_glass/glass_pane_8b"
+      }
+    },
+    {
+      "when": {
+        "variant2": "type_a","upper": "true","under": "true","east": "true","west": "true","variant": "type_a"
+      },
+      "apply": {
+        "model": "urushi:connectable_glass/glass_pane_9a"
+      }
+    },
+    {
+      "when": {
+        "variant2": "type_b","upper": "true","under": "true","north": "true","south": "true","variant": "type_a"
+      },
+      "apply": {
+        "model": "urushi:connectable_glass/glass_pane_9b"
+      }
+    },
+    {
+      "when": {
+        "variant2": "type_a","upper": "true","under": "false","east": "true","west": "true","variant": "type_a"
+      },
+      "apply": {
+        "model": "urushi:connectable_glass/glass_pane_10a"
+      }
+    },
+    {
+      "when": {
+        "variant2": "type_b","upper": "true","under": "false","north": "true","south": "true","variant": "type_a"
+      },
+      "apply": {
+        "model": "urushi:connectable_glass/glass_pane_10b"
+      }
+    },
+    {
+      "when": {
+        "variant2": "type_a","upper": "false","under": "true","east": "true","west": "true","variant": "type_a"
+      },
+      "apply": {
+        "model": "urushi:connectable_glass/glass_pane_11a"
+      }
+    },
+    {
+      "when": {
+        "variant2": "type_b","upper": "false","under": "true","north": "true","south": "true","variant": "type_a"
+      },
+      "apply": {
+        "model": "urushi:connectable_glass/glass_pane_11b"
+      }
+    },
+    {
+      "when": {
+        "variant2": "type_a","upper": "true","under": "false","east": "true","west": "false","variant": "type_a"
+      },
+      "apply": {
+        "model": "urushi:connectable_glass/glass_pane_12a"
+      }
+    },
+    {
+      "when": {
+        "variant2": "type_b","upper": "true","under": "false","north": "true","south": "false","variant": "type_a"
+      },
+      "apply": {
+        "model": "urushi:connectable_glass/glass_pane_12b"
+      }
+    },
+    {
+      "when": {
+        "variant2": "type_a","upper": "true","under": "false","east": "false","west": "true","variant": "type_a"
+      },
+      "apply": {
+        "model": "urushi:connectable_glass/glass_pane_13a"
+      }
+    },
+    {
+      "when": {
+        "variant2": "type_b","upper": "true","under": "false","north": "false","south": "true","variant": "type_a"
+      },
+      "apply": {
+        "model": "urushi:connectable_glass/glass_pane_13b"
+      }
+    },
+    {
+      "when": {
+        "variant2": "type_a","upper": "false","under": "true","east": "true","west": "false","variant": "type_a"
+      },
+      "apply": {
+        "model": "urushi:connectable_glass/glass_pane_14a"
+      }
+    },
+    {
+      "when": {
+        "variant2": "type_b","upper": "false","under": "true","north": "true","south": "false","variant": "type_a"
+      },
+      "apply": {
+        "model": "urushi:connectable_glass/glass_pane_14b"
+      }
+    },
+    {
+      "when": {
+        "variant2": "type_a","upper": "false","under": "true","east": "false","west": "true","variant": "type_a"
+      },
+      "apply": {
+        "model": "urushi:connectable_glass/glass_pane_15a"
+      }
+    },
+    {
+      "when": {
+        "variant2": "type_b","upper": "false","under": "true","north": "false","south": "true","variant": "type_a"
+      },
+      "apply": {
+        "model": "urushi:connectable_glass/glass_pane_15b"
+      }
+    },
+    {
+      "when": {
+        "variant2": "type_a","upper": "true","under": "true","east": "true","west": "false","variant": "type_a"
+      },
+      "apply": {
+        "model": "urushi:connectable_glass/glass_pane_16a"
+      }
+    },
+    {
+      "when": {
+        "variant2": "type_b","upper": "true","under": "true","north": "true","south": "false","variant": "type_a"
+      },
+      "apply": {
+        "model": "urushi:connectable_glass/glass_pane_16b"
+      }
+    },
+    {
+      "when": {
+        "variant2": "type_a","upper": "true","under": "true","east": "false","west": "true","variant": "type_a"
+      },
+      "apply": {
+        "model": "urushi:connectable_glass/glass_pane_17a"
+      }
+    },
+    {
+      "when": {
+        "variant2": "type_b","upper": "true","under": "true","north": "false","south": "true","variant": "type_a"
+      },
+      "apply": {
+        "model": "urushi:connectable_glass/glass_pane_17b"
+      }
+    },
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    {
+      "when": {
+        "variant2": "type_a","upper": "false","under": "false","east": "false","west": "false","variant": "type_b"
+      },
+      "apply": {
+        "model": "urushi:metal_framed_glass/glass_pane_0a"
+      }
+    },
+    {
+      "when": {
+        "variant2": "type_b","upper": "false","under": "false","north": "false","south": "false","variant": "type_b"
+      },
+      "apply": {
+        "model": "urushi:metal_framed_glass/glass_pane_0b"
+      }
+    },
+    {
+      "when": {
+        "variant2": "type_a","upper": "false","under": "true","east": "false","west": "false","variant": "type_b"
+      },
+      "apply": {
+        "model": "urushi:metal_framed_glass/glass_pane_1a"
+      }
+    },
+    {
+      "when": {
+        "variant2": "type_b","upper": "false","under": "true","north": "false","south": "false","variant": "type_b"
+      },
+      "apply": {
+        "model": "urushi:metal_framed_glass/glass_pane_1b"
+      }
+    },
+    {
+      "when": {
+        "variant2": "type_a","upper": "true","under": "false","east": "false","west": "false","variant": "type_b"
+      },
+      "apply": {
+        "model": "urushi:metal_framed_glass/glass_pane_2a"
+      }
+    },
+    {
+      "when": {
+        "variant2": "type_b","upper": "true","under": "false","north": "false","south": "false","variant": "type_b"
+      },
+      "apply": {
+        "model": "urushi:metal_framed_glass/glass_pane_2b"
+      }
+    },
+    {
+      "when": {
+        "variant2": "type_a","upper": "true","under": "true","east": "false","west": "false","variant": "type_b"
+      },
+      "apply": {
+        "model": "urushi:metal_framed_glass/glass_pane_3a"
+      }
+    },
+    {
+      "when": {
+        "variant2": "type_b","upper": "true","under": "true","north": "false","south": "false","variant": "type_b"
+      },
+      "apply": {
+        "model": "urushi:metal_framed_glass/glass_pane_3b"
+      }
+    },
+    {
+      "when": {
+        "variant2": "type_a","upper": "false","under": "false","east": "true","west": "true","variant": "type_b"
+      },
+      "apply": {
+        "model": "urushi:metal_framed_glass/glass_pane_4a"
+      }
+    },
+    {
+      "when": {
+        "variant2": "type_b","upper": "false","under": "false","north": "true","south": "true","variant": "type_b"
+      },
+      "apply": {
+        "model": "urushi:metal_framed_glass/glass_pane_4b"
+      }
+    },
+    {
+      "when": {
+        "variant2": "type_a","upper": "false","under": "false","east": "true","west": "false","variant": "type_b"
+      },
+      "apply": {
+        "model": "urushi:metal_framed_glass/glass_pane_5a"
+      }
+    },
+    {
+      "when": {
+        "variant2": "type_b","upper": "false","under": "false","north": "true","south": "false","variant": "type_b"
+      },
+      "apply": {
+        "model": "urushi:metal_framed_glass/glass_pane_5b"
+      }
+    },
+    {
+      "when": {
+        "variant2": "type_a","upper": "false","under": "false","east": "false","west": "true","variant": "type_b"
+      },
+      "apply": {
+        "model": "urushi:metal_framed_glass/glass_pane_6a"
+      }
+    },
+    {
+      "when": {
+        "variant2": "type_b","upper": "false","under": "false","north": "false","south": "true","variant": "type_b"
+      },
+      "apply": {
+        "model": "urushi:metal_framed_glass/glass_pane_6b"
+      }
+    },
+    {
+      "when": {
+        "variant2": "type_a","upper": "true","under": "false","east": "true","west": "true","variant": "type_b"
+      },
+      "apply": {
+        "model": "urushi:metal_framed_glass/glass_pane_7a"
+      }
+    },
+    {
+      "when": {
+        "variant2": "type_b","upper": "true","under": "false","north": "true","south": "true","variant": "type_b"
+      },
+      "apply": {
+        "model": "urushi:metal_framed_glass/glass_pane_7b"
+      }
+    },
+    {
+      "when": {
+        "variant2": "type_a","upper": "false","under": "true","east": "true","west": "true","variant": "type_b"
+      },
+      "apply": {
+        "model": "urushi:metal_framed_glass/glass_pane_8a"
+      }
+    },
+    {
+      "when": {
+        "variant2": "type_b","upper": "false","under": "true","north": "true","south": "true","variant": "type_b"
+      },
+      "apply": {
+        "model": "urushi:metal_framed_glass/glass_pane_8b"
+      }
+    },
+    {
+      "when": {
+        "variant2": "type_a","upper": "true","under": "true","east": "true","west": "true","variant": "type_b"
+      },
+      "apply": {
+        "model": "urushi:metal_framed_glass/glass_pane_9a"
+      }
+    },
+    {
+      "when": {
+        "variant2": "type_b","upper": "true","under": "true","north": "true","south": "true","variant": "type_b"
+      },
+      "apply": {
+        "model": "urushi:metal_framed_glass/glass_pane_9b"
+      }
+    },
+    {
+      "when": {
+        "variant2": "type_a","upper": "true","under": "false","east": "true","west": "true","variant": "type_b"
+      },
+      "apply": {
+        "model": "urushi:metal_framed_glass/glass_pane_10a"
+      }
+    },
+    {
+      "when": {
+        "variant2": "type_b","upper": "true","under": "false","north": "true","south": "true","variant": "type_b"
+      },
+      "apply": {
+        "model": "urushi:metal_framed_glass/glass_pane_10b"
+      }
+    },
+    {
+      "when": {
+        "variant2": "type_a","upper": "false","under": "true","east": "true","west": "true","variant": "type_b"
+      },
+      "apply": {
+        "model": "urushi:metal_framed_glass/glass_pane_11a"
+      }
+    },
+    {
+      "when": {
+        "variant2": "type_b","upper": "false","under": "true","north": "true","south": "true","variant": "type_b"
+      },
+      "apply": {
+        "model": "urushi:metal_framed_glass/glass_pane_11b"
+      }
+    },
+    {
+      "when": {
+        "variant2": "type_a","upper": "true","under": "false","east": "true","west": "false","variant": "type_b"
+      },
+      "apply": {
+        "model": "urushi:metal_framed_glass/glass_pane_12a"
+      }
+    },
+    {
+      "when": {
+        "variant2": "type_b","upper": "true","under": "false","north": "true","south": "false","variant": "type_b"
+      },
+      "apply": {
+        "model": "urushi:metal_framed_glass/glass_pane_12b"
+      }
+    },
+    {
+      "when": {
+        "variant2": "type_a","upper": "true","under": "false","east": "false","west": "true","variant": "type_b"
+      },
+      "apply": {
+        "model": "urushi:metal_framed_glass/glass_pane_13a"
+      }
+    },
+    {
+      "when": {
+        "variant2": "type_b","upper": "true","under": "false","north": "false","south": "true","variant": "type_b"
+      },
+      "apply": {
+        "model": "urushi:metal_framed_glass/glass_pane_13b"
+      }
+    },
+    {
+      "when": {
+        "variant2": "type_a","upper": "false","under": "true","east": "true","west": "false","variant": "type_b"
+      },
+      "apply": {
+        "model": "urushi:metal_framed_glass/glass_pane_14a"
+      }
+    },
+    {
+      "when": {
+        "variant2": "type_b","upper": "false","under": "true","north": "true","south": "false","variant": "type_b"
+      },
+      "apply": {
+        "model": "urushi:metal_framed_glass/glass_pane_14b"
+      }
+    },
+    {
+      "when": {
+        "variant2": "type_a","upper": "false","under": "true","east": "false","west": "true","variant": "type_b"
+      },
+      "apply": {
+        "model": "urushi:metal_framed_glass/glass_pane_15a"
+      }
+    },
+    {
+      "when": {
+        "variant2": "type_b","upper": "false","under": "true","north": "false","south": "true","variant": "type_b"
+      },
+      "apply": {
+        "model": "urushi:metal_framed_glass/glass_pane_15b"
+      }
+    },
+    {
+      "when": {
+        "variant2": "type_a","upper": "true","under": "true","east": "true","west": "false","variant": "type_b"
+      },
+      "apply": {
+        "model": "urushi:metal_framed_glass/glass_pane_16a"
+      }
+    },
+    {
+      "when": {
+        "variant2": "type_b","upper": "true","under": "true","north": "true","south": "false","variant": "type_b"
+      },
+      "apply": {
+        "model": "urushi:metal_framed_glass/glass_pane_16b"
+      }
+    },
+    {
+      "when": {
+        "variant2": "type_a","upper": "true","under": "true","east": "false","west": "true","variant": "type_b"
+      },
+      "apply": {
+        "model": "urushi:metal_framed_glass/glass_pane_17a"
+      }
+    },
+    {
+      "when": {
+        "variant2": "type_b","upper": "true","under": "true","north": "false","south": "true","variant": "type_b"
+      },
+      "apply": {
+        "model": "urushi:metal_framed_glass/glass_pane_17b"
+      }
+    }
+  ]
+}

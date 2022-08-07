@@ -1,0 +1,6 @@
+{
+    "parent": "block/cross",
+    "textures": {
+        "cross": "urushi:blocks/lycoris_radiata"
+    }
+}

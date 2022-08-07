@@ -1,0 +1,17 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "qqq"
+  ],
+  "key": {
+    "q": {
+      "item": "urushi:wattle_and_daub",
+      "data": 0
+    }
+  },
+  "result": {
+    "item": "urushi:wattle_and_daub_slab_single",
+"data": 0,
+ "count": 6
+  }
+}

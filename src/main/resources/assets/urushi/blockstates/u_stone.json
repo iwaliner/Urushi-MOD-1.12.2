@@ -1,0 +1,20 @@
+{
+    "variants": {
+"variant=cupric_oxide_kawara_block": { "model":"urushi:cupric_oxide_kawara_block" },
+"variant=ibushi_kawara_block": { "model":"urushi:ibushi_kawara_block" },
+"variant=copper_ore": { "model":"urushi:copper_ore" },
+"variant=plaster": { "model":"urushi:plaster" },
+"variant=namako": { "model":"urushi:namako" },
+"variant=copper_kawara_block": { "model":"urushi:copper_kawara_block" },
+"variant=ibushi_kawara_block2": { "model":"urushi:ibushi_kawara_block", "y": 180 },
+"variant=ibushi_kawara_block3": { "model":"urushi:ibushi_kawara_block", "y": 270 },
+"variant=ibushi_kawara_block4": { "model":"urushi:ibushi_kawara_block", "y": 90 },
+"variant=cupric_oxide_kawara_block2": { "model":"urushi:cupric_oxide_kawara_block", "y": 180 },
+"variant=cupric_oxide_kawara_block3": { "model":"urushi:cupric_oxide_kawara_block", "y": 270 },
+"variant=cupric_oxide_kawara_block4": { "model":"urushi:cupric_oxide_kawara_block", "y": 90 },
+"variant=copper_kawara_block2": { "model":"urushi:copper_kawara_block", "y": 180 },
+"variant=copper_kawara_block3": { "model":"urushi:copper_kawara_block", "y": 270 },
+"variant=copper_kawara_block4": { "model":"urushi:copper_kawara_block", "y": 90 },
+"variant=rough_stone": { "model":"urushi:rough_stone" }
+    }
+}

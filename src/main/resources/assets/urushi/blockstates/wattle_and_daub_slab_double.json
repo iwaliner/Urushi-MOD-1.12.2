@@ -1,0 +1,6 @@
+{
+    "variants": {
+"variant=type_a": { "model":"urushi:wattle_and_daub" },
+"variant=type_b": { "model":"urushi:wattle_and_daub" }
+    }
+}

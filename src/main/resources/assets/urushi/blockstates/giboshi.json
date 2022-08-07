@@ -1,0 +1,6 @@
+{
+    "variants": {
+     "variant=type_a": { "model":"urushi:giboshi_iron" },
+     "variant=type_b": { "model":"urushi:giboshi_gold" }
+    }
+}

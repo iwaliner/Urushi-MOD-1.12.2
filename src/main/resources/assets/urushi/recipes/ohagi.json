@@ -1,0 +1,21 @@
+{
+  "type": "forge:ore_shapeless",
+  "ingredients": [
+    {
+      "item": "urushi:rice_cake"
+    },
+    {
+       "type": "forge:ore_dict",
+      "ore": "cropRedbean"
+    },
+    {
+       "type": "forge:ore_dict",
+      "ore": "cropRedbean"
+    }
+  ],
+  "result": {
+    "item": "urushi:ohagi",
+     "data": 0,
+      "count": 1
+  }
+}

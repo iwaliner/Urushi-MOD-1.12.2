@@ -1,0 +1,7 @@
+{
+    "parent": "block/pane_side_alt",
+    "textures": {
+        "edge": "urushi:blocks/smooth_planks_red_urushi_stained",
+        "pane": "urushi:blocks/syoji_red_pane"
+    }
+}

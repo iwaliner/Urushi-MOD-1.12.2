@@ -1,0 +1,22 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "sd",
+    "ds"
+  ],
+  "key": {
+    "d": {
+      "item": "minecraft:cobblestone",
+      "data": 0
+    },
+"s": {
+       "item": "minecraft:stone_slab",
+      "data": 3
+    }
+  },
+  "result": {
+    "item": "urushi:u_stone",
+"data": 15,
+ "count": 3
+  }
+}

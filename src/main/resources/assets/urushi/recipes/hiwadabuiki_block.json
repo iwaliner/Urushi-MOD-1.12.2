@@ -1,0 +1,18 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "qq",
+    "qq"
+  ],
+  "key": {
+    "q": {
+   "item": "urushi:u_items",
+      "data": 37
+    }
+  },
+  "result": {
+    "item": "urushi:thatched_block",
+"data": 1,
+ "count": 1
+  }
+}

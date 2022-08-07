@@ -1,0 +1,8 @@
+{
+    "variants": {
+"facing=north": { "model":"urushi:ariake_andon" },
+"facing=south": { "model":"urushi:ariake_andon" , "y": 180},
+"facing=west": { "model":"urushi:ariake_andon" , "y": 270},
+"facing=east": { "model":"urushi:ariake_andon" , "y": 90}
+    }
+}

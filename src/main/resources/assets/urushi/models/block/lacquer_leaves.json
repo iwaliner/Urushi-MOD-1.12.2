@@ -1,0 +1,6 @@
+{
+    "parent": "block/leaves",
+    "textures": {
+        "all": "urushi:blocks/leaves_lacquer"
+    }
+}

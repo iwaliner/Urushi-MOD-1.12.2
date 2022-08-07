@@ -1,0 +1,17 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "q"
+  ],
+  "key": {
+    "q": {
+      "item": "urushi:lycoris_radiata",
+      "data": 0
+    }
+  },
+  "result": {
+    "item": "minecraft:dye",
+"data": 1,
+ "count": 1
+  }
+}

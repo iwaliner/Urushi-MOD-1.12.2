@@ -1,0 +1,17 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "q"
+  ],
+  "key": {
+    "q": {
+      "item": "urushi:kawara_slab_b_single",
+      "data": 0
+    }
+  },
+  "result": {
+    "item": "urushi:kawara_slab_a_single",
+"data": 4,
+ "count": 1
+  }
+}

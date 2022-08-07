@@ -1,0 +1,18 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "qq",
+    "qq"
+  ],
+  "key": {
+    "q": {
+      "item": "urushi:u_items",
+      "data": 1
+    }
+  },
+  "result": {
+    "item": "urushi:u_stone",
+"data": 5,
+ "count": 1
+  }
+}

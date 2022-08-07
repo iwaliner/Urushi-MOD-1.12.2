@@ -1,0 +1,23 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "qqq",
+    "qdq",
+    "qqq"
+  ],
+  "key": {
+    "q": {
+      "type": "forge:ore_dict",
+      "ore": "stairWood"
+    },
+     "d": {
+      "item": "urushi:u_items",
+      "data": 59
+    }
+  },
+  "result": {
+    "item": "urushi:stairs_red_urushi_stained",
+"data": 0,
+ "count": 8
+  }
+}

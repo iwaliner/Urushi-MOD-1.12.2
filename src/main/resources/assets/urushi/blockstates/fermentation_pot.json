@@ -1,0 +1,13 @@
+{
+    "variants": {
+"variant=empty": { "model":"urushi:fermentation_pot_empty" },
+"variant=leaves": { "model":"urushi:fermentation_pot_leaves" },
+"variant=dirt": { "model":"urushi:fermentation_pot_dirt" },
+"variant=rice": { "model":"urushi:fermentation_pot_rice" },
+"variant=meat": { "model":"urushi:fermentation_pot_meat" },
+"variant=rotten_meat": { "model":"urushi:fermentation_pot_rotten_meat" },
+"variant=rice_malt": { "model":"urushi:fermentation_pot_rice_malt" },
+"variant=matured_apricot": { "model":"urushi:fermentation_pot_matured_apricot" },
+"variant=pickled_apricot": { "model":"urushi:fermentation_pot_pickled_apricot" }
+    }
+}

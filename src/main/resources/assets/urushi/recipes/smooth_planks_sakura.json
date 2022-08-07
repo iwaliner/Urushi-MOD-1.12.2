@@ -1,0 +1,18 @@
+{
+  "type": "forge:ore_shapeless",
+  "ingredients": [
+    {
+      "item": "urushi:u_wooden_slab_b_single",
+      "data": 4
+    },
+    {
+     "item": "urushi:u_wooden_slab_b_single",
+      "data": 4
+    }
+  ],
+  "result": {
+    "item": "urushi:u_planks",
+     "data": 13,
+      "count": 1
+  }
+}

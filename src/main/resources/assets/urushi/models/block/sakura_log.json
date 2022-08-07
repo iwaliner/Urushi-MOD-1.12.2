@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "urushi:blocks/sakura_log_top",
+        "side": "urushi:blocks/sakura_log"
+    }
+}

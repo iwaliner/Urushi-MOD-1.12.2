@@ -1,0 +1,18 @@
+{
+  "type": "forge:ore_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:wool",
+      "data": 9
+    },
+    {
+      "item": "minecraft:string",
+      "data": 0
+    }
+  ],
+  "result": {
+    "item": "urushi:u_items",
+     "data": 23,
+      "count": 4
+  }
+}

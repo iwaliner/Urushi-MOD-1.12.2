@@ -1,0 +1,14 @@
+{
+    "variants": {
+"stage=0,type=oak": { "model":"urushi:japanese_apricot_sapling" },
+"stage=1,type=oak": { "model":"urushi:japanese_apricot_sapling" },
+"stage=0,type=spruce": { "model":"urushi:sakura_sapling" },
+"stage=1,type=spruce": { "model":"urushi:sakura_sapling" },
+"stage=0,type=birch": { "model":"urushi:lacquer_sapling" },
+"stage=1,type=birch": { "model":"urushi:lacquer_sapling" },
+"stage=0,type=jungle": { "model":"urushi:cypress_sapling" },
+"stage=1,type=jungle": { "model":"urushi:cypress_sapling" },
+"stage=0,type=acacia": { "model":"urushi:large_sakura_sapling" },
+"stage=1,type=acacia": { "model":"urushi:large_sakura_sapling" }
+    }
+}

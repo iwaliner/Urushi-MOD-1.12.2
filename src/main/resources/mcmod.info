@@ -1,0 +1,16 @@
+[
+{
+  "modid": "urushi",
+  "name": "Urushi",
+  "description": "iwaliner's mod",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["iwaliner"],
+  "credits": "thanks for playing",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

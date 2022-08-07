@@ -1,0 +1,18 @@
+{
+  "type": "forge:ore_shapeless",
+  "ingredients": [
+    {
+      "item": "urushi:wattle_and_daub",
+      "data": 0
+    },
+    {
+      "item": "urushi:u_wooden_slab_a_single",
+      "data": 4
+    }
+  ],
+  "result": {
+    "item": "urushi:framed_wattle_and_daub",
+     "data": 4,
+      "count": 2
+  }
+}

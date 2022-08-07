@@ -1,0 +1,8 @@
+{
+    "parent": "block/inner_stairs",
+    "textures": {
+        "bottom": "urushi:blocks/kaya",
+        "top": "urushi:blocks/kaya",
+        "side": "urushi:blocks/kaya"
+    }
+}

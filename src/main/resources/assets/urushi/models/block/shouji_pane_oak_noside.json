@@ -1,0 +1,6 @@
+{
+    "parent": "block/pane_noside",
+    "textures": {
+        "pane": "urushi:blocks/syoji_oak_pane"
+    }
+}

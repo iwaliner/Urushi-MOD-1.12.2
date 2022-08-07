@@ -1,0 +1,8 @@
+{
+    "parent": "block/inner_stairs",
+    "textures": {
+        "bottom": "urushi:blocks/planks_red_urushi_stained",
+        "top": "urushi:blocks/planks_red_urushi_stained",
+        "side": "urushi:blocks/planks_red_urushi_stained"
+    }
+}

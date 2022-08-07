@@ -1,0 +1,8 @@
+{
+    "parent": "block/half_slab",
+    "textures": {
+        "bottom": "urushi:blocks/kawara_block_copper",
+        "top": "urushi:blocks/kawara_block_copper",
+        "side": "urushi:blocks/kawara_block_copper"
+    }
+}

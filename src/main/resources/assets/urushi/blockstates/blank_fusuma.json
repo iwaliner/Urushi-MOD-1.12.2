@@ -1,0 +1,20 @@
+{
+    "variants": {
+"facing=north,openclose=close,underupper=under": { "model":"urushi:blank_fusuma_under_close" },
+"facing=south,openclose=close,underupper=under": { "model":"urushi:blank_fusuma_under_close" , "y": 180},
+"facing=west,openclose=close,underupper=under": { "model":"urushi:blank_fusuma_under_close" , "y": 270},
+"facing=east,openclose=close,underupper=under": { "model":"urushi:blank_fusuma_under_close" , "y": 90},
+"facing=north,openclose=open,underupper=under": { "model":"urushi:blank_fusuma_under_open" },
+"facing=south,openclose=open,underupper=under": { "model":"urushi:blank_fusuma_under_open" , "y": 180},
+"facing=west,openclose=open,underupper=under": { "model":"urushi:blank_fusuma_under_open" , "y": 270},
+"facing=east,openclose=open,underupper=under": { "model":"urushi:blank_fusuma_under_open" , "y": 90},
+"facing=north,openclose=close,underupper=upper": { "model":"urushi:blank_fusuma_upper_close" },
+"facing=south,openclose=close,underupper=upper": { "model":"urushi:blank_fusuma_upper_close" , "y": 180},
+"facing=west,openclose=close,underupper=upper": { "model":"urushi:blank_fusuma_upper_close" , "y": 270},
+"facing=east,openclose=close,underupper=upper": { "model":"urushi:blank_fusuma_upper_close" , "y": 90},
+"facing=north,openclose=open,underupper=upper": { "model":"urushi:blank_fusuma_upper_open" },
+"facing=south,openclose=open,underupper=upper": { "model":"urushi:blank_fusuma_upper_open" , "y": 180},
+"facing=west,openclose=open,underupper=upper": { "model":"urushi:blank_fusuma_upper_open" , "y": 270},
+"facing=east,openclose=open,underupper=upper": { "model":"urushi:blank_fusuma_upper_open" , "y": 90}
+    }
+}

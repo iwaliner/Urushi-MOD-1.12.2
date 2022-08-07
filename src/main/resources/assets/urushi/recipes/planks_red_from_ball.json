@@ -1,0 +1,23 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "qqq",
+    "qdq",
+    "qqq"
+  ],
+  "key": {
+    "q": {
+      "type": "forge:ore_dict",
+      "ore": "plankWood"
+    },
+     "d": {
+      "item": "urushi:u_items",
+      "data": 59
+    }
+  },
+  "result": {
+    "item": "urushi:u_planks",
+"data": 6,
+ "count": 8
+  }
+}

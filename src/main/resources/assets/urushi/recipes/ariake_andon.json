@@ -1,0 +1,31 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    " q ",
+    "ptp",
+    " h "
+  ],
+  "key": {
+    "q": {
+  "item": "urushi:u_planks",
+      "data": 9
+    },
+"p": {
+      "type": "forge:ore_dict",
+      "ore": "paper"
+    },
+    "t": {
+ "item": "minecraft:torch",
+      "data": 0
+    },
+  "h": {
+    "item": "urushi:u_wooden_slab_b_single",
+      "data": 1
+    }
+  },
+  "result": {
+    "item": "urushi:u_items",
+"data": 32,
+ "count": 16
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "ppp",
+    "i i",
+    "iii"
+  ],
+  "key": {
+"p": {
+       "type": "forge:ore_dict",
+      "ore": "plankWood"
+    },
+  "i": {
+       "type": "forge:ore_dict",
+      "ore": "ingotIron"
+    }
+  },
+  "result": {
+    "item": "urushi:rice_cauldron",
+"data": 0,
+ "count": 1
+  }
+}

@@ -1,0 +1,16 @@
+{
+    "variants": {
+"axis=y,variant=oak": { "model":"urushi:japanese_apricot_log" },
+"axis=z,variant=oak": { "model":"urushi:japanese_apricot_log","x": 90 },
+"axis=x,variant=oak": { "model":"urushi:japanese_apricot_log", "x": 90, "y": 90 },
+"axis=y,variant=spruce": { "model":"urushi:sakura_log" },
+"axis=z,variant=spruce": { "model":"urushi:sakura_log","x": 90 },
+"axis=x,variant=spruce": { "model":"urushi:sakura_log", "x": 90, "y": 90 },
+"axis=y,variant=birch": { "model":"urushi:lacquer_log" },
+"axis=z,variant=birch": { "model":"urushi:lacquer_log","x": 90 },
+"axis=x,variant=birch": { "model":"urushi:lacquer_log", "x": 90, "y": 90 },
+"axis=y,variant=jungle": { "model":"urushi:cypress_log" },
+"axis=z,variant=jungle": { "model":"urushi:cypress_log","x": 90 },
+"axis=x,variant=jungle": { "model":"urushi:cypress_log", "x": 90, "y": 90 }
+    }
+}

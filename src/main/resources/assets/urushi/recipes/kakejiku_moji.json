@@ -1,0 +1,27 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "s",
+    "p",
+    "b"
+  ],
+  "key": {
+    "b": {
+       "type": "forge:ore_dict",
+      "ore": "stickWood"
+    },
+"s": {
+       "type": "forge:ore_dict",
+      "ore": "string"
+    },
+  "p": {
+     "type": "forge:ore_dict",
+      "ore": "paper"
+    }
+  },
+  "result": {
+    "item": "urushi:kakejiku",
+"data": 0,
+ "count": 4
+  }
+}

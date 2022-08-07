@@ -1,0 +1,18 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "qqq",
+    "qqq"
+  ],
+  "key": {
+    "q": {
+   "item": "urushi:framed_glass",
+   "data": 0
+    }
+  },
+  "result": {
+    "item": "urushi:framed_glass_pane",
+"data": 0,
+ "count": 16
+  }
+}

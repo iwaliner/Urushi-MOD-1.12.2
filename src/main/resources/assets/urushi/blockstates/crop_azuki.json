@@ -1,0 +1,9 @@
+{
+    "variants": {
+        "age=0": { "model": "urushi:azuki_stage0" },
+        "age=1": { "model": "urushi:azuki_stage1" },
+        "age=2": { "model": "urushi:azuki_stage2" },
+        "age=3": { "model": "urushi:azuki_stage3" },
+        "age=4": { "model": "urushi:azuki_stage4" }
+    }
+}

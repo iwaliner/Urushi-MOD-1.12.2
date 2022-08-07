@@ -1,0 +1,6 @@
+{
+    "parent": "block/fence_side",
+    "textures": {
+        "texture": "urushi:blocks/ume_planks"
+    }
+}

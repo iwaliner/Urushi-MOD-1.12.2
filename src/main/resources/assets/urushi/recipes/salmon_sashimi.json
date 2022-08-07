@@ -1,0 +1,14 @@
+{
+  "type": "forge:ore_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:fish",
+      "data": 1
+    }
+  ],
+  "result": {
+    "item": "urushi:salmon_sashimi",
+     "data": 0,
+      "count": 2
+  }
+}

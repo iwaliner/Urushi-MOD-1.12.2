@@ -1,0 +1,17 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "q",
+    "q"
+  ],
+  "key": {
+    "q": {
+      "item": "minecraft:glass_pane"
+    }
+  },
+  "result": {
+    "item": "urushi:u_items",
+"data": 7,
+ "count": 1
+  }
+}

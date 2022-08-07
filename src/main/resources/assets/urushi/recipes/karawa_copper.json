@@ -1,0 +1,18 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    " qq",
+    "qq "
+  ],
+  "key": {
+    "q": {
+      "type": "forge:ore_dict",
+      "ore": "ingotCopper"
+    }
+  },
+  "result": {
+    "item": "urushi:u_items",
+"data": 1,
+ "count": 64
+  }
+}

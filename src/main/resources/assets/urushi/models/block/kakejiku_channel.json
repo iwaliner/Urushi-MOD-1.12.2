@@ -1,0 +1,9 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "urushi:block/kakejiku_base",
+	"textures": {
+		"0": "urushi:blocks/kakejiku_channeltouroku_upper",
+		"1": "urushi:blocks/kakejiku_channeltouroku_under",
+		"particle": "urushi:blocks/kakejiku_channeltouroku_upper"
+	}
+}

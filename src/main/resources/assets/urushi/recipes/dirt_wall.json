@@ -1,0 +1,23 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "sds",
+    "dsd",
+    "sds"
+  ],
+  "key": {
+    "d": {
+       "item": "minecraft:dirt",
+      "data": 0
+    },
+"s": {
+       "type": "forge:ore_dict",
+      "ore": "bamboo"
+    }
+  },
+  "result": {
+    "item": "urushi:wattle_and_daub",
+"data": 0,
+ "count": 8
+  }
+}

@@ -1,0 +1,20 @@
+{
+    "variants": {
+"variant=type_a,variant2=type_a": { "model":"urushi:parapet_oak" },
+"variant=type_a,variant2=type_b": { "model":"urushi:parapet_oak", "y": 90 },
+"variant=type_b,variant2=type_a": { "model":"urushi:parapet_spruce" },
+"variant=type_b,variant2=type_b": { "model":"urushi:parapet_spruce", "y": 90 },
+"variant=type_c,variant2=type_a": { "model":"urushi:parapet_birch" },
+"variant=type_c,variant2=type_b": { "model":"urushi:parapet_birch", "y": 90 },
+"variant=type_d,variant2=type_a": { "model":"urushi:parapet_jungle" },
+"variant=type_d,variant2=type_b": { "model":"urushi:parapet_jungle", "y": 90 },
+"variant=type_e,variant2=type_a": { "model":"urushi:parapet_acacia" },
+"variant=type_e,variant2=type_b": { "model":"urushi:parapet_acacia", "y": 90 },
+"variant=type_f,variant2=type_a": { "model":"urushi:parapet_dark_oak" },
+"variant=type_f,variant2=type_b": { "model":"urushi:parapet_dark_oak", "y": 90 },
+"variant=type_g,variant2=type_a": { "model":"urushi:parapet_red" },
+"variant=type_g,variant2=type_b": { "model":"urushi:parapet_red", "y": 90 },
+"variant=type_h,variant2=type_a": { "model":"urushi:parapet_black" },
+"variant=type_h,variant2=type_b": { "model":"urushi:parapet_black", "y": 90 }
+    }
+}

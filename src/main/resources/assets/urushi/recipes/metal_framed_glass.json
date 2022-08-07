@@ -1,0 +1,23 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "qqq",
+    "qdq",
+    "qqq"
+  ],
+  "key": {
+    "q": {
+ "item": "urushi:framed_glass",
+      "data": 0
+    },
+     "d": {
+      "type": "forge:ore_dict",
+      "ore": "nuggetIron"
+    }
+  },
+  "result": {
+    "item": "urushi:framed_glass",
+"data": 1,
+ "count": 8
+  }
+}

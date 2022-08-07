@@ -1,0 +1,884 @@
+{
+    "multipart": [
+        {   "when": { "north": "false","south": "false","east": "false","west": "false","upper": "false","under": "false","variant": "type_a"},
+            "apply": { "model": "urushi:dirt_oak_0", "uvlock": true }
+        },
+        {   "when": {"north": "false","south": "false","east": "false","west": "false","upper": "false","under": "true","variant": "type_a"},
+            "apply": { "model": "urushi:dirt_oak_1", "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "false","east": "false","west": "false","upper": "true","under": "false","variant": "type_a"},
+            "apply": { "model": "urushi:dirt_oak_2", "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "false","east": "false","west": "false","upper": "true","under": "true","variant": "type_a"},
+            "apply": { "model": "urushi:dirt_oak_3", "uvlock": true }
+        },
+       {   "when": { "north": "true","south": "false","east": "false","west": "false","upper": "false","under": "false","variant": "type_a"},
+            "apply": { "model": "urushi:dirt_oak_4", "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "true","east": "false","west": "false","upper": "false","under": "false","variant": "type_a"},
+            "apply": { "model": "urushi:dirt_oak_4", "y": 180, "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "false","east": "true","west": "false","upper": "false","under": "false","variant": "type_a"},
+            "apply": { "model": "urushi:dirt_oak_4", "y": 90, "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "false","east": "false","west": "true","upper": "false","under": "false","variant": "type_a"},
+            "apply": { "model": "urushi:dirt_oak_4", "y": 270, "uvlock": true }
+        },
+         {   "when": { "north": "true","south": "true","upper": "false","under": "false","variant": "type_a"},
+            "apply": { "model": "urushi:dirt_oak_5", "uvlock": true }
+        },
+        {   "when": { "east": "true","west": "true","upper": "false","under": "false","variant": "type_a"},
+            "apply": { "model": "urushi:dirt_oak_5", "y": 90, "uvlock": true }
+        },
+        {   "when": { "north": "true","south": "false","east": "false","west": "false","upper": "true","under": "false","variant": "type_a"},
+            "apply": { "model": "urushi:dirt_oak_6", "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "true","east": "false","west": "false","upper": "true","under": "false","variant": "type_a"},
+            "apply": { "model": "urushi:dirt_oak_6", "y": 180, "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "false","east": "true","west": "false","upper": "true","under": "false","variant": "type_a"},
+            "apply": { "model": "urushi:dirt_oak_6", "y": 90, "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "false","east": "false","west": "true","upper": "true","under": "false","variant": "type_a"},
+            "apply": { "model": "urushi:dirt_oak_6", "y": 270, "uvlock": true }
+        },
+        {   "when": { "north": "true","south": "false","east": "false","west": "false","upper": "false","under": "true","variant": "type_a"},
+            "apply": { "model": "urushi:dirt_oak_7", "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "true","east": "false","west": "false","upper": "false","under": "true","variant": "type_a"},
+            "apply": { "model": "urushi:dirt_oak_7", "y": 180, "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "false","east": "true","west": "false","upper": "false","under": "true","variant": "type_a"},
+            "apply": { "model": "urushi:dirt_oak_7", "y": 90, "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "false","east": "false","west": "true","upper": "false","under": "true","variant": "type_a"},
+            "apply": { "model": "urushi:dirt_oak_7", "y": 270, "uvlock": true }
+        },
+        {   "when": { "north": "true","south": "false","east": "false","west": "false","upper": "true","under": "true","variant": "type_a"},
+            "apply": { "model": "urushi:dirt_oak_8",  "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "true","east": "false","west": "false","upper": "true","under": "true","variant": "type_a"},
+            "apply": { "model": "urushi:dirt_oak_8", "y": 180, "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "false","east": "true","west": "false","upper": "true","under": "true","variant": "type_a"},
+            "apply": { "model": "urushi:dirt_oak_8", "y": 90, "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "false","east": "false","west": "true","upper": "true","under": "true","variant": "type_a"},
+            "apply": { "model": "urushi:dirt_oak_8", "y":270, "uvlock": true }
+        },
+        {   "when": { "north": "true","south": "true","upper": "true","under": "false","variant": "type_a"},
+            "apply": { "model": "urushi:dirt_oak_9",  "uvlock": true }
+        },
+        {   "when": { "east": "true","west": "true","upper": "true","under": "false","variant": "type_a"},
+            "apply": { "model": "urushi:dirt_oak_9", "y": 90,  "uvlock": true }
+        },
+        {   "when": { "north": "true","south": "true","upper": "false","under": "true","variant": "type_a"},
+            "apply": { "model": "urushi:dirt_oak_10",  "uvlock": true }
+        },
+        {   "when": { "east": "true","west": "true","upper": "false","under": "true","variant": "type_a"},
+            "apply": { "model": "urushi:dirt_oak_10", "y": 90,  "uvlock": true }
+        },
+      
+        {   "when": { "north": "true","south": "false","east": "false","west": "true","upper": "false","under": "false","variant": "type_a"},
+            "apply": { "model": "urushi:dirt_oak_12",  "uvlock": true }
+        },
+        {   "when": { "north": "true","south": "false","east": "true","west": "false","upper": "false","under": "false","variant": "type_a"},
+            "apply": { "model": "urushi:dirt_oak_12", "y": 90,  "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "true","east": "true","west": "false","upper": "false","under": "false","variant": "type_a"},
+            "apply": { "model": "urushi:dirt_oak_12", "y": 180,  "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "true","east": "false","west": "true","upper": "false","under": "false","variant": "type_a"},
+            "apply": { "model": "urushi:dirt_oak_12", "y": 270,  "uvlock": true }
+        },
+        
+        {   "when": { "north": "true","south": "false","east": "false","west": "true","upper": "true","under": "false","variant": "type_a"},
+            "apply": { "model": "urushi:dirt_oak_13",  "uvlock": true }
+        },
+        {   "when": { "north": "true","south": "false","east": "true","west": "false","upper": "true","under": "false","variant": "type_a"},
+            "apply": { "model": "urushi:dirt_oak_13", "y": 90,  "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "true","east": "true","west": "false","upper": "true","under": "false","variant": "type_a"},
+            "apply": { "model": "urushi:dirt_oak_13", "y": 180,  "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "true","east": "false","west": "true","upper": "true","under": "false","variant": "type_a"},
+            "apply": { "model": "urushi:dirt_oak_13", "y": 270,  "uvlock": true }
+        },
+        
+        {   "when": { "north": "true","south": "false","east": "false","west": "true","upper": "false","under": "true","variant": "type_a"},
+            "apply": { "model": "urushi:dirt_oak_14",  "uvlock": true }
+        },
+        {   "when": { "north": "true","south": "false","east": "true","west": "false","upper": "false","under": "true","variant": "type_a"},
+            "apply": { "model": "urushi:dirt_oak_14", "y": 90,  "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "true","east": "true","west": "false","upper": "false","under": "true","variant": "type_a"},
+            "apply": { "model": "urushi:dirt_oak_14", "y": 180,  "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "true","east": "false","west": "true","upper": "false","under": "true","variant": "type_a"},
+            "apply": { "model": "urushi:dirt_oak_14", "y": 270,  "uvlock": true }
+        },
+        
+        {   "when": { "north": "true","south": "true","upper": "true","under": "true"},
+            "apply": { "model": "urushi:wattle_and_daub",  "uvlock": true }
+        },
+        {   "when": { "east": "true","west": "true","upper": "true","under": "true"},
+            "apply": { "model": "urushi:wattle_and_daub",  "uvlock": true }
+        },
+        
+        {   "when": { "north": "true","south": "true","east": "true","west": "true","variant": "type_a"},
+            "apply": { "model": "urushi:oak_smooth_planks",  "uvlock": true }
+        },
+        
+        {   "when": { "north": "true","south": "false","east": "false","west": "true","upper": "true","under": "true","variant": "type_a"},
+            "apply": { "model": "urushi:dirt_oak_15",  "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "true","east": "true","west": "false","upper": "true","under": "true","variant": "type_a"},
+            "apply": { "model": "urushi:dirt_oak_15", "y": 180,  "uvlock": true }
+        },
+        {   "when": { "north": "true","south": "false","east": "true","west": "false","upper": "true","under": "true","variant": "type_a"},
+            "apply": { "model": "urushi:dirt_oak_15", "y": 90,  "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "true","east": "false","west": "true","upper": "true","under": "true","variant": "type_a"},
+            "apply": { "model": "urushi:dirt_oak_15", "y": 270,  "uvlock": true }
+        },
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+       {   "when": { "north": "false","south": "false","east": "false","west": "false","upper": "false","under": "false","variant": "type_b"},
+            "apply": { "model": "urushi:dirt_spruce_0", "uvlock": true }
+        },
+        {   "when": {"north": "false","south": "false","east": "false","west": "false","upper": "false","under": "true","variant": "type_b"},
+            "apply": { "model": "urushi:dirt_spruce_1", "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "false","east": "false","west": "false","upper": "true","under": "false","variant": "type_b"},
+            "apply": { "model": "urushi:dirt_spruce_2", "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "false","east": "false","west": "false","upper": "true","under": "true","variant": "type_b"},
+            "apply": { "model": "urushi:dirt_spruce_3", "uvlock": true }
+        },
+       {   "when": { "north": "true","south": "false","east": "false","west": "false","upper": "false","under": "false","variant": "type_b"},
+            "apply": { "model": "urushi:dirt_spruce_4", "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "true","east": "false","west": "false","upper": "false","under": "false","variant": "type_b"},
+            "apply": { "model": "urushi:dirt_spruce_4", "y": 180, "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "false","east": "true","west": "false","upper": "false","under": "false","variant": "type_b"},
+            "apply": { "model": "urushi:dirt_spruce_4", "y": 90, "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "false","east": "false","west": "true","upper": "false","under": "false","variant": "type_b"},
+            "apply": { "model": "urushi:dirt_spruce_4", "y": 270, "uvlock": true }
+        },
+         {   "when": { "north": "true","south": "true","upper": "false","under": "false","variant": "type_b"},
+            "apply": { "model": "urushi:dirt_spruce_5", "uvlock": true }
+        },
+        {   "when": { "east": "true","west": "true","upper": "false","under": "false","variant": "type_b"},
+            "apply": { "model": "urushi:dirt_spruce_5", "y": 90, "uvlock": true }
+        },
+        {   "when": { "north": "true","south": "false","east": "false","west": "false","upper": "true","under": "false","variant": "type_b"},
+            "apply": { "model": "urushi:dirt_spruce_6", "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "true","east": "false","west": "false","upper": "true","under": "false","variant": "type_b"},
+            "apply": { "model": "urushi:dirt_spruce_6", "y": 180, "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "false","east": "true","west": "false","upper": "true","under": "false","variant": "type_b"},
+            "apply": { "model": "urushi:dirt_spruce_6", "y": 90, "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "false","east": "false","west": "true","upper": "true","under": "false","variant": "type_b"},
+            "apply": { "model": "urushi:dirt_spruce_6", "y": 270, "uvlock": true }
+        },
+        {   "when": { "north": "true","south": "false","east": "false","west": "false","upper": "false","under": "true","variant": "type_b"},
+            "apply": { "model": "urushi:dirt_spruce_7", "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "true","east": "false","west": "false","upper": "false","under": "true","variant": "type_b"},
+            "apply": { "model": "urushi:dirt_spruce_7", "y": 180, "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "false","east": "true","west": "false","upper": "false","under": "true","variant": "type_b"},
+            "apply": { "model": "urushi:dirt_spruce_7", "y": 90, "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "false","east": "false","west": "true","upper": "false","under": "true","variant": "type_b"},
+            "apply": { "model": "urushi:dirt_spruce_7", "y": 270, "uvlock": true }
+        },
+        {   "when": { "north": "true","south": "false","east": "false","west": "false","upper": "true","under": "true","variant": "type_b"},
+            "apply": { "model": "urushi:dirt_spruce_8",  "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "true","east": "false","west": "false","upper": "true","under": "true","variant": "type_b"},
+            "apply": { "model": "urushi:dirt_spruce_8", "y": 180, "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "false","east": "true","west": "false","upper": "true","under": "true","variant": "type_b"},
+            "apply": { "model": "urushi:dirt_spruce_8", "y": 90, "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "false","east": "false","west": "true","upper": "true","under": "true","variant": "type_b"},
+            "apply": { "model": "urushi:dirt_spruce_8", "y":270, "uvlock": true }
+        },
+        {   "when": { "north": "true","south": "true","upper": "true","under": "false","variant": "type_b"},
+            "apply": { "model": "urushi:dirt_spruce_9",  "uvlock": true }
+        },
+        {   "when": { "east": "true","west": "true","upper": "true","under": "false","variant": "type_b"},
+            "apply": { "model": "urushi:dirt_spruce_9", "y": 90,  "uvlock": true }
+        },
+        {   "when": { "north": "true","south": "true","upper": "false","under": "true","variant": "type_b"},
+            "apply": { "model": "urushi:dirt_spruce_10",  "uvlock": true }
+        },
+        {   "when": { "east": "true","west": "true","upper": "false","under": "true","variant": "type_b"},
+            "apply": { "model": "urushi:dirt_spruce_10", "y": 90,  "uvlock": true }
+        },
+      
+        {   "when": { "north": "true","south": "false","east": "false","west": "true","upper": "false","under": "false","variant": "type_b"},
+            "apply": { "model": "urushi:dirt_spruce_12",  "uvlock": true }
+        },
+        {   "when": { "north": "true","south": "false","east": "true","west": "false","upper": "false","under": "false","variant": "type_b"},
+            "apply": { "model": "urushi:dirt_spruce_12", "y": 90,  "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "true","east": "true","west": "false","upper": "false","under": "false","variant": "type_b"},
+            "apply": { "model": "urushi:dirt_spruce_12", "y": 180,  "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "true","east": "false","west": "true","upper": "false","under": "false","variant": "type_b"},
+            "apply": { "model": "urushi:dirt_spruce_12", "y": 270,  "uvlock": true }
+        },
+        
+        {   "when": { "north": "true","south": "false","east": "false","west": "true","upper": "true","under": "false","variant": "type_b"},
+            "apply": { "model": "urushi:dirt_spruce_13",  "uvlock": true }
+        },
+        {   "when": { "north": "true","south": "false","east": "true","west": "false","upper": "true","under": "false","variant": "type_b"},
+            "apply": { "model": "urushi:dirt_spruce_13", "y": 90,  "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "true","east": "true","west": "false","upper": "true","under": "false","variant": "type_b"},
+            "apply": { "model": "urushi:dirt_spruce_13", "y": 180,  "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "true","east": "false","west": "true","upper": "true","under": "false","variant": "type_b"},
+            "apply": { "model": "urushi:dirt_spruce_13", "y": 270,  "uvlock": true }
+        },
+        
+        {   "when": { "north": "true","south": "false","east": "false","west": "true","upper": "false","under": "true","variant": "type_b"},
+            "apply": { "model": "urushi:dirt_spruce_14",  "uvlock": true }
+        },
+        {   "when": { "north": "true","south": "false","east": "true","west": "false","upper": "false","under": "true","variant": "type_b"},
+            "apply": { "model": "urushi:dirt_spruce_14", "y": 90,  "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "true","east": "true","west": "false","upper": "false","under": "true","variant": "type_b"},
+            "apply": { "model": "urushi:dirt_spruce_14", "y": 180,  "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "true","east": "false","west": "true","upper": "false","under": "true","variant": "type_b"},
+            "apply": { "model": "urushi:dirt_spruce_14", "y": 270,  "uvlock": true }
+        },
+        
+        
+        
+        {   "when": { "north": "true","south": "true","east": "true","west": "true","variant": "type_b"},
+            "apply": { "model": "urushi:spruce_smooth_planks",  "uvlock": true }
+        },
+        
+        {   "when": { "north": "true","south": "false","east": "false","west": "true","upper": "true","under": "true","variant": "type_b"},
+            "apply": { "model": "urushi:dirt_spruce_15",  "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "true","east": "true","west": "false","upper": "true","under": "true","variant": "type_b"},
+            "apply": { "model": "urushi:dirt_spruce_15", "y": 180,  "uvlock": true }
+        },
+        {   "when": { "north": "true","south": "false","east": "true","west": "false","upper": "true","under": "true","variant": "type_b"},
+            "apply": { "model": "urushi:dirt_spruce_15", "y": 90,  "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "true","east": "false","west": "true","upper": "true","under": "true","variant": "type_b"},
+            "apply": { "model": "urushi:dirt_spruce_15", "y": 270,  "uvlock": true }
+        },
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+       {   "when": { "north": "false","south": "false","east": "false","west": "false","upper": "false","under": "false","variant": "type_c"},
+            "apply": { "model": "urushi:dirt_birch_0", "uvlock": true }
+        },
+        {   "when": {"north": "false","south": "false","east": "false","west": "false","upper": "false","under": "true","variant": "type_c"},
+            "apply": { "model": "urushi:dirt_birch_1", "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "false","east": "false","west": "false","upper": "true","under": "false","variant": "type_c"},
+            "apply": { "model": "urushi:dirt_birch_2", "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "false","east": "false","west": "false","upper": "true","under": "true","variant": "type_c"},
+            "apply": { "model": "urushi:dirt_birch_3", "uvlock": true }
+        },
+       {   "when": { "north": "true","south": "false","east": "false","west": "false","upper": "false","under": "false","variant": "type_c"},
+            "apply": { "model": "urushi:dirt_birch_4", "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "true","east": "false","west": "false","upper": "false","under": "false","variant": "type_c"},
+            "apply": { "model": "urushi:dirt_birch_4", "y": 180, "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "false","east": "true","west": "false","upper": "false","under": "false","variant": "type_c"},
+            "apply": { "model": "urushi:dirt_birch_4", "y": 90, "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "false","east": "false","west": "true","upper": "false","under": "false","variant": "type_c"},
+            "apply": { "model": "urushi:dirt_birch_4", "y": 270, "uvlock": true }
+        },
+         {   "when": { "north": "true","south": "true","upper": "false","under": "false","variant": "type_c"},
+            "apply": { "model": "urushi:dirt_birch_5", "uvlock": true }
+        },
+        {   "when": { "east": "true","west": "true","upper": "false","under": "false","variant": "type_c"},
+            "apply": { "model": "urushi:dirt_birch_5", "y": 90, "uvlock": true }
+        },
+        {   "when": { "north": "true","south": "false","east": "false","west": "false","upper": "true","under": "false","variant": "type_c"},
+            "apply": { "model": "urushi:dirt_birch_6", "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "true","east": "false","west": "false","upper": "true","under": "false","variant": "type_c"},
+            "apply": { "model": "urushi:dirt_birch_6", "y": 180, "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "false","east": "true","west": "false","upper": "true","under": "false","variant": "type_c"},
+            "apply": { "model": "urushi:dirt_birch_6", "y": 90, "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "false","east": "false","west": "true","upper": "true","under": "false","variant": "type_c"},
+            "apply": { "model": "urushi:dirt_birch_6", "y": 270, "uvlock": true }
+        },
+        {   "when": { "north": "true","south": "false","east": "false","west": "false","upper": "false","under": "true","variant": "type_c"},
+            "apply": { "model": "urushi:dirt_birch_7", "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "true","east": "false","west": "false","upper": "false","under": "true","variant": "type_c"},
+            "apply": { "model": "urushi:dirt_birch_7", "y": 180, "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "false","east": "true","west": "false","upper": "false","under": "true","variant": "type_c"},
+            "apply": { "model": "urushi:dirt_birch_7", "y": 90, "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "false","east": "false","west": "true","upper": "false","under": "true","variant": "type_c"},
+            "apply": { "model": "urushi:dirt_birch_7", "y": 270, "uvlock": true }
+        },
+        {   "when": { "north": "true","south": "false","east": "false","west": "false","upper": "true","under": "true","variant": "type_c"},
+            "apply": { "model": "urushi:dirt_birch_8",  "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "true","east": "false","west": "false","upper": "true","under": "true","variant": "type_c"},
+            "apply": { "model": "urushi:dirt_birch_8", "y": 180, "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "false","east": "true","west": "false","upper": "true","under": "true","variant": "type_c"},
+            "apply": { "model": "urushi:dirt_birch_8", "y": 90, "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "false","east": "false","west": "true","upper": "true","under": "true","variant": "type_c"},
+            "apply": { "model": "urushi:dirt_birch_8", "y":270, "uvlock": true }
+        },
+        {   "when": { "north": "true","south": "true","upper": "true","under": "false","variant": "type_c"},
+            "apply": { "model": "urushi:dirt_birch_9",  "uvlock": true }
+        },
+        {   "when": { "east": "true","west": "true","upper": "true","under": "false","variant": "type_c"},
+            "apply": { "model": "urushi:dirt_birch_9", "y": 90,  "uvlock": true }
+        },
+        {   "when": { "north": "true","south": "true","upper": "false","under": "true","variant": "type_c"},
+            "apply": { "model": "urushi:dirt_birch_10",  "uvlock": true }
+        },
+        {   "when": { "east": "true","west": "true","upper": "false","under": "true","variant": "type_c"},
+            "apply": { "model": "urushi:dirt_birch_10", "y": 90,  "uvlock": true }
+        },
+      
+        {   "when": { "north": "true","south": "false","east": "false","west": "true","upper": "false","under": "false","variant": "type_c"},
+            "apply": { "model": "urushi:dirt_birch_12",  "uvlock": true }
+        },
+        {   "when": { "north": "true","south": "false","east": "true","west": "false","upper": "false","under": "false","variant": "type_c"},
+            "apply": { "model": "urushi:dirt_birch_12", "y": 90,  "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "true","east": "true","west": "false","upper": "false","under": "false","variant": "type_c"},
+            "apply": { "model": "urushi:dirt_birch_12", "y": 180,  "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "true","east": "false","west": "true","upper": "false","under": "false","variant": "type_c"},
+            "apply": { "model": "urushi:dirt_birch_12", "y": 270,  "uvlock": true }
+        },
+        
+        {   "when": { "north": "true","south": "false","east": "false","west": "true","upper": "true","under": "false","variant": "type_c"},
+            "apply": { "model": "urushi:dirt_birch_13",  "uvlock": true }
+        },
+        {   "when": { "north": "true","south": "false","east": "true","west": "false","upper": "true","under": "false","variant": "type_c"},
+            "apply": { "model": "urushi:dirt_birch_13", "y": 90,  "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "true","east": "true","west": "false","upper": "true","under": "false","variant": "type_c"},
+            "apply": { "model": "urushi:dirt_birch_13", "y": 180,  "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "true","east": "false","west": "true","upper": "true","under": "false","variant": "type_c"},
+            "apply": { "model": "urushi:dirt_birch_13", "y": 270,  "uvlock": true }
+        },
+        
+        {   "when": { "north": "true","south": "false","east": "false","west": "true","upper": "false","under": "true","variant": "type_c"},
+            "apply": { "model": "urushi:dirt_birch_14",  "uvlock": true }
+        },
+        {   "when": { "north": "true","south": "false","east": "true","west": "false","upper": "false","under": "true","variant": "type_c"},
+            "apply": { "model": "urushi:dirt_birch_14", "y": 90,  "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "true","east": "true","west": "false","upper": "false","under": "true","variant": "type_c"},
+            "apply": { "model": "urushi:dirt_birch_14", "y": 180,  "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "true","east": "false","west": "true","upper": "false","under": "true","variant": "type_c"},
+            "apply": { "model": "urushi:dirt_birch_14", "y": 270,  "uvlock": true }
+        },
+        
+        
+        
+        {   "when": { "north": "true","south": "true","east": "true","west": "true","variant": "type_c"},
+            "apply": { "model": "urushi:birch_smooth_planks",  "uvlock": true }
+        },
+        
+        {   "when": { "north": "true","south": "false","east": "false","west": "true","upper": "true","under": "true","variant": "type_c"},
+            "apply": { "model": "urushi:dirt_birch_15",  "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "true","east": "true","west": "false","upper": "true","under": "true","variant": "type_c"},
+            "apply": { "model": "urushi:dirt_birch_15", "y": 180,  "uvlock": true }
+        },
+        {   "when": { "north": "true","south": "false","east": "true","west": "false","upper": "true","under": "true","variant": "type_c"},
+            "apply": { "model": "urushi:dirt_birch_15", "y": 90,  "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "true","east": "false","west": "true","upper": "true","under": "true","variant": "type_c"},
+            "apply": { "model": "urushi:dirt_birch_15", "y": 270,  "uvlock": true }
+        },
+        
+        
+        
+        
+        
+        
+        
+        
+        {   "when": { "north": "false","south": "false","east": "false","west": "false","upper": "false","under": "false","variant": "type_d"},
+            "apply": { "model": "urushi:dirt_jungle_0", "uvlock": true }
+        },
+        {   "when": {"north": "false","south": "false","east": "false","west": "false","upper": "false","under": "true","variant": "type_d"},
+            "apply": { "model": "urushi:dirt_jungle_1", "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "false","east": "false","west": "false","upper": "true","under": "false","variant": "type_d"},
+            "apply": { "model": "urushi:dirt_jungle_2", "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "false","east": "false","west": "false","upper": "true","under": "true","variant": "type_d"},
+            "apply": { "model": "urushi:dirt_jungle_3", "uvlock": true }
+        },
+       {   "when": { "north": "true","south": "false","east": "false","west": "false","upper": "false","under": "false","variant": "type_d"},
+            "apply": { "model": "urushi:dirt_jungle_4", "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "true","east": "false","west": "false","upper": "false","under": "false","variant": "type_d"},
+            "apply": { "model": "urushi:dirt_jungle_4", "y": 180, "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "false","east": "true","west": "false","upper": "false","under": "false","variant": "type_d"},
+            "apply": { "model": "urushi:dirt_jungle_4", "y": 90, "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "false","east": "false","west": "true","upper": "false","under": "false","variant": "type_d"},
+            "apply": { "model": "urushi:dirt_jungle_4", "y": 270, "uvlock": true }
+        },
+         {   "when": { "north": "true","south": "true","upper": "false","under": "false","variant": "type_d"},
+            "apply": { "model": "urushi:dirt_jungle_5", "uvlock": true }
+        },
+        {   "when": { "east": "true","west": "true","upper": "false","under": "false","variant": "type_d"},
+            "apply": { "model": "urushi:dirt_jungle_5", "y": 90, "uvlock": true }
+        },
+        {   "when": { "north": "true","south": "false","east": "false","west": "false","upper": "true","under": "false","variant": "type_d"},
+            "apply": { "model": "urushi:dirt_jungle_6", "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "true","east": "false","west": "false","upper": "true","under": "false","variant": "type_d"},
+            "apply": { "model": "urushi:dirt_jungle_6", "y": 180, "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "false","east": "true","west": "false","upper": "true","under": "false","variant": "type_d"},
+            "apply": { "model": "urushi:dirt_jungle_6", "y": 90, "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "false","east": "false","west": "true","upper": "true","under": "false","variant": "type_d"},
+            "apply": { "model": "urushi:dirt_jungle_6", "y": 270, "uvlock": true }
+        },
+        {   "when": { "north": "true","south": "false","east": "false","west": "false","upper": "false","under": "true","variant": "type_d"},
+            "apply": { "model": "urushi:dirt_jungle_7", "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "true","east": "false","west": "false","upper": "false","under": "true","variant": "type_d"},
+            "apply": { "model": "urushi:dirt_jungle_7", "y": 180, "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "false","east": "true","west": "false","upper": "false","under": "true","variant": "type_d"},
+            "apply": { "model": "urushi:dirt_jungle_7", "y": 90, "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "false","east": "false","west": "true","upper": "false","under": "true","variant": "type_d"},
+            "apply": { "model": "urushi:dirt_jungle_7", "y": 270, "uvlock": true }
+        },
+        {   "when": { "north": "true","south": "false","east": "false","west": "false","upper": "true","under": "true","variant": "type_d"},
+            "apply": { "model": "urushi:dirt_jungle_8",  "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "true","east": "false","west": "false","upper": "true","under": "true","variant": "type_d"},
+            "apply": { "model": "urushi:dirt_jungle_8", "y": 180, "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "false","east": "true","west": "false","upper": "true","under": "true","variant": "type_d"},
+            "apply": { "model": "urushi:dirt_jungle_8", "y": 90, "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "false","east": "false","west": "true","upper": "true","under": "true","variant": "type_d"},
+            "apply": { "model": "urushi:dirt_jungle_8", "y":270, "uvlock": true }
+        },
+        {   "when": { "north": "true","south": "true","upper": "true","under": "false","variant": "type_d"},
+            "apply": { "model": "urushi:dirt_jungle_9",  "uvlock": true }
+        },
+        {   "when": { "east": "true","west": "true","upper": "true","under": "false","variant": "type_d"},
+            "apply": { "model": "urushi:dirt_jungle_9", "y": 90,  "uvlock": true }
+        },
+        {   "when": { "north": "true","south": "true","upper": "false","under": "true","variant": "type_d"},
+            "apply": { "model": "urushi:dirt_jungle_10",  "uvlock": true }
+        },
+        {   "when": { "east": "true","west": "true","upper": "false","under": "true","variant": "type_d"},
+            "apply": { "model": "urushi:dirt_jungle_10", "y": 90,  "uvlock": true }
+        },
+      
+        {   "when": { "north": "true","south": "false","east": "false","west": "true","upper": "false","under": "false","variant": "type_d"},
+            "apply": { "model": "urushi:dirt_jungle_12",  "uvlock": true }
+        },
+        {   "when": { "north": "true","south": "false","east": "true","west": "false","upper": "false","under": "false","variant": "type_d"},
+            "apply": { "model": "urushi:dirt_jungle_12", "y": 90,  "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "true","east": "true","west": "false","upper": "false","under": "false","variant": "type_d"},
+            "apply": { "model": "urushi:dirt_jungle_12", "y": 180,  "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "true","east": "false","west": "true","upper": "false","under": "false","variant": "type_d"},
+            "apply": { "model": "urushi:dirt_jungle_12", "y": 270,  "uvlock": true }
+        },
+        
+        {   "when": { "north": "true","south": "false","east": "false","west": "true","upper": "true","under": "false","variant": "type_d"},
+            "apply": { "model": "urushi:dirt_jungle_13",  "uvlock": true }
+        },
+        {   "when": { "north": "true","south": "false","east": "true","west": "false","upper": "true","under": "false","variant": "type_d"},
+            "apply": { "model": "urushi:dirt_jungle_13", "y": 90,  "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "true","east": "true","west": "false","upper": "true","under": "false","variant": "type_d"},
+            "apply": { "model": "urushi:dirt_jungle_13", "y": 180,  "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "true","east": "false","west": "true","upper": "true","under": "false","variant": "type_d"},
+            "apply": { "model": "urushi:dirt_jungle_13", "y": 270,  "uvlock": true }
+        },
+        
+        {   "when": { "north": "true","south": "false","east": "false","west": "true","upper": "false","under": "true","variant": "type_d"},
+            "apply": { "model": "urushi:dirt_jungle_14",  "uvlock": true }
+        },
+        {   "when": { "north": "true","south": "false","east": "true","west": "false","upper": "false","under": "true","variant": "type_d"},
+            "apply": { "model": "urushi:dirt_jungle_14", "y": 90,  "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "true","east": "true","west": "false","upper": "false","under": "true","variant": "type_d"},
+            "apply": { "model": "urushi:dirt_jungle_14", "y": 180,  "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "true","east": "false","west": "true","upper": "false","under": "true","variant": "type_d"},
+            "apply": { "model": "urushi:dirt_jungle_14", "y": 270,  "uvlock": true }
+        },
+        
+        
+        
+        {   "when": { "north": "true","south": "true","east": "true","west": "true","variant": "type_d"},
+            "apply": { "model": "urushi:jungle_smooth_planks",  "uvlock": true }
+        },
+        
+        {   "when": { "north": "true","south": "false","east": "false","west": "true","upper": "true","under": "true","variant": "type_d"},
+            "apply": { "model": "urushi:dirt_jungle_15",  "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "true","east": "true","west": "false","upper": "true","under": "true","variant": "type_d"},
+            "apply": { "model": "urushi:dirt_jungle_15", "y": 180,  "uvlock": true }
+        },
+        {   "when": { "north": "true","south": "false","east": "true","west": "false","upper": "true","under": "true","variant": "type_d"},
+            "apply": { "model": "urushi:dirt_jungle_15", "y": 90,  "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "true","east": "false","west": "true","upper": "true","under": "true","variant": "type_d"},
+            "apply": { "model": "urushi:dirt_jungle_15", "y": 270,  "uvlock": true }
+        },
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        {   "when": { "north": "false","south": "false","east": "false","west": "false","upper": "false","under": "false","variant": "type_e"},
+            "apply": { "model": "urushi:dirt_acacia_0", "uvlock": true }
+        },
+        {   "when": {"north": "false","south": "false","east": "false","west": "false","upper": "false","under": "true","variant": "type_e"},
+            "apply": { "model": "urushi:dirt_acacia_1", "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "false","east": "false","west": "false","upper": "true","under": "false","variant": "type_e"},
+            "apply": { "model": "urushi:dirt_acacia_2", "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "false","east": "false","west": "false","upper": "true","under": "true","variant": "type_e"},
+            "apply": { "model": "urushi:dirt_acacia_3", "uvlock": true }
+        },
+       {   "when": { "north": "true","south": "false","east": "false","west": "false","upper": "false","under": "false","variant": "type_e"},
+            "apply": { "model": "urushi:dirt_acacia_4", "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "true","east": "false","west": "false","upper": "false","under": "false","variant": "type_e"},
+            "apply": { "model": "urushi:dirt_acacia_4", "y": 180, "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "false","east": "true","west": "false","upper": "false","under": "false","variant": "type_e"},
+            "apply": { "model": "urushi:dirt_acacia_4", "y": 90, "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "false","east": "false","west": "true","upper": "false","under": "false","variant": "type_e"},
+            "apply": { "model": "urushi:dirt_acacia_4", "y": 270, "uvlock": true }
+        },
+         {   "when": { "north": "true","south": "true","upper": "false","under": "false","variant": "type_e"},
+            "apply": { "model": "urushi:dirt_acacia_5", "uvlock": true }
+        },
+        {   "when": { "east": "true","west": "true","upper": "false","under": "false","variant": "type_e"},
+            "apply": { "model": "urushi:dirt_acacia_5", "y": 90, "uvlock": true }
+        },
+        {   "when": { "north": "true","south": "false","east": "false","west": "false","upper": "true","under": "false","variant": "type_e"},
+            "apply": { "model": "urushi:dirt_acacia_6", "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "true","east": "false","west": "false","upper": "true","under": "false","variant": "type_e"},
+            "apply": { "model": "urushi:dirt_acacia_6", "y": 180, "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "false","east": "true","west": "false","upper": "true","under": "false","variant": "type_e"},
+            "apply": { "model": "urushi:dirt_acacia_6", "y": 90, "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "false","east": "false","west": "true","upper": "true","under": "false","variant": "type_e"},
+            "apply": { "model": "urushi:dirt_acacia_6", "y": 270, "uvlock": true }
+        },
+        {   "when": { "north": "true","south": "false","east": "false","west": "false","upper": "false","under": "true","variant": "type_e"},
+            "apply": { "model": "urushi:dirt_acacia_7", "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "true","east": "false","west": "false","upper": "false","under": "true","variant": "type_e"},
+            "apply": { "model": "urushi:dirt_acacia_7", "y": 180, "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "false","east": "true","west": "false","upper": "false","under": "true","variant": "type_e"},
+            "apply": { "model": "urushi:dirt_acacia_7", "y": 90, "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "false","east": "false","west": "true","upper": "false","under": "true","variant": "type_e"},
+            "apply": { "model": "urushi:dirt_acacia_7", "y": 270, "uvlock": true }
+        },
+        {   "when": { "north": "true","south": "false","east": "false","west": "false","upper": "true","under": "true","variant": "type_e"},
+            "apply": { "model": "urushi:dirt_acacia_8",  "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "true","east": "false","west": "false","upper": "true","under": "true","variant": "type_e"},
+            "apply": { "model": "urushi:dirt_acacia_8", "y": 180, "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "false","east": "true","west": "false","upper": "true","under": "true","variant": "type_e"},
+            "apply": { "model": "urushi:dirt_acacia_8", "y": 90, "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "false","east": "false","west": "true","upper": "true","under": "true","variant": "type_e"},
+            "apply": { "model": "urushi:dirt_acacia_8", "y":270, "uvlock": true }
+        },
+        {   "when": { "north": "true","south": "true","upper": "true","under": "false","variant": "type_e"},
+            "apply": { "model": "urushi:dirt_acacia_9",  "uvlock": true }
+        },
+        {   "when": { "east": "true","west": "true","upper": "true","under": "false","variant": "type_e"},
+            "apply": { "model": "urushi:dirt_acacia_9", "y": 90,  "uvlock": true }
+        },
+        {   "when": { "north": "true","south": "true","upper": "false","under": "true","variant": "type_e"},
+            "apply": { "model": "urushi:dirt_acacia_10",  "uvlock": true }
+        },
+        {   "when": { "east": "true","west": "true","upper": "false","under": "true","variant": "type_e"},
+            "apply": { "model": "urushi:dirt_acacia_10", "y": 90,  "uvlock": true }
+        },
+      
+        {   "when": { "north": "true","south": "false","east": "false","west": "true","upper": "false","under": "false","variant": "type_e"},
+            "apply": { "model": "urushi:dirt_acacia_12",  "uvlock": true }
+        },
+        {   "when": { "north": "true","south": "false","east": "true","west": "false","upper": "false","under": "false","variant": "type_e"},
+            "apply": { "model": "urushi:dirt_acacia_12", "y": 90,  "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "true","east": "true","west": "false","upper": "false","under": "false","variant": "type_e"},
+            "apply": { "model": "urushi:dirt_acacia_12", "y": 180,  "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "true","east": "false","west": "true","upper": "false","under": "false","variant": "type_e"},
+            "apply": { "model": "urushi:dirt_acacia_12", "y": 270,  "uvlock": true }
+        },
+        
+        {   "when": { "north": "true","south": "false","east": "false","west": "true","upper": "true","under": "false","variant": "type_e"},
+            "apply": { "model": "urushi:dirt_acacia_13",  "uvlock": true }
+        },
+        {   "when": { "north": "true","south": "false","east": "true","west": "false","upper": "true","under": "false","variant": "type_e"},
+            "apply": { "model": "urushi:dirt_acacia_13", "y": 90,  "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "true","east": "true","west": "false","upper": "true","under": "false","variant": "type_e"},
+            "apply": { "model": "urushi:dirt_acacia_13", "y": 180,  "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "true","east": "false","west": "true","upper": "true","under": "false","variant": "type_e"},
+            "apply": { "model": "urushi:dirt_acacia_13", "y": 270,  "uvlock": true }
+        },
+        
+        {   "when": { "north": "true","south": "false","east": "false","west": "true","upper": "false","under": "true","variant": "type_e"},
+            "apply": { "model": "urushi:dirt_acacia_14",  "uvlock": true }
+        },
+        {   "when": { "north": "true","south": "false","east": "true","west": "false","upper": "false","under": "true","variant": "type_e"},
+            "apply": { "model": "urushi:dirt_acacia_14", "y": 90,  "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "true","east": "true","west": "false","upper": "false","under": "true","variant": "type_e"},
+            "apply": { "model": "urushi:dirt_acacia_14", "y": 180,  "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "true","east": "false","west": "true","upper": "false","under": "true","variant": "type_e"},
+            "apply": { "model": "urushi:dirt_acacia_14", "y": 270,  "uvlock": true }
+        },
+        
+        
+        
+        {   "when": { "north": "true","south": "true","east": "true","west": "true","variant": "type_e"},
+            "apply": { "model": "urushi:acacia_smooth_planks",  "uvlock": true }
+        },
+        
+        {   "when": { "north": "true","south": "false","east": "false","west": "true","upper": "true","under": "true","variant": "type_e"},
+            "apply": { "model": "urushi:dirt_acacia_15",  "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "true","east": "true","west": "false","upper": "true","under": "true","variant": "type_e"},
+            "apply": { "model": "urushi:dirt_acacia_15", "y": 180,  "uvlock": true }
+        },
+        {   "when": { "north": "true","south": "false","east": "true","west": "false","upper": "true","under": "true","variant": "type_e"},
+            "apply": { "model": "urushi:dirt_acacia_15", "y": 90,  "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "true","east": "false","west": "true","upper": "true","under": "true","variant": "type_e"},
+            "apply": { "model": "urushi:dirt_acacia_15", "y": 270,  "uvlock": true }
+        },
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        {   "when": { "north": "false","south": "false","east": "false","west": "false","upper": "false","under": "false","variant": "type_f"},
+            "apply": { "model": "urushi:dirt_dark_oak_0", "uvlock": true }
+        },
+        {   "when": {"north": "false","south": "false","east": "false","west": "false","upper": "false","under": "true","variant": "type_f"},
+            "apply": { "model": "urushi:dirt_dark_oak_1", "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "false","east": "false","west": "false","upper": "true","under": "false","variant": "type_f"},
+            "apply": { "model": "urushi:dirt_dark_oak_2", "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "false","east": "false","west": "false","upper": "true","under": "true","variant": "type_f"},
+            "apply": { "model": "urushi:dirt_dark_oak_3", "uvlock": true }
+        },
+       {   "when": { "north": "true","south": "false","east": "false","west": "false","upper": "false","under": "false","variant": "type_f"},
+            "apply": { "model": "urushi:dirt_dark_oak_4", "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "true","east": "false","west": "false","upper": "false","under": "false","variant": "type_f"},
+            "apply": { "model": "urushi:dirt_dark_oak_4", "y": 180, "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "false","east": "true","west": "false","upper": "false","under": "false","variant": "type_f"},
+            "apply": { "model": "urushi:dirt_dark_oak_4", "y": 90, "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "false","east": "false","west": "true","upper": "false","under": "false","variant": "type_f"},
+            "apply": { "model": "urushi:dirt_dark_oak_4", "y": 270, "uvlock": true }
+        },
+         {   "when": { "north": "true","south": "true","upper": "false","under": "false","variant": "type_f"},
+            "apply": { "model": "urushi:dirt_dark_oak_5", "uvlock": true }
+        },
+        {   "when": { "east": "true","west": "true","upper": "false","under": "false","variant": "type_f"},
+            "apply": { "model": "urushi:dirt_dark_oak_5", "y": 90, "uvlock": true }
+        },
+        {   "when": { "north": "true","south": "false","east": "false","west": "false","upper": "true","under": "false","variant": "type_f"},
+            "apply": { "model": "urushi:dirt_dark_oak_6", "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "true","east": "false","west": "false","upper": "true","under": "false","variant": "type_f"},
+            "apply": { "model": "urushi:dirt_dark_oak_6", "y": 180, "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "false","east": "true","west": "false","upper": "true","under": "false","variant": "type_f"},
+            "apply": { "model": "urushi:dirt_dark_oak_6", "y": 90, "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "false","east": "false","west": "true","upper": "true","under": "false","variant": "type_f"},
+            "apply": { "model": "urushi:dirt_dark_oak_6", "y": 270, "uvlock": true }
+        },
+        {   "when": { "north": "true","south": "false","east": "false","west": "false","upper": "false","under": "true","variant": "type_f"},
+            "apply": { "model": "urushi:dirt_dark_oak_7", "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "true","east": "false","west": "false","upper": "false","under": "true","variant": "type_f"},
+            "apply": { "model": "urushi:dirt_dark_oak_7", "y": 180, "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "false","east": "true","west": "false","upper": "false","under": "true","variant": "type_f"},
+            "apply": { "model": "urushi:dirt_dark_oak_7", "y": 90, "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "false","east": "false","west": "true","upper": "false","under": "true","variant": "type_f"},
+            "apply": { "model": "urushi:dirt_dark_oak_7", "y": 270, "uvlock": true }
+        },
+        {   "when": { "north": "true","south": "false","east": "false","west": "false","upper": "true","under": "true","variant": "type_f"},
+            "apply": { "model": "urushi:dirt_dark_oak_8",  "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "true","east": "false","west": "false","upper": "true","under": "true","variant": "type_f"},
+            "apply": { "model": "urushi:dirt_dark_oak_8", "y": 180, "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "false","east": "true","west": "false","upper": "true","under": "true","variant": "type_f"},
+            "apply": { "model": "urushi:dirt_dark_oak_8", "y": 90, "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "false","east": "false","west": "true","upper": "true","under": "true","variant": "type_f"},
+            "apply": { "model": "urushi:dirt_dark_oak_8", "y":270, "uvlock": true }
+        },
+        {   "when": { "north": "true","south": "true","upper": "true","under": "false","variant": "type_f"},
+            "apply": { "model": "urushi:dirt_dark_oak_9",  "uvlock": true }
+        },
+        {   "when": { "east": "true","west": "true","upper": "true","under": "false","variant": "type_f"},
+            "apply": { "model": "urushi:dirt_dark_oak_9", "y": 90,  "uvlock": true }
+        },
+        {   "when": { "north": "true","south": "true","upper": "false","under": "true","variant": "type_f"},
+            "apply": { "model": "urushi:dirt_dark_oak_10",  "uvlock": true }
+        },
+        {   "when": { "east": "true","west": "true","upper": "false","under": "true","variant": "type_f"},
+            "apply": { "model": "urushi:dirt_dark_oak_10", "y": 90,  "uvlock": true }
+        },
+      
+        {   "when": { "north": "true","south": "false","east": "false","west": "true","upper": "false","under": "false","variant": "type_f"},
+            "apply": { "model": "urushi:dirt_dark_oak_12",  "uvlock": true }
+        },
+        {   "when": { "north": "true","south": "false","east": "true","west": "false","upper": "false","under": "false","variant": "type_f"},
+            "apply": { "model": "urushi:dirt_dark_oak_12", "y": 90,  "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "true","east": "true","west": "false","upper": "false","under": "false","variant": "type_f"},
+            "apply": { "model": "urushi:dirt_dark_oak_12", "y": 180,  "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "true","east": "false","west": "true","upper": "false","under": "false","variant": "type_f"},
+            "apply": { "model": "urushi:dirt_dark_oak_12", "y": 270,  "uvlock": true }
+        },
+        
+        {   "when": { "north": "true","south": "false","east": "false","west": "true","upper": "true","under": "false","variant": "type_f"},
+            "apply": { "model": "urushi:dirt_dark_oak_13",  "uvlock": true }
+        },
+        {   "when": { "north": "true","south": "false","east": "true","west": "false","upper": "true","under": "false","variant": "type_f"},
+            "apply": { "model": "urushi:dirt_dark_oak_13", "y": 90,  "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "true","east": "true","west": "false","upper": "true","under": "false","variant": "type_f"},
+            "apply": { "model": "urushi:dirt_dark_oak_13", "y": 180,  "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "true","east": "false","west": "true","upper": "true","under": "false","variant": "type_f"},
+            "apply": { "model": "urushi:dirt_dark_oak_13", "y": 270,  "uvlock": true }
+        },
+        
+        {   "when": { "north": "true","south": "false","east": "false","west": "true","upper": "false","under": "true","variant": "type_f"},
+            "apply": { "model": "urushi:dirt_dark_oak_14",  "uvlock": true }
+        },
+        {   "when": { "north": "true","south": "false","east": "true","west": "false","upper": "false","under": "true","variant": "type_f"},
+            "apply": { "model": "urushi:dirt_dark_oak_14", "y": 90,  "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "true","east": "true","west": "false","upper": "false","under": "true","variant": "type_f"},
+            "apply": { "model": "urushi:dirt_dark_oak_14", "y": 180,  "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "true","east": "false","west": "true","upper": "false","under": "true","variant": "type_f"},
+            "apply": { "model": "urushi:dirt_dark_oak_14", "y": 270,  "uvlock": true }
+        },
+        
+        
+        
+        {   "when": { "north": "true","south": "true","east": "true","west": "true","variant": "type_f"},
+            "apply": { "model": "urushi:dark_oak_smooth_planks",  "uvlock": true }
+        },
+        
+        {   "when": { "north": "true","south": "false","east": "false","west": "true","upper": "true","under": "true","variant": "type_f"},
+            "apply": { "model": "urushi:dirt_dark_oak_15",  "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "true","east": "true","west": "false","upper": "true","under": "true","variant": "type_f"},
+            "apply": { "model": "urushi:dirt_dark_oak_15", "y": 180,  "uvlock": true }
+        },
+        {   "when": { "north": "true","south": "false","east": "true","west": "false","upper": "true","under": "true","variant": "type_f"},
+            "apply": { "model": "urushi:dirt_dark_oak_15", "y": 90,  "uvlock": true }
+        },
+        {   "when": { "north": "false","south": "true","east": "false","west": "true","upper": "true","under": "true","variant": "type_f"},
+            "apply": { "model": "urushi:dirt_dark_oak_15", "y": 270,  "uvlock": true }
+        }
+    ]
+}

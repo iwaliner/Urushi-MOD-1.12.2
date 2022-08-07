@@ -1,0 +1,12 @@
+{
+    "variants": {
+"facing=north,variant=type_a": { "model":"urushi:dirt_furnace" },
+"facing=south,variant=type_a": { "model":"urushi:dirt_furnace" , "y": 180},
+"facing=west,variant=type_a": { "model":"urushi:dirt_furnace" , "y": 270},
+"facing=east,variant=type_a": { "model":"urushi:dirt_furnace" , "y": 90},
+"facing=north,variant=type_b": { "model":"urushi:dirt_furnace_lit" },
+"facing=south,variant=type_b": { "model":"urushi:dirt_furnace_lit" , "y": 180},
+"facing=west,variant=type_b": { "model":"urushi:dirt_furnace_lit" , "y": 270},
+"facing=east,variant=type_b": { "model":"urushi:dirt_furnace_lit" , "y": 90}
+    }
+}

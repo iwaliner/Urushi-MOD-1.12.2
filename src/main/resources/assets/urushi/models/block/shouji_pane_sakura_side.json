@@ -1,0 +1,7 @@
+{
+    "parent": "block/template_glass_pane_side",
+    "textures": {
+       "edge": "urushi:blocks/planks_smooth_sakura",
+        "pane": "urushi:blocks/syoji_sakura_pane"
+    }
+}

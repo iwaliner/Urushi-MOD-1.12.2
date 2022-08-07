@@ -1,0 +1,7 @@
+{
+    "parent": "block/template_glass_pane_side_alt",
+    "textures": {
+       "edge": "urushi:blocks/planks_smooth_birch",
+        "pane": "urushi:blocks/syoji_birch_pane"
+    }
+}

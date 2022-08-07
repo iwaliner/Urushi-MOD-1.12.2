@@ -1,0 +1,17 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "qq"
+  ],
+  "key": {
+    "q": {
+      "item": "urushi:u_wooden_slab_a_single",
+      "data": 7
+    }
+  },
+  "result": {
+    "item": "urushi:japanese_apricot_shitomi",
+"data": 0,
+ "count": 16
+  }
+}

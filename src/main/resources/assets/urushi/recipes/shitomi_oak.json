@@ -1,0 +1,17 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "qq"
+  ],
+  "key": {
+    "q": {
+      "item": "urushi:u_wooden_slab_a_single",
+      "data": 0
+    }
+  },
+  "result": {
+    "item": "urushi:oak_shitomi",
+"data": 0,
+ "count": 16
+  }
+}

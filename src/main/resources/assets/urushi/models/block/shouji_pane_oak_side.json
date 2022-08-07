@@ -1,0 +1,7 @@
+{
+    "parent": "block/pane_side",
+    "textures": {
+       "edge": "urushi:blocks/planks_smooth_oak",
+        "pane": "urushi:blocks/syoji_oak_pane"
+    }
+}

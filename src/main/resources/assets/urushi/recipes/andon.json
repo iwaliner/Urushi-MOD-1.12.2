@@ -1,0 +1,31 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "hqh",
+    "ptp",
+    "hhh"
+  ],
+  "key": {
+    "q": {
+   "type": "forge:ore_dict",
+      "ore": "bamboo"
+    },
+"p": {
+      "type": "forge:ore_dict",
+      "ore": "paper"
+    },
+    "t": {
+ "item": "minecraft:torch",
+      "data": 0
+    },
+  "h": {
+       "type": "forge:ore_dict",
+      "ore": "slabWood"
+    }
+  },
+  "result": {
+    "item": "urushi:u_items",
+"data": 31,
+ "count": 16
+  }
+}

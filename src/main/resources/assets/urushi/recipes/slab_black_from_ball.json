@@ -1,0 +1,23 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "qqq",
+    "qdq",
+    "qqq"
+  ],
+  "key": {
+    "q": {
+      "type": "forge:ore_dict",
+      "ore": "slabWood"
+    },
+     "d": {
+      "item": "urushi:u_items",
+      "data": 60
+    }
+  },
+  "result": {
+    "item": "urushi:u_wooden_slab_b_single",
+"data": 2,
+ "count": 8
+  }
+}

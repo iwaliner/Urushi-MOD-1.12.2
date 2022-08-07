@@ -1,0 +1,22 @@
+{
+  "type": "forge:ore_shapeless",
+  "ingredients": [
+    {
+      "item": "urushi:u_items",
+      "data": 30
+    },
+    {
+       "type": "forge:ore_dict",
+      "ore": "dyeLightBlue"
+    },
+    {
+      "item": "minecraft:fish",
+      "data": 0
+    }
+  ],
+  "result": {
+    "item": "urushi:u_items",
+     "data": 53,
+      "count": 1
+  }
+}

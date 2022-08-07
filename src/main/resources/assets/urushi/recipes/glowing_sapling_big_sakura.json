@@ -1,0 +1,18 @@
+{
+  "type": "forge:ore_shapeless",
+  "ingredients": [
+    {
+   "type": "forge:ore_dict",
+      "ore": "dustGlowstone"
+    },
+    {
+      "item": "urushi:u_sapling",
+      "data": 4
+    }
+  ],
+  "result": {
+    "item": "urushi:u_sapling2",
+     "data": 2,
+      "count": 1
+  }
+}

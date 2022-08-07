@@ -1,0 +1,11 @@
+{
+	"parent": "urushi:block/connectable_glass_pane_base2",
+	"textures": {
+		"front": "urushi:blocks/framed_glass_9",
+		"north": "urushi:blocks/glass_pane_side",
+		"south": "urushi:blocks/framed_glass_15",
+		"up": "urushi:blocks/framed_glass_15",
+		"down": "urushi:blocks/framed_glass_15",
+		"particle": "urushi:blocks/glass_pane_side"
+	}
+}
