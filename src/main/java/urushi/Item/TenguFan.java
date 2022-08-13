@@ -36,7 +36,7 @@ public class TenguFan extends Item {
         //super();
 
         this.setRegistryName(ModCore_Urushi.modid, "tengu_fan");
-        this.setCreativeTab(ModCore_Urushi.TabUrushi);
+        //this.setCreativeTab(ModCore_Urushi.TabUrushi);
         this.setUnlocalizedName("TenguFan");
         this.setMaxDamage(700);
    this.setMaxStackSize(1);

@@ -70,9 +70,9 @@ public class TileEntityRiceCauldron extends TileEntity implements ITickable
     {
         compound.setInteger("CookTime", (short)this.cookTime);
         compound.setInteger("ItemAmount", this.itemAmount);
-        //return   super.writeToNBT(compound);
-        return compound==null? compound:super.writeToNBT(compound);
-        //   return compound;
+        return   super.writeToNBT(compound);
+       // return compound==null? compound:super.writeToNBT(compound);
+         //  return compound;
     }
 
 

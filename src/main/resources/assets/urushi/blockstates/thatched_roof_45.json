@@ -1,0 +1,8 @@
+{
+    "variants": {
+"facing=south": { "model":"urushi:thatched_roof_45" },
+"facing=north": { "model":"urushi:thatched_roof_45" , "y": 180},
+"facing=east": { "model":"urushi:thatched_roof_45" , "y": 270},
+"facing=west": { "model":"urushi:thatched_roof_45" , "y": 90}
+    }
+}

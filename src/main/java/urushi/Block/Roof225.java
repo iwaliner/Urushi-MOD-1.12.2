@@ -3,6 +3,7 @@ package urushi.Block;
 
 import net.minecraft.block.BlockHorizontal;
 import net.minecraft.block.BlockSlab;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
@@ -45,14 +46,20 @@ public abstract class Roof225 extends BlockSlab
         {
             iblockstate = iblockstate.withProperty(HALF, EnumBlockHalf.BOTTOM);
         }
-        this.useNeighborBrightness=!this.isDouble();
+        this.useNeighborBrightness=true;
         this.setDefaultState(iblockstate.withProperty(VARIANT,EnumType.EnumType2.TypeA).withProperty(FACING, EnumFacing.NORTH));
         this.setCreativeTab(ModCore_Urushi.TabUrushi);
         setLightOpacity(255);
         setLightLevel(0.0F);
+
         if(material==Material.ROCK){
             setHarvestLevel("pickaxe", 0);
-            this.useNeighborBrightness=true;
+            setHardness(1.0F);
+            setResistance(10F);
+        }else{
+            setSoundType(SoundType.PLANT);
+            setResistance(3F);
+            setHardness(0.3F);
         }
 
     }
@@ -70,25 +77,11 @@ public abstract class Roof225 extends BlockSlab
           return state.getValue(HALF) == BlockSlab.EnumBlockHalf.TOP ? AABB_EXTEND_UPPER : AABB_UNDER;
 
     }
-    public MapColor getMapColor(IBlockState state, IBlockAccess worldIn, BlockPos pos)
-    {
-        return ((EnumType.EnumType2)state.getValue(VARIANT)).getMapColor();
-    }
 
-    public Item getItemDropped(IBlockState state, Random rand, int fortune)
-    {
-          return Item.getItemFromBlock(ModCore_Urushi.KawaraSlabASingle);
-    }
-
-    public ItemStack getItem(World worldIn, BlockPos pos, IBlockState state)
-    {
-
-        return new ItemStack(ModCore_Urushi.KawaraSlabASingle, 1, ((EnumType.EnumType2)state.getValue(VARIANT)).getMetadata()*4);
-    }
 
     public String getUnlocalizedName(int meta)
     {
-        return super.getUnlocalizedName() + "." + EnumType.EnumType2.byMetadata(meta).getUnlocalizedName();
+        return super.getUnlocalizedName() ;
     }
 
     public IProperty<?> getVariantProperty()
@@ -99,14 +92,6 @@ public abstract class Roof225 extends BlockSlab
     public Comparable<?> getTypeForItem(ItemStack stack)
     {
         return EnumType.EnumType2.byMetadata(stack.getMetadata() & 7);
-    }
-
-    public void getSubBlocks(CreativeTabs itemIn, NonNullList<ItemStack> items)
-    {
-
-            items.add(new ItemStack(this, 1, 0));
-        items.add(new ItemStack(this, 1, 4));
-
     }
 
     public IBlockState getStateFromMeta(int meta)
@@ -150,25 +135,43 @@ public abstract class Roof225 extends BlockSlab
 
     public IBlockState getStateForPlacement(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer)
     {
-        EnumFacing facingState=placer.getHorizontalFacing();
-        if(facing != EnumFacing.DOWN && (facing == EnumFacing.UP || (double) hitY <= 0.5D) ) {
-            if (meta == 0) {
-                    return this.getDefaultState().withProperty(VARIANT, EnumType.EnumType2.TypeA).withProperty(HALF, EnumBlockHalf.BOTTOM).withProperty(FACING, facingState);
 
-            }else{
-                return this.getDefaultState().withProperty(VARIANT, EnumType.EnumType2.TypeB).withProperty(HALF, EnumBlockHalf.BOTTOM).withProperty(FACING, facingState);
-
+        IBlockState blockstateClicked=null;
+        EnumFacing facingP=placer.getHorizontalFacing();
+        EnumFacing facingState=placer.getHorizontalFacing().getOpposite();
+        boolean flag1 = facingP.getAxis()== EnumFacing.Axis.Z && (worldIn.getBlockState(pos.west()).getBlock() instanceof Roof225 || worldIn.getBlockState(pos.east()).getBlock() instanceof Roof225) || facingP.getAxis() == EnumFacing.Axis.X && (worldIn.getBlockState(pos.north()).getBlock() instanceof Roof225 || worldIn.getBlockState(pos.south()).getBlock() instanceof Roof225);
+        if(facingP.getAxis() == EnumFacing.Axis.Z){
+            if(worldIn.getBlockState(pos.west()).getBlock() instanceof Roof225 ){
+                blockstateClicked=worldIn.getBlockState(pos.west());
+            }else if(worldIn.getBlockState(pos.east()).getBlock() instanceof Roof225 ){
+                blockstateClicked=worldIn.getBlockState(pos.east());
             }
-        }else{
-            if (meta == 0) {
-                return this.getDefaultState().withProperty(VARIANT, EnumType.EnumType2.TypeA).withProperty(HALF, EnumBlockHalf.TOP).withProperty(FACING, facingState);
-
-            }else{
-                return this.getDefaultState().withProperty(VARIANT, EnumType.EnumType2.TypeB).withProperty(HALF, EnumBlockHalf.TOP).withProperty(FACING, facingState);
-
+        }else if(facingP.getAxis() == EnumFacing.Axis.X){
+            if(worldIn.getBlockState(pos.north()).getBlock() instanceof Roof225 ){
+                blockstateClicked=worldIn.getBlockState(pos.north());
+            }else if(worldIn.getBlockState(pos.south()).getBlock() instanceof Roof225 ){
+                blockstateClicked=worldIn.getBlockState(pos.south());
             }
         }
 
+        if(flag1&&blockstateClicked!=null){
+            return this.getDefaultState().withProperty(FACING, blockstateClicked.getValue(FACING)).withProperty(HALF, blockstateClicked.getValue(HALF));
+
+        }else if(worldIn.getBlockState(pos.down()).getBlock() instanceof BlockSlab&&!((BlockSlab) worldIn.getBlockState(pos.down()).getBlock()).isDouble()){
+            if(worldIn.getBlockState(pos.down()).getValue(HALF)==EnumBlockHalf.TOP){
+                return this.getDefaultState().withProperty(FACING, facingState).withProperty(HALF, EnumBlockHalf.BOTTOM);
+            }else if(worldIn.getBlockState(pos.down()).getValue(HALF)==EnumBlockHalf.BOTTOM){
+                return this.getDefaultState().withProperty(FACING, facingState).withProperty(HALF, EnumBlockHalf.TOP);
+            }else{
+                return this.getDefaultState();
+            }
+        }
+        else{
+            IBlockState blockstate1 = this.getDefaultState().withProperty(FACING, facingState).withProperty(HALF, EnumBlockHalf.BOTTOM);
+            EnumFacing direction2 =facing;
+            return direction2 != EnumFacing.DOWN && (direction2 == EnumFacing.UP || !(hitY - (double)pos.getY() > 0.5D)) ? blockstate1 : blockstate1.withProperty(HALF, EnumBlockHalf.TOP);
+
+        }
     }
     public int damageDropped(IBlockState state)
     {

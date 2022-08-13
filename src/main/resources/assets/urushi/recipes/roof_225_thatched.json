@@ -1,0 +1,18 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+  "  q",
+  " qq"
+  ],
+  "key": {
+    "q": {
+      "item": "urushi:thatched_slab_single",
+      "data": 0
+    }
+  },
+  "result": {
+    "item": "urushi:thatched_roof_225",
+"data": 0,
+ "count": 3
+  }
+}

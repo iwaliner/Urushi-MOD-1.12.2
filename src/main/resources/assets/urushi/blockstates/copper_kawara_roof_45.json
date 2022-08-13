@@ -1,0 +1,8 @@
+{
+    "variants": {
+"facing=south": { "model":"urushi:copper_kawara_roof_45" },
+"facing=north": { "model":"urushi:copper_kawara_roof_45" , "y": 180},
+"facing=east": { "model":"urushi:copper_kawara_roof_45" , "y": 270},
+"facing=west": { "model":"urushi:copper_kawara_roof_45" , "y": 90}
+    }
+}

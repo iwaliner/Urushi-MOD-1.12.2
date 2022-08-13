@@ -43,6 +43,7 @@ import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.IFuelHandler;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
+import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLConstructionEvent;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
@@ -59,6 +60,7 @@ import urushi.Else.EnumType;
 import urushi.Entity.EntityOni;
 import urushi.Entity.EntityOniGirl;
 import urushi.Entity.EntityOnibi;
+import urushi.Proxy.CommonProxy;
 import urushi.Render.RenderOni;
 import urushi.Render.RenderOniGirl;
 import urushi.WorldGen.BiomeSakuraForest;
@@ -75,6 +77,13 @@ import urushi.WorldGen.WorldProviderKakuriyo;
 @Mod(modid = "urushi", version = "alpha2.33", name = "Urushi MOD")
 public class  ModCore_Urushi {
    public static String modid="urushi";
+    public static final String CLIENTPROXY = "urushi.Proxy.ClientProxy";
+    public static final String COMMONPROXY = "urushi.Proxy.CommonProxy";
+    @SidedProxy(
+            clientSide = "urushi.Proxy.ClientProxy",
+            serverSide = "urushi.Proxy.CommonProxy"
+    )
+    public static CommonProxy proxy;
     public static final CreativeTabs TabUrushi = new TabUrushi("TabUrushi");
     public static final Block UPlanks = new U_Planks();
     public static final ItemBlock ItemBlockUPlanks=new ItemBlockMetadata(UPlanks);
@@ -307,11 +316,16 @@ public class  ModCore_Urushi {
     public static final Block TatamiCarpet = new TatamiCarpet(2);
     public static final ItemBlock ItemBlockTatamiCarpet=new ItemBlockMetadata(TatamiCarpet);
     public static boolean wheather_player_speed_up=true;
-    //public static final Block IbushiKawaraRoof45 = new Roof45(Material.ROCK).setHardness(1.0F).setResistance(10F);
-
-    //public static final BlockSlab KawaraRoof225Single = new Roof225(Material.ROCK) {@Override public boolean isDouble() {return false;}};
-    //public static final BlockSlab KawaraRoof225Double = new Roof225(Material.ROCK) {@Override public boolean isDouble() {return true;}};
-    //public static final ItemBlock ItemBlockKawaraRoof225=new ItemSlab(KawaraRoof225Single, KawaraRoof225Single, KawaraRoof225Double);
+    public static final Block ThatchedRoof45 = new Roof45(Material.GRASS).setHardness(0.3F).setResistance(3F);
+    public static final BlockSlab ThatchedRoof225 = new Roof225(Material.GRASS) {@Override public boolean isDouble() {return false;}};
+    public static final Block IbushiKawaraRoof45 = new Roof45(Material.ROCK).setHardness(0.3F).setResistance(3F);
+    public static final BlockSlab IbushiKawaraRoof225 = new Roof225(Material.ROCK) {@Override public boolean isDouble() {return false;}};
+    public static final Block CopperKawaraRoof45 = new Roof45(Material.ROCK).setHardness(1.0F).setResistance(10F);
+    public static final BlockSlab CopperKawaraRoof225 = new Roof225(Material.ROCK) {@Override public boolean isDouble() {return false;}};
+    public static final Block CupricOxideKawaraRoof45 = new Roof45(Material.ROCK).setHardness(1.0F).setResistance(10F);
+    public static final BlockSlab CupricOxideKawaraRoof225 = new Roof225(Material.ROCK) {@Override public boolean isDouble() {return false;}};
+    public static final Item KusaMochi = new ItemFood(8, 1F, false);
+    public static final Item TKG = new ItemFood(10, 1.2F, false);
 
     @EventHandler
     public void construct(FMLConstructionEvent event) {
@@ -449,10 +463,16 @@ public class  ModCore_Urushi {
         event.getRegistry().register(ItemBlockFramedGlass.setRegistryName(modid, "framed_glass"));
         event.getRegistry().register(ItemBlockFramedGlassPane.setRegistryName(modid, "framed_glass_pane"));
         event.getRegistry().register(ItemBlockTatamiCarpet.setRegistryName(modid, "tatami_carpet"));
-        //event.getRegistry().register(new ItemBlock(IbushiKawaraRoof45).setRegistryName(modid, "ibushi_kawara_roof_45"));
-        //event.getRegistry().register(ItemBlockKawaraRoof225.setRegistryName(modid, "kawara_roof_225"));
-
-
+        event.getRegistry().register(KusaMochi.setUnlocalizedName("KusaMochi").setRegistryName("kusa_mochi").setCreativeTab(TabUrushi));
+        event.getRegistry().register(TKG.setUnlocalizedName("TKG").setRegistryName("tkg").setCreativeTab(TabUrushi));
+        event.getRegistry().register(new ItemBlock(ThatchedRoof45).setRegistryName(modid, "thatched_roof_45"));
+        event.getRegistry().register(new ItemBlock(ThatchedRoof225).setRegistryName(modid, "thatched_roof_225"));
+        event.getRegistry().register(new ItemBlock(IbushiKawaraRoof45).setRegistryName(modid, "ibushi_kawara_roof_45"));
+        event.getRegistry().register(new ItemBlock(IbushiKawaraRoof225).setRegistryName(modid, "ibushi_kawara_roof_225"));
+        event.getRegistry().register(new ItemBlock(CopperKawaraRoof45).setRegistryName(modid, "copper_kawara_roof_45"));
+        event.getRegistry().register(new ItemBlock(CopperKawaraRoof225).setRegistryName(modid, "copper_kawara_roof_225"));
+        event.getRegistry().register(new ItemBlock(CupricOxideKawaraRoof45).setRegistryName(modid, "cupric_oxide_kawara_roof_45"));
+        event.getRegistry().register(new ItemBlock(CupricOxideKawaraRoof225).setRegistryName(modid, "cupric_oxide_kawara_roof_225"));
 
 
         }
@@ -601,9 +621,14 @@ public class  ModCore_Urushi {
         event.getRegistry().register(FramedGlass.setRegistryName(modid,"framed_glass").setUnlocalizedName("FramedGlass"));
         event.getRegistry().register(FramedGlassPane.setRegistryName(modid,"framed_glass_pane").setUnlocalizedName("FramedGlassPane"));
         event.getRegistry().register(TatamiCarpet.setRegistryName(modid,"tatami_carpet").setUnlocalizedName("TatamiCarpet"));
-        //event.getRegistry().register(IbushiKawaraRoof45.setRegistryName(modid,"ibushi_kawara_roof_45").setUnlocalizedName("IbushiKawaraRoof45"));
-        //event.getRegistry().register(KawaraRoof225Single.setRegistryName(modid,"kawara_roof_225_single").setUnlocalizedName("KawaraRoof225"));
-        //event.getRegistry().register(KawaraRoof225Double.setRegistryName(modid,"kawara_roof_225_double").setUnlocalizedName("KawaraRoof225"));
+        event.getRegistry().register(ThatchedRoof45.setRegistryName(modid,"thatched_roof_45").setUnlocalizedName("ThatchedRoof45"));
+        event.getRegistry().register(ThatchedRoof225.setRegistryName(modid,"thatched_roof_225").setUnlocalizedName("ThatchedRoof225"));
+        event.getRegistry().register(IbushiKawaraRoof45.setRegistryName(modid,"ibushi_kawara_roof_45").setUnlocalizedName("IbushiKawaraRoof45"));
+        event.getRegistry().register(IbushiKawaraRoof225.setRegistryName(modid,"ibushi_kawara_roof_225").setUnlocalizedName("IbushiKawaraRoof225"));
+        event.getRegistry().register(CopperKawaraRoof45.setRegistryName(modid,"copper_kawara_roof_45").setUnlocalizedName("CopperKawaraRoof45"));
+        event.getRegistry().register(CopperKawaraRoof225.setRegistryName(modid,"copper_kawara_roof_225").setUnlocalizedName("CopperKawaraRoof225"));
+        event.getRegistry().register(CupricOxideKawaraRoof45.setRegistryName(modid,"cupric_oxide_kawara_roof_45").setUnlocalizedName("CupricOxideKawaraRoof45"));
+        event.getRegistry().register(CupricOxideKawaraRoof225.setRegistryName(modid,"cupric_oxide_kawara_roof_225").setUnlocalizedName("CupricOxideKawaraRoof225"));
 
 
 
@@ -942,7 +967,16 @@ public class  ModCore_Urushi {
         ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(FramedGlassPane), 1, new ModelResourceLocation(new ResourceLocation(modid, "metal_framed_glass_pane"), "inventory"));
         ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(TatamiCarpet), 1, new ModelResourceLocation(new ResourceLocation(modid, "green_tatami_carpet"), "inventory"));
         ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(TatamiCarpet), 0, new ModelResourceLocation(new ResourceLocation(modid, "brown_tatami_carpet"), "inventory"));
-        //ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(IbushiKawaraRoof45), 0, new ModelResourceLocation(new ResourceLocation(modid, "ibushi_kawara_roof_45"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(KusaMochi,0, new ModelResourceLocation(new ResourceLocation(modid, "kusa_mochi"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(TKG,0, new ModelResourceLocation(new ResourceLocation(modid, "tkg"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ThatchedRoof45), 0, new ModelResourceLocation(new ResourceLocation(modid, "thatched_roof_45"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(IbushiKawaraRoof45), 0, new ModelResourceLocation(new ResourceLocation(modid, "ibushi_kawara_roof_45"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(CopperKawaraRoof45), 0, new ModelResourceLocation(new ResourceLocation(modid, "copper_kawara_roof_45"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(CupricOxideKawaraRoof45), 0, new ModelResourceLocation(new ResourceLocation(modid, "cupric_oxide_kawara_roof_45"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ThatchedRoof225), 0, new ModelResourceLocation(new ResourceLocation(modid, "thatched_roof_225"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(IbushiKawaraRoof225), 0, new ModelResourceLocation(new ResourceLocation(modid, "ibushi_kawara_roof_225"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(CopperKawaraRoof225), 0, new ModelResourceLocation(new ResourceLocation(modid, "copper_kawara_roof_225"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(CupricOxideKawaraRoof225), 0, new ModelResourceLocation(new ResourceLocation(modid, "cupric_oxide_kawara_roof_225"), "inventory"));
 
 
 
@@ -1096,16 +1130,10 @@ public class  ModCore_Urushi {
             cfg.save();
         }
 
+        /**タイルエンティティを登録*/
+        proxy.registerTileEntity();
 
        if(event.getSide().isClient()) {
-        /**タイルエンティティを登録*/
-           GameRegistry.registerTileEntity(TileEntityRiceCauldron.getClass(),new ResourceLocation(modid,"rice_cauldron"));
-           GameRegistry.registerTileEntity(TileEntityWoodenCabinetry.getClass(),new ResourceLocation(modid,"wooden_cabinetry"));
-            GameRegistry.registerTileEntity(TileEntityWoodenCabinetryUnderSlab.getClass(),new ResourceLocation(modid,"wooden_cabinetry_under_slab"));
-           GameRegistry.registerTileEntity(TileEntityRiceHokora.getClass(),new ResourceLocation(modid,"rice_hokora"));
-           GameRegistry.registerTileEntity(TileEntityFuton.getClass(),new ResourceLocation(modid,"futon"));
-           GameRegistry.registerTileEntity(TileEntityFermentationPot.getClass(),new ResourceLocation(modid,"fermentation_pot"));
-
 
 
            /**鉱石や樹木、花などを自然生成させる*/
@@ -1145,16 +1173,10 @@ public class  ModCore_Urushi {
         Kakuriyo_DIMENSION = DimensionType.register("KakuriyoDimension", "_kakuriyo", KakuriyoDimensionID, WorldProviderKakuriyo.class, false);
         DimensionManager.registerDimension(KakuriyoDimensionID, Kakuriyo_DIMENSION);
 
-        if (event.getSide().isClient()) {
-        /**精錬レシピを登録*/
-            GameRegistry.addSmelting(new ItemStack(UItems, 1, 10), new ItemStack(UItems, 1, 3), 5F);
-            GameRegistry.addSmelting(new ItemStack(UStone, 1, 2), new ItemStack(UItems, 1, 9), 5F);
-            GameRegistry.addSmelting(new ItemStack(UItems, 1, 5), new ItemStack(Rice, 1, 0), 5F);
-            GameRegistry.addSmelting(new ItemStack(Mochi, 1, 0), new ItemStack(YakiMochi, 1, 0), 5F);
-            GameRegistry.addSmelting(new ItemStack(UItems, 1, 35), new ItemStack(FermentationPot, 1, 0), 5F);
-            GameRegistry.addSmelting(new ItemStack(UItems, 1, 0), new ItemStack(UItems, 1, 61), 5F);
+        /**製錬レシピを追加*/
+        proxy.registerFurnaceRecipe();
 
-        }
+
 
         /**バイオームを追加*/
          SakuraBiome.setRegistryName("Sakura");

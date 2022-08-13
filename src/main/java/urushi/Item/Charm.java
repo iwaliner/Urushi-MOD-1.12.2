@@ -41,7 +41,7 @@ public class Charm extends Item {
         this.setMaxDamage(0);
         this.setHasSubtypes(true);
     }
-    public void getSubItems(CreativeTabs tab, NonNullList<ItemStack> items)
+    /*public void getSubItems(CreativeTabs tab, NonNullList<ItemStack> items)
     {
         if (this.isInCreativeTab(tab))
         {
@@ -52,7 +52,7 @@ public class Charm extends Item {
             }
 
         }
-    }
+    }*/
 
     @Override
     public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer player, EnumHand hand) {

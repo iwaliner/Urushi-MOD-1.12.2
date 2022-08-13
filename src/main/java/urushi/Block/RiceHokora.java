@@ -42,7 +42,6 @@ public class RiceHokora extends BlockContainer {
     public RiceHokora() {
         super(Material.WOOD);
         this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH).withProperty(VARIANT, EnumType.EnumType4.TypeA));
-        this.setCreativeTab(ModCore_Urushi.TabUrushi);
         setResistance(10F);
         setLightOpacity(0);
         setLightLevel(0.0F);

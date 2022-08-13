@@ -81,7 +81,7 @@ public class TileEntityWCabinetry extends TileEntityLockableLoot
 
     public void readFromNBT(NBTTagCompound compound)
     {
-        super.readFromNBT(compound);
+
         this.stacks = NonNullList.<ItemStack>withSize(this.getSizeInventory(), ItemStack.EMPTY);
 
         if (!this.checkLootAndRead(compound))
@@ -93,12 +93,12 @@ public class TileEntityWCabinetry extends TileEntityLockableLoot
         {
             this.customName = compound.getString("CustomName");
         }
+        super.readFromNBT(compound);
     }
 
     public NBTTagCompound writeToNBT(NBTTagCompound compound)
     {
         super.writeToNBT(compound);
-
         if (!this.checkLootAndWrite(compound))
         {
             ItemStackHelper.saveAllItems(compound, this.stacks);

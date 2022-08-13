@@ -31,24 +31,12 @@ public class QuartzMagatama extends Item {
     public QuartzMagatama() {
         //super();
         this.setRegistryName(ModCore_Urushi.modid, "quartz_magatama");
-        this.setCreativeTab(ModCore_Urushi.TabUrushi);
+        //this.setCreativeTab(ModCore_Urushi.TabUrushi);
         this.setUnlocalizedName("QuartzMagatama");
         this.setMaxDamage(5000);
-       // this.setHasSubtypes(true);
+
    this.setMaxStackSize(1);
     }
-  /*  public void getSubItems(CreativeTabs tab, NonNullList<ItemStack> items)
-    {
-        if (this.isInCreativeTab(ModCore_Urushi.TabUrushi)) {
-            items.add(new ItemStack(this, 1, 1));
-            items.add(new ItemStack(this, 1, 5000));
-
-        }
-    }*/
-    /*@Override
-    public void onUpdate(ItemStack stack, World worldIn, Entity entityIn, int itemSlot, boolean isSelected) {
-
-    }*/
 
     @Override
     public EnumActionResult onItemUse(EntityPlayer player, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {

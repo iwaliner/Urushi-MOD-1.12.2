@@ -1,5 +1,6 @@
 {
 	"credit": "Made with Blockbench",
+	"parent": "block/block",
 	"ambientocclusion": false,
 	"textures": {
 		"top": "urushi:blocks/wooden_bucket_top",
@@ -165,36 +166,5 @@
 				"down": {"uv": [14, 2, 16, 4], "texture": "#bottom"}
 			}
 		}
-	],
-	"display": {
-		"thirdperson_righthand": {
-			"translation": [0, 2, 0],
-			"scale": [0.3, 0.3, 0.3]
-		},
-		"thirdperson_lefthand": {
-			"translation": [0, 2, 0],
-			"scale": [0.3, 0.3, 0.3]
-		},
-		"firstperson_righthand": {
-			"rotation": [0, 13, 0],
-			"translation": [-1.25, 1, 0],
-			"scale": [0.4, 0.4, 0.4]
-		},
-		"firstperson_lefthand": {
-			"rotation": [0, 13, 0],
-			"translation": [-1.25, 1, 0],
-			"scale": [0.4, 0.4, 0.4]
-		},
-		"ground": {
-			"scale": [0.3, 0.3, 0.31]
-		},
-		"gui": {
-			"rotation": [23, -32, 0],
-			"scale": [0.65, 0.65, 0.65]
-		},
-		"fixed": {
-			"translation": [0, 0, 2],
-			"scale": [0.9, 0.9, 0.9]
-		}
-	}
+	]
 }

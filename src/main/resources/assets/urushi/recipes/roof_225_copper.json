@@ -1,0 +1,18 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+  "  q",
+  " qq"
+  ],
+  "key": {
+    "q": {
+      "item": "urushi:kawara_slab_b_single",
+      "data": 0
+    }
+  },
+  "result": {
+    "item": "urushi:copper_kawara_roof_225",
+"data": 0,
+ "count": 3
+  }
+}

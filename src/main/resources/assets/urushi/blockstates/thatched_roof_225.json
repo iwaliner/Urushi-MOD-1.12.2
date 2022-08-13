@@ -1,0 +1,12 @@
+{
+    "variants": {
+"facing=north,half=bottom,variant=type_a": { "model":"urushi:thatched_roof_22.5_under" },
+"facing=south,half=bottom,variant=type_a": { "model":"urushi:thatched_roof_22.5_under" , "y": 180 },
+"facing=east,half=bottom,variant=type_a": { "model":"urushi:thatched_roof_22.5_under" , "y": 90 },
+"facing=west,half=bottom,variant=type_a": { "model":"urushi:thatched_roof_22.5_under" , "y": 270 },
+"facing=north,half=top,variant=type_a": { "model":"urushi:thatched_roof_22.5_upper" },
+"facing=south,half=top,variant=type_a": { "model":"urushi:thatched_roof_22.5_upper" , "y": 180 },
+"facing=east,half=top,variant=type_a": { "model":"urushi:thatched_roof_22.5_upper" , "y": 90 },
+"facing=west,half=top,variant=type_a": { "model":"urushi:thatched_roof_22.5_upper" , "y": 270 }
+    }
+}

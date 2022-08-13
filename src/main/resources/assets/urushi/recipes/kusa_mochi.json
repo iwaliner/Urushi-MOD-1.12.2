@@ -1,0 +1,21 @@
+{
+  "type": "forge:ore_shapeless",
+  "ingredients": [
+    {
+      "item": "urushi:rice_cake"
+    },
+    {
+       "type": "forge:ore_dict",
+      "ore": "cropRedbean"
+    },
+    {
+ "item": "minecraft:tallgrass",
+      "data": 1
+    }
+  ],
+  "result": {
+    "item": "urushi:kusa_mochi",
+     "data": 0,
+      "count": 1
+  }
+}

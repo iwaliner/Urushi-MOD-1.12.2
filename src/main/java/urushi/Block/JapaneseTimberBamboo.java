@@ -44,8 +44,13 @@ public class JapaneseTimberBamboo extends Block implements net.minecraftforge.co
 
     public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos)
     {
-        return Bamboo_AABB;
+        return Bamboo_AABB.offset(state.getOffset(source, pos));
     }
+    public Block.EnumOffsetType getOffsetType()
+    {
+        return Block.EnumOffsetType.XZ;
+    }
+
 
     public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand)
     {

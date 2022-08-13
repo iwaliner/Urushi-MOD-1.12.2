@@ -52,9 +52,11 @@ public class Roof45 extends Block  {
         this.setCreativeTab(ModCore_Urushi.TabUrushi);
         setLightOpacity(225);
         setLightLevel(0.0F);
+       this.useNeighborBrightness=true;
        if(material==Material.ROCK){
            setHarvestLevel("pickaxe", 0);
-           this.useNeighborBrightness=true;
+       }else{
+           setSoundType(SoundType.PLANT);
        }
 
     }
