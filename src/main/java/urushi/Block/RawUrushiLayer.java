@@ -8,9 +8,11 @@ import net.minecraft.block.material.EnumPushReaction;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
@@ -33,7 +35,7 @@ public class RawUrushiLayer extends BlockFalling
         setLightOpacity(0);
         setLightLevel(0.0F);
         setHardness(0.3F);
-        setCreativeTab(ModCore_Urushi.TabUrushi);
+       // setCreativeTab(ModCore_Urushi.TabUrushi);
     }
 
     /**
@@ -69,7 +71,7 @@ public class RawUrushiLayer extends BlockFalling
     }
     public Item getItemDropped(IBlockState state, Random rand, int fortune)
     {
-        return  ModCore_Urushi.UItems;
+        return ModCore_Urushi.UItems;
     }
 
     @Override
@@ -81,4 +83,9 @@ public class RawUrushiLayer extends BlockFalling
     public EnumPushReaction getMobilityFlag(IBlockState state) {
         return EnumPushReaction.DESTROY;
     }
+
+
+
+
+
 }

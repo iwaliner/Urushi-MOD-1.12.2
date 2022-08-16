@@ -1,0 +1,18 @@
+{
+  "type": "forge:ore_shapeless",
+  "ingredients": [
+    {
+      "item": "urushi:red_urushi_wooden_cabinetry",
+      "data": 0
+    },
+    {
+      "item": "urushi:red_urushi_wooden_cabinetry",
+      "data": 0
+    }
+  ],
+  "result": {
+    "item": "urushi:red_urushi_doubled_wooden_cabinetry",
+     "data": 0,
+      "count": 1
+  }
+}

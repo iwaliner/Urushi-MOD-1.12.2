@@ -67,7 +67,9 @@ public class Futon extends BlockBed
 
     @Override
     public int damageDropped(IBlockState state) {
-        return meta;
+        //return meta;
+        return state.getValue(PART) == BlockBed.EnumPartType.FOOT ? 0 : meta;
+
     }
 
 @Override
@@ -201,13 +203,6 @@ public class Futon extends BlockBed
 
     public ItemStack getItem(World worldIn, BlockPos pos, IBlockState state)
     {
-        BlockPos blockpos = pos;
-
-        if (state.getValue(PART) == BlockBed.EnumPartType.FOOT)
-        {
-            blockpos = pos.offset((EnumFacing)state.getValue(FACING));
-        }
-
         return new ItemStack(ModCore_Urushi.UItems, 1, meta);
     }
 
@@ -231,36 +226,16 @@ public class Futon extends BlockBed
     {
         return MapColor.CLOTH;
     }
-
-
-
-
-
-
-
-
     @SideOnly(Side.CLIENT)
     public boolean hasCustomBreakingProgress(IBlockState state)
     {
         return false;
     }
-
-
-
-
-
     public void harvestBlock(World worldIn, EntityPlayer player, BlockPos pos, IBlockState state, TileEntity te, ItemStack stack)
     {
-      /*  if (state.getValue(PART) == BlockBed.EnumPartType.HEAD && te instanceof TileEntityBed)
+     if (state.getValue(PART) == BlockBed.EnumPartType.HEAD )
         {
-            TileEntityBed tileentitybed = (TileEntityBed)te;
-            ItemStack itemstack = tileentitybed.getItemStack();
-            spawnAsEntity(worldIn, pos, itemstack);
-        }*/
-        if (state.getValue(PART) == BlockBed.EnumPartType.HEAD && te instanceof TileEntityFuton)
-        {
-            TileEntityFuton tileentitybed = (TileEntityFuton)te;
-            ItemStack itemstack = tileentitybed.getItemStack();
+            ItemStack itemstack =new ItemStack(ModCore_Urushi.UItems,1,meta);
             spawnAsEntity(worldIn, pos, itemstack);
         }
         else

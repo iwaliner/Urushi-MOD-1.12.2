@@ -1,0 +1,8 @@
+{
+    "variants": {
+"facing=north": { "model":"urushi:doubled_wooden_cabinetry" },
+"facing=south": { "model":"urushi:doubled_wooden_cabinetry" , "y": 180},
+"facing=west": { "model":"urushi:doubled_wooden_cabinetry" , "y": 270},
+"facing=east": { "model":"urushi:doubled_wooden_cabinetry" , "y": 90}
+    }
+}

@@ -1,0 +1,12 @@
+{
+    "variants": {
+"half=bottom,variant=type_a": { "model":"urushi:wooden_cabinetry_red_under_slab" },
+"half=bottom,variant=type_b": { "model":"urushi:wooden_cabinetry_red_under_slab" , "y": 180},
+"half=bottom,variant=type_d": { "model":"urushi:wooden_cabinetry_red_under_slab" , "y": 270},
+"half=bottom,variant=type_c": { "model":"urushi:wooden_cabinetry_red_under_slab" , "y": 90},
+"half=top,variant=type_a": { "model":"urushi:wooden_cabinetry_red_upper_slab" },
+"half=top,variant=type_b": { "model":"urushi:wooden_cabinetry_red_upper_slab" , "y": 180},
+"half=top,variant=type_d": { "model":"urushi:wooden_cabinetry_red_upper_slab" , "y": 270},
+"half=top,variant=type_c": { "model":"urushi:wooden_cabinetry_red_upper_slab" , "y": 90}
+    }
+}

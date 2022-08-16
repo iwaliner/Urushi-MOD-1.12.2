@@ -188,7 +188,7 @@ public class ChiseledLacquerLog extends BlockLog {
                 }else{
                     break;
                 }
-            }else if(worldIn.getBlockState(pos.add(p,q-i,r)).getBlock()!= Blocks.AIR&&worldIn.getBlockState(pos.add(p,q-i,r)).getBlock()!= ModCore_Urushi.RawUrushiLayer){
+            }else if(worldIn.getBlockState(pos.add(p,q-i,r)).getBlock()!= Blocks.AIR&&worldIn.getBlockState(pos.add(p,q-i,r)).getBlock()!= ModCore_Urushi.RawUrushiLayer&&worldIn.getBlockState(pos.add(p,q-i+1,r)).getBlock()==Blocks.AIR){
                 worldIn.setBlockState(pos.add(p,q-i+1,r),ModCore_Urushi.RawUrushiLayer.getDefaultState());
 
                 break;

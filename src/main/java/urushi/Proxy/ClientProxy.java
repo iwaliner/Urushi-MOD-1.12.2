@@ -43,35 +43,10 @@ public class ClientProxy extends CommonProxy {
         GameRegistry.registerTileEntity(TileEntityRiceHokora.class,new ResourceLocation(ModCore_Urushi.modid,"rice_hokora"));
         GameRegistry.registerTileEntity(TileEntityFuton.class,new ResourceLocation(ModCore_Urushi.modid,"futon"));
         GameRegistry.registerTileEntity(TileEntityFermentationPot.class,new ResourceLocation(ModCore_Urushi.modid,"fermentation_pot"));
+        GameRegistry.registerTileEntity(TileEntityDoubledWoodenCabinetry.class,new ResourceLocation(ModCore_Urushi.modid,"doubled_wooden_cabinetry"));
 
     }
-    public void registerEntityRender(){
-        RenderingRegistry.registerEntityRenderingHandler(EntityCushion.class, new IRenderFactory<EntityCushion>(){
-            @Override
-            public Render<? super EntityCushion> createRenderFor(RenderManager manager){
-                return new RenderCushion(manager);
-            }
-        });
-        RenderingRegistry.registerEntityRenderingHandler(EntityOni.class, new IRenderFactory<EntityOni>(){
-            @Override
-            public Render<? super EntityOni> createRenderFor(RenderManager manager){
-                return new RenderOni(manager);
-            }
-        });
-        RenderingRegistry.registerEntityRenderingHandler(EntityOniGirl.class, new IRenderFactory<EntityOniGirl>(){
-            @Override
-            public Render<? super EntityOniGirl> createRenderFor(RenderManager manager){
-                return new RenderOniGirl(manager);
-            }
-        });
-        RenderingRegistry.registerEntityRenderingHandler(EntityOnibi.class, new IRenderFactory<EntityOnibi>(){
-            @Override
-            public Render<? super EntityOnibi> createRenderFor(RenderManager manager){
-                Minecraft mcIn = Minecraft.getMinecraft();
-                return (Render)new RenderSnowball<EntityOnibi>(manager, ModCore_Urushi.ItemOnibi, mcIn.getRenderItem());
-            }
-        });
-    }
+
     public void registerFurnaceRecipe(){
         GameRegistry.addSmelting(new ItemStack(UItems, 1, 10), new ItemStack(UItems, 1, 3), 5F);
         GameRegistry.addSmelting(new ItemStack(UStone, 1, 2), new ItemStack(UItems, 1, 9), 5F);

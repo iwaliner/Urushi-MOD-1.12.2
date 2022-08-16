@@ -49,6 +49,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -60,6 +61,7 @@ import urushi.Else.EnumType;
 import urushi.Entity.EntityOni;
 import urushi.Entity.EntityOniGirl;
 import urushi.Entity.EntityOnibi;
+import urushi.GUI.GUIHandler;
 import urushi.Proxy.CommonProxy;
 import urushi.Render.RenderOni;
 import urushi.Render.RenderOniGirl;
@@ -84,6 +86,8 @@ public class  ModCore_Urushi {
             serverSide = "urushi.Proxy.CommonProxy"
     )
     public static CommonProxy proxy;
+    @Mod.Instance("urushi")
+    public static ModCore_Urushi instance;
     public static final CreativeTabs TabUrushi = new TabUrushi("TabUrushi");
     public static final Block UPlanks = new U_Planks();
     public static final ItemBlock ItemBlockUPlanks=new ItemBlockMetadata(UPlanks);
@@ -120,9 +124,11 @@ public class  ModCore_Urushi {
     public static final Block TrapdoorRedUrushiStained = new WoodenTrapDoor();
     public static final Item UItems = new UItems();
     public static final Block WoodenCabinetry = new BlockWoodenCabinetry();
-    public static final TileEntity TileEntityWoodenCabinetry = new TileEntityWCabinetry();
     public static final Block WoodenCabinetryUnderSlab = new WoodenCabinetrySlab();
-    public static final TileEntity TileEntityWoodenCabinetryUnderSlab = new TileEntityWoodenCabinetrySlab();
+    public static final Block DoubledWoodenCabinetry = new DoubledWoodenCabinetry();
+    public static final Block RedUrushiWoodenCabinetry = new BlockWoodenCabinetry();
+    public static final Block RedUrushiWoodenCabinetryUnderSlab = new WoodenCabinetrySlab();
+    public static final Block RedUrushiDoubledWoodenCabinetry = new DoubledWoodenCabinetry();
     public static final Block JapaneseTimberBamboo = new JapaneseTimberBamboo();
     public static final Block JapaneseTimberBambooShoot = new JapaneseTimberBambooShoot();
     public static final Block BambooWall = new PaneWall(Material.WOOD);
@@ -362,6 +368,10 @@ public class  ModCore_Urushi {
         event.getRegistry().register(UItems);
         event.getRegistry().register(new ItemBlock(WoodenCabinetry).setRegistryName(modid, "wooden_cabinetry"));
         event.getRegistry().register(new ItemBlock(WoodenCabinetryUnderSlab).setRegistryName(modid, "wooden_cabinetry_under_slab"));
+        event.getRegistry().register(new ItemBlock(DoubledWoodenCabinetry).setRegistryName(modid, "doubled_wooden_cabinetry"));
+        event.getRegistry().register(new ItemBlock(RedUrushiWoodenCabinetry).setRegistryName(modid, "red_urushi_wooden_cabinetry"));
+        event.getRegistry().register(new ItemBlock(RedUrushiWoodenCabinetryUnderSlab).setRegistryName(modid, "red_urushi_wooden_cabinetry_slab"));
+        event.getRegistry().register(new ItemBlock(RedUrushiDoubledWoodenCabinetry).setRegistryName(modid, "red_urushi_doubled_wooden_cabinetry"));
         event.getRegistry().register(new ItemBlock(JapaneseTimberBambooShoot).setRegistryName(modid, "japanese_timber_bamboo_shoot"));
         event.getRegistry().register(new ItemBlock(BambooWall).setRegistryName(modid, "bamboo_wall"));
         event.getRegistry().register(ItemBlockWoodenBucket.setRegistryName(modid, "wooden_bucket"));
@@ -453,7 +463,7 @@ public class  ModCore_Urushi {
         event.getRegistry().register(ItemBlockBambooBlock.setRegistryName(modid, "bamboo_block"));
         event.getRegistry().register(ItemBlockBambooSlab.setRegistryName(modid, "bamboo_slab_single"));
         event.getRegistry().register(new ItemBlock(BambooStairs).setRegistryName(modid, "bamboo_stairs"));
-        event.getRegistry().register(new ItemBlock(RawUrushiLayer).setRegistryName(modid, "raw_urushi_layer"));
+       // event.getRegistry().register(new ItemBlock(RawUrushiLayer).setRegistryName(modid, "raw_urushi_layer"));
         event.getRegistry().register(ItemBlockWattleAndDaubSlab.setRegistryName(modid, "wattle_and_daub_slab_single"));
         event.getRegistry().register(new ItemBlock(WattleAndDaubStairs).setRegistryName(modid, "wattle_and_daub_stairs"));
         event.getRegistry().register(new ItemBlock(RoughStoneStairs).setRegistryName(modid, "rough_stone_stairs"));
@@ -507,6 +517,10 @@ public class  ModCore_Urushi {
         event.getRegistry().register(TrapdoorRedUrushiStained.setRegistryName(modid,"trapdoor_red_urushi_stained").setUnlocalizedName("TrapdoorRedUrushiStained"));
         event.getRegistry().register(WoodenCabinetry.setRegistryName(modid,"wooden_cabinetry").setUnlocalizedName("WoodenCabinetry"));
         event.getRegistry().register(WoodenCabinetryUnderSlab.setRegistryName(modid,"wooden_cabinetry_under_slab").setUnlocalizedName("WoodenCabinetryUnderSlab"));
+        event.getRegistry().register(DoubledWoodenCabinetry.setRegistryName(modid,"doubled_wooden_cabinetry").setUnlocalizedName("DoubledWoodenCabinetry"));
+        event.getRegistry().register(RedUrushiWoodenCabinetry.setRegistryName(modid,"red_urushi_wooden_cabinetry").setUnlocalizedName("RedUrushiWoodenCabinetry"));
+        event.getRegistry().register(RedUrushiWoodenCabinetryUnderSlab.setRegistryName(modid,"red_urushi_wooden_cabinetry_slab").setUnlocalizedName("RedUrushiWoodenCabinetrySlab"));
+        event.getRegistry().register(RedUrushiDoubledWoodenCabinetry.setRegistryName(modid,"red_urushi_doubled_wooden_cabinetry").setUnlocalizedName("RedUrushiDoubledWoodenCabinetry"));
         event.getRegistry().register(JapaneseTimberBamboo.setRegistryName(modid,"japanese_timber_bamboo").setUnlocalizedName("JapaneseTimberBamboo"));
         event.getRegistry().register(JapaneseTimberBambooShoot.setRegistryName(modid,"japanese_timber_bamboo_shoot").setUnlocalizedName("JapaneseTimberBambooShoot"));
         event.getRegistry().register(BambooWall.setRegistryName(modid,"bamboo_wall").setUnlocalizedName("BambooWall"));
@@ -949,7 +963,6 @@ public class  ModCore_Urushi {
         ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(Giboshi), 1, new ModelResourceLocation(new ResourceLocation(modid, "gold_giboshi"), "inventory"));
         ModelLoader.setCustomModelResourceLocation(UItems, 59, new ModelResourceLocation(new ResourceLocation(modid, "red_urushi_ball"), "inventory"));
         ModelLoader.setCustomModelResourceLocation(UItems, 60, new ModelResourceLocation(new ResourceLocation(modid, "black_urushi_ball"), "inventory"));
-        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(RawUrushiLayer), 0, new ModelResourceLocation(new ResourceLocation(modid, "raw_urushi_layer"), "inventory"));
         ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(BambooBlock), 0, new ModelResourceLocation(new ResourceLocation(modid, "bamboo_block"), "inventory"));
         ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(BambooBlock), 1, new ModelResourceLocation(new ResourceLocation(modid, "bamboo_charcoal_block"), "inventory"));
         ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(BambooSlabSingle), 0, new ModelResourceLocation(new ResourceLocation(modid, "bamboo_slab"), "inventory"));
@@ -977,7 +990,10 @@ public class  ModCore_Urushi {
         ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(IbushiKawaraRoof225), 0, new ModelResourceLocation(new ResourceLocation(modid, "ibushi_kawara_roof_225"), "inventory"));
         ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(CopperKawaraRoof225), 0, new ModelResourceLocation(new ResourceLocation(modid, "copper_kawara_roof_225"), "inventory"));
         ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(CupricOxideKawaraRoof225), 0, new ModelResourceLocation(new ResourceLocation(modid, "cupric_oxide_kawara_roof_225"), "inventory"));
-
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(DoubledWoodenCabinetry), 0, new ModelResourceLocation(new ResourceLocation(modid, "doubled_wooden_cabinetry"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(RedUrushiWoodenCabinetry), 0, new ModelResourceLocation(new ResourceLocation(modid, "red_urushi_wooden_cabinetry"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(RedUrushiWoodenCabinetryUnderSlab), 0, new ModelResourceLocation(new ResourceLocation(modid, "red_urushi_wooden_cabinetry_slab"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(RedUrushiDoubledWoodenCabinetry), 0, new ModelResourceLocation(new ResourceLocation(modid, "red_urushi_doubled_wooden_cabinetry"), "inventory"));
 
 
     }
@@ -1087,7 +1103,7 @@ public class  ModCore_Urushi {
         LootTableList.register(RED_ONI);
 
 
-
+        NetworkRegistry.INSTANCE.registerGuiHandler(this, new GUIHandler());
         /**コンフィグ設定を追加*/
         Configuration cfg = new Configuration(event.getSuggestedConfigurationFile());
         try {

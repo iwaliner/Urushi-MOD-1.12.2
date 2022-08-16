@@ -67,48 +67,76 @@ public class KakejikuItem extends Item {
             if (facing != EnumFacing.UP && facing != EnumFacing.DOWN) {
                 if (meta == 0) {
                     worldIn.setBlockState(newPos, ModCore_Urushi.KakejikuA.getDefaultState().withProperty(VARIANT,EnumType.EnumType4.TypeA).withProperty(FACING, facing.getOpposite()));
+                    itemStack.shrink(1);
                     return EnumActionResult.SUCCESS;
                 }else if (meta == 1) {
                     worldIn.setBlockState(newPos, ModCore_Urushi.KakejikuA.getDefaultState().withProperty(VARIANT,EnumType.EnumType4.TypeB).withProperty(FACING, facing.getOpposite()));
+                    itemStack.shrink(1);
+
                     return EnumActionResult.SUCCESS;
                 }else if (meta ==2) {
                     worldIn.setBlockState(newPos, ModCore_Urushi.KakejikuA.getDefaultState().withProperty(VARIANT,EnumType.EnumType4.TypeC).withProperty(FACING, facing.getOpposite()));
+                    itemStack.shrink(1);
+
                     return EnumActionResult.SUCCESS;
                 }else if (meta == 3) {
                     worldIn.setBlockState(newPos, ModCore_Urushi.KakejikuA.getDefaultState().withProperty(VARIANT,EnumType.EnumType4.TypeD).withProperty(FACING, facing.getOpposite()));
+                    itemStack.shrink(1);
+
                     return EnumActionResult.SUCCESS;
                 }else if (meta == 4) {
                     worldIn.setBlockState(newPos, ModCore_Urushi.KakejikuB.getDefaultState().withProperty(VARIANT,EnumType.EnumType4.TypeA).withProperty(FACING, facing.getOpposite()));
+                    itemStack.shrink(1);
+
                     return EnumActionResult.SUCCESS;
                 }else if (meta == 5) {
                     worldIn.setBlockState(newPos, ModCore_Urushi.KakejikuB.getDefaultState().withProperty(VARIANT,EnumType.EnumType4.TypeB).withProperty(FACING, facing.getOpposite()));
+                    itemStack.shrink(1);
+
                     return EnumActionResult.SUCCESS;
                 }else if (meta == 6) {
                     worldIn.setBlockState(newPos, ModCore_Urushi.KakejikuB.getDefaultState().withProperty(VARIANT,EnumType.EnumType4.TypeC).withProperty(FACING, facing.getOpposite()));
+                    itemStack.shrink(1);
+
                     return EnumActionResult.SUCCESS;
                 }else if (meta == 7) {
                     worldIn.setBlockState(newPos, ModCore_Urushi.KakejikuB.getDefaultState().withProperty(VARIANT,EnumType.EnumType4.TypeD).withProperty(FACING, facing.getOpposite()));
+                    itemStack.shrink(1);
+
                     return EnumActionResult.SUCCESS;
                 }else if (meta == 8) {
                     worldIn.setBlockState(newPos, ModCore_Urushi.KakejikuC.getDefaultState().withProperty(VARIANT,EnumType.EnumType4.TypeA).withProperty(FACING, facing.getOpposite()));
+                    itemStack.shrink(1);
+
                     return EnumActionResult.SUCCESS;
                 }else if (meta == 9) {
                     worldIn.setBlockState(newPos, ModCore_Urushi.KakejikuC.getDefaultState().withProperty(VARIANT,EnumType.EnumType4.TypeB).withProperty(FACING, facing.getOpposite()));
+                    itemStack.shrink(1);
+
                     return EnumActionResult.SUCCESS;
                 }else if (meta == 10) {
                     worldIn.setBlockState(newPos, ModCore_Urushi.KakejikuC.getDefaultState().withProperty(VARIANT,EnumType.EnumType4.TypeC).withProperty(FACING, facing.getOpposite()));
+                    itemStack.shrink(1);
+
                     return EnumActionResult.SUCCESS;
                 }else if (meta == 11) {
                     worldIn.setBlockState(newPos, ModCore_Urushi.KakejikuC.getDefaultState().withProperty(VARIANT,EnumType.EnumType4.TypeD).withProperty(FACING, facing.getOpposite()));
+                    itemStack.shrink(1);
+
                     return EnumActionResult.SUCCESS;
                 }else if (meta == 12) {
                     worldIn.setBlockState(newPos, ModCore_Urushi.KakejikuD.getDefaultState().withProperty(VARIANT,EnumType.EnumType4.TypeA).withProperty(FACING, facing.getOpposite()));
+                       itemStack.shrink(1);
                     return EnumActionResult.SUCCESS;
                 }else if (meta == 13) {
                     worldIn.setBlockState(newPos, ModCore_Urushi.KakejikuD.getDefaultState().withProperty(VARIANT,EnumType.EnumType4.TypeB).withProperty(FACING, facing.getOpposite()));
+                    itemStack.shrink(1);
+
                     return EnumActionResult.SUCCESS;
                 }else if (meta == 14) {
                     worldIn.setBlockState(newPos, ModCore_Urushi.KakejikuD.getDefaultState().withProperty(VARIANT,EnumType.EnumType4.TypeC).withProperty(FACING, facing.getOpposite()));
+                    itemStack.shrink(1);
+
                     return EnumActionResult.SUCCESS;
                 }
             }

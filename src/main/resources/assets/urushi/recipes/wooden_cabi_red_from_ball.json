@@ -1,0 +1,23 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "qqq",
+    "qdq",
+    "qqq"
+  ],
+  "key": {
+    "q": {
+       "item": "urushi:wooden_cabinetry",
+      "data": 0
+    },
+     "d": {
+      "item": "urushi:u_items",
+      "data": 59
+    }
+  },
+  "result": {
+    "item": "urushi:red_urushi_wooden_cabinetry",
+"data": 0,
+ "count": 8
+  }
+}
