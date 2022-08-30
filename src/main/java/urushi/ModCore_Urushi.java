@@ -331,7 +331,9 @@ public class  ModCore_Urushi {
     public static final Block CupricOxideKawaraRoof45 = new Roof45(Material.ROCK).setHardness(1.0F).setResistance(10F);
     public static final BlockSlab CupricOxideKawaraRoof225 = new Roof225(Material.ROCK) {@Override public boolean isDouble() {return false;}};
     public static final Item KusaMochi = new ItemFood(8, 1F, false);
-    public static final Item TKG = new ItemFood(10, 1.2F, false);
+    public static final Item TKG = new ItemFood(6, 0.8F, false);
+    public static final Item Yokan = new ItemFood(8, 1F, false);
+    public static final Item SakuraYokan = new ItemFood(8, 1F, false);
 
     @EventHandler
     public void construct(FMLConstructionEvent event) {
@@ -483,6 +485,8 @@ public class  ModCore_Urushi {
         event.getRegistry().register(new ItemBlock(CopperKawaraRoof225).setRegistryName(modid, "copper_kawara_roof_225"));
         event.getRegistry().register(new ItemBlock(CupricOxideKawaraRoof45).setRegistryName(modid, "cupric_oxide_kawara_roof_45"));
         event.getRegistry().register(new ItemBlock(CupricOxideKawaraRoof225).setRegistryName(modid, "cupric_oxide_kawara_roof_225"));
+            event.getRegistry().register(Yokan.setUnlocalizedName("Yokan").setRegistryName("yokan").setCreativeTab(TabUrushi));
+            event.getRegistry().register(SakuraYokan.setUnlocalizedName("SakuraYokan").setRegistryName("sakura_yokan").setCreativeTab(TabUrushi));
 
 
         }
@@ -994,6 +998,8 @@ public class  ModCore_Urushi {
         ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(RedUrushiWoodenCabinetry), 0, new ModelResourceLocation(new ResourceLocation(modid, "red_urushi_wooden_cabinetry"), "inventory"));
         ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(RedUrushiWoodenCabinetryUnderSlab), 0, new ModelResourceLocation(new ResourceLocation(modid, "red_urushi_wooden_cabinetry_slab"), "inventory"));
         ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(RedUrushiDoubledWoodenCabinetry), 0, new ModelResourceLocation(new ResourceLocation(modid, "red_urushi_doubled_wooden_cabinetry"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(Yokan,0, new ModelResourceLocation(new ResourceLocation(modid, "yokan"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(SakuraYokan,0, new ModelResourceLocation(new ResourceLocation(modid, "sakura_yokan"), "inventory"));
 
 
     }

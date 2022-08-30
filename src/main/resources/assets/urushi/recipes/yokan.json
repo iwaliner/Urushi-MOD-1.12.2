@@ -1,0 +1,21 @@
+{
+  "type": "forge:ore_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+       "type": "forge:ore_dict",
+      "ore": "cropRedbean"
+    },
+    {
+    "type": "forge:ore_dict",
+      "ore": "cropRedbean"
+    }
+  ],
+  "result": {
+    "item": "urushi:yokan",
+     "data": 0,
+      "count": 1
+  }
+}

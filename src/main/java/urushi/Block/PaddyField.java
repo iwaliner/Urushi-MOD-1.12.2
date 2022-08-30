@@ -9,7 +9,7 @@ public class PaddyField extends BlockFarmland {
     public PaddyField()
     {
         super();
-        this.setDefaultState(this.blockState.getBaseState().withProperty(MOISTURE, Integer.valueOf(0)));
+       // this.setDefaultState(this.blockState.getBaseState().withProperty(MOISTURE, Integer.valueOf(0)));
         this.setTickRandomly(true);
         this.setLightOpacity(255);
         setResistance(3F);

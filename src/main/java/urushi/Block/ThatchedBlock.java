@@ -11,12 +11,15 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import urushi.Else.EnumType;
 import urushi.ModCore_Urushi;
+
+import java.util.Random;
 
 public class ThatchedBlock extends Block
 {
@@ -32,7 +35,6 @@ public class ThatchedBlock extends Block
         setHardness(0.3F);
         setCreativeTab(ModCore_Urushi.TabUrushi);
         this.setDefaultState(this.blockState.getBaseState().withProperty(VARIANT,EnumType.EnumType2.TypeA));
-
     }
 
     /**
@@ -72,5 +74,10 @@ public class ThatchedBlock extends Block
     protected BlockStateContainer createBlockState() {
         return new BlockStateContainer(this, new IProperty[]{VARIANT});
     }
+
+
+
+
+
 
 }
